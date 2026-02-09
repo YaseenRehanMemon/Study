@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Waves - Completion Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --success-color: #10b981;
+            --pending-color: #f59e0b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', sans-serif;
+            color: #1f2937;
+        }
+
+        .plan-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-section h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .header-section p {
+            color: #bfdbfe;
+            margin-top: 0.5rem;
+        }
+
+        .status-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .status-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .session-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .session-card.completed {
+            border-left-color: var(--success-color);
+            opacity: 0.8;
+        }
+
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .session-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .session-time {
+            background: #eefff6;
+            color: #059669;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            margin-right: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .checkbox.checked {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .progress-bar-container {
+            background-color: #e5e7eb;
+            height: 10px;
+            border-radius: 999px;
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background-color: var(--success-color);
+            height: 100%;
+            width: 37%; /* Approx 3/8 topics done */
+            transition: width 0.3s ease;
+        }
+
+        .note-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="plan-container">
+    <div class="header-section">
+        <h1>Chapter 7: Waves</h1>
+        <p>Target: Complete Chapter by Tomorrow</p>
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="overall-progress"></div>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; text-align: right;">Progress: <span id="progress-text">37%</span></p>
+    </div>
+
+    <!-- Completed Section -->
+    <div class="session-card completed">
+        <div class="session-header">
+            <span class="session-title">✅ Completed Previously</span>
+            <span class="session-time" style="background-color: #d1fae5; color: #065f46;">Done</span>
+        </div>
+        <ul class="task-list">
+            <li class="task-item">
+                <div class="checkbox checked"></div>
+                <span>1. What is a Wave? (Concept & Definition)</span>
+            </li>
+            <li class="task-item">
+                <div class="checkbox checked"></div>
+                <span>2. Oscillatory Motion Foundation</span>
+            </li>
+            <li class="task-item">
+                <div class="checkbox checked"></div>
+                <span>3. Key Parameters (Amplitude, Frequency, Wavelength, Period)</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tomorrow's Plan -->
+    <h2 style="color: var(--text-color); margin-bottom: 1rem;">Tomorrow's Schedule</h2>
+
+    <!-- Session 1 -->
+    <div class="session-card">
+        <div class="session-header">
+            <span class="session-title">Session 1: Mechanics of Waves</span>
+            <span class="session-time">Morning (45 mins)</span>
+        </div>
+        <ul class="task-list">
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span>4. Wave Speed & Energy (v = fλ, E ∝ A²)</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span>5. Types of Waves (Mechanical/EM, Transverse/Longitudinal)</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span><strong>Derivation Check:</strong> Practice Speed of Sound formula (Newton & Laplace) *If in syllabus</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Session 2 -->
+    <div class="session-card">
+        <div class="session-header">
+            <span class="session-title">Session 2: Superposition & Interference</span>
+            <span class="session-time">Afternoon (60 mins)</span>
+        </div>
+        <ul class="task-list">
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span>6. Principle of Superposition (Vector Sum)</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span>7. Interference Conditions (Constructive vs Destructive)</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span><strong>Deep Dive:</strong> Path Difference Formulas (Δx = nλ vs (n+0.5)λ)</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Session 3 -->
+    <div class="session-card">
+        <div class="session-header">
+            <span class="session-title">Session 3: Phenomena & Application</span>
+            <span class="session-time">Evening (60 mins)</span>
+        </div>
+        <ul class="task-list">
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span>8. Beats (Definition & Frequency Formula)</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span>9. Stationary/Standing Waves (Nodes & Antinodes)</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span><strong>Check Book:</strong> Stationary Waves in Stretched Strings?</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span><strong>Check Book:</strong> Air Columns / Organ Pipes?</span>
+            </li>
+             <li class="task-item" onclick="toggleTask(this)">
+                <div class="checkbox"></div>
+                <span><strong>Check Book:</strong> Doppler Effect?</span>
+            </li>
+        </ul>
+        <div class="note-box">
+            ⚠️ <strong>Crucial:</strong> "Stationary Waves" and "Doppler Effect" are usually the most tested topics for Long Questions. Ensure you check your PDF textbook if these are included in Chapter 7.
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="index.html" style="color: var(--primary-color); text-decoration: none;">&larr; Back to Dashboard</a>
+    </div>
+
+</div>
+
+<script>
+    function toggleTask(element) {
+        const checkbox = element.querySelector('.checkbox');
+        checkbox.classList.toggle('checked');
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const totalTasks = document.querySelectorAll('.task-item').length;
+        const checkedTasks = document.querySelectorAll('.checkbox.checked').length;
+        const percentage = Math.round((checkedTasks / totalTasks) * 100);
+        
+        document.getElementById('overall-progress').style.width = percentage + '%';
+        document.getElementById('progress-text').innerText = percentage + '%';
+    }
+
+    // Initial calculation
+    updateProgress();
+</script>
+
+</body>
+</html>
