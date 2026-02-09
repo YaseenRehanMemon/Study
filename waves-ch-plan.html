@@ -3,560 +3,1062 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 7: Waves - Advanced Protocol</title>
-    <!-- MathJax for Formula Rendering -->
+    <title>Chapter 7: Waves - Daily Planner</title>
+    <!-- MathJax -->
     <script>
         window.MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\(', '\)']],
-                displayMath: [['$$', '$$'], ['\[', '\]']]
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
             },
-            svg: { fontCache: 'global' }
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady();
+                }
+            }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --border: #2a2a3a;
+            --text-primary: #e8e8ed;
+            --text-secondary: #8888a0;
+            --accent-purple: #a855f7;
             --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+            --accent-gold: #f59e0b;
             --accent-cyan: #06b6d4;
-            --accent-green: #10b981;
-            --accent-purple: #8b5cf6;
-            --accent-rose: #f43f5e;
-            --border-color: #334155;
+            --glow-purple: rgba(168, 85, 247, 0.3);
+            --glow-blue: rgba(59, 130, 246, 0.3);
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+            background-image:
+                radial-gradient(ellipse at top, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
         }
 
-        /* HUD Header */
-        header {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 2rem;
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 1rem;
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
-        .subtitle {
-            color: var(--text-muted);
-            font-family: monospace;
-            font-size: 1rem;
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
-        /* Progress HUD */
-        .hud-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+        .header .date {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
         }
 
-        .hud-card {
+        /* Section Styling */
+        .section {
             background: var(--bg-card);
+            border-radius: 16px;
             padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .hud-card::before {
+        .section:hover {
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent-blue);
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
         }
 
-        .hud-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .hud-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Sections */
-        .mission-sector {
-            margin-bottom: 3rem;
-        }
-
-        .sector-title {
-            color: var(--accent-cyan);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
         }
 
-        .sector-title::before {
-            content: '►';
-            font-size: 0.8rem;
-        }
-
-        /* Tasks */
-        .task-group {
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-        }
-
-        .task-item {
-            padding: 1.25rem;
-            border-bottom: 1px solid var(--border-color);
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            transition: background 0.2s;
-            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
         }
 
-        .task-item:last-child {
-            border-bottom: none;
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        .task-item:hover {
-            background: rgba(255, 255, 255, 0.03);
+        .section-badge {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
-        /* Checkbox Styling */
-        .checkbox-wrapper {
-            position: relative;
-            width: 24px;
-            height: 24px;
+        /* IBADAH SECTION */
+        .ibadah-section .section-icon {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.1));
+            color: var(--accent-purple);
+        }
+
+        .ibadah-section .section-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .ibadah-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .spiritual-ring-container {
             flex-shrink: 0;
-            margin-top: 2px;
+            position: relative;
+            width: 140px;
+            height: 140px;
         }
 
-        .checkbox-ring {
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--text-muted);
-            border-radius: 50%;
-            transition: all 0.3s ease;
+        .spiritual-ring {
+            transform: rotate(-90deg);
+            width: 140px;
+            height: 140px;
         }
 
-        .task-item.completed .checkbox-ring {
-            border-color: var(--accent-green);
-            background: var(--accent-green);
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        .ring-bg {
+            fill: none;
+            stroke: var(--bg-secondary);
+            stroke-width: 8;
         }
 
-        .task-item.completed .checkbox-ring::after {
-            content: '✓';
+        .ring-progress {
+            fill: none;
+            stroke: url(#purpleGradient);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 6px var(--glow-purple));
+        }
+
+        .ring-center {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: var(--bg-dark);
-            font-weight: bold;
-            font-size: 14px;
+            text-align: center;
         }
 
-        .task-content {
-            flex-grow: 1;
+        .ring-count {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent-purple);
         }
 
-        .task-name {
-            font-weight: 500;
-            display: block;
-            margin-bottom: 0.25rem;
+        .ring-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .task-item.completed .task-name {
-            color: var(--text-muted);
-            text-decoration: line-through;
+        .ibadah-list {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
         }
 
-        .task-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        .ibadah-item {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0.8rem;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
 
-        .badge {
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.1);
+        .ibadah-item:hover {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+
+        .ibadah-item.checked {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .ibadah-item.checked .checkbox {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        .ibadah-item.checked .checkbox::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            position: relative;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .checkbox::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
             font-size: 0.75rem;
-            font-family: monospace;
+            font-weight: 700;
+            opacity: 0;
+            transition: all 0.3s ease;
         }
 
-        .badge-formula { color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.3); }
-        .badge-exp { color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.3); }
-        .badge-imp { color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.3); }
-
-        /* Formula Box */
-        .formula-box {
-            background: rgba(15, 23, 42, 0.5);
-            padding: 1rem;
-            margin-top: 0.5rem;
-            border-left: 3px solid var(--accent-purple);
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: #d1d5db;
-            display: none; /* Hidden by default */
+        .ibadah-text {
+            font-size: 0.85rem;
+            color: var(--text-primary);
         }
 
-        .task-item.expanded .formula-box {
-            display: block;
+        .ibadah-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-left: auto;
         }
 
-        /* Progress Bar */
+        /* STUDY BLOCKS */
+        .study-section .section-icon {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1));
+            color: var(--accent-blue);
+        }
+
+        .study-section::before {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+        }
+
         .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--bg-dark);
-            z-index: 1000;
+            margin-bottom: 1.25rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
             width: 0%;
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 10px var(--accent-blue);
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 6px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Floating Nav */
-        .back-nav {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--accent-blue);
+        .blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .study-block {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .study-block:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+        }
+
+        .study-block.completed {
+            border-color: var(--accent-green);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .study-block.completed::before {
+            content: '✓';
+            position: absolute;
+            top: 4px;
+            right: 6px;
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .block-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-            font-size: 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
         }
 
-        .back-nav:hover {
-            transform: scale(1.1);
+        .block-title {
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
+        .block-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .block-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            line-height: 1.3;
+        }
+
+        /* TOPICS SECTION */
+        .topics-section .section-icon {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+            color: var(--accent-green);
+        }
+
+        .topics-section::before {
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .topic-block {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .topic-block-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-block-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .topic-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .topic-item:hover {
+            background: rgba(34, 197, 94, 0.08);
+        }
+
+        .topic-item.checked {
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .topic-item.checked .topic-checkbox {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .topic-item.checked .topic-checkbox::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .topic-item.checked .topic-text {
+            color: var(--accent-green);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .topic-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .topic-checkbox::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .topic-text {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 0.25rem;
+        }
+
+        .priority-high { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .priority-medium { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .priority-low { background: rgba(107, 114, 128, 0.2); color: #9ca3af; }
+
+        /* TIMER SECTION */
+        .timer-section .section-icon {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+            color: var(--accent-gold);
+        }
+
+        .timer-section::before {
+            background: linear-gradient(90deg, var(--accent-gold), #f97316);
+        }
+
+        .timer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .timer-display-wrapper {
+            position: relative;
+            width: 220px;
+            height: 220px;
+        }
+
+        .timer-ring {
+            transform: rotate(-90deg);
+            width: 220px;
+            height: 220px;
+        }
+
+        .timer-ring-bg {
+            fill: none;
+            stroke: var(--bg-secondary);
+            stroke-width: 10;
+        }
+
+        .timer-ring-progress {
+            fill: none;
+            stroke: url(#timerGradient);
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 597;
+            stroke-dashoffset: 597;
+            transition: stroke-dashoffset 1s linear;
+            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+        }
+
+        .timer-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .timer-time {
+            font-size: 2.75rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: var(--text-primary);
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .timer-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timer-btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #f97316);
+            color: white;
+            min-width: 140px;
+        }
+
+        .timer-btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .timer-stats {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .timer-stat { text-align: center; }
+        .timer-stat-value { font-size: 1.25rem; font-weight: 700; color: var(--accent-gold); }
+        .timer-stat-label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ibadah-content { flex-direction: column; }
+            .blocks-grid, .topics-grid, .ibadah-list { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Chapter 7: Waves & Vibrations</h1>
+            <div class="subtitle">Physics - Punjab Textbook Board</div>
+            <div class="date" id="currentDate"></div>
+        </div>
 
-<div class="progress-container">
-    <div class="progress-fill" id="progressBar"></div>
-</div>
+        <!-- Section 1: Ibadah Tracker -->
+        <div class="section ibadah-section">
+            <div class="section-header">
+                <div class="section-icon">&#127775;</div>
+                <div class="section-title">Daily Ibadah</div>
+                <div class="section-badge">Spiritual Foundation</div>
+            </div>
 
-<div class="container">
-    <header>
-        <div>
-            <h1>Operation: Waves</h1>
-            <div class="subtitle">Ch.7 Physics - Punjab Textbook Board - Tactical Breakdown</div>
-        </div>
-        <div style="text-align: right;">
-            <div style="font-size: 0.8rem; color: var(--accent-green);">STATUS: ACTIVE</div>
-            <div style="font-size: 2rem; font-family: monospace;" id="percentText">0%</div>
-        </div>
-    </header>
+            <div class="ibadah-content">
+                <div class="spiritual-ring-container">
+                    <svg class="spiritual-ring" viewBox="0 0 140 140">
+                        <defs>
+                            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="ring-bg" cx="70" cy="70" r="60"/>
+                        <circle class="ring-progress" id="spiritualRing" cx="70" cy="70" r="60"/>
+                    </svg>
+                    <div class="ring-center">
+                        <div class="ring-count" id="ibadahCount">0/7</div>
+                        <div class="ring-label">Complete</div>
+                    </div>
+                </div>
 
-    <div class="hud-grid">
-        <div class="hud-card">
-            <div class="hud-value" id="remainingCount">24</div>
-            <div class="hud-label">Modules Remaining</div>
+                <div class="ibadah-list">
+                    <div class="ibadah-item" data-ibadah="tahajjud" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Tahajjud</span><span class="ibadah-arabic">تہجد</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="yaseen" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Surah Yaseen</span><span class="ibadah-arabic">یٰسین</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="fajr" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Fajr</span><span class="ibadah-arabic">فجر</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="zuhr" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Zuhr</span><span class="ibadah-arabic">ظہر</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="asr" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Asr</span><span class="ibadah-arabic">عصر</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="maghrib" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Maghrib</span><span class="ibadah-arabic">مغرب</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="isha" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div><span class="ibadah-text">Isha</span><span class="ibadah-arabic">عشاء</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hud-card" style="border-left-color: var(--accent-purple);">
-            <div class="hud-value">4</div>
-            <div class="hud-label">Critical Derivations</div>
+
+        <!-- Section 2: Study Blocks -->
+        <div class="section study-section">
+            <div class="section-header">
+                <div class="section-icon">&#128218;</div>
+                <div class="section-title">Study Blocks</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-label">Daily Study Progress</span>
+                    <span class="progress-value" id="progressValue">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="blocks-grid">
+                <div class="study-block" data-block="1" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">1</div>
+                        <div>
+                            <div class="block-title">Wave Mechanics</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-desc">Types, $v=f\lambda$, Energy $E \propto A^2$, Superposition Principle.</div>
+                </div>
+
+                <div class="study-block" data-block="2" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">2</div>
+                        <div>
+                            <div class="block-title">Interference & Beats</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-desc">Path Difference conditions, Beats formula, Applications.</div>
+                </div>
+
+                <div class="study-block" data-block="3" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">3</div>
+                        <div>
+                            <div class="block-title">Stationary Waves</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-desc">Stretched Strings ($f_n = n f_1$), Air Columns (Open/Closed pipes).</div>
+                </div>
+
+                <div class="study-block" data-block="4" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">4</div>
+                        <div>
+                            <div class="block-title">Doppler & Review</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-desc">Source Moving cases, Red/Blue shift, Radar/Sonar applications.</div>
+                </div>
+            </div>
         </div>
-        <div class="hud-card" style="border-left-color: var(--accent-rose);">
-            <div class="hud-value">3</div>
-            <div class="hud-label">Core Experiments</div>
+
+        <!-- Section 2.5: Study Timer -->
+        <div class="section timer-section">
+            <div class="section-header">
+                <div class="section-icon">&#9201;</div>
+                <div class="section-title">Focus Timer</div>
+            </div>
+
+            <div class="timer-container">
+                <div class="timer-display-wrapper">
+                    <svg class="timer-ring" viewBox="0 0 220 220">
+                        <defs>
+                            <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f59e0b"/>
+                                <stop offset="100%" stop-color="#f97316"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="timer-ring-bg" cx="110" cy="110" r="95"/>
+                        <circle class="timer-ring-progress" id="timerRing" cx="110" cy="110" r="95"/>
+                    </svg>
+                    <div class="timer-center">
+                        <div class="timer-time" id="timerDisplay">00:00</div>
+                        <div class="timer-label">Current Session</div>
+                        <div class="timer-goal">Goal: 50:00</div>
+                    </div>
+                </div>
+
+                <div class="timer-controls">
+                    <button class="timer-btn timer-btn-secondary" onclick="resetTimer()">&#8635; Reset</button>
+                    <button class="timer-btn timer-btn-primary" id="timerBtn" onclick="toggleTimer()">&#9654; Start Focus</button>
+                </div>
+
+                <div class="timer-stats">
+                    <div class="timer-stat">
+                        <div class="timer-stat-value" id="totalTimeToday">00:00</div>
+                        <div class="timer-stat-label">Total Today</div>
+                    </div>
+                    <div class="timer-stat">
+                        <div class="timer-stat-value" id="sessionsCompleted">0</div>
+                        <div class="timer-stat-label">Sessions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Micro Topics -->
+        <div class="section topics-section">
+            <div class="section-header">
+                <div class="section-icon">&#9989;</div>
+                <div class="section-title">Micro Topic Checklist</div>
+            </div>
+
+            <div class="topics-grid">
+                <!-- Core Fundamentals -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-title">Core Fundamentals (Must-Do)</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Wave Parameters ($v=f\lambda, T=1/f$) <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Superposition Principle <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Interference: Path Diff $\Delta x = n\lambda$ <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Interference: Path Diff $\Delta x = (n+0.5)\lambda$ <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stationary Waves -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-title">Stationary Waves (Derivations)</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Nodes vs Antinodes <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Stretched String: $v = \sqrt{F/m}$ <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Harmonics in Strings ($f_n = n f_1$) <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Open Pipe (All Harmonics) <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Closed Pipe (Odd Harmonics) <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiments & Phenomena -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-title">Experiments & Phenomena</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Exp 7.7: Microwave Stationary Waves <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Beats ($f_b = f_1 - f_2$) & Tuning <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Doppler: Source Moves Towards <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Doppler: Source Moves Away <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Doppler Apps (Radar/Sonar/Stars) <span class="priority-badge priority-low">Low</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-title">Extra & Concepts</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Ripple Tank Diffraction <span class="priority-badge priority-low">Low</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Intensity ($I \propto 1/r^2$) <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- SECTOR 1 -->
-    <div class="mission-sector">
-        <div class="sector-title">SECTOR 01: WAVE MECHANICS & FUNDAMENTALS</div>
-        <div class="task-group">
+    <script>
+        // Set Date
+        const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('currentDate').textContent = today;
+        const todayKey = new Date().toISOString().split('T')[0];
+
+        // --- Ibadah Logic ---
+        function toggleIbadah(element) {
+            element.classList.toggle('checked');
+            const checked = document.querySelectorAll('.ibadah-item.checked').length;
             
-            <div class="task-item completed" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Define Wave Types (Mechanical vs EM)</span>
-                    <div class="task-meta"><span class="badge">Basic</span></div>
-                </div>
-            </div>
-
-            <div class="task-item completed" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Parameters: $A, f, \lambda, T$</span>
-                    <div class="task-meta"><span class="badge badge-formula">Formula</span></div>
-                    <div class="formula-box">
-                        Speed equation: $$v = f\lambda$$
-                        Frequency: $$f = 1/T$$
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Speed & Energy Relations</span>
-                    <div class="task-meta"><span class="badge badge-imp">Conceptual</span></div>
-                    <div class="formula-box">
-                        Energy is proportional to Amplitude squared: $$E \propto A^2$$
-                        Speed depends on medium density/elasticity, NOT frequency.
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- SECTOR 2 -->
-    <div class="mission-sector">
-        <div class="sector-title">SECTOR 02: SUPERPOSITION & INTERFERENCE</div>
-        <div class="task-group">
-            
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Principle of Superposition</span>
-                    <div class="task-meta"><span class="badge">Definition</span></div>
-                    <div class="formula-box">
-                        Resultant displacement is vector sum: $$y = y_1 + y_2$$
-                        Application: Noise-cancelling headphones.
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Interference Conditions (Path Difference)</span>
-                    <div class="task-meta"><span class="badge badge-formula">Critical</span></div>
-                    <div class="formula-box">
-                        Constructive: $$\\Delta x = n\\lambda$$
-                        Destructive: $$\\Delta x = (n + \\frac{1}{2})\\lambda$$
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Beats Phenomenon</span>
-                    <div class="task-meta"><span class="badge badge-formula">Numerical</span></div>
-                    <div class="formula-box">
-                        Periodic loudness change. $$f_{beat} = |f_A - f_B|$$
-                        Uses: Tuning forks, Radar speed guns.
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- SECTOR 3 -->
-    <div class="mission-sector">
-        <div class="sector-title">SECTOR 03: STATIONARY WAVES (THE BIG GUNS)</div>
-        <div class="task-group">
-            
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Stretched String Analysis</span>
-                    <div class="task-meta"><span class="badge badge-formula">Derivation</span></div>
-                    <div class="formula-box">
-                        Speed on string: $$v = \sqrt{\\frac{F}{m}}$$
-                        Harmonics: $$f_n = n f_1$$
-                        Nodes at ends.
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Air Column: Open Pipe</span>
-                    <div class="task-meta"><span class="badge badge-formula">Derivation</span></div>
-                    <div class="formula-box">
-                        Antinodes at both ends.
-                        All Harmonics present ($f, 2f, 3f...$).
-                        Length: $$L = \frac{n\\lambda}{2}$$
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Air Column: Closed Pipe</span>
-                    <div class="task-meta"><span class="badge badge-formula">Derivation</span></div>
-                    <div class="formula-box">
-                        Node at closed end, Antinode at open.
-                        Only ODD Harmonics ($f, 3f, 5f...$).
-                        Length: $$L = \frac{n\\lambda}{4}$$ (for fundamental)
-                    </div>
-                </div>
-            </div>
-
-             <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Microwave Experiment</span>
-                    <div class="task-meta"><span class="badge badge-exp">Exp 7.7</span></div>
-                    <div class="formula-box">
-                        Using microwave transmitter and detector to find Nodes/Antinodes.
-                        $$c = f\\lambda$$
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- SECTOR 4 -->
-    <div class="mission-sector">
-        <div class="sector-title">SECTOR 04: ADVANCED PHENOMENA</div>
-        <div class="task-group">
-            
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Doppler Effect: Source Moving</span>
-                    <div class="task-meta"><span class="badge badge-formula">Complex</span></div>
-                    <div class="formula-box">
-                        Towards Observer ($\\lambda$ decreases):
-                        $$f' = f(\\"frac{v}{v-u_s})$$
-                        Away from Observer ($\\lambda$ increases):
-                        $$f' = f(\\"frac{v}{v+u_s})$$
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Doppler Applications</span>
-                    <div class="task-meta"><span class="badge">Theory</span></div>
-                    <div class="formula-box">
-                        Radar, Sonar, Red Shift (Stars moving away), Blue Shift (Stars approaching).
-                    </div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Diffraction & Ripple Tank</span>
-                    <div class="task-meta"><span class="badge badge-exp">Exp</span></div>
-                    <div class="formula-box">
-                        Bending around corners.
-                        Condition: Obstacle size $\\approx \\lambda$.
-                    </div>
-                </div>
-            </div>
-             <div class="task-item" onclick="toggle(this)">
-                <div class="checkbox-wrapper"><div class="checkbox-ring"></div></div>
-                <div class="task-content">
-                    <span class="task-name">Intensity of Wave</span>
-                    <div class="task-meta"><span class="badge badge-formula">Formula</span></div>
-                    <div class="formula-box">
-                         $$I = \\frac{P}{A}$$
-                         Inverse Square Law: $$I \\propto \\frac{1}{r^2}$$
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-<a href="index.html" class="back-nav">↩</a>
-
-<script>
-    function toggle(element) {
-        // Toggle Checked State
-        element.classList.toggle('completed');
-        
-        // Toggle Formula Box (Expansion)
-        element.classList.toggle('expanded');
-        
-        updateStats();
-    }
-
-    function updateStats() {
-        const total = document.querySelectorAll('.task-item').length;
-        const completed = document.querySelectorAll('.task-item.completed').length;
-        const percent = Math.round((completed / total) * 100);
-        const remaining = total - completed;
-
-        // Update UI
-        document.getElementById('progressBar').style.width = percent + '%';
-        document.getElementById('percentText').innerText = percent + '%';
-        document.getElementById('remainingCount').innerText = remaining;
-
-        // Color shift for HUD based on progress
-        if(percent > 50) {
-            document.documentElement.style.setProperty('--accent-blue', '#10b981'); // Turn green
-        } else {
-            document.documentElement.style.setProperty('--accent-blue', '#3b82f6'); // Back to blue
+            const ring = document.getElementById('spiritualRing');
+            const circumference = 2 * Math.PI * 60;
+            const progress = (checked / 7) * circumference;
+            ring.style.strokeDashoffset = circumference - progress;
+            document.getElementById('ibadahCount').textContent = `${checked}/7`;
+            saveState();
         }
-    }
 
-    // Initialize
-    updateStats();
-</script>
+        // --- Block Logic ---
+        function toggleBlock(element) {
+            element.classList.toggle('completed');
+            const completed = document.querySelectorAll('.study-block.completed').length;
+            const percentage = completed * 25;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('progressValue').textContent = `${percentage}%`;
+            saveState();
+        }
 
+        // --- Topic Logic ---
+        function toggleTopic(element) {
+            element.classList.toggle('checked');
+            saveState();
+        }
+
+        // --- Timer Logic (Simplified for stability) ---
+        let timerRunning = false;
+        let timerInterval = null;
+        let seconds = 0;
+        let totalSeconds = 0;
+        let sessions = 0;
+        const GOAL = 50 * 60;
+
+        function formatTime(s) {
+            const m = Math.floor(s / 60).toString().padStart(2, '0');
+            const sec = (s % 60).toString().padStart(2, '0');
+            return `${m}:${sec}`;
+        }
+
+        function updateDisplay() {
+            document.getElementById('timerDisplay').textContent = formatTime(seconds);
+            document.getElementById('totalTimeToday').textContent = formatTime(totalSeconds);
+            document.getElementById('sessionsCompleted').textContent = sessions;
+            
+            const ring = document.getElementById('timerRing');
+            const circumference = 2 * Math.PI * 95;
+            const progress = Math.min(seconds / GOAL, 1) * circumference;
+            ring.style.strokeDashoffset = circumference - progress;
+        }
+
+        function toggleTimer() {
+            if (timerRunning) {
+                clearInterval(timerInterval);
+                timerRunning = false;
+                document.getElementById('timerBtn').innerHTML = '&#9654; Resume';
+            } else {
+                timerRunning = true;
+                document.getElementById('timerBtn').innerHTML = '&#10074;&#10074; Pause';
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    totalSeconds++;
+                    updateDisplay();
+                    if(seconds === GOAL) {
+                        sessions++;
+                        alert("Session Complete! Take a break.");
+                    }
+                    saveTimerState();
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            if(timerRunning) toggleTimer();
+            seconds = 0;
+            updateDisplay();
+            document.getElementById('timerBtn').innerHTML = '&#9654; Start Focus';
+        }
+
+        // --- Persistence ---
+        function saveState() {
+            const state = {
+                date: todayKey,
+                ibadah: Array.from(document.querySelectorAll('.ibadah-item.checked')).map(el => el.dataset.ibadah),
+                blocks: Array.from(document.querySelectorAll('.study-block.completed')).map(el => el.dataset.block),
+                topics: Array.from(document.querySelectorAll('.topic-item')).reduce((acc, el, idx) => {
+                    if (el.classList.contains('checked')) acc.push(idx);
+                    return acc;
+                }, [])
+            };
+            localStorage.setItem('wavesPlanner', JSON.stringify(state));
+        }
+
+        function saveTimerState() {
+            const state = { date: todayKey, totalSeconds, sessions };
+            localStorage.setItem('wavesTimer', JSON.stringify(state));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem('wavesPlanner');
+            if (saved) {
+                const state = JSON.parse(saved);
+                if (state.date === todayKey) {
+                    if (state.ibadah) state.ibadah.forEach(key => toggleIbadah(document.querySelector(`[data-ibadah="${key}"]`)));
+                    if (state.blocks) state.blocks.forEach(num => toggleBlock(document.querySelector(`[data-block="${num}"]`)));
+                    if (state.topics) {
+                        const items = document.querySelectorAll('.topic-item');
+                        state.topics.forEach(idx => items[idx].classList.add('checked'));
+                    }
+                }
+            }
+            
+            const savedTimer = localStorage.getItem('wavesTimer');
+            if (savedTimer) {
+                const tState = JSON.JSON.parse(savedTimer);
+                if (tState.date === todayKey) {
+                    totalSeconds = tState.totalSeconds || 0;
+                    sessions = tState.sessions || 0;
+                    updateDisplay();
+                }
+            }
+        }
+
+        // Init
+        loadState();
+    </script>
 </body>
 </html>
