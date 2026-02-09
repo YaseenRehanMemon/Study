@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feb 7 - Ch13 Finish + Ch14 Vectors | Daily Planner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --border: #2a2a3a;
+            --text-primary: #e8e8ed;
+            --text-secondary: #8888a0;
+            --accent-purple: #a855f7;
+            --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+            --accent-gold: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --accent-red: #ef4444;
+            --glow-purple: rgba(168, 85, 247, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+            background-image:
+                radial-gradient(ellipse at top, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px var(--glow-purple)); }
+            to { filter: drop-shadow(0 0 15px var(--glow-purple)); }
+        }
+
+        .header .subtitle { color: var(--text-secondary); font-size: 0.9rem; }
+        .header .date { color: var(--accent-gold); font-size: 0.85rem; margin-top: 0.5rem; }
+
+        .section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .section:hover {
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .section-title { font-size: 1.1rem; font-weight: 600; }
+
+        .section-badge {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* IBADAH */
+        .ibadah-section .section-icon { background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(168,85,247,0.1)); color: var(--accent-purple); }
+        .ibadah-section .section-badge { background: rgba(168,85,247,0.15); color: var(--accent-purple); }
+        .ibadah-content { display: flex; gap: 2rem; align-items: center; }
+
+        .spiritual-ring-container { flex-shrink: 0; position: relative; width: 140px; height: 140px; }
+        .spiritual-ring { transform: rotate(-90deg); width: 140px; height: 140px; }
+        .ring-bg { fill: none; stroke: var(--bg-secondary); stroke-width: 8; }
+        .ring-progress {
+            fill: none; stroke: url(#purpleGradient); stroke-width: 8;
+            stroke-linecap: round; stroke-dasharray: 377; stroke-dashoffset: 377;
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 6px var(--glow-purple));
+        }
+        .ring-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+        .ring-count { font-size: 1.75rem; font-weight: 700; color: var(--accent-purple); }
+        .ring-label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+
+        .ibadah-list { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+        .ibadah-item {
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.6rem 0.8rem; background: var(--bg-secondary);
+            border-radius: 10px; cursor: pointer; transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .ibadah-item:hover { background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.2); }
+        .ibadah-item.checked { background: rgba(168,85,247,0.15); border-color: rgba(168,85,247,0.3); }
+        .ibadah-item.checked .checkbox { background: var(--accent-purple); border-color: var(--accent-purple); }
+        .ibadah-item.checked .checkbox::after { opacity: 1; transform: scale(1); }
+        .ibadah-item.checked .ibadah-text { color: var(--accent-purple); }
+
+        .checkbox {
+            width: 20px; height: 20px; border: 2px solid var(--border);
+            border-radius: 6px; position: relative; transition: all 0.3s ease; flex-shrink: 0;
+        }
+        .checkbox::after {
+            content: '\2713'; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%,-50%) scale(0); color: white;
+            font-size: 0.75rem; font-weight: 700; opacity: 0; transition: all 0.3s ease;
+        }
+        .ibadah-text { font-size: 0.85rem; color: var(--text-primary); transition: color 0.3s ease; }
+        .ibadah-arabic { font-family: 'Amiri', serif; font-size: 0.75rem; color: var(--text-secondary); margin-left: auto; }
+
+        /* STUDY BLOCKS */
+        .study-section .section-icon { background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(59,130,246,0.1)); color: var(--accent-blue); }
+        .study-section::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); }
+
+        .progress-container { margin-bottom: 1.25rem; }
+        .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .progress-label { font-size: 0.8rem; color: var(--text-secondary); }
+        .progress-value { font-size: 1.25rem; font-weight: 700; color: var(--accent-blue); }
+        .progress-bar { height: 12px; background: var(--bg-secondary); border-radius: 6px; overflow: hidden; }
+        .progress-fill {
+            height: 100%; width: 0%; border-radius: 6px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+        }
+        .progress-fill::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+        .blocks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+        .study-block {
+            background: var(--bg-secondary); border-radius: 12px; padding: 1rem;
+            cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;
+            position: relative; overflow: hidden;
+        }
+        .study-block:hover { transform: translateY(-2px); border-color: rgba(59,130,246,0.3); box-shadow: 0 4px 20px rgba(59,130,246,0.15); }
+        .study-block.completed { border-color: var(--accent-green); background: rgba(34,197,94,0.1); }
+        .study-block.completed::after { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 40px; background: var(--accent-green); clip-path: polygon(100% 0, 0 0, 100% 100%); }
+        .study-block.completed::before { content: '\2713'; position: absolute; top: 4px; right: 6px; color: white; font-size: 0.7rem; font-weight: 700; z-index: 1; }
+
+        .block-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .block-number { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: white; }
+        .block-title { font-weight: 600; font-size: 0.9rem; }
+        .block-desc { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem; line-height: 1.4; }
+        .block-percent { position: absolute; bottom: 0.75rem; right: 0.75rem; font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600; }
+
+        /* TIMER */
+        .timer-section .section-icon { background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(245,158,11,0.1)); color: var(--accent-gold); }
+        .timer-section::before { background: linear-gradient(90deg, var(--accent-gold), #f97316); }
+        .timer-container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+        .timer-display-wrapper { position: relative; width: 220px; height: 220px; }
+        .timer-ring { transform: rotate(-90deg); width: 220px; height: 220px; }
+        .timer-ring-bg { fill: none; stroke: var(--bg-secondary); stroke-width: 10; }
+        .timer-ring-progress {
+            fill: none; stroke: url(#timerGradient); stroke-width: 10;
+            stroke-linecap: round; stroke-dasharray: 597; stroke-dashoffset: 597;
+            transition: stroke-dashoffset 1s linear;
+            filter: drop-shadow(0 0 8px rgba(245,158,11,0.4));
+        }
+        .timer-ring-progress.complete { stroke: var(--accent-green); filter: drop-shadow(0 0 12px rgba(34,197,94,0.6)); animation: pulseGlow 1s ease-in-out infinite; }
+        @keyframes pulseGlow { 0%,100% { filter: drop-shadow(0 0 8px rgba(34,197,94,0.4)); } 50% { filter: drop-shadow(0 0 20px rgba(34,197,94,0.8)); } }
+        .timer-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; }
+        .timer-time { font-size: 2.75rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--text-primary); letter-spacing: 2px; }
+        .timer-time.running { color: var(--accent-gold); }
+        .timer-time.complete { color: var(--accent-green); }
+        .timer-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; }
+        .timer-goal { font-size: 0.75rem; color: var(--accent-gold); margin-top: 0.5rem; }
+
+        .timer-controls { display: flex; gap: 1rem; align-items: center; }
+        .timer-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border: none; border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+        .timer-btn-primary { background: linear-gradient(135deg, var(--accent-gold), #f97316); color: white; min-width: 140px; }
+        .timer-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(245,158,11,0.4); }
+        .timer-btn-primary.running { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .timer-btn-secondary { background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border); }
+        .timer-btn-secondary:hover { background: var(--bg-card); color: var(--text-primary); }
+
+        .timer-stats { display: flex; gap: 2rem; padding: 1rem 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border); }
+        .timer-stat { text-align: center; }
+        .timer-stat-value { font-size: 1.25rem; font-weight: 700; color: var(--accent-gold); }
+        .timer-stat-label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* TOPICS */
+        .topics-section .section-icon { background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(34,197,94,0.1)); color: var(--accent-green); }
+        .topics-section::before { background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan)); }
+        .topics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+        .topic-block { background: var(--bg-secondary); border-radius: 12px; padding: 1rem; border: 1px solid var(--border); }
+        .topic-block-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+        .topic-block-icon { font-size: 0.9rem; }
+        .topic-block-title { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); }
+        .topic-items { display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .topic-item { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.5rem; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; }
+        .topic-item:hover { background: rgba(34,197,94,0.08); }
+        .topic-item.checked { background: rgba(34,197,94,0.1); }
+        .topic-item.checked .topic-checkbox { background: var(--accent-green); border-color: var(--accent-green); }
+        .topic-item.checked .topic-checkbox::after { opacity: 1; transform: scale(1); }
+        .topic-item.checked .topic-text { color: var(--accent-green); text-decoration: line-through; text-decoration-color: rgba(34,197,94,0.5); }
+
+        .topic-checkbox { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; margin-top: 2px; position: relative; transition: all 0.2s ease; }
+        .topic-checkbox::after { content: '\2713'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0); color: white; font-size: 0.6rem; font-weight: 700; opacity: 0; transition: all 0.2s ease; }
+        .topic-text { font-size: 0.8rem; color: var(--text-primary); line-height: 1.4; transition: all 0.2s ease; }
+
+        .priority-badge { display: inline-block; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; margin-left: 0.25rem; }
+        .priority-high { background: rgba(239,68,68,0.2); color: #ef4444; }
+        .priority-medium { background: rgba(245,158,11,0.2); color: #f59e0b; }
+        .priority-low { background: rgba(107,114,128,0.2); color: #9ca3af; }
+
+        /* HOW-TO GUIDE */
+        .guide-section .section-icon { background: linear-gradient(135deg, rgba(236,72,153,0.2), rgba(236,72,153,0.1)); color: #ec4899; }
+        .guide-section::before { background: linear-gradient(90deg, #ec4899, var(--accent-purple)); }
+        .guide-block { background: var(--bg-secondary); border-radius: 12px; padding: 1rem; margin-bottom: 0.75rem; border-left: 3px solid var(--accent-purple); }
+        .guide-block h4 { color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .guide-block p, .guide-block li { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+        .guide-block ul { padding-left: 1.25rem; }
+        .guide-block li { margin-bottom: 0.3rem; }
+        .guide-block .tip { color: var(--accent-gold); font-weight: 500; }
+        .guide-block .warn { color: var(--accent-red); font-weight: 500; }
+
+        /* Celebration */
+        .celebration-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .celebration-overlay.show { opacity: 1; visibility: visible; }
+        .celebration-content { text-align: center; animation: bounceIn 0.6s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        @keyframes bounceIn { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
+        .celebration-icon { font-size: 5rem; margin-bottom: 1rem; animation: bounce 0.6s ease infinite alternate; }
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+        .celebration-title { font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+        .celebration-subtitle { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.5rem; }
+        .celebration-btn { padding: 0.75rem 2rem; background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); border: none; border-radius: 10px; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+        .celebration-btn:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(34,197,94,0.4); }
+        .confetti { position: fixed; width: 10px; height: 10px; top: -10px; z-index: 1001; animation: confettiFall 3s ease-out forwards; }
+        @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+
+        .footer { text-align: center; padding-top: 1.5rem; border-top: 1px solid var(--border); margin-top: 1rem; }
+        .footer-text { font-size: 0.75rem; color: var(--text-secondary); }
+        .motivational { font-style: italic; color: var(--accent-gold); margin-bottom: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .ibadah-content { flex-direction: column; }
+            .blocks-grid, .topics-grid, .ibadah-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Feb 7 - Finish Ch13 + Ch14 Vectors</h1>
+            <div class="subtitle">Sindh Textbook Board - Mathematics XI</div>
+            <div class="date">Friday, February 7, 2026</div>
+        </div>
+
+        <!-- IBADAH -->
+        <div class="section ibadah-section">
+            <div class="section-header">
+                <div class="section-icon">&#127775;</div>
+                <div class="section-title">Daily Ibadah</div>
+                <div class="section-badge">Spiritual Foundation</div>
+            </div>
+            <div class="ibadah-content">
+                <div class="spiritual-ring-container">
+                    <svg class="spiritual-ring" viewBox="0 0 140 140">
+                        <defs><linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+                        <circle class="ring-bg" cx="70" cy="70" r="60"/>
+                        <circle class="ring-progress" id="spiritualRing" cx="70" cy="70" r="60"/>
+                    </svg>
+                    <div class="ring-center">
+                        <div class="ring-count" id="ibadahCount">0/7</div>
+                        <div class="ring-label">Complete</div>
+                    </div>
+                </div>
+                <div class="ibadah-list">
+                    <div class="ibadah-item" data-ibadah="tahajjud" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Tahajjud</span><span class="ibadah-arabic">تہجد</span></div>
+                    <div class="ibadah-item" data-ibadah="yaseen" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Surah Yaseen</span><span class="ibadah-arabic">یٰسین</span></div>
+                    <div class="ibadah-item" data-ibadah="fajr" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Fajr</span><span class="ibadah-arabic">فجر</span></div>
+                    <div class="ibadah-item" data-ibadah="zuhr" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Zuhr</span><span class="ibadah-arabic">ظہر</span></div>
+                    <div class="ibadah-item" data-ibadah="asr" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Asr</span><span class="ibadah-arabic">عصر</span></div>
+                    <div class="ibadah-item" data-ibadah="maghrib" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Maghrib</span><span class="ibadah-arabic">مغرب</span></div>
+                    <div class="ibadah-item" data-ibadah="isha" onclick="toggleIbadah(this)"><div class="checkbox"></div><span class="ibadah-text">Isha</span><span class="ibadah-arabic">عشاء</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STUDY BLOCKS -->
+        <div class="section study-section">
+            <div class="section-header">
+                <div class="section-icon">&#128218;</div>
+                <div class="section-title">Study Blocks</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-label">Daily Study Progress</span>
+                    <span class="progress-value" id="progressValue">0%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+            <div class="blocks-grid">
+                <div class="study-block" data-block="1" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">1</div>
+                        <div><div class="block-title">Finish Ch13 Rules</div><div class="block-desc">13.6 Theorems + Ex 13.2</div></div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+                <div class="study-block" data-block="2" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">2</div>
+                        <div><div class="block-title">Ch13 Apps + Ch14 Start</div><div class="block-desc">13.7 + Ex 13.3 + 14.1 Basics</div></div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+                <div class="study-block" data-block="3" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">3</div>
+                        <div><div class="block-title">Dot Product Mastery</div><div class="block-desc">14.2 All + Ex 14.2</div></div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+                <div class="study-block" data-block="4" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">4</div>
+                        <div><div class="block-title">Cross Product + Review</div><div class="block-desc">14.3 + Ex 14.1 selected + Recap</div></div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMER -->
+        <div class="section timer-section">
+            <div class="section-header">
+                <div class="section-icon">&#9201;</div>
+                <div class="section-title">Focus Timer</div>
+            </div>
+            <div class="timer-container">
+                <div class="timer-display-wrapper">
+                    <svg class="timer-ring" viewBox="0 0 220 220">
+                        <defs><linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs>
+                        <circle class="timer-ring-bg" cx="110" cy="110" r="95"/>
+                        <circle class="timer-ring-progress" id="timerRing" cx="110" cy="110" r="95"/>
+                    </svg>
+                    <div class="timer-center">
+                        <div class="timer-time" id="timerDisplay">00:00</div>
+                        <div class="timer-label">Current Session</div>
+                        <div class="timer-goal">Goal: 50:00</div>
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button class="timer-btn timer-btn-secondary" onclick="resetTimer()">&#8635; Reset</button>
+                    <button class="timer-btn timer-btn-primary" id="timerBtn" onclick="toggleTimer()">&#9654; Start Focus</button>
+                </div>
+                <div class="timer-stats">
+                    <div class="timer-stat"><div class="timer-stat-value" id="totalTimeToday">00:00</div><div class="timer-stat-label">Today's Total</div></div>
+                    <div class="timer-stat"><div class="timer-stat-value" id="sessionsCompleted">0</div><div class="timer-stat-label">Sessions Done</div></div>
+                    <div class="timer-stat"><div class="timer-stat-value" id="currentStreak">0</div><div class="timer-stat-label">Day Streak</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="celebration-overlay" id="celebrationOverlay">
+            <div class="celebration-content">
+                <div class="celebration-icon">&#127881;</div>
+                <div class="celebration-title">Block Complete!</div>
+                <div class="celebration-subtitle">50 minutes focused. MashaAllah!</div>
+                <button class="celebration-btn" onclick="closeCelebration()">Continue &#10140;</button>
+            </div>
+        </div>
+
+        <!-- HOW TO STUDY GUIDE -->
+        <div class="section guide-section">
+            <div class="section-header">
+                <div class="section-icon">&#128161;</div>
+                <div class="section-title">How to Study Each Block</div>
+            </div>
+
+            <div class="guide-block">
+                <h4>Block 1: Finish Ch13 Rules (13.6 + Ex 13.2)</h4>
+                <ul>
+                    <li><span class="tip">Skip all proofs.</span> You already know first principle from 13.1-13.5. Now just learn the shortcut rules.</li>
+                    <li>Write these 6 formulas on a separate paper like a cheat sheet:
+                        <br>1) d/dx(c) = 0 &nbsp; 2) d/dx(x^n) = nx^(n-1) &nbsp; 3) d/dx[cf] = cf'
+                        <br>4) d/dx[f+g] = f'+g' &nbsp; 5) (fg)' = f'g + fg' &nbsp; 6) (f/g)' = (f'g - fg')/g^2</li>
+                    <li>Read Examples 7, 9, 10, 11 from the book. <span class="tip">Cover the solution, try it yourself first, then check.</span></li>
+                    <li>Do Ex 13.2: Q1 (i, iii, vi, vii), Q2, Q4. <span class="warn">Skip Q1(x, xi) for now</span> - those are hard and low-yield.</li>
+                    <li><span class="tip">Speed trick:</span> For product/quotient rule, always label f and g first, find f' and g' separately, then plug into formula.</li>
+                </ul>
+            </div>
+
+            <div class="guide-block">
+                <h4>Block 2: Ch13 Applications + Ch14 Basics</h4>
+                <ul>
+                    <li><span class="tip">13.7 is easy - just "find derivative then plug in value".</span> Read Examples 12-13 only. Skip 14-15 (investment/stress are low-yield).</li>
+                    <li>Do Ex 13.3: Q1 only. Q2 is similar pattern.</li>
+                    <li>Then start Ch14. <span class="tip">14.1 is mostly recall from 1st year.</span> Skim quickly:</li>
+                    <li>Focus on NEW things: R^3 vectors [x,y,z], magnitude = sqrt(x^2+y^2+z^2), unit vector = u/|u|</li>
+                    <li>Direction cosines: cos a = x/r, cos b = y/r, cos c = z/r. <span class="tip">Just remember: component divided by magnitude.</span></li>
+                    <li><span class="warn">Don't waste time on proofs of vector properties (pg 263-264).</span> Just know they exist.</li>
+                </ul>
+            </div>
+
+            <div class="guide-block">
+                <h4>Block 3: Dot Product Mastery (14.2 + Ex 14.2)</h4>
+                <ul>
+                    <li>This is the <span class="warn">MOST EXAM-HEAVY</span> section of Ch14. Master this block.</li>
+                    <li>Key formulas to memorize:
+                        <br>u.v = a1*a2 + b1*b2 + c1*c2 (component form)
+                        <br>u.v = |u||v| cos theta (angle form)
+                        <br>cos theta = u.v / (|u||v|)
+                        <br>Projection of v along u = u.v / |u|
+                        <br>Work = F . d</li>
+                    <li><span class="tip">Orthogonal means dot product = 0. This is asked in every exam.</span></li>
+                    <li>Do Ex 14.2: Q1(i), Q3, Q4(i), Q5(i), Q6, Q13, Q14. These cover all types.</li>
+                    <li>Read Examples 7 (cosine law proof), 12 (angle), 14 (work done).</li>
+                </ul>
+            </div>
+
+            <div class="guide-block">
+                <h4>Block 4: Cross Product + Exercises + Recap</h4>
+                <ul>
+                    <li>Cross product = determinant of 3x3 matrix with i,j,k on top. <span class="tip">This is pure mechanical computation.</span></li>
+                    <li>Key formula: u x v = |i  j  k; a1 b1 c1; a2 b2 c2| (expand along first row)</li>
+                    <li>Remember: i.i=j.j=k.k=0 (parallel cross = 0), ixj=k, jxk=i, kxi=j</li>
+                    <li>Read Examples 15, 16. Do the cross product computations yourself.</li>
+                    <li>Go back and do Ex 14.1: Q1(i), Q2(i), Q4, Q5, Q11(i). These are quick.</li>
+                    <li><span class="tip">Last 10 min: Write ALL formulas from Ch13+Ch14 on one page.</span> This is your revision sheet for exam day.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MICRO TOPICS -->
+        <div class="section topics-section">
+            <div class="section-header">
+                <div class="section-icon">&#9989;</div>
+                <div class="section-title">Micro Topic Checklist</div>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#128293;</span>
+                        <span class="topic-block-title">Block 1: Ch13 Rules</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Write 6 formulas cheat sheet <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Read Ex 7 (polynomial derivative) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Read Ex 9 (product - expand method) <span class="priority-badge priority-medium">Med</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Read Ex 10 (product rule method) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Read Ex 11 (quotient rule) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.2 Q1(i) x^4+2x^3+x^2 <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.2 Q1(iii) fraction type <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.2 Q1(vi) product type <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.2 Q1(vii) quotient type <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.2 Q2 (dy/dx with sqrt) <span class="priority-badge priority-medium">Med</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.2 Q4 (show that) <span class="priority-badge priority-medium">Med</span></span></div>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#128640;</span>
+                        <span class="topic-block-title">Block 2: Apps + 14.1</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 12 - Marginal profit <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13 - Velocity & acceleration <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 13.3 Q1 (find velocity) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">14.1 - Vectors in R^3 concept <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Magnitude |u| = sqrt(x^2+y^2+z^2) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Unit vector u-hat = u/|u| <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">i, j, k components <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Distance formula in R^3 <span class="priority-badge priority-medium">Med</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Direction cosines <span class="priority-badge priority-medium">Med</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">cos^2 a + cos^2 b + cos^2 c = 1 <span class="priority-badge priority-medium">Med</span></span></div>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#127919;</span>
+                        <span class="topic-block-title">Block 3: Dot Product</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">u.v = a1a2 + b1b2 + c1c2 <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">cos theta = u.v / (|u||v|) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Orthogonal: u.v = 0 <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Projection = u.v / |u| <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Work done = F . d <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.2 Q1(i) angle <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.2 Q3 (|a|,|b|,|a+b|) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.2 Q5(i) perpendicular <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.2 Q13 work done <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.2 Q4(i) projection <span class="priority-badge priority-medium">Med</span></span></div>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#9889;</span>
+                        <span class="topic-block-title">Block 4: Cross Product + Review</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Cross product determinant formula <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">ixj=k, jxk=i, kxi=j <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">u x v = -v x u <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Example 15 (perpendicular vector) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Example 16 (sin of angle) <span class="priority-badge priority-medium">Med</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.1 Q1(i) basic ops <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.1 Q2(i) magnitude+cosines <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Ex 14.1 Q4 unit vector <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Write FULL formula sheet (both ch) <span class="priority-badge priority-high">Must</span></span></div>
+                        <div class="topic-item" onclick="toggleTopic(this)"><div class="topic-checkbox"></div><span class="topic-text">Review weak areas from today <span class="priority-badge priority-medium">Med</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="motivational">"Indeed, with hardship comes ease." - Quran 94:6</div>
+            <div class="footer-text">You've got this. One block at a time.</div>
+        </div>
+    </div>
+
+    <script>
+        const todayKey = '2026-02-07';
+        const STORAGE_KEY = 'feb7Planner';
+        const TIMER_KEY = 'feb7Timer';
+        const GOAL_SECONDS = 50 * 60;
+
+        // Timer state
+        let timerRunning = false;
+        let timerInterval = null;
+        let sessionStartTimestamp = null;
+        let sessionBankedSeconds = 0;
+        let currentSessionSeconds = 0;
+        let totalSecondsToday = 0;
+        let sessionsCompleted = 0;
+        let currentStreak = 0;
+        let goalFired = false;
+        let audioContext = null;
+
+        function initAudio() { if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)(); }
+
+        function playNotificationSound() {
+            initAudio();
+            if (audioContext.state === 'suspended') audioContext.resume();
+            [523.25,659.25,783.99,1046.50].forEach((freq,i) => {
+                const o = audioContext.createOscillator(), g = audioContext.createGain();
+                o.connect(g); g.connect(audioContext.destination);
+                o.frequency.value = freq; o.type = 'sine';
+                const t = audioContext.currentTime + i*0.15;
+                g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.3,t+0.05); g.gain.exponentialRampToValueAtTime(0.01,t+0.4);
+                o.start(t); o.stop(t+0.4);
+            });
+            setTimeout(() => { const o=audioContext.createOscillator(),g=audioContext.createGain(); o.connect(g);g.connect(audioContext.destination); o.frequency.value=1046.5;o.type='sine'; g.gain.setValueAtTime(0.2,audioContext.currentTime); g.gain.exponentialRampToValueAtTime(0.01,audioContext.currentTime+1); o.start();o.stop(audioContext.currentTime+1); },600);
+        }
+
+        function formatTime(s) { return `${Math.floor(s/60).toString().padStart(2,'0')}:${(s%60).toString().padStart(2,'0')}`; }
+
+        function computeSessionSeconds() {
+            if (timerRunning && sessionStartTimestamp) return sessionBankedSeconds + Math.floor((Date.now()-sessionStartTimestamp)/1000);
+            return sessionBankedSeconds;
+        }
+
+        function updateTimerDisplay() {
+            currentSessionSeconds = computeSessionSeconds();
+            document.getElementById('timerDisplay').textContent = formatTime(currentSessionSeconds);
+            const circ = 2*Math.PI*95;
+            document.getElementById('timerRing').style.strokeDashoffset = circ - Math.min(currentSessionSeconds/GOAL_SECONDS,1)*circ;
+            document.getElementById('totalTimeToday').textContent = formatTime(totalSecondsToday + (timerRunning ? currentSessionSeconds-sessionBankedSeconds : 0));
+            document.getElementById('sessionsCompleted').textContent = sessionsCompleted;
+            document.getElementById('currentStreak').textContent = currentStreak;
+            if (currentSessionSeconds >= GOAL_SECONDS && !goalFired) { goalFired = true; goalReached(); }
+        }
+
+        function toggleTimer() { initAudio(); timerRunning ? pauseTimer() : startTimer(); }
+
+        function startTimer() {
+            timerRunning = true; goalFired = currentSessionSeconds >= GOAL_SECONDS; sessionStartTimestamp = Date.now();
+            const btn = document.getElementById('timerBtn'), d = document.getElementById('timerDisplay');
+            btn.innerHTML = '&#10074;&#10074; Pause'; btn.classList.add('running'); d.classList.add('running');
+            saveTimerState();
+            timerInterval = setInterval(() => { updateTimerDisplay(); saveTimerState(); }, 1000);
+        }
+
+        function pauseTimer() {
+            if (timerRunning && sessionStartTimestamp) { const e = Math.floor((Date.now()-sessionStartTimestamp)/1000); sessionBankedSeconds += e; totalSecondsToday += e; }
+            timerRunning = false; sessionStartTimestamp = null; clearInterval(timerInterval);
+            const btn = document.getElementById('timerBtn'), d = document.getElementById('timerDisplay');
+            btn.innerHTML = '&#9654; Resume'; btn.classList.remove('running'); d.classList.remove('running');
+            updateTimerDisplay(); saveTimerState();
+        }
+
+        function resetTimer() {
+            if (timerRunning) pauseTimer();
+            sessionBankedSeconds = 0; currentSessionSeconds = 0; goalFired = false;
+            document.getElementById('timerBtn').innerHTML = '&#9654; Start Focus';
+            document.getElementById('timerDisplay').classList.remove('running','complete');
+            document.getElementById('timerRing').classList.remove('complete');
+            updateTimerDisplay(); saveTimerState();
+        }
+
+        function goalReached() {
+            sessionsCompleted++;
+            document.getElementById('timerDisplay').classList.add('complete');
+            document.getElementById('timerRing').classList.add('complete');
+            playNotificationSound();
+            if (Notification.permission === 'granted') new Notification('Block Complete!', { body: '50 min focused. MashaAllah!' });
+            showCelebration();
+            const nb = document.querySelector('.study-block:not(.completed)');
+            if (nb) setTimeout(() => { nb.classList.add('completed'); updateBlockProgress(); saveState(); }, 500);
+            saveTimerState();
+        }
+
+        function showCelebration() { document.getElementById('celebrationOverlay').classList.add('show'); createConfetti(); }
+        function closeCelebration() { document.getElementById('celebrationOverlay').classList.remove('show'); }
+
+        function createConfetti() {
+            const colors = ['#a855f7','#3b82f6','#22c55e','#f59e0b','#06b6d4','#ec4899'];
+            for (let i=0;i<50;i++) setTimeout(()=>{const c=document.createElement('div');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.borderRadius=Math.random()>0.5?'50%':'0';c.style.width=(Math.random()*10+5)+'px';c.style.height=c.style.width;c.style.animationDuration=(Math.random()*2+2)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),4000);},i*30);
+        }
+
+        function updateBlockProgress() {
+            const c = document.querySelectorAll('.study-block.completed').length;
+            document.getElementById('progressFill').style.width = `${c*25}%`;
+            document.getElementById('progressValue').textContent = `${c*25}%`;
+        }
+
+        function saveTimerState() {
+            localStorage.setItem(TIMER_KEY, JSON.stringify({
+                date: todayKey, sessionBankedSeconds, sessionStartTimestamp: timerRunning?sessionStartTimestamp:null,
+                isRunning: timerRunning, goalFired, totalSecondsToday, sessionsCompleted, currentStreak, lastActiveDate: todayKey
+            }));
+        }
+
+        function loadTimerState() {
+            const s = localStorage.getItem(TIMER_KEY);
+            if (s) {
+                const st = JSON.parse(s);
+                if (st.date === todayKey) {
+                    totalSecondsToday=st.totalSecondsToday||0; sessionsCompleted=st.sessionsCompleted||0;
+                    currentStreak=st.currentStreak||0; sessionBankedSeconds=st.sessionBankedSeconds||0;
+                    if (st.isRunning && st.sessionStartTimestamp) {
+                        sessionStartTimestamp=st.sessionStartTimestamp; timerRunning=true;
+                        sessionBankedSeconds=st.sessionBankedSeconds||0;
+                        currentSessionSeconds=computeSessionSeconds();
+                        const away=Math.floor((Date.now()-st.sessionStartTimestamp)/1000);
+                        totalSecondsToday+=away;
+                        if (currentSessionSeconds>=GOAL_SECONDS && !st.goalFired) {
+                            goalFired=true; sessionsCompleted++;
+                            document.getElementById('timerDisplay').classList.add('complete');
+                            document.getElementById('timerRing').classList.add('complete');
+                            playNotificationSound(); showCelebration();
+                            const nb=document.querySelector('.study-block:not(.completed)');
+                            if(nb) setTimeout(()=>{nb.classList.add('completed');updateBlockProgress();saveState();},500);
+                        } else { goalFired=currentSessionSeconds>=GOAL_SECONDS; }
+                        document.getElementById('timerBtn').innerHTML='&#10074;&#10074; Pause';
+                        document.getElementById('timerBtn').classList.add('running');
+                        document.getElementById('timerDisplay').classList.add('running');
+                        timerInterval=setInterval(()=>{updateTimerDisplay();saveTimerState();},1000);
+                        saveTimerState(); updateTimerDisplay(); return;
+                    }
+                } else {
+                    sessionBankedSeconds=0;totalSecondsToday=0;sessionsCompleted=0;
+                    const y=new Date();y.setDate(y.getDate()-1);
+                    currentStreak=st.lastActiveDate===y.toISOString().split('T')[0]?(st.currentStreak||0)+1:0;
+                }
+            }
+            updateTimerDisplay();
+        }
+
+        document.addEventListener('visibilitychange',()=>{if(!document.hidden&&timerRunning)updateTimerDisplay();});
+        window.addEventListener('focus',()=>{if(timerRunning)updateTimerDisplay();});
+
+        function toggleIbadah(el) {
+            el.classList.toggle('checked');
+            const c=document.querySelectorAll('.ibadah-item.checked').length;
+            const ring=document.getElementById('spiritualRing');
+            ring.style.strokeDashoffset=2*Math.PI*60-(c/7)*2*Math.PI*60;
+            document.getElementById('ibadahCount').textContent=`${c}/7`;
+        }
+
+        function toggleBlock(el) { el.classList.toggle('completed'); updateBlockProgress(); }
+        function toggleTopic(el) { el.classList.toggle('checked'); }
+
+        function loadState() {
+            const s=localStorage.getItem(STORAGE_KEY);
+            if(s){const st=JSON.parse(s);if(st.date!==todayKey){localStorage.removeItem(STORAGE_KEY);return;}
+            if(st.ibadah)st.ibadah.forEach(k=>{const e=document.querySelector(`[data-ibadah="${k}"]`);if(e&&!e.classList.contains('checked'))toggleIbadah(e);});
+            if(st.blocks)st.blocks.forEach(n=>{const e=document.querySelector(`[data-block="${n}"]`);if(e&&!e.classList.contains('completed'))e.classList.add('completed');});updateBlockProgress();
+            if(st.topics){document.querySelectorAll('.topic-item').forEach((e,i)=>{if(st.topics.includes(i))e.classList.add('checked');});}}
+        }
+
+        function saveState() {
+            localStorage.setItem(STORAGE_KEY,JSON.stringify({
+                date:todayKey,
+                ibadah:Array.from(document.querySelectorAll('.ibadah-item.checked')).map(e=>e.dataset.ibadah),
+                blocks:Array.from(document.querySelectorAll('.study-block.completed')).map(e=>e.dataset.block),
+                topics:Array.from(document.querySelectorAll('.topic-item')).reduce((a,e,i)=>{if(e.classList.contains('checked'))a.push(i);return a;},[])
+            }));
+        }
+
+        document.addEventListener('click',()=>setTimeout(saveState,100));
+        window.addEventListener('beforeunload',()=>{if(timerRunning)saveTimerState();});
+        document.addEventListener('click',function rq(){if('Notification'in window&&Notification.permission==='default')Notification.requestPermission();document.removeEventListener('click',rq);},{once:true});
+
+        loadState(); loadTimerState();
+    </script>
+</body>
+</html>

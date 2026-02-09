@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 13 Differentiation - Daily Planner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --border: #2a2a3a;
+            --text-primary: #e8e8ed;
+            --text-secondary: #8888a0;
+            --accent-purple: #a855f7;
+            --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+            --accent-gold: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --glow-purple: rgba(168, 85, 247, 0.3);
+            --glow-blue: rgba(59, 130, 246, 0.3);
+            --glow-green: rgba(34, 197, 94, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+            background-image:
+                radial-gradient(ellipse at top, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px var(--glow-purple)); }
+            to { filter: drop-shadow(0 0 15px var(--glow-purple)); }
+        }
+
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .header .date {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styling */
+        .section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-cyan));
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .section-badge {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* IBADAH SECTION */
+        .ibadah-section .section-icon {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.1));
+            color: var(--accent-purple);
+        }
+
+        .ibadah-section .section-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .ibadah-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Spiritual Ring */
+        .spiritual-ring-container {
+            flex-shrink: 0;
+            position: relative;
+            width: 140px;
+            height: 140px;
+        }
+
+        .spiritual-ring {
+            transform: rotate(-90deg);
+            width: 140px;
+            height: 140px;
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: var(--bg-secondary);
+            stroke-width: 8;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: url(#purpleGradient);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 6px var(--glow-purple));
+        }
+
+        .ring-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .ring-count {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .ring-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Ibadah Checklist */
+        .ibadah-list {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+
+        .ibadah-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0.8rem;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .ibadah-item:hover {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+
+        .ibadah-item.checked {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .ibadah-item.checked .checkbox {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        .ibadah-item.checked .checkbox::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .ibadah-item.checked .ibadah-text {
+            color: var(--accent-purple);
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            position: relative;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .checkbox::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .ibadah-text {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+
+        .ibadah-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-left: auto;
+        }
+
+        /* STUDY BLOCKS SECTION */
+        .study-section .section-icon {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1));
+            color: var(--accent-blue);
+        }
+
+        .study-section::before {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 1.25rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 6px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Study Blocks Grid */
+        .blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .study-block {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .study-block:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+        }
+
+        .study-block.completed {
+            border-color: var(--accent-green);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .study-block.completed::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-green);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .study-block.completed::before {
+            content: '✓';
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .block-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .block-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .block-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .block-percent {
+            position: absolute;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        /* MICRO TOPICS SECTION */
+        .topics-section .section-icon {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+            color: var(--accent-green);
+        }
+
+        .topics-section::before {
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .topic-block {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .topic-block-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topic-block-icon {
+            font-size: 0.9rem;
+        }
+
+        .topic-block-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .topic-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .topic-item:hover {
+            background: rgba(34, 197, 94, 0.08);
+        }
+
+        .topic-item.checked {
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .topic-item.checked .topic-checkbox {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .topic-item.checked .topic-checkbox::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .topic-item.checked .topic-text {
+            color: var(--accent-green);
+            text-decoration: line-through;
+            text-decoration-color: rgba(34, 197, 94, 0.5);
+        }
+
+        .topic-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .topic-checkbox::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .topic-text {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: all 0.2s ease;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 0.25rem;
+        }
+
+        .priority-high {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .priority-medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+
+        .priority-low {
+            background: rgba(107, 114, 128, 0.2);
+            color: #9ca3af;
+        }
+
+        /* TIMER SECTION */
+        .timer-section .section-icon {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+            color: var(--accent-gold);
+        }
+
+        .timer-section::before {
+            background: linear-gradient(90deg, var(--accent-gold), #f97316);
+        }
+
+        .timer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .timer-display-wrapper {
+            position: relative;
+            width: 220px;
+            height: 220px;
+        }
+
+        .timer-ring {
+            transform: rotate(-90deg);
+            width: 220px;
+            height: 220px;
+        }
+
+        .timer-ring-bg {
+            fill: none;
+            stroke: var(--bg-secondary);
+            stroke-width: 10;
+        }
+
+        .timer-ring-progress {
+            fill: none;
+            stroke: url(#timerGradient);
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 597;
+            stroke-dashoffset: 597;
+            transition: stroke-dashoffset 1s linear;
+            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+        }
+
+        .timer-ring-progress.complete {
+            stroke: var(--accent-green);
+            filter: drop-shadow(0 0 12px rgba(34, 197, 94, 0.6));
+            animation: pulseGlow 1s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4)); }
+            50% { filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.8)); }
+        }
+
+        .timer-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .timer-time {
+            font-size: 2.75rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+        }
+
+        .timer-time.running {
+            color: var(--accent-gold);
+        }
+
+        .timer-time.complete {
+            color: var(--accent-green);
+            animation: celebrateText 0.5s ease-in-out;
+        }
+
+        @keyframes celebrateText {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .timer-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .timer-goal {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            margin-top: 0.5rem;
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .timer-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .timer-btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #f97316);
+            color: white;
+            min-width: 140px;
+        }
+
+        .timer-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .timer-btn-primary.running {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .timer-btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .timer-btn-secondary:hover {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        .timer-stats {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .timer-stat {
+            text-align: center;
+        }
+
+        .timer-stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .timer-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Celebration Overlay */
+        .celebration-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .celebration-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .celebration-content {
+            text-align: center;
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .celebration-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 0.6s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        .celebration-title {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .celebration-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .celebration-btn {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .celebration-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 1001;
+            animation: confettiFall 3s ease-out forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .motivational {
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: #0a0a0f;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .section:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .study-block:hover {
+                transform: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ibadah-content {
+                flex-direction: column;
+            }
+
+            .blocks-grid, .topics-grid, .ibadah-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Unit 13: Differentiation</h1>
+            <div class="subtitle">Sindh Textbook Board - Mathematics</div>
+            <div class="date" id="currentDate"></div>
+        </div>
+
+        <!-- Section 1: Ibadah Tracker -->
+        <div class="section ibadah-section">
+            <div class="section-header">
+                <div class="section-icon">&#127775;</div>
+                <div class="section-title">Daily Ibadah</div>
+                <div class="section-badge">Spiritual Foundation</div>
+            </div>
+
+            <div class="ibadah-content">
+                <div class="spiritual-ring-container">
+                    <svg class="spiritual-ring" viewBox="0 0 140 140">
+                        <defs>
+                            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="ring-bg" cx="70" cy="70" r="60"/>
+                        <circle class="ring-progress" id="spiritualRing" cx="70" cy="70" r="60"/>
+                    </svg>
+                    <div class="ring-center">
+                        <div class="ring-count" id="ibadahCount">0/7</div>
+                        <div class="ring-label">Complete</div>
+                    </div>
+                </div>
+
+                <div class="ibadah-list">
+                    <div class="ibadah-item" data-ibadah="tahajjud" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Tahajjud</span>
+                        <span class="ibadah-arabic">تہجد</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="yaseen" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Surah Yaseen</span>
+                        <span class="ibadah-arabic">یٰسین</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="fajr" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Fajr</span>
+                        <span class="ibadah-arabic">فجر</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="zuhr" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Zuhr</span>
+                        <span class="ibadah-arabic">ظہر</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="asr" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Asr</span>
+                        <span class="ibadah-arabic">عصر</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="maghrib" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Maghrib</span>
+                        <span class="ibadah-arabic">مغرب</span>
+                    </div>
+                    <div class="ibadah-item" data-ibadah="isha" onclick="toggleIbadah(this)">
+                        <div class="checkbox"></div>
+                        <span class="ibadah-text">Isha</span>
+                        <span class="ibadah-arabic">عشاء</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Study Blocks -->
+        <div class="section study-section">
+            <div class="section-header">
+                <div class="section-icon">&#128218;</div>
+                <div class="section-title">Study Blocks</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-label">Daily Study Progress</span>
+                    <span class="progress-value" id="progressValue">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="blocks-grid">
+                <div class="study-block" data-block="1" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">1</div>
+                        <div>
+                            <div class="block-title">Focus Session 1</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+
+                <div class="study-block" data-block="2" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">2</div>
+                        <div>
+                            <div class="block-title">Focus Session 2</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+
+                <div class="study-block" data-block="3" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">3</div>
+                        <div>
+                            <div class="block-title">Focus Session 3</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+
+                <div class="study-block" data-block="4" onclick="toggleBlock(this)">
+                    <div class="block-header">
+                        <div class="block-number">4</div>
+                        <div>
+                            <div class="block-title">Focus Session 4</div>
+                            <div class="block-time">~50 min</div>
+                        </div>
+                    </div>
+                    <div class="block-percent">+25%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2.5: Study Timer -->
+        <div class="section timer-section">
+            <div class="section-header">
+                <div class="section-icon">&#9201;</div>
+                <div class="section-title">Focus Timer</div>
+            </div>
+
+            <div class="timer-container">
+                <div class="timer-display-wrapper">
+                    <svg class="timer-ring" viewBox="0 0 220 220">
+                        <defs>
+                            <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f59e0b"/>
+                                <stop offset="100%" stop-color="#f97316"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="timer-ring-bg" cx="110" cy="110" r="95"/>
+                        <circle class="timer-ring-progress" id="timerRing" cx="110" cy="110" r="95"/>
+                    </svg>
+                    <div class="timer-center">
+                        <div class="timer-time" id="timerDisplay">00:00</div>
+                        <div class="timer-label">Current Session</div>
+                        <div class="timer-goal">Goal: 50:00</div>
+                    </div>
+                </div>
+
+                <div class="timer-controls">
+                    <button class="timer-btn timer-btn-secondary" onclick="resetTimer()">
+                        &#8635; Reset
+                    </button>
+                    <button class="timer-btn timer-btn-primary" id="timerBtn" onclick="toggleTimer()">
+                        &#9654; Start Focus
+                    </button>
+                </div>
+
+                <div class="timer-stats">
+                    <div class="timer-stat">
+                        <div class="timer-stat-value" id="totalTimeToday">00:00</div>
+                        <div class="timer-stat-label">Today's Total</div>
+                    </div>
+                    <div class="timer-stat">
+                        <div class="timer-stat-value" id="sessionsCompleted">0</div>
+                        <div class="timer-stat-label">Sessions Done</div>
+                    </div>
+                    <div class="timer-stat">
+                        <div class="timer-stat-value" id="currentStreak">0</div>
+                        <div class="timer-stat-label">Day Streak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Celebration Overlay -->
+        <div class="celebration-overlay" id="celebrationOverlay">
+            <div class="celebration-content">
+                <div class="celebration-icon">&#127881;</div>
+                <div class="celebration-title">Block Complete!</div>
+                <div class="celebration-subtitle">You focused for 50 minutes. MashaAllah!</div>
+                <button class="celebration-btn" onclick="closeCelebration()">Continue &#10140;</button>
+            </div>
+        </div>
+
+        <!-- Section 3: Micro Topics -->
+        <div class="section topics-section">
+            <div class="section-header">
+                <div class="section-icon">&#9989;</div>
+                <div class="section-title">Micro Topic Checklist</div>
+            </div>
+
+            <div class="topics-grid">
+                <!-- Core Concepts -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#128293;</span>
+                        <span class="topic-block-title">Core Concepts (Must-Do)</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">13.1 Definition of Derivative <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Tangent Line Concept <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Secant to Tangent Transition <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Difference Quotient Formula <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Limit Definition of Derivative <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- First Principle -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#128161;</span>
+                        <span class="topic-block-title">First Principle (Must-Do)</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">First Principle Process <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Example: f(x) = x² <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Example: f(x) = x³ <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Example: f(x) = 1/x <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Example: f(x) = √x <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Differentiation Rules -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#128736;</span>
+                        <span class="topic-block-title">Differentiation Rules (Must-Do)</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Constant Rule: d/dx(c) = 0 <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Power Rule: d/dx(xⁿ) = nxⁿ⁻¹ <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Constant Multiple Rule <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Sum & Difference Rule <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Product Rule <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Quotient Rule <span class="priority-badge priority-high">High</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications -->
+                <div class="topic-block">
+                    <div class="topic-block-header">
+                        <span class="topic-block-icon">&#127919;</span>
+                        <span class="topic-block-title">Applications (Should-Do)</span>
+                    </div>
+                    <div class="topic-items">
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Derivative as Rate of Change <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Velocity & Acceleration <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Slope of Tangent at Point <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Continuity vs Differentiability <span class="priority-badge priority-medium">Med</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Simple Word Problems <span class="priority-badge priority-low">Low</span></span>
+                        </div>
+                        <div class="topic-item" onclick="toggleTopic(this)">
+                            <div class="topic-checkbox"></div>
+                            <span class="topic-text">Marginal Cost/Profit <span class="priority-badge priority-low">Low</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="motivational">"Seek knowledge from the cradle to the grave."</div>
+            <div class="footer-text">Stay consistent. Progress compounds.</div>
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        const today = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        const todayKey = new Date().toISOString().split('T')[0];
+        document.getElementById('currentDate').textContent = today;
+
+        // State
+        let ibadahCompleted = 0;
+        let blocksCompleted = 0;
+
+        // Timer State — uses real wall-clock timestamps so it survives
+        // screen sleep, tab throttling, and browser suspension.
+        let timerRunning = false;
+        let timerInterval = null;
+        let sessionStartTimestamp = null;   // Date.now() when current run started
+        let sessionBankedSeconds = 0;       // seconds accumulated from previous pause/resume cycles within this session
+        let currentSessionSeconds = 0;      // live computed: banked + (now - startTimestamp)
+        let totalSecondsToday = 0;
+        let sessionsCompleted = 0;
+        let currentStreak = 0;
+        let goalFired = false;              // prevent double-fire after wake
+        const GOAL_SECONDS = 50 * 60;       // 50 minutes
+
+        // Audio Context for notification sound
+        let audioContext = null;
+
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playNotificationSound() {
+            initAudio();
+            // Resume context if suspended (browsers suspend after inactivity)
+            if (audioContext.state === 'suspended') audioContext.resume();
+
+            const notes = [523.25, 659.25, 783.99, 1046.50];
+            notes.forEach((freq, i) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                oscillator.frequency.value = freq;
+                oscillator.type = 'sine';
+                const startTime = audioContext.currentTime + (i * 0.15);
+                const duration = 0.4;
+                gainNode.gain.setValueAtTime(0, startTime);
+                gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.05);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+                oscillator.start(startTime);
+                oscillator.stop(startTime + duration);
+            });
+
+            setTimeout(() => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.frequency.value = 1046.50;
+                osc.type = 'sine';
+                gain.gain.setValueAtTime(0.2, audioContext.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+                osc.start();
+                osc.stop(audioContext.currentTime + 1);
+            }, 600);
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Compute live elapsed seconds from real clock
+        function computeSessionSeconds() {
+            if (timerRunning && sessionStartTimestamp) {
+                return sessionBankedSeconds + Math.floor((Date.now() - sessionStartTimestamp) / 1000);
+            }
+            return sessionBankedSeconds;
+        }
+
+        function updateTimerDisplay() {
+            currentSessionSeconds = computeSessionSeconds();
+
+            const display = document.getElementById('timerDisplay');
+            display.textContent = formatTime(currentSessionSeconds);
+
+            // Update ring progress
+            const ring = document.getElementById('timerRing');
+            const circumference = 2 * Math.PI * 95;
+            const progress = Math.min(currentSessionSeconds / GOAL_SECONDS, 1) * circumference;
+            ring.style.strokeDashoffset = circumference - progress;
+
+            // Update stats
+            document.getElementById('totalTimeToday').textContent = formatTime(totalSecondsToday + (timerRunning ? currentSessionSeconds - sessionBankedSeconds : 0));
+            document.getElementById('sessionsCompleted').textContent = sessionsCompleted;
+            document.getElementById('currentStreak').textContent = currentStreak;
+
+            // Check if goal reached (works even after waking from sleep)
+            if (currentSessionSeconds >= GOAL_SECONDS && !goalFired) {
+                goalFired = true;
+                goalReached();
+            }
+        }
+
+        function toggleTimer() {
+            initAudio();
+            if (timerRunning) {
+                pauseTimer();
+            } else {
+                startTimer();
+            }
+        }
+
+        function startTimer() {
+            timerRunning = true;
+            goalFired = currentSessionSeconds >= GOAL_SECONDS;
+            sessionStartTimestamp = Date.now();
+
+            const btn = document.getElementById('timerBtn');
+            const display = document.getElementById('timerDisplay');
+            btn.innerHTML = '&#10074;&#10074; Pause';
+            btn.classList.add('running');
+            display.classList.add('running');
+
+            saveTimerState();
+
+            // Tick every second for UI updates; actual time comes from Date.now()
+            timerInterval = setInterval(() => {
+                updateTimerDisplay();
+                saveTimerState();
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            // Bank the elapsed seconds from this run
+            if (timerRunning && sessionStartTimestamp) {
+                const elapsed = Math.floor((Date.now() - sessionStartTimestamp) / 1000);
+                sessionBankedSeconds += elapsed;
+                totalSecondsToday += elapsed;
+            }
+
+            timerRunning = false;
+            sessionStartTimestamp = null;
+            clearInterval(timerInterval);
+
+            const btn = document.getElementById('timerBtn');
+            const display = document.getElementById('timerDisplay');
+            btn.innerHTML = '&#9654; Resume';
+            btn.classList.remove('running');
+            display.classList.remove('running');
+
+            updateTimerDisplay();
+            saveTimerState();
+        }
+
+        function resetTimer() {
+            if (timerRunning) pauseTimer();
+
+            sessionBankedSeconds = 0;
+            currentSessionSeconds = 0;
+            goalFired = false;
+
+            const btn = document.getElementById('timerBtn');
+            const display = document.getElementById('timerDisplay');
+            const ring = document.getElementById('timerRing');
+            btn.innerHTML = '&#9654; Start Focus';
+            display.classList.remove('running', 'complete');
+            ring.classList.remove('complete');
+
+            updateTimerDisplay();
+            saveTimerState();
+        }
+
+        function goalReached() {
+            // Timer keeps running — DON'T stop it
+            sessionsCompleted++;
+
+            const display = document.getElementById('timerDisplay');
+            const ring = document.getElementById('timerRing');
+            display.classList.add('complete');
+            ring.classList.add('complete');
+
+            playNotificationSound();
+
+            if (Notification.permission === 'granted') {
+                new Notification('Block Complete!', {
+                    body: 'You focused for 50 minutes. MashaAllah!',
+                    icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127881;</text></svg>'
+                });
+            }
+
+            showCelebration();
+
+            const nextBlock = document.querySelector('.study-block:not(.completed)');
+            if (nextBlock) {
+                setTimeout(() => {
+                    nextBlock.classList.add('completed');
+                    updateBlockProgress();
+                    saveState();
+                }, 500);
+            }
+
+            saveTimerState();
+        }
+
+        // Request notification permission on first interaction
+        function requestNotificationPermission() {
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+        }
+
+        function showCelebration() {
+            const overlay = document.getElementById('celebrationOverlay');
+            overlay.classList.add('show');
+            createConfetti();
+        }
+
+        function closeCelebration() {
+            const overlay = document.getElementById('celebrationOverlay');
+            overlay.classList.remove('show');
+            // Timer keeps running — don't reset
+        }
+
+        function createConfetti() {
+            const colors = ['#a855f7', '#3b82f6', '#22c55e', '#f59e0b', '#06b6d4', '#ec4899'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 4000);
+                }, i * 30);
+            }
+        }
+
+        function updateBlockProgress() {
+            const completed = document.querySelectorAll('.study-block.completed').length;
+            blocksCompleted = completed;
+            const percentage = completed * 25;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('progressValue').textContent = `${percentage}%`;
+        }
+
+        // Timer state persistence — stores timestamps, not counters
+        function saveTimerState() {
+            const timerState = {
+                date: todayKey,
+                sessionBankedSeconds,
+                sessionStartTimestamp: timerRunning ? sessionStartTimestamp : null,
+                isRunning: timerRunning,
+                goalFired,
+                totalSecondsToday,
+                sessionsCompleted,
+                currentStreak,
+                lastActiveDate: todayKey
+            };
+            localStorage.setItem('differentiationTimer', JSON.stringify(timerState));
+        }
+
+        function loadTimerState() {
+            const saved = localStorage.getItem('differentiationTimer');
+            if (saved) {
+                const state = JSON.parse(saved);
+
+                if (state.date === todayKey) {
+                    totalSecondsToday = state.totalSecondsToday || 0;
+                    sessionsCompleted = state.sessionsCompleted || 0;
+                    currentStreak = state.currentStreak || 0;
+                    sessionBankedSeconds = state.sessionBankedSeconds || 0;
+
+                    // Was the timer running when the page closed / went to sleep?
+                    if (state.isRunning && state.sessionStartTimestamp) {
+                        // It was running — auto-resume from the original timestamp
+                        // so all time while away is counted
+                        sessionStartTimestamp = state.sessionStartTimestamp;
+                        timerRunning = true;
+                        // Restore banked to what it was before (don't double-add away time)
+                        sessionBankedSeconds = state.sessionBankedSeconds || 0;
+
+                        // Compute live total right now
+                        currentSessionSeconds = computeSessionSeconds();
+                        const awayElapsed = Math.floor((Date.now() - state.sessionStartTimestamp) / 1000);
+                        totalSecondsToday += awayElapsed;
+
+                        // Check if goal was crossed while away (and not already fired)
+                        if (currentSessionSeconds >= GOAL_SECONDS && !state.goalFired) {
+                            goalFired = true;
+                            sessionsCompleted++;
+
+                            const display = document.getElementById('timerDisplay');
+                            const ring = document.getElementById('timerRing');
+                            display.classList.add('complete');
+                            ring.classList.add('complete');
+
+                            playNotificationSound();
+                            showCelebration();
+
+                            const nextBlock = document.querySelector('.study-block:not(.completed)');
+                            if (nextBlock) {
+                                setTimeout(() => {
+                                    nextBlock.classList.add('completed');
+                                    updateBlockProgress();
+                                    saveState();
+                                }, 500);
+                            }
+                        } else {
+                            goalFired = currentSessionSeconds >= GOAL_SECONDS;
+                        }
+
+                        // Re-start the UI tick interval (timer keeps running)
+                        const btn = document.getElementById('timerBtn');
+                        const display2 = document.getElementById('timerDisplay');
+                        btn.innerHTML = '&#10074;&#10074; Pause';
+                        btn.classList.add('running');
+                        display2.classList.add('running');
+
+                        timerInterval = setInterval(() => {
+                            updateTimerDisplay();
+                            saveTimerState();
+                        }, 1000);
+
+                        saveTimerState();
+                        updateTimerDisplay();
+                        return;
+                    }
+                } else {
+                    // New day
+                    sessionBankedSeconds = 0;
+                    totalSecondsToday = 0;
+                    sessionsCompleted = 0;
+
+                    const yesterday = new Date();
+                    yesterday.setDate(yesterday.getDate() - 1);
+                    const yesterdayKey = yesterday.toISOString().split('T')[0];
+
+                    if (state.lastActiveDate === yesterdayKey) {
+                        currentStreak = (state.currentStreak || 0) + 1;
+                    } else {
+                        currentStreak = 0;
+                    }
+                }
+            }
+            updateTimerDisplay();
+        }
+
+        // When page becomes visible again (unlock screen, switch tab), immediately
+        // recalculate the timer from real clock — this catches up all missed time.
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && timerRunning) {
+                updateTimerDisplay();
+            }
+        });
+
+        // Also catch focus events (some browsers fire this but not visibilitychange)
+        window.addEventListener('focus', () => {
+            if (timerRunning) updateTimerDisplay();
+        });
+
+        // Toggle Ibadah items
+        function toggleIbadah(element) {
+            element.classList.toggle('checked');
+
+            const checked = document.querySelectorAll('.ibadah-item.checked').length;
+            ibadahCompleted = checked;
+
+            // Update ring
+            const ring = document.getElementById('spiritualRing');
+            const circumference = 2 * Math.PI * 60;
+            const progress = (checked / 7) * circumference;
+            ring.style.strokeDashoffset = circumference - progress;
+
+            // Update count
+            document.getElementById('ibadahCount').textContent = `${checked}/7`;
+        }
+
+        // Toggle Study Blocks
+        function toggleBlock(element) {
+            element.classList.toggle('completed');
+            updateBlockProgress();
+        }
+
+        // Toggle Topic items
+        function toggleTopic(element) {
+            element.classList.toggle('checked');
+        }
+
+        // Load saved state from localStorage
+        function loadState() {
+            const saved = localStorage.getItem('differentiationPlanner');
+            if (saved) {
+                const state = JSON.parse(saved);
+
+                // Check if same day
+                if (state.date !== todayKey) {
+                    // New day - clear daily progress but keep topics
+                    localStorage.removeItem('differentiationPlanner');
+                    return;
+                }
+
+                // Restore ibadah
+                if (state.ibadah) {
+                    state.ibadah.forEach(key => {
+                        const el = document.querySelector(`[data-ibadah="${key}"]`);
+                        if (el && !el.classList.contains('checked')) {
+                            toggleIbadah(el);
+                        }
+                    });
+                }
+
+                // Restore blocks
+                if (state.blocks) {
+                    state.blocks.forEach(num => {
+                        const el = document.querySelector(`[data-block="${num}"]`);
+                        if (el && !el.classList.contains('completed')) {
+                            el.classList.add('completed');
+                        }
+                    });
+                    updateBlockProgress();
+                }
+
+                // Restore topics
+                if (state.topics) {
+                    const topicItems = document.querySelectorAll('.topic-item');
+                    state.topics.forEach(idx => {
+                        if (topicItems[idx]) topicItems[idx].classList.add('checked');
+                    });
+                }
+            }
+        }
+
+        // Save state to localStorage
+        function saveState() {
+            const state = {
+                date: todayKey,
+                ibadah: Array.from(document.querySelectorAll('.ibadah-item.checked')).map(el => el.dataset.ibadah),
+                blocks: Array.from(document.querySelectorAll('.study-block.completed')).map(el => el.dataset.block),
+                topics: Array.from(document.querySelectorAll('.topic-item')).reduce((acc, el, idx) => {
+                    if (el.classList.contains('checked')) acc.push(idx);
+                    return acc;
+                }, [])
+            };
+            localStorage.setItem('differentiationPlanner', JSON.stringify(state));
+        }
+
+        // Auto-save on changes
+        document.addEventListener('click', () => {
+            setTimeout(saveState, 100);
+        });
+
+        // Save timer state before page unloads (no warning — timer survives)
+        window.addEventListener('beforeunload', () => {
+            if (timerRunning) saveTimerState();
+        });
+
+        // Request notification permission on first click
+        document.addEventListener('click', requestNotificationPermission, { once: true });
+
+        // Load on page ready
+        loadState();
+        loadTimerState();
+    </script>
+</body>
+</html>
