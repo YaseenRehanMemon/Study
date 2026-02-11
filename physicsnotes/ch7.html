@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics: Wave Motion - Combined Notes</title>
+    <!-- MathJax for LaTeX Rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\(', '\)']],
+                displayMath: [['$$', '$$'], ['\[', '\]']],
+                processEscapes: true
+            },
+            options: {
+                renderActions: {
+                    addMenu: [] // Hide menu for cleaner handwritten look
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gochi+Hand&family=Permanent+Marker&display=swap');
+
+        :root {
+            --bg-color: #1a1a1b;
+            --paper-color: #242526;
+            --text-main: #e4e6eb;
+            --ink-white: #f0f0f0;
+            --ink-blue: #7ccdf4;
+            --ink-yellow: #f9d978;
+            --ink-pink: #f48fb1;
+            --ink-green: #a5d6a7;
+            --highlight: rgba(255, 235, 59, 0.15);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Architects Daughter', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .notebook-page {
+            background-color: var(--paper-color);
+            max-width: 900px;
+            width: 100%;
+            padding: 60px 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 100% 2.2rem;
+        }
+
+        .title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--ink-yellow);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transform: rotate(-1deg);
+            border-bottom: 3px dashed var(--ink-yellow);
+            display: inline-block;
+            width: 100%;
+        }
+
+        h2 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 2rem;
+            color: var(--ink-blue);
+            margin-top: 40px;
+            border-bottom: 2px solid var(--ink-blue);
+            display: inline-block;
+        }
+
+        h3 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 1.5rem;
+            color: var(--ink-pink);
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            border: 2px solid var(--ink-green);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 15px 5px 15px 5px;
+            background: var(--highlight);
+            transform: rotate(0.5deg);
+        }
+
+        .formula {
+            font-size: 1.4rem;
+            text-align: center;
+            margin: 15px 0;
+            color: var(--ink-yellow);
+        }
+
+        .diagram {
+            display: block;
+            margin: 30px auto;
+            max-width: 100%;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+        }
+
+        .sketch-circle {
+            border: 2px solid var(--ink-pink);
+            border-radius: 50%;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+
+        .note-sticky {
+            background: #3e3e42;
+            padding: 15px;
+            border-left: 5px solid var(--ink-pink);
+            margin: 20px 0;
+            font-size: 1rem;
+            transform: rotate(-0.5deg);
+        }
+
+        .footer-note {
+            margin-top: 60px;
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+            color: var(--ink-green);
+            opacity: 0.8;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li::before {
+            content: "→";
+            color: var(--ink-blue);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .phase-box {
+            border: 1px dashed var(--ink-white);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        /* Styling MathJax to fit the ink colors */
+        mjx-container {
+            color: inherit !important;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .notebook-page {
+                padding: 30px 20px;
+            }
+        }
+        /* Styles from ch7p2.html that might override or supplement */
+        .notebook-page h1 { font-family: 'Permanent Marker', cursive; color: var(--ink-yellow); text-align: center; border-bottom: 2px dashed var(--ink-yellow); padding-bottom: 10px; }
+        .notebook-page h2 { font-family: 'Gochi Hand', cursive; color: var(--ink-pink); border-left: 4px solid var(--ink-pink); padding-left: 15px; margin-top: 40px; }
+        .notebook-page h3 { color: var(--ink-blue); text-decoration: underline; margin-top: 25px; }
+
+        .notebook-page .note-sticky {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--ink-yellow);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .notebook-page .crux-box {
+            border: 2px solid var(--ink-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: rgba(165, 214, 167, 0.05);
+        }
+
+        .notebook-page .sketch-circle { border: 1px solid var(--ink-blue); border-radius: 50%; padding: 2px 5px; }
+        .notebook-page .highlight { color: var(--ink-yellow); font-weight: bold; }
+        
+        .notebook-page ul { list-style-type: "→ "; }
+        .notebook-page li { margin-bottom: 10px; }
+
+        .notebook-page .footer-note {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 50px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="notebook-page">
+    <div class="title">Physics: Wave Motion</div>
+
+    <h2>1. What is a Wave?</h2>
+    <p>A wave is basically a <span style="color: var(--ink-pink);">traveling disturbance</span>. It's the universe's way of moving energy without moving the "stuff" itself.</p>
+    <ul>
+        <li>Transfers <strong>Energy</strong> from point $A$ to $B$.</li>
+        <li><strong>No transfer of matter</strong> (the particles stay home).</li>
+        <li>Particles oscillate about a <span class="sketch-circle">mean position</span>.</li>
+    </ul>
+
+    <h2>2. The Foundation: Oscillatory Motion</h2>
+    <div class="note-sticky">
+        Think of it this way: One particle dances (oscillation), and its neighbors decide to follow along. The "Wave" is just the collective result of many dancers!
+    </div>
+
+    <h2>3. Key Parameters</h2>
+    <div class="grid-layout">
+        <div>
+            <h3>Amplitude ($A$)</h3>
+            <p>Maximum displacement. More Amplitude = More Energy. Does NOT affect speed!</p>
+            
+            <h3>Frequency ($f$)</h3>
+            <p>Oscillations per second. Measured in $\text{Hz}$.</p>
+            <div class="formula"><span class="math-inline">$$f = \frac{1}{T}$$</span></div>
+        </div>
+        <div>
+            <h3>Wavelength ($\lambda$)</h3>
+            <p>Distance between two identical points (Crest to Crest).</p>
+            
+            <h3>Time Period ($T$)</h3>
+            <p>Time for one full wiggle.</p>
+        </div>
+    </div>
+
+    <svg class="diagram" width="400" height="150" viewBox="0 0 400 150">
+        <!-- Wave Line -->
+        <path d="M 0 75 Q 50 0, 100 75 T 200 75 T 300 75 T 400 75" fill="none" stroke="#7ccdf4" stroke-width="3" />
+        <!-- Axis -->
+        <line x1="0" y1="75" x2="400" y2="75" stroke="#f0f0f0" stroke-width="1" stroke-dasharray="5,5" />
+        <!-- Labels -->
+        <text x="50" y="25" fill="#f48fb1" font-size="14">Crest</text>
+        <text x="150" y="130" fill="#f48fb1" font-size="14">Trough</text>
+        <line x1="50" y1="35" x2="150" y2="35" stroke="#f9d978" stroke-width="2" />
+        <text x="90" y="30" fill="#f9d978" font-size="12">Wavelength</text>
+    </svg>
+
+    <h2>4. Wave Speed & Energy</h2>
+    <div class="highlight-box">
+        <p><strong>The Golden Rule:</strong> Speed ($v$) depends <u>ONLY</u> on the medium (density & elasticity).</p>
+        <div class="formula"><span class="math-inline">$$v = f \times \lambda$$</span></div>
+    </div>
+    <p><strong>Energy Check:</strong> Energy is proportional to the <u>Square</u> of Amplitude.</p>
+    <div class="formula"><span class="math-inline">$$E \propto A^2$$</span></div>
+
+    <h2>5. Types of Waves</h2>
+    <div class="grid-layout">
+        <div style="border: 1px dashed var(--ink-white); padding: 10px;">
+            <h3 style="color: var(--ink-green)">By Nature</h3>
+            <ul>
+                <li><strong>Mechanical:</strong> Needs stuff (Sound, Water).</li>
+                <li><strong>EM Waves:</strong> Vacuum okay! (Light, X-rays).</li>
+                <li><strong>Quantum:</strong> Probability waves.</li>
+            </ul>
+        </div>
+        <div style="border: 1px dashed var(--ink-white); padding: 10px;">
+            <h3 style="color: var(--ink-green)">By Motion</h3>
+            <ul>
+                <li><strong>Transverse:</strong> Perpendicular wiggle (String).</li>
+                <li><strong>Longitudinal:</strong> Parallel wiggle (Sound).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. Principle of Superposition</h2>
+    <p>When two or more waves overlap, the resulting displacement is the <span style="color: var(--ink-yellow);">vector sum</span> of individual displacements.</p>
+    <div class="formula"><span class="math-inline">$$y = y_1 + y_2 + y_3 + \dots$$</span></div>
+    
+    <p>This principle gives rise to three major phenomena depending on the wave properties:</p>
+    <ul>
+        <li><strong>Interference:</strong> Same frequency, constant phase difference.</li>
+        <li><strong>Beats:</strong> Slightly different frequencies (heard as volume pulsing).</li>
+        <li><strong>Stationary Waves:</strong> Same frequency, traveling in opposite directions.</li>
+    </ul>
+
+    <h2>7. Interference in Detail</h2>
+    <p>Redistribution of energy due to superposition of <u>coherent</u> waves (same $f$, fixed phase).</p>
+
+    <div class="grid-layout">
+        <div class="phase-box">
+            <h3 style="color: var(--ink-green)">Constructive</h3>
+            <p>Waves meet <strong>In-Phase</strong> (Crest meets Crest).</p>
+            <ul>
+                <li>Max Amplitude: $A_{\text{max}} = A_1 + A_2$</li>
+                <li>Max Intensity: $I \propto (A_1 + A_2)^2$</li>
+                <li><span style="color: var(--ink-yellow)">Path Diff: $\Delta x = n\lambda$</span></li>
+                <li>Phase Diff: $\phi = 2n\pi$</li>
+            </ul>
+        </div>
+        <div class="phase-box">
+            <h3 style="color: var(--ink-pink)">Destructive</h3>
+            <p>Waves meet in <strong>Opposite Phase</strong> (Crest meets Trough).</p>
+            <ul>
+                <li>Min Amplitude: $A_{\text{min}} = |A_1 - A_2|$</li>
+                <li>Min Intensity: $I \propto (A_1 - A_2)^2$</li>
+                <li><span style="color: var(--ink-yellow)">Path Diff: $\Delta x = (2n+1)\frac{\lambda}{2}$</span></li>
+                <li>Phase Diff: $\phi = (2n+1)\pi$</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>8. Superposition Phenomena</h2>
+    
+    <h3>A. Beats</h3>
+    <p>When two sound waves of <span class="sketch-circle">slightly different frequencies</span> ($f_1 \approx f_2$) overlap.</p>
+    <ul>
+        <li>Result: Periodic rise and fall in loudness.</li>
+        <li><strong>Beat Frequency:</strong> $f_b = |f_1 - f_2|$</li>
+    </ul>
+
+    <h3>B. Stationary (Standing) Waves</h3>
+    <p>Formed by superposition of two identical waves traveling in <strong>opposite directions</strong> in a confined medium.</p>
+    <ul>
+        <li><strong>Nodes (N):</strong> Points of zero amplitude (total destructive).</li>
+        <li><strong>Antinodes (A):</strong> Points of max amplitude (total constructive).</li>
+        <li>Energy is trapped—it does not propagate!</li>
+    </ul>
+
+    <div class="note-sticky" style="border-left-color: var(--ink-green);">
+        <strong>Cool Tip:</strong> Path difference ($\Delta x$) is the "head start" one wave has over another. If that head start is exactly one full wavelength ($\lambda$), they stay perfectly aligned (Constructive)!
+    </div>
+
+    <div class="footer-note">
+        ~ OSCILLATION $\rightarrow$ WAVE $\rightarrow$ SUPERPOSITION $\rightarrow$ INTERFERENCE ~
+    </div>
+</div>
+
+<div class="notebook-page">
+    <h1>CH 7: WAVES MASTERY</h1>
+
+    <h2>7.1 - 7.3 Fundamentals & Interference</h2>
+    <p>Waves transfer energy without transferring matter. The medium just "dances" in place.</p>
+    
+    <div class="note-sticky">
+        <strong>The Rule:</strong> $v = f\lambda$. If the medium doesn't change, $v$ stays constant. If you increase $f$, $\lambda$ must shrink!
+    </div>
+
+    <h3>Interference Recap</h3>
+    <ul>
+        <li><strong>Constructive:</strong> Waves in phase. Path Diff $\Delta x = n\lambda$.</li>
+        <li><strong>Destructive:</strong> Waves out of phase. Path Diff $\Delta x = (n + \frac{1}{2})\lambda$.</li>
+    </ul>
+
+    <h2>7.4 Stationary (Standing) Waves</h2>
+    <p>When two <span class="highlight">identical waves</span> travel in opposite directions and overlap, they don't move forward. They "vibrate" in a fixed pattern.</p>
+    
+    <ul>
+        <li><strong>Nodes (N):</strong> Zero displacement. Total Destructive Interference.</li>
+        <li><strong>Antinodes (AN):</strong> Max displacement. Total Constructive Interference.</li>
+    </ul>
+
+    <div class="note-sticky">
+        <strong>Cheat Key:</strong> Distance between N-to-N or AN-to-AN is always <strong>$\\lambda/2$</strong>. Distance between N-to-AN is <strong>$\\lambda/4$</strong>.
+    </div>
+
+    <h2>7.5 Stationary Waves in Strings</h2>
+    <p>A string fixed at both ends forms nodes at the boundaries. The length ($L$) determines the allowed "modes" of vibration.</p>
+
+    <ul>
+        <li><strong>1st Harmonic (Fundamental):</strong> $L = \lambda/2 \rightarrow f_1 = \frac{v}{2L}$</li>
+        <li><strong>2nd Harmonic (1st Overtone):</strong> $L = \lambda \rightarrow f_2 = 2f_1$</li>
+        <li><strong>nth Harmonic:</strong> $f_n = n f_1$</li>
+    </ul>
+
+    <h2>7.6 Stationary Waves in Air Columns</h2>
+    
+    <h3>A. Open Pipes (Both ends open)</h3>
+    <p>Air molecules at both ends are free to move $\rightarrow$ <span class="highlight">Antinodes</span> at both ends.</p>
+    <ul>
+        <li>Fundamental: $L = \lambda/2$</li>
+        <li>Formula: $f_n = n (\frac{v}{2L})$ (All harmonics $1, 2, 3...$ exist)</li>
+    </ul>
+
+    <h3>B. Closed Pipes (One end closed)</h3>
+    <p>The closed end stops air flow $\rightarrow$ <span class="highlight">Node</span> at closed end, <span class="highlight">Antinode</span> at open end.</p>
+    <ul>
+        <li>Fundamental: $L = \lambda/4 \rightarrow f_1 = \frac{v}{4L}$</li>
+        <li><strong>The Catch:</strong> Only <span class="highlight">Odd Harmonics</span> exist ($n = 1, 3, 5...$).</li>
+        <li>$f_3 = 3f_1$ (This is the 2nd mode of vibration).</li>
+    </ul>
+
+    <h2>7.7 The Microwave Experiment</h2>
+    <p>Using a metal plate to reflect microwaves back toward the source.</p>
+    <div class="crux-box">
+        <strong>Master Crux:</strong>
+        <ol>
+            <li>The incident and reflected microwaves create a <strong>Stationary Wave</strong>.</li>
+            <li>A probe moved between the source and plate detects <strong>Nodes</strong> (zero signal) and <strong>Antinodes</strong> (max signal).</li>
+            <li>Measure distance between 10 nodes $\rightarrow$ divide by 9 to get average N-to-N distance.</li>
+            <li>This distance $= \lambda/2$. Multiply by 2 to get $\lambda$.</li>
+            <li>Use $c = f\lambda$ to find the speed of light!</li>
+        </ol>
+    </div>
+
+    <div class="footer-note">
+        ~ NODES = SILENCE/ZERO | ANTINODES = LOUD/MAX | $\Delta x$ (N-to-N) = $\\lambda/2$ ~
+    </div>
+</div>
+
+</body>
+</html>
