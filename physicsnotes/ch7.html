@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics: Wave Motion - Combined Notes</title>
+    <title>Physics: Wave Motion - Complete Notes</title>
     <!-- MathJax for LaTeX Rendering -->
     <script>
         window.MathJax = {
@@ -78,7 +78,7 @@
             font-family: 'Gochi Hand', cursive;
             font-size: 2rem;
             color: var(--ink-blue);
-            margin-top: 40px;
+            margin-top: 50px;
             border-bottom: 2px solid var(--ink-blue);
             display: inline-block;
         }
@@ -88,6 +88,7 @@
             font-size: 1.5rem;
             color: var(--ink-pink);
             margin-bottom: 10px;
+            margin-top: 30px;
         }
 
         p, li {
@@ -133,6 +134,17 @@
             font-size: 1rem;
             transform: rotate(-0.5deg);
         }
+        
+        /* Styles from Part 2 */
+        .crux-box {
+            border: 2px solid var(--ink-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: rgba(165, 214, 167, 0.05);
+        }
+        
+        .highlight { color: var(--ink-yellow); font-weight: bold; }
 
         .footer-note {
             margin-top: 60px;
@@ -140,6 +152,8 @@
             font-family: 'Permanent Marker', cursive;
             color: var(--ink-green);
             opacity: 0.8;
+            border-top: 1px dashed #444;
+            padding-top: 20px;
         }
 
         ul {
@@ -170,6 +184,12 @@
         mjx-container {
             color: inherit !important;
         }
+        
+        .section-break {
+            margin: 60px 0;
+            border-top: 4px dotted var(--ink-white);
+            opacity: 0.3;
+        }
 
         @media (max-width: 768px) {
             .grid-layout {
@@ -179,47 +199,14 @@
                 padding: 30px 20px;
             }
         }
-        /* Styles from ch7p2.html that might override or supplement */
-        .notebook-page h1 { font-family: 'Permanent Marker', cursive; color: var(--ink-yellow); text-align: center; border-bottom: 2px dashed var(--ink-yellow); padding-bottom: 10px; }
-        .notebook-page h2 { font-family: 'Gochi Hand', cursive; color: var(--ink-pink); border-left: 4px solid var(--ink-pink); padding-left: 15px; margin-top: 40px; }
-        .notebook-page h3 { color: var(--ink-blue); text-decoration: underline; margin-top: 25px; }
-
-        .notebook-page .note-sticky {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--ink-yellow);
-            padding: 15px;
-            margin: 20px 0;
-            font-style: italic;
-        }
-
-        .notebook-page .crux-box {
-            border: 2px solid var(--ink-green);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            background: rgba(165, 214, 167, 0.05);
-        }
-
-        .notebook-page .sketch-circle { border: 1px solid var(--ink-blue); border-radius: 50%; padding: 2px 5px; }
-        .notebook-page .highlight { color: var(--ink-yellow); font-weight: bold; }
-        
-        .notebook-page ul { list-style-type: "→ "; }
-        .notebook-page li { margin-bottom: 10px; }
-
-        .notebook-page .footer-note {
-            text-align: center;
-            font-size: 0.9em;
-            color: #777;
-            margin-top: 50px;
-            border-top: 1px solid #444;
-            padding-top: 20px;
-        }
     </style>
 </head>
 <body>
 
 <div class="notebook-page">
     <div class="title">Physics: Wave Motion</div>
+
+    <!-- PART 1 CONTENT -->
 
     <h2>1. What is a Wave?</h2>
     <p>A wave is basically a <span style="color: var(--ink-pink);">traveling disturbance</span>. It's the universe's way of moving energy without moving the "stuff" itself.</p>
@@ -242,10 +229,10 @@
             
             <h3>Frequency ($f$)</h3>
             <p>Oscillations per second. Measured in $\text{Hz}$.</p>
-            <div class="formula"><span class="math-inline">$$f = \frac{1}{T}$$</span></div>
+            <div class="formula">$$f = \frac{1}{T}$$</div>
         </div>
         <div>
-            <h3>Wavelength ($\lambda$)</h3>
+            <h3>Wavelength ($\\lambda$)</h3>
             <p>Distance between two identical points (Crest to Crest).</p>
             
             <h3>Time Period ($T$)</h3>
@@ -268,10 +255,10 @@
     <h2>4. Wave Speed & Energy</h2>
     <div class="highlight-box">
         <p><strong>The Golden Rule:</strong> Speed ($v$) depends <u>ONLY</u> on the medium (density & elasticity).</p>
-        <div class="formula"><span class="math-inline">$$v = f \times \lambda$$</span></div>
+        <div class="formula">$$v = f \times \lambda$$</div>
     </div>
     <p><strong>Energy Check:</strong> Energy is proportional to the <u>Square</u> of Amplitude.</p>
-    <div class="formula"><span class="math-inline">$$E \propto A^2$$</span></div>
+    <div class="formula">$$E \propto A^2$$</div>
 
     <h2>5. Types of Waves</h2>
     <div class="grid-layout">
@@ -294,7 +281,7 @@
 
     <h2>6. Principle of Superposition</h2>
     <p>When two or more waves overlap, the resulting displacement is the <span style="color: var(--ink-yellow);">vector sum</span> of individual displacements.</p>
-    <div class="formula"><span class="math-inline">$$y = y_1 + y_2 + y_3 + \dots$$</span></div>
+    <div class="formula">$$y = y_1 + y_2 + y_3 + \dots$$</div>
     
     <p>This principle gives rise to three major phenomena depending on the wave properties:</p>
     <ul>
@@ -323,8 +310,8 @@
             <ul>
                 <li>Min Amplitude: $A_{\text{min}} = |A_1 - A_2|$</li>
                 <li>Min Intensity: $I \propto (A_1 - A_2)^2$</li>
-                <li><span style="color: var(--ink-yellow)">Path Diff: $\Delta x = (2n+1)\frac{\lambda}{2}$</span></li>
-                <li>Phase Diff: $\phi = (2n+1)\pi$</li>
+                <li><span style="color: var(--ink-yellow)">Path Diff: $\Delta x = (2n+1)\rac{\\lambda}{2}$</span></li>
+                <li>Phase Diff: $\phi = (2n+1)\\pi$</li>
             </ul>
         </div>
     </div>
@@ -347,28 +334,26 @@
     </ul>
 
     <div class="note-sticky" style="border-left-color: var(--ink-green);">
-        <strong>Cool Tip:</strong> Path difference ($\Delta x$) is the "head start" one wave has over another. If that head start is exactly one full wavelength ($\lambda$), they stay perfectly aligned (Constructive)!
+        <strong>Cool Tip:</strong> Path difference ($\\Delta x$) is the "head start" one wave has over another. If that head start is exactly one full wavelength ($\\lambda$), they stay perfectly aligned (Constructive)!
     </div>
 
-    <div class="footer-note">
-        ~ OSCILLATION $\rightarrow$ WAVE $\rightarrow$ SUPERPOSITION $\rightarrow$ INTERFERENCE ~
-    </div>
-</div>
+    <!-- SEPARATION BETWEEN PART 1 AND PART 2 -->
+    <div class="section-break"></div>
+    <div class="title" style="font-size: 2.2rem; transform: rotate(1deg); border-bottom-style: solid; margin-top: 20px;">Part 2: Mastery & Applications</div>
 
-<div class="notebook-page">
-    <h1>CH 7: WAVES MASTERY</h1>
+    <!-- PART 2 CONTENT -->
 
-    <h2>7.1 - 7.3 Fundamentals & Interference</h2>
+    <h2>7.1 - 7.3 Fundamentals & Interference (Recap)</h2>
     <p>Waves transfer energy without transferring matter. The medium just "dances" in place.</p>
     
     <div class="note-sticky">
-        <strong>The Rule:</strong> $v = f\lambda$. If the medium doesn't change, $v$ stays constant. If you increase $f$, $\lambda$ must shrink!
+        <strong>The Rule:</strong> $v = f\\lambda$. If the medium doesn't change, $v$ stays constant. If you increase $f$, $\\lambda$ must shrink!
     </div>
 
     <h3>Interference Recap</h3>
     <ul>
-        <li><strong>Constructive:</strong> Waves in phase. Path Diff $\Delta x = n\lambda$.</li>
-        <li><strong>Destructive:</strong> Waves out of phase. Path Diff $\Delta x = (n + \frac{1}{2})\lambda$.</li>
+        <li><strong>Constructive:</strong> Waves in phase. Path Diff $\\Delta x = n\\lambda$.</li>
+        <li><strong>Destructive:</strong> Waves out of phase. Path Diff $\\Delta x = (n + \frac{1}{2})\\lambda$.</li>
     </ul>
 
     <h2>7.4 Stationary (Standing) Waves</h2>
@@ -380,7 +365,7 @@
     </ul>
 
     <div class="note-sticky">
-        <strong>Cheat Key:</strong> Distance between N-to-N or AN-to-AN is always <strong>$\\lambda/2$</strong>. Distance between N-to-AN is <strong>$\\lambda/4$</strong>.
+        <strong>Cheat Key:</strong> Distance between N-to-N or AN-to-AN is always <strong>$\lambda/2$</strong>. Distance between N-to-AN is <strong>$\lambda/4$</strong>.
     </div>
 
     <h2>7.5 Stationary Waves in Strings</h2>
@@ -417,13 +402,13 @@
             <li>The incident and reflected microwaves create a <strong>Stationary Wave</strong>.</li>
             <li>A probe moved between the source and plate detects <strong>Nodes</strong> (zero signal) and <strong>Antinodes</strong> (max signal).</li>
             <li>Measure distance between 10 nodes $\rightarrow$ divide by 9 to get average N-to-N distance.</li>
-            <li>This distance $= \lambda/2$. Multiply by 2 to get $\lambda$.</li>
-            <li>Use $c = f\lambda$ to find the speed of light!</li>
+            <li>This distance $= \lambda/2$. Multiply by 2 to get $\\lambda$.</li>
+            <li>Use $c = f\\lambda$ to find the speed of light!</li>
         </ol>
     </div>
 
     <div class="footer-note">
-        ~ NODES = SILENCE/ZERO | ANTINODES = LOUD/MAX | $\Delta x$ (N-to-N) = $\\lambda/2$ ~
+        ~ NODES = SILENCE/ZERO | ANTINODES = LOUD/MAX | $\\Delta x$ (N-to-N) = $\\lambda/2$ ~
     </div>
 </div>
 
