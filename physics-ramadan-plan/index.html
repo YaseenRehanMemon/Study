@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Physics Study Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .ramadan-mubarak { font-style: italic; color: var(--accent-secondary); margin-top: 1rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+        }
+
+        /* Timer Section */
+        .timer-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3.5rem;
+            text-align: center;
+            margin: 0.5rem 0;
+            font-weight: 700;
+            color: var(--text-main);
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .total-study-time {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-start { background: var(--accent-primary); color: var(--bg-color); }
+        .btn-stop { background: var(--danger); color: white; }
+        .btn-reset { background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); }
+
+        button:hover { opacity: 0.9; transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
+
+        /* Notes Section */
+        .notes-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            color: white;
+            outline: none;
+        }
+
+        input[type="text"]:focus { border-color: var(--accent-primary); }
+
+        .notes-list {
+            list-style: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .note-item {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid var(--accent-secondary);
+        }
+
+        .btn-delete {
+            background: transparent;
+            color: var(--text-muted);
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+        }
+        .btn-delete:hover { color: var(--danger); }
+
+        /* Schedule Items */
+        .schedule-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+        }
+        .time { font-family: 'JetBrains Mono', monospace; color: var(--accent-secondary); font-weight: 700; }
+        .focus-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            margin-top: 0.25rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-primary);
+        }
+        .high-energy { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .rest { background: rgba(148, 163, 184, 0.1); color: var(--text-muted); }
+
+        @media (max-width: 850px) {
+            .grid { grid-template-columns: 1fr; }
+            .back-link { position: static; margin-bottom: 1rem; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-link">← Study Portal</a>
+            <h1>Physics Ramadan Plan</h1>
+            <p class="subtitle">Deep focus & discipline during the holy month</p>
+            <p class="ramadan-mubarak">Ramadan Mubarak! 🌙✨</p>
+        </header>
+
+        <div class="grid">
+            <div class="main-content">
+                <!-- Timer Card -->
+                <div class="card">
+                    <div class="card-title"><span>⏳</span> Study Session Timer</div>
+                    <div id="timer" class="timer-display">00:00:00</div>
+                    <div id="totalTime" class="total-study-time">Total Studied: 0h 0m</div>
+                    <div class="timer-controls">
+                        <button id="startBtn" class="btn-start" onclick="timerApp.start()">Start Session</button>
+                        <button id="stopBtn" class="btn-stop" style="display:none;" onclick="timerApp.stop()">Stop</button>
+                        <button class="btn-reset" onclick="timerApp.reset()">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Schedule Card -->
+                <div class="card">
+                    <div class="card-title"><span>📅</span> Daily Schedule</div>
+                    <div class="schedule-list">
+                        <div class="schedule-item">
+                            <div class="time">06:15 AM - 10:00 AM</div>
+                            <div class="activity">Heavy Study Session 🔥 <span class="focus-tag high-energy">High Focus: New Concepts</span></div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">01:30 PM - 04:30 PM</div>
+                            <div class="activity">Mid-Day Study ✍️ <span class="focus-tag">Medium Focus: Numerical Practice</span></div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">05:30 PM - 06:30 PM</div>
+                            <div class="activity">Light Revision 📖 <span class="focus-tag">Flashcards & Formulas</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <!-- Points Card -->
+                <div class="card">
+                    <div class="card-title"><span>📝</span> Points to Revise</div>
+                    <div class="notes-input-group">
+                        <input type="text" id="noteInput" placeholder="Add a formula or topic...">
+                        <button class="btn-start" onclick="notesApp.add()">Add</button>
+                    </div>
+                    <div id="notesList" class="notes-list">
+                        <!-- Notes appear here -->
+                    </div>
+                </div>
+
+                <!-- Tips Card -->
+                <div class="card">
+                    <div class="card-title"><span>💡</span> Quick Tips</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">• 6-10 AM is your Golden Window.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">• Solve numericals when sleepy.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">• Hydrate well during Sehri.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; color: var(--text-muted); padding: 2rem;">
+            Built for a future Physicist. Keep grinding! 🚀
+        </footer>
+    </div>
+
+    <script>
+        // --- TIMER LOGIC ---
+        const timerApp = {
+            isRunning: false,
+            startTime: 0,
+            accumulatedTime: 0,
+            totalStudyTime: 0, // All time ever studied
+            interval: null,
+
+            init() {
+                const saved = JSON.parse(localStorage.getItem('studyTimer')) || {};
+                this.isRunning = saved.isRunning || false;
+                this.accumulatedTime = saved.accumulatedTime || 0;
+                this.startTime = saved.startTime || 0;
+                this.totalStudyTime = saved.totalStudyTime || 0;
+
+                if (this.isRunning) {
+                    const elapsedSinceStart = Date.now() - this.startTime;
+                    this.start(true);
+                } else {
+                    this.updateDisplay(this.accumulatedTime);
+                }
+                this.updateTotalDisplay();
+            },
+
+            start(isResuming = false) {
+                if (!isResuming && this.isRunning) return;
+                
+                if (!isResuming) {
+                    this.startTime = Date.now();
+                    this.isRunning = true;
+                }
+
+                document.getElementById('startBtn').style.display = 'none';
+                document.getElementById('stopBtn').style.display = 'block';
+
+                this.interval = setInterval(() => {
+                    const now = Date.now();
+                    const currentElapsed = now - this.startTime;
+                    this.updateDisplay(this.accumulatedTime + currentElapsed);
+                }, 100);
+
+                this.save();
+            },
+
+            stop() {
+                if (!this.isRunning) return;
+                clearInterval(this.interval);
+                const sessionTime = (Date.now() - this.startTime);
+                this.accumulatedTime += sessionTime;
+                this.totalStudyTime += sessionTime;
+                this.isRunning = false;
+                
+                document.getElementById('startBtn').style.display = 'block';
+                document.getElementById('stopBtn').style.display = 'none';
+                
+                this.updateTotalDisplay();
+                this.save();
+            },
+
+            reset() {
+                if (this.isRunning) this.stop();
+                this.accumulatedTime = 0;
+                this.startTime = 0;
+                this.updateDisplay(0);
+                this.save();
+            },
+
+            updateDisplay(ms) {
+                const seconds = Math.floor(ms / 1000) % 60;
+                const minutes = Math.floor(ms / (1000 * 60)) % 60;
+                const hours = Math.floor(ms / (1000 * 60 * 60));
+                
+                const pad = (n) => n.toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+            },
+
+            updateTotalDisplay() {
+                const minutes = Math.floor(this.totalStudyTime / (1000 * 60)) % 60;
+                const hours = Math.floor(this.totalStudyTime / (1000 * 60 * 60));
+                document.getElementById('totalTime').innerText = `Total Studied: ${hours}h ${minutes}m`;
+            },
+
+            save() {
+                localStorage.setItem('studyTimer', JSON.stringify({
+                    isRunning: this.isRunning,
+                    startTime: this.startTime,
+                    accumulatedTime: this.accumulatedTime,
+                    totalStudyTime: this.totalStudyTime
+                }));
+            }
+        };
+
+        // --- NOTES LOGIC ---
+        const notesApp = {
+            notes: [],
+
+            init() {
+                this.notes = JSON.parse(localStorage.getItem('studyNotes')) || [];
+                this.render();
+            },
+
+            add() {
+                const input = document.getElementById('noteInput');
+                if (!input.value.trim()) return;
+                
+                this.notes.push({ id: Date.now(), text: input.value });
+                input.value = '';
+                this.save();
+                this.render();
+            },
+
+            delete(id) {
+                this.notes = this.notes.filter(n => n.id !== id);
+                this.save();
+                this.render();
+            },
+
+            render() {
+                const list = document.getElementById('notesList');
+                list.innerHTML = this.notes.map(note => `
+                    <div class="note-item">
+                        <span>${note.text}</span>
+                        <button class="btn-delete" onclick="notesApp.delete(${note.id})">✕</button>
+                    </div>
+                `).join('');
+            },
+
+            save() {
+                localStorage.setItem('studyNotes', JSON.stringify(this.notes));
+            }
+        };
+
+        // Initialize Apps
+        timerApp.init();
+        notesApp.init();
+
+        // Handle Enter key for notes
+        document.getElementById('noteInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') notesApp.add();
+        });
+    </script>
+</body>
+</html>
