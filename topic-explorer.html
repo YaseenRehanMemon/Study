@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Explorer | NUST Study Hub</title>
+    <!-- MathJax for LaTeX support -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/0/polyfill.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0e1a;
+            --bg2: #111827;
+            --card: #1a2236;
+            --card-hover: #1f2b45;
+            --border: #2a3450;
+            --primary: #3b82f6;
+            --green: #22c55e;
+            --purple: #a78bfa;
+            --orange: #f59e0b;
+            --text: #f1f5f9;
+            --text2: #94a3b8;
+            --text3: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .nav-header {
+            padding: 16px 20px;
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .back-btn {
+            color: var(--text2);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .back-btn:hover { color: var(--primary); }
+        .nav-title { font-weight: 700; font-size: 18px; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Subject Selection */
+        .selection-screen { text-align: center; }
+        .screen-title { font-size: 32px; font-weight: 800; margin-bottom: 8px; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .screen-subtitle { color: var(--text2); margin-bottom: 40px; }
+
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+        .subject-card {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .subject-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(59,130,246,0.15); }
+        .subject-card.math:hover { border-color: var(--purple); }
+        .subject-card.physics:hover { border-color: var(--green); }
+        .subject-card .icon { font-size: 48px; margin-bottom: 16px; }
+        .subject-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .subject-card p { color: var(--text3); font-size: 14px; }
+
+        /* Chapter Grid */
+        .chapter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 24px; }
+        .ch-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .ch-card:hover { background: var(--card-hover); border-color: var(--primary); transform: translateY(-2px); }
+        .ch-card .num { font-size: 28px; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+        .ch-card .label { font-size: 12px; color: var(--text2); line-height: 1.3; }
+
+        /* Topic Explorer View */
+        .explorer-view { display: none; }
+        .topic-header { margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+        .topic-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .badge { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-difficulty { background: rgba(59,130,246,0.1); color: var(--primary); }
+        .topic-id { color: var(--text3); font-family: monospace; font-size: 12px; }
+        .topic-name { font-size: 28px; font-weight: 800; line-height: 1.2; }
+
+        .content-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 24px; }
+        .content-card h4 { font-size: 14px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .content-card h4 svg { width: 16px; height: 16px; }
+        .scratch-text { font-size: 18px; line-height: 1.6; color: var(--text); }
+        
+        .formula-box { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 16px; margin-top: 12px; overflow-x: auto; text-align: center; font-size: 1.2em; }
+        
+        .list-items { list-style: none; }
+        .list-items li { position: relative; padding-left: 24px; margin-bottom: 12px; line-height: 1.5; color: var(--text2); }
+        .list-items li::before { content: '→'; position: absolute; left: 0; color: var(--primary); }
+
+        /* Controls */
+        .controls { display: flex; align-items: center; justify-content: space-between; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .btn { padding: 12px 24px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; display: flex; align-items: center; gap: 8px; font-size: 15px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { background: var(--card); color: var(--text2); border: 1px solid var(--border); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+        .btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+        .progress-bar-container { width: 100%; height: 6px; background: var(--border); border-radius: 3px; margin-top: 24px; position: relative; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.4s ease; }
+        .progress-text { font-size: 12px; color: var(--text3); margin-top: 8px; text-align: right; }
+
+        .pitfall-box { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 16px; margin-top: 12px; }
+        .pitfall-box li::before { color: #ef4444; content: '✕'; }
+
+        /* Hidden elements */
+        .hidden { display: none !important; }
+
+        @media (max-width: 640px) {
+            .subject-grid { grid-template-columns: 1fr; }
+            .topic-name { font-size: 22px; }
+            .controls { flex-direction: column; gap: 16px; }
+            .controls div { width: 100%; }
+            .controls button { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="nav-header">
+    <a href="#" onclick="handleBack(); return false;" class="back-btn">
+        <svg style="width:18px;height:18px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        <span id="back-btn-text">Dashboard</span>
+    </a>
+    <div class="nav-title" id="nav-breadcrumb">Topic Explorer</div>
+</header>
+
+<div class="container">
+    <!-- Screen 1: Subject Selection -->
+    <div id="subject-screen" class="selection-screen">
+        <h1 class="screen-title">Choose your focus</h1>
+        <p class="screen-subtitle">Select a subject to dive into structured topics</p>
+        
+        <div class="subject-grid">
+            <div onclick="selectSubject('math')" class="subject-card math">
+                <div class="icon">π</div>
+                <h3>Mathematics</h3>
+                <p>14 Chapters • Punjab Board</p>
+            </div>
+            <div onclick="selectSubject('physics')" class="subject-card physics">
+                <div class="icon">⚛</div>
+                <h3>Physics</h3>
+                <p>12 Chapters • Punjab Board</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 2: Chapter Selection -->
+    <div id="chapter-screen" class="selection-screen hidden">
+        <h1 class="screen-title" id="subject-title">Mathematics</h1>
+        <p class="screen-subtitle">Select a chapter to begin the structured journey</p>
+        
+        <div class="chapter-grid" id="chapter-list">
+            <!-- Dynamic Chapters -->
+        </div>
+    </div>
+
+    <!-- Screen 3: Topic Explorer -->
+    <div id="explorer-view" class="explorer-view">
+        <div class="topic-header">
+            <div class="topic-meta">
+                <span id="topic-difficulty" class="badge badge-difficulty">Easy</span>
+                <span id="topic-id" class="topic-id">PHY-CH1-T1</span>
+            </div>
+            <h2 id="topic-name" class="topic-name">Base Physical Quantities</h2>
+            <div class="progress-bar-container">
+                <div id="progress-fill" class="progress-bar-fill"></div>
+            </div>
+            <div id="progress-text" class="progress-text">Topic 1 of 18</div>
+        </div>
+
+        <!-- Prerequisites -->
+        <div id="prereq-card" class="content-card">
+            <h4><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg> Prerequisites</h4>
+            <ul id="topic-prereqs" class="list-items" style="display: flex; gap: 12px; flex-wrap: wrap;"></ul>
+        </div>
+
+        <div class="content-card">
+            <h4><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Scratch Idea</h4>
+            <p id="topic-scratch" class="scratch-text"></p>
+        </div>
+
+        <div id="formulas-card" class="content-card hidden">
+            <h4><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg> Key Formulas</h4>
+            <div id="formula-container"></div>
+        </div>
+
+        <div class="content-card">
+            <h4><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> Core Technique</h4>
+            <p id="topic-technique" class="scratch-text" style="font-size:16px;"></p>
+        </div>
+
+        <div class="content-card">
+            <h4><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg> Check Questions</h4>
+            <ul id="check-questions" class="list-items"></ul>
+        </div>
+
+        <div id="pitfalls-card" class="content-card hidden">
+            <h4><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg> Common Pitfalls</h4>
+            <ul id="pitfalls" class="list-items pitfall-box"></ul>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn" onclick="prevTopic()" class="btn btn-secondary">
+                <svg style="width:18px;height:18px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                Previous
+            </button>
+            <div style="display:flex; gap:12px;">
+                <button id="done-btn" onclick="markAsDone()" class="btn btn-secondary" style="border-color: var(--green); color: var(--green);">
+                    Mark as Completed
+                </button>
+                <button id="next-btn" onclick="nextTopic()" class="btn btn-primary" disabled>
+                    Next Topic
+                    <svg style="width:18px;height:18px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const CHAPTERS = {
+        math: [
+            "Number Systems", "Sets, Functions & Groups", "Matrices & Determinants", "Quadratic Equations", 
+            "Partial Fractions", "Sequences & Series", "Permutations & Combinations", "Induction & Binomial",
+            "Fundamentals of Trig", "Trig Identities", "Trig Functions & Graphs", "Application of Trig",
+            "Inverse Trig Functions", "Solutions of Trig Eq"
+        ],
+        physics: [
+            "Measurements", "Vectors & Equilibrium", "Motion & Force", "Work & Energy",
+            "Circular Motion", "Fluid Dynamics", "Oscillations", "Waves",
+            "Physical Optics", "Optical Instruments", "Heat & Thermo", "Electrostatics"
+        ]
+    };
+
+    let state = {
+        view: 'subject', // subject, chapter, explorer
+        subject: null,
+        chapter: null,
+        topics: [],
+        currentIndex: 0,
+        completedTopics: {}
+    };
+
+    // Initialize
+    window.addEventListener('load', () => {
+        const saved = localStorage.getItem('nust_study_progress');
+        if (saved) state.completedTopics = JSON.parse(saved);
+        
+        // Check URL params for direct navigation
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('sub')) {
+            selectSubject(params.get('sub'), false);
+            if (params.has('ch')) {
+                loadChapter(parseInt(params.get('ch')), false);
+            }
+        }
+    });
+
+    function selectSubject(sub, pushState = true) {
+        state.subject = sub;
+        state.view = 'chapter';
+        renderView();
+        if (pushState) window.history.pushState({view: 'chapter', sub}, '', `?sub=${sub}`);
+    }
+
+    async function loadChapter(chNum, pushState = true) {
+        state.chapter = chNum;
+        const subPath = `${state.subject}_structured`;
+        const fileName = `ch${chNum}.json`;
+        
+        try {
+            const url = `./${subPath}/${fileName}`;
+            console.log("Fetching:", url);
+            const res = await fetch(url);
+            if (!res.ok) throw new Error("File not found");
+            state.topics = await res.json();
+            state.currentIndex = 0;
+            state.view = 'explorer';
+            renderView();
+            if (pushState) window.history.pushState({view: 'explorer', sub: state.subject, ch: chNum}, '', `?sub=${state.subject}&ch=${chNum}`);
+        } catch (err) {
+            alert(`Chapter data not available yet for ${state.subject} Ch ${chNum}`);
+        }
+    }
+
+    function renderView() {
+        // Hide all screens
+        document.getElementById('subject-screen').classList.add('hidden');
+        document.getElementById('chapter-screen').classList.add('hidden');
+        document.getElementById('explorer-view').style.display = 'none';
+        
+        const breadcrumb = document.getElementById('nav-breadcrumb');
+        const backBtnText = document.getElementById('back-btn-text');
+
+        if (state.view === 'subject') {
+            document.getElementById('subject-screen').classList.remove('hidden');
+            breadcrumb.innerText = 'Topic Explorer';
+            backBtnText.innerText = 'Dashboard';
+        } 
+        else if (state.view === 'chapter') {
+            document.getElementById('chapter-screen').classList.remove('hidden');
+            document.getElementById('subject-title').innerText = state.subject === 'math' ? 'Mathematics' : 'Physics';
+            breadcrumb.innerText = `Explorer > ${state.subject.toUpperCase()}`;
+            backBtnText.innerText = 'Back to Subjects';
+            
+            const list = document.getElementById('chapter-list');
+            list.innerHTML = '';
+            CHAPTERS[state.subject].forEach((name, i) => {
+                const card = document.createElement('div');
+                card.className = 'ch-card';
+                card.innerHTML = `<div class="num">${i + 1}</div><div class="label">${name}</div>`;
+                card.onclick = () => loadChapter(i + 1);
+                list.appendChild(card);
+            });
+        } 
+        else if (state.view === 'explorer') {
+            document.getElementById('explorer-view').style.display = 'block';
+            backBtnText.innerText = 'Back to Chapters';
+            renderTopic();
+        }
+    }
+
+    function renderTopic() {
+        const topic = state.topics[state.currentIndex];
+        const topicKey = `${state.subject}-ch${state.chapter}-${topic.id}`;
+        const isDone = state.completedTopics[topicKey];
+
+        document.getElementById('nav-breadcrumb').innerText = `${state.subject.toUpperCase()} Ch${state.chapter} > ${topic.topic_name}`;
+        document.getElementById('topic-id').innerText = topic.id;
+        document.getElementById('topic-name').innerText = topic.topic_name;
+        document.getElementById('topic-difficulty').innerText = topic.difficulty;
+        document.getElementById('topic-scratch').innerText = topic.scratch_idea;
+        document.getElementById('topic-technique').innerText = topic.core_technique;
+
+        // Prereqs
+        const prereqCard = document.getElementById('prereq-card');
+        const prereqList = document.getElementById('topic-prereqs');
+        if (topic.prerequisites && topic.prerequisites.length > 0) {
+            prereqCard.classList.remove('hidden');
+            prereqList.innerHTML = topic.prerequisites.map(p => `<li style="margin-bottom:0; background:rgba(255,255,255,0.05); padding: 4px 12px; border-radius:6px; font-size:13px;">${p}</li>`).join('');
+        } else {
+            prereqCard.classList.add('hidden');
+        }
+
+        // Formulas
+        const formulaCard = document.getElementById('formulas-card');
+        const formulaContainer = document.getElementById('formula-container');
+        if (topic.formulas && topic.formulas.length > 0) {
+            formulaCard.classList.remove('hidden');
+            formulaContainer.innerHTML = topic.formulas.map(f => `<div class="formula-box">${f}</div>`).join('');
+            if (window.MathJax) MathJax.typeset();
+        } else {
+            formulaCard.classList.add('hidden');
+        }
+
+        // Questions
+        document.getElementById('check-questions').innerHTML = topic.check_questions.map(q => `<li>${q}</li>`).join('');
+
+        // Pitfalls
+        const pitfallCard = document.getElementById('pitfalls-card');
+        if (topic.common_pitfalls && topic.common_pitfalls.length > 0) {
+            pitfallCard.classList.remove('hidden');
+            document.getElementById('pitfalls').innerHTML = topic.common_pitfalls.map(p => `<li>${p}</li>`).join('');
+        } else {
+            pitfallCard.classList.add('hidden');
+        }
+
+        // Progress
+        const prog = ((state.currentIndex + 1) / state.topics.length) * 100;
+        document.getElementById('progress-fill').style.width = `${prog}%`;
+        document.getElementById('progress-text').innerText = `Topic ${state.currentIndex + 1} of ${state.topics.length}`;
+
+        // Buttons
+        document.getElementById('prev-btn').disabled = state.currentIndex === 0;
+        const doneBtn = document.getElementById('done-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        if (isDone) {
+            doneBtn.innerText = 'Completed ✓';
+            doneBtn.style.background = 'rgba(34, 197, 94, 0.15)';
+            doneBtn.style.color = 'var(--green)';
+            nextBtn.disabled = false;
+        } else {
+            doneBtn.innerText = 'Mark as Completed';
+            doneBtn.style.background = 'transparent';
+            doneBtn.style.color = 'var(--green)';
+            nextBtn.disabled = true;
+        }
+        window.scrollTo(0, 0);
+    }
+
+    function markAsDone() {
+        const topic = state.topics[state.currentIndex];
+        const key = `${state.subject}-ch${state.chapter}-${topic.id}`;
+        state.completedTopics[key] = true;
+        localStorage.setItem('nust_study_progress', JSON.stringify(state.completedTopics));
+        renderTopic();
+    }
+
+    function nextTopic() {
+        if (state.currentIndex < state.topics.length - 1) {
+            state.currentIndex++;
+            renderTopic();
+        } else {
+            alert("Chapter Complete! Great job.");
+            handleBack();
+        }
+    }
+
+    function prevTopic() {
+        if (state.currentIndex > 0) {
+            state.currentIndex--;
+            renderTopic();
+        }
+    }
+
+    function handleBack() {
+        if (state.view === 'explorer') {
+            state.view = 'chapter';
+            window.history.pushState({view: 'chapter', sub: state.subject}, '', `?sub=${state.subject}`);
+        } else if (state.view === 'chapter') {
+            state.view = 'subject';
+            window.history.pushState({view: 'subject'}, '', 'topic-explorer.html');
+        } else {
+            window.location.href = 'index.html';
+        }
+        renderView();
+    }
+
+    window.onpopstate = (e) => {
+        if (e.state) {
+            state.view = e.state.view;
+            state.subject = e.state.sub || null;
+            state.chapter = e.state.ch || null;
+            if (state.view === 'explorer') {
+                loadChapter(state.chapter, false);
+            } else {
+                renderView();
+            }
+        } else {
+            state.view = 'subject';
+            renderView();
+        }
+    };
+</script>
+
+</body>
+</html>
