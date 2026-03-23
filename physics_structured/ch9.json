@@ -1,0 +1,449 @@
+[
+  {
+    "topic_name": "Quantization of Electric Charge",
+    "id": "PHY-CH9-T1",
+    "scratch_idea": "Electric charge is a fundamental property of particles like electrons and protons. It exists only in discrete amounts, meaning the total charge on any object is an integral multiple of the basic unit of charge.",
+    "prerequisites": [
+      "Atomic structure",
+      "Protons and Electrons"
+    ],
+    "formulas": [
+      "$Q = ne$",
+      "$e \\approx 1.6 \\times 10^{-19} \\text{ C}$"
+    ],
+    "core_technique": "Always remember that charge cannot be subdivided beyond the electronic charge 'e' in macroscopic calculations.",
+    "check_questions": [
+      "What is the smallest discrete unit of charge found in nature?",
+      "Can an object have a charge of $0.8 \\times 10^{-19} \\text{ C}$? Why or why not?",
+      "Calculate the number of electrons in 1 Coulomb of charge."
+    ],
+    "common_pitfalls": [
+      "Treating charge as a continuous fluid rather than discrete units.",
+      "Forgetting to include the sign (positive or negative) in net charge calculations."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Coulomb's Law",
+    "id": "PHY-CH9-T2",
+    "scratch_idea": "This law calculates the electrostatic force between two stationary point charges. It follows an inverse square relationship with distance and is directly proportional to the magnitude of the charges.",
+    "prerequisites": [
+      "Newton's Third Law",
+      "Inverse Square Law"
+    ],
+    "formulas": [
+      "$F = k \\frac{q_1 q_2}{r^2}$",
+      "$k = \\frac{1}{4\\pi\\varepsilon_0}$"
+    ],
+    "core_technique": "Treat the force as a vector; if multiple charges are present, use the principle of superposition to find the net force.",
+    "check_questions": [
+      "How does the force change if the distance between two charges is doubled?",
+      "Define the Coulomb constant 'k' and state its value in SI units.",
+      "Is Coulomb's force a central force?"
+    ],
+    "common_pitfalls": [
+      "Squaring the charge instead of the distance in the denominator.",
+      "Ignoring the medium constant when charges are not in a vacuum."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Effect of Dielectric on Electrostatic Force",
+    "id": "PHY-CH9-T3",
+    "scratch_idea": "When an insulating material (dielectric) is placed between two charges, it reduces the effective electrostatic force between them due to polarization of the medium.",
+    "prerequisites": [
+      "Coulomb's Law",
+      "Insulators"
+    ],
+    "formulas": [
+      "$\\varepsilon_r = \\frac{F_{vac}}{F_{med}}$",
+      "$F_{med} = \\frac{1}{4\\pi\\varepsilon_0\\varepsilon_r} \\frac{q_1 q_2}{r^2}$"
+    ],
+    "core_technique": "The relative permittivity $\\varepsilon_r$ is always greater than 1 for any material medium, meaning the force in a medium is always less than in a vacuum.",
+    "check_questions": [
+      "Define relative permittivity.",
+      "What happens to the electrostatic force between two charges if a glass slab is inserted between them?",
+      "Why does a dielectric reduce the force between point charges?"
+    ],
+    "common_pitfalls": [
+      "Multiplying by $\\varepsilon_r$ instead of dividing when calculating the force in a medium.",
+      "Confusing permittivity of free space with relative permittivity."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Electric Field Strength",
+    "id": "PHY-CH9-T4",
+    "scratch_idea": "Electric field strength represents the force experienced per unit positive test charge placed at a specific point in space. It is a vector field representing the influence of a source charge.",
+    "prerequisites": [
+      "Coulomb's Law",
+      "Vector Addition"
+    ],
+    "formulas": [
+      "$E = \\frac{F}{q_0}$",
+      "$E = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{r^2}$"
+    ],
+    "core_technique": "Always use a 'unit positive test charge' as the reference for determining the direction of the E-field.",
+    "check_questions": [
+      "What is the SI unit of electric field intensity?",
+      "Determine the direction of the electric field produced by a negative point charge.",
+      "How does E-field strength vary with distance 'r' from a point charge?"
+    ],
+    "common_pitfalls": [
+      "Confusing the source charge 'q' with the test charge 'q0' in formulas.",
+      "Assuming the field is uniform around a single point charge."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Gauss's Law",
+    "id": "PHY-CH9-T5",
+    "scratch_idea": "Gauss's Law relates the total electric flux passing through a closed surface (Gaussian surface) to the total net charge enclosed within that surface.",
+    "prerequisites": [
+      "Electric Flux",
+      "Closed Surfaces"
+    ],
+    "formulas": [
+      "$\\Phi_e = \\frac{Q_{enclosed}}{\\varepsilon_0}$"
+    ],
+    "core_technique": "Choose a Gaussian surface that matches the symmetry of the charge distribution (spherical, cylindrical, or planar) to simplify calculations.",
+    "check_questions": [
+      "State Gauss's Law in words.",
+      "Does the flux through a closed surface depend on its shape or size?",
+      "If the net charge inside a box is zero, what is the net flux through it?"
+    ],
+    "common_pitfalls": [
+      "Including charges located outside the closed surface in the calculation of net flux.",
+      "Forgetting that Gauss's law only applies to 'closed' surfaces."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Electric Potential",
+    "id": "PHY-CH9-T6",
+    "scratch_idea": "Electric potential at a point is the work done per unit charge in moving a positive test charge from infinity to that point in an electric field.",
+    "prerequisites": [
+      "Work-Energy Theorem",
+      "Electric Field"
+    ],
+    "formulas": [
+      "$V = \\frac{W}{q}$",
+      "$\\Delta V = V_b - V_a$"
+    ],
+    "core_technique": "Potential is a scalar quantity; sum potentials from multiple charges algebraically, not as vectors.",
+    "check_questions": [
+      "Define the Volt in terms of Joules and Coulombs.",
+      "Is electric potential a vector or a scalar quantity?",
+      "Calculate the potential at a point if 10J of work is done to move 2C of charge."
+    ],
+    "common_pitfalls": [
+      "Attempting to add potentials using vector components.",
+      "Confusing potential (V) with potential energy (U)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Potential Gradient",
+    "id": "PHY-CH9-T7",
+    "scratch_idea": "The potential gradient describes how electric potential changes with position. It establishes the quantitative link between the electric field and the change in potential.",
+    "prerequisites": [
+      "Electric Potential",
+      "Electric Field"
+    ],
+    "formulas": [
+      "$E = -\\frac{\\Delta V}{\\Delta d}$"
+    ],
+    "core_technique": "The negative sign indicates that the electric field direction is always from higher potential to lower potential.",
+    "check_questions": [
+      "What does the negative sign in the potential gradient formula represent?",
+      "Express the units of Electric Field in terms of Volts and Meters.",
+      "If potential is constant in a region, what is the electric field strength there?"
+    ],
+    "common_pitfalls": [
+      "Ignoring the negative sign, which leads to incorrect field direction mapping.",
+      "Confusing the gradient with the total potential value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "The Electron-Volt",
+    "id": "PHY-CH9-T8",
+    "scratch_idea": "The electron-volt (eV) is a tiny unit of energy commonly used in particle physics, representing the energy gained by an electron when accelerated through a potential difference of one volt.",
+    "prerequisites": [
+      "Electric Potential",
+      "Kinetic Energy"
+    ],
+    "formulas": [
+      "$1 \\text{ eV} = 1.6 \\times 10^{-19} \\text{ J}$",
+      "$\\Delta K.E = q \\Delta V$"
+    ],
+    "core_technique": "Use eV for subatomic particles (electrons, protons) and convert to Joules for standard SI calculations.",
+    "check_questions": [
+      "Define one electron-volt.",
+      "Convert 5 eV into Joules.",
+      "How much energy does an alpha particle (charge 2e) gain if moved through 100V?"
+    ],
+    "common_pitfalls": [
+      "Using eV as a unit of potential rather than energy.",
+      "Forgetting to multiply the charge magnitude when dealing with particles other than electrons (like alpha particles)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Electrostatic Shielding",
+    "id": "PHY-CH9-T9",
+    "scratch_idea": "In a hollow conductor, all excess charges reside on the outer surface. Consequently, the electric field inside the cavity is zero, protecting anything inside from external electrical influences.",
+    "prerequisites": [
+      "Gauss's Law",
+      "Properties of Conductors"
+    ],
+    "formulas": [
+      "$E_{inside} = 0$"
+    ],
+    "core_technique": "Remember that the interior of a conductor is an equipotential volume; there is no potential difference to drive a current.",
+    "check_questions": [
+      "What is a Faraday cage?",
+      "Why is it safe to stay inside a car during a lightning storm?",
+      "Where does the excess charge reside on a hollow conducting sphere?"
+    ],
+    "common_pitfalls": [
+      "Thinking that potential inside is zero (only the field 'E' is zero; potential 'V' is constant).",
+      "Assuming shielding works for magnetic fields in the same way."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Ohm's Law",
+    "id": "PHY-CH9-T10",
+    "scratch_idea": "Ohm's Law states that the current through a conductor is directly proportional to the potential difference across it, provided physical conditions like temperature remain constant.",
+    "prerequisites": [
+      "Electric Current",
+      "Potential Difference"
+    ],
+    "formulas": [
+      "$V = IR$"
+    ],
+    "core_technique": "Ohm's Law only applies to 'Ohmic' conductors (like metals at constant temperature) and fails for semi-conductors or gases.",
+    "check_questions": [
+      "State the conditions under which Ohm's Law is valid.",
+      "Draw the V-I graph for an Ohmic conductor.",
+      "If voltage is tripled and resistance is halved, what happens to the current?"
+    ],
+    "common_pitfalls": [
+      "Applying Ohm's law to non-ohmic devices like diodes.",
+      "Ignoring temperature changes that alter the resistance 'R'."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Resistivity and its Dependencies",
+    "id": "PHY-CH9-T11",
+    "scratch_idea": "Resistivity is an intrinsic property of a material that measures its opposition to current. While resistance depends on geometry (length and area), resistivity depends only on material type and temperature.",
+    "prerequisites": [
+      "Resistance",
+      "Cross-sectional Area"
+    ],
+    "formulas": [
+      "$R = \\rho \\frac{L}{A}$"
+    ],
+    "core_technique": "If a wire is stretched, its length increases and area decreases; both factors increase the resistance significantly.",
+    "check_questions": [
+      "Difference between resistance and resistivity.",
+      "What is the SI unit of resistivity?",
+      "A wire is stretched to double its length. What happens to its resistivity?"
+    ],
+    "common_pitfalls": [
+      "Thinking resistivity changes when a wire is cut in half.",
+      "Confusing the units of resistivity (Ohm-meter) with resistance (Ohm)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Temperature Coefficient of Resistance",
+    "id": "PHY-CH9-T12",
+    "scratch_idea": "Most metals show an increase in resistance as temperature rises. The temperature coefficient (alpha) quantifies the fractional change in resistance per degree rise in temperature.",
+    "prerequisites": [
+      "Resistivity",
+      "Thermal expansion concepts"
+    ],
+    "formulas": [
+      "$\\alpha = \\frac{R_t - R_0}{R_0 \\Delta T}$"
+    ],
+    "core_technique": "Positive alpha values indicate metals (resistance increases with heat), while negative alpha values indicate semiconductors or insulators.",
+    "check_questions": [
+      "Define the temperature coefficient of resistance.",
+      "Why does resistance increase with temperature in conductors?",
+      "What does a negative value of $\\alpha$ imply for a material?"
+    ],
+    "common_pitfalls": [
+      "Using Celsius in formulas where Kelvin might be required (though $\\Delta T$ is the same).",
+      "Forgetting that $R_0$ is the resistance at $0^{\\circ}C$, not just any initial temperature."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Electrical Power and Joule Heating",
+    "id": "PHY-CH9-T13",
+    "scratch_idea": "When current flows through a resistor, electrical energy is converted into heat. Power is the rate at which this energy is dissipated.",
+    "prerequisites": [
+      "Ohm's Law",
+      "Power definition"
+    ],
+    "formulas": [
+      "$P = VI$",
+      "$P = I^2 R$",
+      "$P = \\frac{V^2}{R}$"
+    ],
+    "core_technique": "Use $I^2R$ for series circuits (constant current) and $V^2/R$ for parallel circuits (constant voltage) to compare power dissipation.",
+    "check_questions": [
+      "What is the SI unit of electrical power?",
+      "Two bulbs (60W and 100W) are connected in series. Which one glows brighter?",
+      "Define 1 Watt."
+    ],
+    "common_pitfalls": [
+      "Using the wrong power formula for the specific circuit configuration (series vs parallel).",
+      "Confusing Power (Watts) with Energy (Joules)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Electromotive Force (EMF) and Internal Resistance",
+    "id": "PHY-CH9-T14",
+    "scratch_idea": "EMF is the energy supplied by a battery to each unit charge. However, because the battery has its own internal resistance, the voltage available at the terminals is usually less than the EMF.",
+    "prerequisites": [
+      "Potential Difference",
+      "Conservation of Energy"
+    ],
+    "formulas": [
+      "$E = V_t + Ir$",
+      "$V_t = E - Ir$"
+    ],
+    "core_technique": "Terminal potential difference $V_t$ equals EMF only when no current is drawn (open circuit).",
+    "check_questions": [
+      "What is internal resistance of a cell?",
+      "Why is terminal potential difference less than EMF when current is flowing?",
+      "Under what condition does $V_t = E$?"
+    ],
+    "common_pitfalls": [
+      "Assuming EMF and Terminal Voltage are the same in a working circuit.",
+      "Miscalculating internal resistance 'r' as part of the external load 'R'."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Kirchhoff's First Rule (Junction Rule)",
+    "id": "PHY-CH9-T15",
+    "scratch_idea": "Based on the Law of Conservation of Charge, this rule states that the sum of all currents entering a junction must equal the sum of all currents leaving it.",
+    "prerequisites": [
+      "Conservation of Charge",
+      "Electric Current"
+    ],
+    "formulas": [
+      "$\\sum I = 0$"
+    ],
+    "core_technique": "Assign positive signs to currents entering the node and negative signs to currents leaving the node.",
+    "check_questions": [
+      "Which conservation law is the basis of Kirchhoff's First Rule?",
+      "If 5A and 3A enter a junction and 2A leaves through one path, how much current leaves through the other?",
+      "What is a 'node' in a circuit?"
+    ],
+    "common_pitfalls": [
+      "Mixing up signs for entering and leaving currents.",
+      "Applying the rule to a loop instead of a single point/junction."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Kirchhoff's Second Rule (Loop Rule)",
+    "id": "PHY-CH9-T16",
+    "scratch_idea": "Based on the Law of Conservation of Energy, this rule states that the algebraic sum of all potential changes (drops and gains) in any closed loop of a circuit is zero.",
+    "prerequisites": [
+      "Electric Potential",
+      "Conservation of Energy"
+    ],
+    "formulas": [
+      "$\\sum \\Delta V = 0$"
+    ],
+    "core_technique": "Consistency in sign convention is key: crossing a battery from '-' to '+' is a gain; moving with the current through a resistor is a loss.",
+    "check_questions": [
+      "Which conservation law justifies the Loop Rule?",
+      "How do you determine the sign of the potential change across a resistor?",
+      "Does the starting point in the loop affect the final result of the equation?"
+    ],
+    "common_pitfalls": [
+      "Inconsistent sign convention while traversing the loop.",
+      "Forgetting to include the internal resistance of the battery in the loop equation."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Wheatstone Bridge",
+    "id": "PHY-CH9-T17",
+    "scratch_idea": "A specialized circuit arrangement of four resistors used to measure an unknown resistance with high precision by achieving a balanced condition where no current flows through a central galvanometer.",
+    "prerequisites": [
+      "Kirchhoff's Rules",
+      "Galvanometer"
+    ],
+    "formulas": [
+      "$\\frac{R_1}{R_2} = \\frac{R_3}{R_4}$"
+    ],
+    "core_technique": "The 'Null Point' (zero deflection) is the most accurate measurement condition because it eliminates the influence of the measuring instrument's resistance.",
+    "check_questions": [
+      "What is the 'balance condition' of a Wheatstone Bridge?",
+      "Why is the Wheatstone Bridge method preferred over an Ohmmeter for precision?",
+      "If $R_1=10, R_2=20, R_3=5$, find the unknown $R_4$ at balance."
+    ],
+    "common_pitfalls": [
+      "Confusing the ratio of resistors (opposite arms vs adjacent arms).",
+      "Assuming the bridge is balanced even when the galvanometer shows deflection."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Potentiometer",
+    "id": "PHY-CH9-T18",
+    "scratch_idea": "A null-method instrument used to measure EMF or potential difference accurately. It works by balancing an unknown voltage against a known potential gradient along a uniform wire.",
+    "prerequisites": [
+      "Potential Gradient",
+      "EMF"
+    ],
+    "formulas": [
+      "$E_x = E \\left( \\frac{l}{L} \\right)$",
+      "$\\frac{E_1}{E_2} = \\frac{l_1}{l_2}$"
+    ],
+    "core_technique": "The potentiometer draws no current from the source being measured at the null point, making it an ideal voltmeter.",
+    "check_questions": [
+      "Why is a potentiometer more accurate than a standard voltmeter for measuring EMF?",
+      "How does the balancing length change if a battery of higher EMF is used in the driver circuit?",
+      "Define the principle of a potentiometer."
+    ],
+    "common_pitfalls": [
+      "Connecting the battery terminals incorrectly (they must oppose the driver cell).",
+      "Using a wire with non-uniform cross-section, which ruins the potential gradient linearity."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Thermistors and LDRs",
+    "id": "PHY-CH9-T19",
+    "scratch_idea": "These are non-ohmic sensors. Thermistors change resistance based on temperature (usually NTC - resistance drops as temp rises), and LDRs change resistance based on light intensity.",
+    "prerequisites": [
+      "Resistance",
+      "Semiconductors"
+    ],
+    "formulas": [
+      "None specifically required at this level; focus on qualitative relationships."
+    ],
+    "core_technique": "Use these components in potential divider circuits to create sensors that respond to environmental changes.",
+    "check_questions": [
+      "How does the resistance of an NTC thermistor change with increasing temperature?",
+      "What happens to the resistance of an LDR when it is moved from a dark room to sunlight?",
+      "State one practical use for a thermistor."
+    ],
+    "common_pitfalls": [
+      "Assuming all thermistors behave like metals (most decrease in resistance, unlike metals).",
+      "Thinking LDRs produce electricity (they only change resistance)."
+    ],
+    "difficulty": "Easy"
+  }
+]

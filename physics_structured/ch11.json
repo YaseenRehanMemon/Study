@@ -1,0 +1,328 @@
+[
+  {
+    "topic_name": "Relative Motion",
+    "id": "PHY-CH11-T01",
+    "scratch_idea": "Motion is not an absolute property; the state of rest or motion of an object depends entirely on the observer's position and velocity. An object appearing stationary to one observer can be seen as moving by another in a different reference frame.",
+    "prerequisites": [
+      "Frames of Reference",
+      "Vector Addition"
+    ],
+    "formulas": [],
+    "core_technique": "Always identify the observer's frame before describing the path of a moving object.",
+    "check_questions": [
+      "Why does a ball dropped in a moving train appear to fall straight down to a passenger but move in a parabola to a person on the ground?",
+      "Can we define 'absolute rest' in the universe?",
+      "Does the horizontal distance traveled by a projectile depend on the observer's frame?"
+    ],
+    "common_pitfalls": [
+      "Assuming that if something looks stationary to you, it is stationary for everyone.",
+      "Confusing relative velocity with absolute velocity."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Inertial Frame of Reference",
+    "id": "PHY-CH11-T02",
+    "scratch_idea": "An inertial frame is a coordinate system where Newton's First Law of motion holds true. In this frame, an object with no net force acting on it remains at rest or moves with a constant velocity.",
+    "prerequisites": [
+      "Newton's First Law",
+      "Law of Inertia"
+    ],
+    "formulas": [],
+    "core_technique": "An inertial frame is characterized by zero acceleration ($a = 0$).",
+    "check_questions": [
+      "Define an inertial frame of reference.",
+      "Is a car moving at a constant speed of 60 km/h in a straight line an inertial frame?",
+      "Why is the Earth often treated as an inertial frame despite its rotation?"
+    ],
+    "common_pitfalls": [
+      "Thinking all frames moving at constant speed are non-inertial.",
+      "Forgetting that any frame moving with uniform velocity relative to an inertial frame is also inertial."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Non-Inertial Frame of Reference",
+    "id": "PHY-CH11-T03",
+    "scratch_idea": "A non-inertial frame is a coordinate system that is accelerating relative to an inertial frame. In these frames, the law of inertia does not apply, and objects may appear to accelerate without an external force.",
+    "prerequisites": [
+      "Inertial Frame of Reference",
+      "Acceleration"
+    ],
+    "formulas": [],
+    "core_technique": "Look for changes in speed or direction to identify a non-inertial frame.",
+    "check_questions": [
+      "What distinguishes a non-inertial frame from an inertial frame?",
+      "Why is an accelerating elevator considered a non-inertial frame?",
+      "How does the behavior of a ball inside a suddenly braking car prove the frame is non-inertial?"
+    ],
+    "common_pitfalls": [
+      "Assuming a rotating frame is inertial just because the angular speed is constant.",
+      "Failing to recognize that centripetal acceleration makes a frame non-inertial."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Postulates of Special Relativity",
+    "id": "PHY-CH11-T04",
+    "scratch_idea": "Einstein's theory is built on two pillars: the laws of physics are identical in all inertial frames, and the speed of light in a vacuum is a universal constant ($c$) for all observers regardless of their motion.",
+    "prerequisites": [
+      "Inertial Frame of Reference",
+      "Speed of Light"
+    ],
+    "formulas": [
+      "$c \\approx 3 \\times 10^8 \\text{ m s}^{-1}$"
+    ],
+    "core_technique": "Apply the principle that light speed $c$ is never added to or subtracted from the source's velocity.",
+    "check_questions": [
+      "State the first postulate of the Special Theory of Relativity.",
+      "How does the second postulate challenge classical Newtonian addition of velocities?",
+      "Does the speed of light change if the observer moves toward the light source at $0.5c$?"
+    ],
+    "common_pitfalls": [
+      "Trying to calculate $c + v$ or $c - v$ for light beams.",
+      "Misunderstanding that the postulates only apply to inertial (non-accelerating) frames."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Relativity of Simultaneity",
+    "id": "PHY-CH11-T05",
+    "scratch_idea": "Two events that appear to happen at the same time for one observer may occur at different times for another observer moving at a relative velocity. This proves that simultaneity is not an absolute property of time.",
+    "prerequisites": [
+      "Postulates of Special Relativity",
+      "Relative Motion"
+    ],
+    "formulas": [],
+    "core_technique": "Use the light-signal-in-a-moving-train thought experiment to visualize why the back door is hit first by light for an outside observer.",
+    "check_questions": [
+      "Explain why two events simultaneous in one frame might not be in another.",
+      "In the train experiment, why does the outside observer see the back door open first?",
+      "Does the relativity of simultaneity depend on the speed of the observer?"
+    ],
+    "common_pitfalls": [
+      "Thinking the delay is just a 'perceptual illusion' due to light travel time, rather than a fundamental property of time.",
+      "Assuming there is one 'correct' observer who sees the 'real' time."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Time Dilation",
+    "id": "PHY-CH11-T06",
+    "scratch_idea": "Time dilation is the phenomenon where the time interval between two events appears longer (slower) when measured from a frame moving relative to the events. Moving clocks run slow.",
+    "prerequisites": [
+      "Proper Time",
+      "Relativity of Simultaneity"
+    ],
+    "formulas": [
+      "$t = \\frac{t_o}{\\sqrt{1 - \\frac{v^2}{c^2}}}$"
+    ],
+    "core_technique": "Always ensure the calculated dilated time ($t$) is greater than the proper time ($t_o$).",
+    "check_questions": [
+      "Define time dilation.",
+      "A clock is moving at $0.9c$. Will it appear to tick faster or slower to a stationary observer?",
+      "Calculate the dilated time for an event that lasts 5s in its own frame, moving at $0.8c$."
+    ],
+    "common_pitfalls": [
+      "Incorrectly identifying which value is $t$ and which is $t_o$.",
+      "Applying time dilation to non-relativistic speeds (where the effect is negligible)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Proper Time",
+    "id": "PHY-CH11-T07",
+    "scratch_idea": "Proper time ($t_o$) is the time interval measured by an observer who is at rest relative to the events being timed. It is the 'shortest' possible time interval measured between two events.",
+    "prerequisites": [
+      "Time Dilation",
+      "Inertial Frame of Reference"
+    ],
+    "formulas": [],
+    "core_technique": "Identify $t_o$ as the time recorded by the clock that stays with the event (e.g., the traveler's clock).",
+    "check_questions": [
+      "What is meant by 'proper time'?",
+      "If a passenger on a spaceship measures a 1-hour nap, is that 1 hour considered $t$ or $t_o$?",
+      "How is proper time related to the dilated time measured by an external observer?"
+    ],
+    "common_pitfalls": [
+      "Confusing proper time with the time measured by a stationary observer looking at a moving object.",
+      "Thinking proper time is 'absolute' time."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Length Contraction",
+    "id": "PHY-CH11-T08",
+    "scratch_idea": "Length contraction is the decrease in the measured length of an object moving at relativistic speeds relative to an observer. This shortening only occurs in the direction of motion.",
+    "prerequisites": [
+      "Proper Length",
+      "Postulates of Relativity"
+    ],
+    "formulas": [
+      "$l = l_o \\sqrt{1 - \\frac{v^2}{c^2}}$"
+    ],
+    "core_technique": "Remember that the measured length $l$ is always less than the proper length $l_o$.",
+    "check_questions": [
+      "What is length contraction?",
+      "If a meter stick moves at $0.9c$ along its length, how long does it appear to a stationary observer?",
+      "Does length contraction affect the dimensions perpendicular to the direction of motion?"
+    ],
+    "common_pitfalls": [
+      "Calculating contraction in all three dimensions instead of just the direction of motion.",
+      "Confusing the formula with the one for time dilation (multiplying by the root instead of dividing)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Proper Length",
+    "id": "PHY-CH11-T09",
+    "scratch_idea": "Proper length ($l_o$) is the length of an object measured by an observer who is at rest relative to that object. It is the maximum measurable length of the object.",
+    "prerequisites": [
+      "Length Contraction"
+    ],
+    "formulas": [],
+    "core_technique": "Assign $l_o$ to the length measured in the object's own rest frame.",
+    "check_questions": [
+      "Define proper length.",
+      "An observer on Earth measures a football field to be 100m. Is this its proper length?",
+      "Why is the length measured by a moving observer always less than the proper length?"
+    ],
+    "common_pitfalls": [
+      "Using the contracted length as the 'standard' or 'real' length.",
+      "Thinking proper length changes when the object starts moving (it only changes for the outside observer)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Mass Variation (Relativistic Mass)",
+    "id": "PHY-CH11-T10",
+    "scratch_idea": "As an object's velocity approaches the speed of light, its mass (inertia) increases. This increase in mass makes it increasingly difficult to accelerate the object further.",
+    "prerequisites": [
+      "Rest Mass",
+      "Inertia"
+    ],
+    "formulas": [
+      "$m = \\frac{m_o}{\\sqrt{1 - \\frac{v^2}{c^2}}}$"
+    ],
+    "core_technique": "Analyze the limit as $v \\to c$ to understand why an infinite force is needed to reach the speed of light.",
+    "check_questions": [
+      "How does the mass of an object change as its speed increases?",
+      "What happens to the mass of an object as its velocity approaches $c$?",
+      "Calculate the relativistic mass of an electron moving at $0.8c$ if its rest mass is $m_o$."
+    ],
+    "common_pitfalls": [
+      "Assuming mass increases at low, everyday speeds.",
+      "Thinking the number of atoms in the object increases; it is the inertia that increases."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Rest Mass",
+    "id": "PHY-CH11-T11",
+    "scratch_idea": "Rest mass ($m_o$) is the mass of an object measured by an observer at rest relative to the object. It is an intrinsic property that determines the object's rest energy.",
+    "prerequisites": [
+      "Mass Variation"
+    ],
+    "formulas": [],
+    "core_technique": "Always use $m_o$ when calculating the rest energy $E_o = m_o c^2$.",
+    "check_questions": [
+      "What is meant by rest mass?",
+      "If a particle has zero rest mass, can it ever be at rest?",
+      "Why is rest mass considered a more fundamental property than relativistic mass?"
+    ],
+    "common_pitfalls": [
+      "Confusing rest mass with weight.",
+      "Using relativistic mass ($m$) in the rest energy formula."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Mass-Energy Equivalence",
+    "id": "PHY-CH11-T12",
+    "scratch_idea": "Einstein proposed that mass and energy are two forms of the same thing. A small amount of mass can be converted into a tremendous amount of energy, as dictated by the square of the speed of light.",
+    "prerequisites": [
+      "Relativistic Mass",
+      "Conservation of Energy"
+    ],
+    "formulas": [
+      "$E = mc^2$",
+      "$E_o = m_o c^2$"
+    ],
+    "core_technique": "Use this formula to explain the massive energy release in nuclear reactions where mass is 'lost'.",
+    "check_questions": [
+      "State Einstein's mass-energy equivalence equation.",
+      "Calculate the rest energy of 1 kg of mass.",
+      "Why don't we notice mass changes in everyday chemical reactions?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the speed of light ($c$).",
+      "Mixing units (ensure mass is in kg and $c$ is in m/s to get energy in Joules)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Relativistic Kinetic Energy",
+    "id": "PHY-CH11-T13",
+    "scratch_idea": "In relativistic mechanics, kinetic energy is defined as the difference between the total energy of a moving object and its rest mass energy.",
+    "prerequisites": [
+      "Mass-Energy Equivalence",
+      "Rest Mass"
+    ],
+    "formulas": [
+      "$\\text{K.E.} = (m - m_o)c^2$"
+    ],
+    "core_technique": "Subtract rest mass from relativistic mass before multiplying by $c^2$.",
+    "check_questions": [
+      "Write the formula for relativistic kinetic energy.",
+      "How does relativistic K.E. differ from classical K.E. ($\\frac{1}{2}mv^2$)?",
+      "Calculate the K.E. of an object if its moving mass is double its rest mass."
+    ],
+    "common_pitfalls": [
+      "Using $\\frac{1}{2}mv^2$ for particles moving near the speed of light.",
+      "Confusing total energy ($mc^2$) with kinetic energy."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Space-Time Continuum",
+    "id": "PHY-CH11-T14",
+    "scratch_idea": "Relativity treats time as a fourth dimension linked with the three dimensions of space, forming a single four-dimensional fabric known as space-time.",
+    "prerequisites": [
+      "Time Dilation",
+      "Cartesian Coordinate System"
+    ],
+    "formulas": [],
+    "core_technique": "Visualize space-time as a grid where time and space can stretch or compress together.",
+    "check_questions": [
+      "What is the fourth dimension in the theory of relativity?",
+      "Why are space and time not considered independent in relativity?",
+      "Give an example of how time and space are influenced by speed."
+    ],
+    "common_pitfalls": [
+      "Visualizing space and time as two separate 'boxes' instead of a single unified fabric.",
+      "Treating time as a constant background regardless of spatial motion."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Space-Time Curvature and Gravity",
+    "id": "PHY-CH11-T15",
+    "scratch_idea": "Massive objects like stars and planets do not just 'pull' on other objects; they curve the fabric of space-time. Gravity is the effect of objects following paths along this curvature.",
+    "prerequisites": [
+      "Space-Time Continuum",
+      "Newton's Law of Gravitation"
+    ],
+    "formulas": [],
+    "core_technique": "The 'rubber sheet' analogy: a heavy ball (mass) creates a dip, causing smaller balls to roll toward it.",
+    "check_questions": [
+      "How does Einstein's view of gravity differ from Newton's?",
+      "What are 'geodesics' in the context of curved space-time?",
+      "Describe the experimental evidence provided by the solar eclipse of 1919 regarding the bending of light."
+    ],
+    "common_pitfalls": [
+      "Thinking gravity is still a 'force' in the classical sense within general relativity.",
+      "Assuming light only travels in perfectly straight lines near massive bodies."
+    ],
+    "difficulty": "Hard"
+  }
+]

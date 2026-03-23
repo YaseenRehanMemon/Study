@@ -1,0 +1,277 @@
+[
+  {
+    "topic_name": "Partial Fraction Resolution",
+    "id": "MTH-CH5-T1",
+    "scratch_idea": "Partial fraction resolution is the process of decomposing a single complex rational fraction into a sum of two or more simpler rational fractions. It is essentially the reverse process of adding rational fractions.",
+    "prerequisites": [
+      "Rational Numbers",
+      "Addition of Algebraic Fractions"
+    ],
+    "formulas": [],
+    "core_technique": "View partial fraction resolution as reversing the 'Common Denominator' step in fraction addition.",
+    "check_questions": [
+      "What is the definition of a partial fraction?",
+      "How is partial fraction resolution related to the addition of rational fractions?",
+      "Why is partial fraction decomposition useful in calculus?"
+    ],
+    "common_pitfalls": [
+      "Confusing the process with simple division.",
+      "Thinking all fractions can be split into partial fractions without a common denominator structure."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Conditional Equation vs. Identity",
+    "id": "MTH-CH5-T2",
+    "scratch_idea": "A conditional equation is true only for specific values of the variable, whereas an identity is an equation that holds true for all possible values of the variable within its domain.",
+    "prerequisites": [
+      "Algebraic Expressions",
+      "Equality Sign"
+    ],
+    "formulas": [
+      "$(a+b)x = ax + bx$ (Identity)",
+      "$2x = 3$ (Conditional Equation)"
+    ],
+    "core_technique": "Identify an identity by checking if both sides of the equation simplify to the exact same polynomial expression.",
+    "check_questions": [
+      "Is $x^2 - 1 = (x-1)(x+1)$ an equation or an identity?",
+      "Solve $2x + 5 = 11$. Is this a conditional equation?",
+      "How many values of $x$ satisfy an identity?"
+    ],
+    "common_pitfalls": [
+      "Assuming all equations are identities.",
+      "Treating the '=' sign in an identity as a requirement to find a single 'x' value."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Rational Fraction Definition",
+    "id": "MTH-CH5-T3",
+    "scratch_idea": "A rational fraction is an algebraic expression expressed as the quotient of two polynomials, $P(x)/Q(x)$, where the denominator $Q(x)$ is not zero.",
+    "prerequisites": [
+      "Polynomial Definition",
+      "Division of Expressions"
+    ],
+    "formulas": [
+      "$\\frac{P(x)}{Q(x)}, Q(x) \\neq 0$"
+    ],
+    "core_technique": "Ensure both the numerator and denominator are polynomials with real coefficients.",
+    "check_questions": [
+      "What are the requirements for $P(x)$ and $Q(x)$ in a rational fraction?",
+      "Can the denominator of a rational fraction be zero?",
+      "Give an example of a rational fraction with a degree of 2 in the numerator."
+    ],
+    "common_pitfalls": [
+      "Including expressions with square roots of variables, which are not polynomials.",
+      "Forgetting the condition $Q(x) \\neq 0$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Proper Rational Fraction",
+    "id": "MTH-CH5-T4",
+    "scratch_idea": "A rational fraction is 'proper' if the degree of the polynomial in the numerator is strictly less than the degree of the polynomial in the denominator.",
+    "prerequisites": [
+      "Degree of a Polynomial",
+      "Rational Fraction"
+    ],
+    "formulas": [
+      "$\\text{deg } P(x) < \\text{deg } Q(x)$"
+    ],
+    "core_technique": "Always compare the highest power of $x$ in the numerator to the highest power of $x$ in the denominator first.",
+    "check_questions": [
+      "Is $\\frac{x+1}{x^2+1}$ a proper fraction?",
+      "If the numerator degree is 2 and denominator degree is 3, is it proper?",
+      "Provide an example of a proper rational fraction."
+    ],
+    "common_pitfalls": [
+      "Thinking a fraction is proper when the degrees are equal.",
+      "Miscalculating the degree of the denominator when it is in factored form."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Improper Rational Fraction",
+    "id": "MTH-CH5-T5",
+    "scratch_idea": "A rational fraction is 'improper' if the degree of the numerator is equal to or greater than the degree of the denominator.",
+    "prerequisites": [
+      "Degree of a Polynomial",
+      "Rational Fraction"
+    ],
+    "formulas": [
+      "$\\text{deg } P(x) \\geq \\text{deg } Q(x)$"
+    ],
+    "core_technique": "Check if you can perform long division; if you can, the fraction is improper.",
+    "check_questions": [
+      "Is $\\frac{x^2+1}{x^2-1}$ proper or improper?",
+      "What happens to the fraction if the numerator degree is greater than the denominator?",
+      "Can an improper fraction be converted into a proper one?"
+    ],
+    "common_pitfalls": [
+      "Overlooking fractions where degrees are exactly equal (these are improper).",
+      "Attempting partial fraction resolution directly on an improper fraction without dividing."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Reduction of Improper Fractions",
+    "id": "MTH-CH5-T6",
+    "scratch_idea": "Improper fractions must be reduced to a mixed form (a polynomial plus a proper rational fraction) using long division before applying partial fraction decomposition.",
+    "prerequisites": [
+      "Algebraic Long Division",
+      "Improper Rational Fraction"
+    ],
+    "formulas": [
+      "$\\frac{P(x)}{Q(x)} = Q(x) + \\frac{R(x)}{D(x)}$"
+    ],
+    "core_technique": "Divide until the remainder's degree is strictly less than the divisor's degree.",
+    "check_questions": [
+      "Divide $\\frac{3x^2+1}{x-2}$ and find the remainder.",
+      "What is the first step in resolving $\\frac{x^3}{x^2-1}$?",
+      "In the mixed form, what type of fraction is the remaining fractional part?"
+    ],
+    "common_pitfalls": [
+      "Stopping division too early before the remainder is of a lower degree.",
+      "Forgetting to include the quotient polynomial in the final partial fraction sum."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Theorem of Equal Polynomials",
+    "id": "MTH-CH5-T7",
+    "scratch_idea": "If two polynomials are equal for all values of $x$ (an identity), then the coefficients of the like powers of $x$ on both sides must be equal.",
+    "prerequisites": [
+      "Polynomial Coefficients",
+      "Identities"
+    ],
+    "formulas": [
+      "$px^3 + qx^2 = 2x^3 - 3x^2 \\Rightarrow p=2, q=-3$"
+    ],
+    "core_technique": "Line up terms of $x^n, x^{n-1}, \\dots$ and create a system of linear equations for the unknown constants.",
+    "check_questions": [
+      "If $Ax + B = 3x + 5$, what are $A$ and $B$?",
+      "What condition allows us to equate coefficients of different powers?",
+      "How do we handle missing powers of $x$ when equating coefficients?"
+    ],
+    "common_pitfalls": [
+      "Equating coefficients of different powers (e.g., $x^2$ coefficient to $x$ coefficient).",
+      "Ignoring the sign (positive/negative) of the coefficients."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Case I: Non-repeated Linear Factors",
+    "id": "MTH-CH5-T8",
+    "scratch_idea": "When the denominator $Q(x)$ consists of distinct linear factors $(x-a_1)(x-a_2)...$, the fraction is resolved into a sum of constants over each linear factor.",
+    "prerequisites": [
+      "Factorization of Quadratics",
+      "Proper Rational Fractions"
+    ],
+    "formulas": [
+      "$\\frac{P(x)}{(x-a)(x-b)} = \\frac{A}{x-a} + \\frac{B}{x-b}$"
+    ],
+    "core_technique": "Substitute the roots of the linear factors (e.g., $x=a$ and $x=b$) into the identity to solve for constants $A$ and $B$ quickly.",
+    "check_questions": [
+      "Resolve $\\frac{7x+25}{(x+3)(x+4)}$ into partial fractions.",
+      "What is the form of the decomposition if the denominator has three distinct linear factors?",
+      "How do you find the constant $A$ in $\\frac{A}{x-1}$?"
+    ],
+    "common_pitfalls": [
+      "Substituting values into the original fraction instead of the cleared-denominator identity.",
+      "Failing to factorize the denominator completely before starting."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Case II: Repeated Linear Factors",
+    "id": "MTH-CH5-T9",
+    "scratch_idea": "If a linear factor $(x-a)$ is repeated $n$ times in the denominator, it gives rise to $n$ partial fractions with denominators $(x-a), (x-a)^2, \\dots, (x-a)^n$.",
+    "prerequisites": [
+      "Case I Resolution",
+      "Algebraic Identities"
+    ],
+    "formulas": [
+      "$\\frac{P(x)}{(x-a)^n} = \\frac{A_1}{x-a} + \\frac{A_2}{(x-a)^2} + \\dots + \\frac{A_n}{(x-a)^n}$"
+    ],
+    "core_technique": "Solve for the constant under the highest power first using substitution, then use coefficient comparison for the others.",
+    "check_questions": [
+      "How many partial fractions are needed for a factor of $(x+2)^3$?",
+      "Resolve $\\frac{x+1}{(x-1)^2}$ into partial fractions.",
+      "Why can't we find all constants using only substitution in this case?"
+    ],
+    "common_pitfalls": [
+      "Missing intermediate powers (e.g., jumping from $(x-a)$ to $(x-a)^3$ and skipping $(x-a)^2$).",
+      "Assuming the numerators are anything other than constants for linear base factors."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Irreducible Quadratic Factors",
+    "id": "MTH-CH5-T10",
+    "scratch_idea": "An irreducible quadratic factor is a quadratic expression $ax^2 + bx + c$ that cannot be factored into real linear factors (its discriminant is negative).",
+    "prerequisites": [
+      "Quadratic Formula",
+      "Discriminant"
+    ],
+    "formulas": [
+      "$b^2 - 4ac < 0$"
+    ],
+    "core_technique": "Test for irreducibility by checking if $b^2 - 4ac$ is less than zero before assigning the partial fraction form.",
+    "check_questions": [
+      "Is $x^2 + 1$ irreducible over real numbers?",
+      "Is $x^2 - 1$ irreducible?",
+      "What is the condition for a quadratic to be called irreducible?"
+    ],
+    "common_pitfalls": [
+      "Attempting to factor $x^2 + k$ (where $k > 0$) into real linear factors.",
+      "Mistaking a reducible quadratic for an irreducible one."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Case III: Non-repeated Irreducible Quadratic Factors",
+    "id": "MTH-CH5-T11",
+    "scratch_idea": "When the denominator contains a non-repeated irreducible quadratic factor, the corresponding partial fraction numerator must be a linear expression of the form $Ax + B$.",
+    "prerequisites": [
+      "Irreducible Quadratic Factors",
+      "Equating Coefficients"
+    ],
+    "formulas": [
+      "$\\frac{P(x)}{(ax^2+bx+c)(x-d)} = \\frac{Ax+B}{ax^2+bx+c} + \\frac{C}{x-d}$"
+    ],
+    "core_technique": "Always use a linear numerator ($Ax + B$) for any quadratic denominator that cannot be factored.",
+    "check_questions": [
+      "Resolve $\\frac{3x-11}{(x^2+1)(x+3)}$ into partial fractions.",
+      "What is the form of the numerator for the denominator $x^2 + x + 1$?",
+      "How do you find the values of $A, B,$ and $C$ in Case III?"
+    ],
+    "common_pitfalls": [
+      "Using only a single constant $A$ in the numerator for a quadratic factor.",
+      "Forgetting to equate coefficients of $x^2$ and $x$ after clearing denominators."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Case IV: Repeated Irreducible Quadratic Factors",
+    "id": "MTH-CH5-T12",
+    "scratch_idea": "If an irreducible quadratic factor $(ax^2+bx+c)$ is repeated $n$ times, the decomposition includes $n$ fractions with linear numerators $A_ix + B_i$ over increasing powers of the quadratic factor.",
+    "prerequisites": [
+      "Case II Resolution",
+      "Case III Resolution"
+    ],
+    "formulas": [
+      "$\\frac{P(x)}{(ax^2+bx+c)^n} = \\frac{A_1x+B_1}{ax^2+bx+c} + \\frac{A_2x+B_2}{(ax^2+bx+c)^2} + \\dots$"
+    ],
+    "core_technique": "This case usually leads to a large system of equations; keep work organized by powers of $x$.",
+    "check_questions": [
+      "What is the general form for resolving $\\frac{4x^2}{(x^2+1)^2(x-1)}$?",
+      "How many constants must be found for a repeated quadratic factor of power 2?",
+      "Which method is preferred for finding constants in Case IV: substitution or equating coefficients?"
+    ],
+    "common_pitfalls": [
+      "Losing track of terms when expanding high-degree polynomials.",
+      "Missing the linear component (the $x$ term) in the numerators."
+    ],
+    "difficulty": "Hard"
+  }
+]

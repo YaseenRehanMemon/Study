@@ -1,0 +1,513 @@
+[
+  {
+    "topic_name": "Meaning of the Phrase 'x approaches zero'",
+    "id": "MAT-CH12-T01",
+    "scratch_idea": "This concept explains the behavior of a sequence or variable as it becomes infinitely small and gets closer to zero without ever actually reaching it. It is symbolized as $x \\to 0$ and represents an unending decrease in magnitude.",
+    "prerequisites": [
+      "Sequences",
+      "Real numbers"
+    ],
+    "formulas": [
+      "$x_n \\to 0 \\text{ as } n \\to \\infty$"
+    ],
+    "core_technique": "Think of it as a value that can be made smaller than any pre-assigned positive number by choosing a large enough index or proximity.",
+    "check_questions": [
+      "What is the symbolic notation for 'x approaches zero'?",
+      "If $x_n = \\frac{1}{2^n}$, what value does $x_n$ approach as $n$ becomes very large?",
+      "Does $x \\to 0$ imply that $x$ will eventually equal zero?"
+    ],
+    "common_pitfalls": [
+      "Confusing $x \\to 0$ with $x = 0$.",
+      "Assuming the sequence must reach zero to have zero as a limit."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Meaning of the Phrase 'x approaches infinity'",
+    "id": "MAT-CH12-T02",
+    "scratch_idea": "This refers to a variable or sequence increasing without any bound, becoming larger than any number we can imagine. It is denoted as $x \\to \\infty$.",
+    "prerequisites": [
+      "Number line",
+      "Sequences"
+    ],
+    "formulas": [
+      "$x_n \\to \\infty \\text{ as } n \\to \\infty$"
+    ],
+    "core_technique": "Visualize a sequence where every subsequent term is significantly larger than the previous one, surpassing any finite limit.",
+    "check_questions": [
+      "What does the symbol $\\infty$ represent in calculus?",
+      "For the sequence $x_n = 10^n$, what happens as $n$ increases?",
+      "Is infinity a specific number on the real number line?"
+    ],
+    "common_pitfalls": [
+      "Treating infinity as a real number in arithmetic operations.",
+      "Thinking 'approaching infinity' means reaching a very large but fixed value."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "The Phrase 'x approaches a'",
+    "id": "MAT-CH12-T03",
+    "scratch_idea": "The phrase $x \\to a$ means $x$ is sufficiently close to $a$ from both the left and right sides, but $x$ is not equal to $a$. The difference $|x - a|$ becomes smaller and smaller but remains non-zero.",
+    "prerequisites": [
+      "Real number line",
+      "Absolute value"
+    ],
+    "formulas": [
+      "$x \\to a \\implies x \\neq a$"
+    ],
+    "core_technique": "Always remember that limits describe the behavior 'near' a point, not necessarily 'at' the point.",
+    "check_questions": [
+      "If $x \\to 5$, what can you say about the value of $x - 5$?",
+      "Can $x$ approach $a$ from only one side in the general definition of a limit?",
+      "Does $x \\to a$ require the function to be defined at $a$?"
+    ],
+    "common_pitfalls": [
+      "Assuming $f(a)$ must exist for $x$ to approach $a$.",
+      "Confusing the limit value with the function's value at that point."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Formal Definition of the Limit of a Function",
+    "id": "MAT-CH12-T04",
+    "scratch_idea": "A function $f(x)$ has a limit $L$ at $x=a$ if, as $x$ gets closer to $a$ from both sides, $f(x)$ approaches the specific number $L$. This is the foundational concept of calculus.",
+    "prerequisites": [
+      "Function notation",
+      "Proximity concepts"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to a} f(x) = L$"
+    ],
+    "core_technique": "Check if the function approaches the same unique value from both the left-hand side and right-hand side of $a$.",
+    "check_questions": [
+      "What is the symbolic way to write 'the limit of $f(x)$ as $x$ approaches $a$ is $L$'?",
+      "In the definition of a limit, why is the behavior 'at' $x=a$ often ignored?",
+      "Must the limit $L$ be a finite real number for the limit to exist in standard contexts?"
+    ],
+    "common_pitfalls": [
+      "Assuming the limit exists even if left and right behaviors differ.",
+      "Misinterpreting the limit as the value of $f(a)$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Limit of Power and Constant Functions",
+    "id": "MAT-CH12-T05",
+    "scratch_idea": "The limit of a power function $x^p$ is simply the value $a^p$ when $x$ approaches $a$. The limit of a constant function is always the constant itself, regardless of what $x$ approaches.",
+    "prerequisites": [
+      "Exponents",
+      "Constants"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to a} x^p = a^p$",
+      "$\\lim_{x \\to a} c = c$"
+    ],
+    "core_technique": "For basic polynomials and constants, direct substitution is the primary method of evaluation.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 2} x^3$.",
+      "What is $\\lim_{x \\to 10} 5$?",
+      "If $p$ is a positive real number, what is $\\lim_{x \\to a} x^p$?"
+    ],
+    "common_pitfalls": [
+      "Trying to apply complex techniques to a simple constant limit.",
+      "Forgetting that the limit of a constant does not change with $x$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Sum and Difference Rules for Limits",
+    "id": "MAT-CH12-T06",
+    "scratch_idea": "The limit of the sum or difference of two functions is equal to the sum or difference of their individual limits. This allows us to break complex expressions into simpler parts.",
+    "prerequisites": [
+      "Arithmetic of functions",
+      "Basic limit laws"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to a} [f(x) \\pm g(x)] = \\lim_{x \\to a} f(x) \\pm \\lim_{x \\to a} g(x)$"
+    ],
+    "core_technique": "Distribute the limit operator across each term in a polynomial or algebraic expression.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 1} (x + 5)$ using limit theorems.",
+      "If $\\lim f(x) = 2$ and $\\lim g(x) = 3$, what is $\\lim (f(x) + g(x))$?",
+      "Evaluate $\\lim_{x \\to 3} (x - 5)$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to apply the limit to every term in the expression.",
+      "Assuming the rule holds if one of the individual limits does not exist."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Product and Constant Multiple Rules for Limits",
+    "id": "MAT-CH12-T07",
+    "scratch_idea": "A constant can be pulled out of a limit, and the limit of a product of functions is the product of their respective limits.",
+    "prerequisites": [
+      "Multiplication",
+      "Scalar multiples"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to a} [k f(x)] = k \\lim_{x \\to a} f(x)$",
+      "$\\lim_{x \\to a} [f(x) \\cdot g(x)] = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)$"
+    ],
+    "core_technique": "Separate constants from variables first to simplify the evaluation process.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 2} 3x$.",
+      "If $\\lim f(x) = L$ and $\\lim g(x) = M$, find $\\lim (f(x)g(x))$.",
+      "Evaluate $\\lim_{x \\to 1} (2x)(x+4)$."
+    ],
+    "common_pitfalls": [
+      "Multiplying the constant by the 'a' value instead of the limit result.",
+      "Confusing the product rule for limits with the product rule for derivatives."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Quotient Rule for Limits",
+    "id": "MAT-CH12-T08",
+    "scratch_idea": "The limit of a fraction is the limit of the numerator divided by the limit of the denominator, provided the limit of the denominator is not zero.",
+    "prerequisites": [
+      "Division",
+      "Domain restrictions"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to a} [\\frac{f(x)}{g(x)}] = \\frac{\\lim_{x \\to a} f(x)}{\\lim_{x \\to a} g(x)}$ where $\\lim g(x) \\neq 0$"
+    ],
+    "core_technique": "Always check the denominator's limit first; if it is zero, you cannot use this rule directly and must simplify algebraically.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 2} \\frac{3x+4}{x+3}$.",
+      "Under what condition can the quotient rule for limits not be applied?",
+      "Evaluate $\\lim_{x \\to 0} \\frac{5}{x+1}$."
+    ],
+    "common_pitfalls": [
+      "Dividing by zero when the denominator's limit is zero.",
+      "Applying the rule to indeterminate forms like $0/0$ without simplification."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "The Algebraic Limit (x^n - a^n)/(x - a)",
+    "id": "MAT-CH12-T09",
+    "scratch_idea": "This special limit formula handles cases that result in a $0/0$ form. It relies on factoring the numerator to cancel the $(x-a)$ term.",
+    "prerequisites": [
+      "Factoring polynomials",
+      "Indeterminate forms"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to a} \\frac{x^n - a^n}{x - a} = n a^{n-1}$"
+    ],
+    "core_technique": "Recognize the specific structure of the power difference and use the formula to skip tedious long division or factoring.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to a} \\frac{x^3 - a^3}{x - a}$.",
+      "Find the value of $\\lim_{x \\to 2} \\frac{x^4 - 16}{x - 2}$.",
+      "Does this formula apply if $n$ is a negative integer?"
+    ],
+    "common_pitfalls": [
+      "Using $n a^n$ instead of $n a^{n-1}$.",
+      "Forgetting to check if the expression matches the required form exactly."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Radical Limits and Rationalization",
+    "id": "MAT-CH12-T10",
+    "scratch_idea": "When a limit involving square roots results in $0/0$, rationalizing the numerator (multiplying by the conjugate) usually cancels the problematic factor in the denominator.",
+    "prerequisites": [
+      "Conjugates",
+      "Rationalization"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to 0} \\frac{\\sqrt{x+a} - \\sqrt{a}}{x} = \\frac{1}{2\\sqrt{a}}$"
+    ],
+    "core_technique": "Multiply the numerator and denominator by the conjugate of the expression containing the square root.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 0} \\frac{\\sqrt{x+9} - 3}{x}$.",
+      "Why is rationalization useful in limit evaluation?",
+      "Simplify $\\frac{\\sqrt{x+a}-\\sqrt{a}}{x}$ by multiplying by the conjugate."
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply both top and bottom by the conjugate.",
+      "Errors in algebraic expansion of $(A-B)(A+B)$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Evaluating Limits at Infinity",
+    "id": "MAT-CH12-T11",
+    "scratch_idea": "Limits at infinity determine the horizontal asymptotic behavior of a function. For rational functions, we divide every term by the highest power of $x$ found in the denominator.",
+    "prerequisites": [
+      "Reciprocals",
+      "Infinite behavior"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to \\infty} \\frac{a}{x^p} = 0 \\text{ for } p > 0$"
+    ],
+    "core_technique": "Identify the highest power of $x$ in the denominator and divide all terms in the fraction by it.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to \\infty} \\frac{5x^2 + 1}{3x^2 - 2}$.",
+      "What is $\\lim_{x \\to \\infty} \\frac{1}{x}$?",
+      "If the degree of the numerator is higher than the denominator, what is the limit at infinity?"
+    ],
+    "common_pitfalls": [
+      "Assuming the limit is always zero.",
+      "Incorrectly dividing by $x$ when $x^2$ is the highest power."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Limit of a Sequence and Convergence",
+    "id": "MAT-CH12-T12",
+    "scratch_idea": "The limit of a sequence is the value the terms approach as the index $n$ goes to infinity. If this value exists and is finite, the sequence is 'convergent'; otherwise, it is 'divergent'.",
+    "prerequisites": [
+      "Sequences",
+      "Limits at infinity"
+    ],
+    "formulas": [
+      "$\\lim_{n \\to \\infty} a_n = L$"
+    ],
+    "core_technique": "Treat the sequence index $n$ like a continuous variable $x$ approaching infinity.",
+    "check_questions": [
+      "Is the sequence $a_n = (-1)^n$ convergent or divergent?",
+      "Find the limit of $a_n = \\frac{2n+3}{n+1}$ as $n \\to \\infty$.",
+      "Define a divergent sequence."
+    ],
+    "common_pitfalls": [
+      "Thinking an oscillating sequence like $1, -1, 1, -1$ converges to zero.",
+      "Confusion between sequence limits and series sums."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "The Constant 'e' as a Limit",
+    "id": "MAT-CH12-T13",
+    "scratch_idea": "The mathematical constant $e$ (approx. 2.718) is defined by a specific limit involving $1/n$ raised to the power of $n$ as $n$ goes to infinity.",
+    "prerequisites": [
+      "Binomial theorem",
+      "Exponential functions"
+    ],
+    "formulas": [
+      "$\\lim_{n \\to \\infty} (1 + \\frac{1}{n})^n = e$",
+      "$\\lim_{x \\to 0} (1 + x)^{1/x} = e$"
+    ],
+    "core_technique": "Ensure the term inside the parenthesis and the exponent are reciprocals of each other.",
+    "check_questions": [
+      "What is the approximate value of $e$?",
+      "Evaluate $\\lim_{n \\to \\infty} (1 + \\frac{1}{n})^{2n}$.",
+      "Express $\\lim_{x \\to 0} (1 + 2x)^{1/x}$ in terms of $e$."
+    ],
+    "common_pitfalls": [
+      "Applying the formula when the exponent is not the reciprocal of the internal term.",
+      "Misidentifying $1^\\infty$ as 1 instead of an indeterminate form leading to $e$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Logarithmic and Exponential Limits",
+    "id": "MAT-CH12-T14",
+    "scratch_idea": "This covers the limit of exponential growth relative to its variable, which leads to the natural logarithm or specific values like 1.",
+    "prerequisites": [
+      "Natural logarithms",
+      "Substitution method"
+    ],
+    "formulas": [
+      "$\\lim_{x \\to 0} \\frac{a^x - 1}{x} = \\log_e a$",
+      "$\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$"
+    ],
+    "core_technique": "Use the substitution $y = a^x - 1$ to transform the limit into the definition of $e$.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 0} \\frac{2^x - 1}{x}$.",
+      "What is the limit of $\\frac{e^x - 1}{x}$ as $x \\to 0$?",
+      "Evaluate $\\lim_{x \\to 0} \\frac{e^{ax} - e^{bx}}{x}$ (Advanced)."
+    ],
+    "common_pitfalls": [
+      "Assuming the limit of $\\frac{a^x - 1}{x}$ is always 1.",
+      "Forgetting that the base must be positive."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "The Sandwich Theorem",
+    "id": "MAT-CH12-T15",
+    "scratch_idea": "Also known as the Squeeze Theorem, it states that if a function $g(x)$ is trapped between two functions $f(x)$ and $h(x)$ that have the same limit $L$, then $g(x)$ must also have limit $L$.",
+    "prerequisites": [
+      "Inequalities",
+      "Functional boundaries"
+    ],
+    "formulas": [
+      "f(x) \\leq g(x) \\leq h(x) \\text{ and } \\lim f = \\lim h = L \\implies \\lim g = L"
+    ],
+    "core_technique": "Find two simpler functions that bound the complex function from above and below and share a common limit.",
+    "check_questions": [
+      "If $1 - x^2 \\leq f(x) \\leq 1 + x^2$, what is $\\lim_{x \\to 0} f(x)$?",
+      "What is another name for the Sandwich Theorem?",
+      "Can the Sandwich Theorem be used if the upper and lower limits are different?"
+    ],
+    "common_pitfalls": [
+      "Using bounds that do not meet at the same limit point.",
+      "Applying the theorem to points where the inequality does not hold."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Trigonometric Limit (sin theta)/theta",
+    "id": "MAT-CH12-T16",
+    "scratch_idea": "A fundamental geometric limit where the ratio of the sine of an angle to the angle itself (in radians) approaches 1 as the angle approaches 0.",
+    "prerequisites": [
+      "Radian measure",
+      "Unit circle geometry"
+    ],
+    "formulas": [
+      "$\\lim_{\\theta \\to 0} \\frac{\\sin \\theta}{\\theta} = 1$"
+    ],
+    "core_technique": "Ensure the angle $\\theta$ is measured in radians. If it is in degrees, convert to radians first.",
+    "check_questions": [
+      "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 5x}{x}$.",
+      "What is $\\lim_{\\theta \\to 0} \\frac{\\sin \\theta}{\\theta}$ if $\\theta$ is in degrees?",
+      "Evaluate $\\lim_{\\theta \\to 0} \\frac{1 - \\cos \\theta}{\\theta}$."
+    ],
+    "common_pitfalls": [
+      "Applying the formula when $\\theta$ is not in radians.",
+      "Assuming $\\lim \\frac{\\cos \\theta}{\\theta} = 1$ (Incorrect)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "One-Sided Limits",
+    "id": "MAT-CH12-T17",
+    "scratch_idea": "One-sided limits look at the behavior of a function as $x$ approaches a point from only the left ($x \\to c^-$) or only the right ($x \\to c^+$).",
+    "prerequisites": [
+      "Number line direction",
+      "Intervals"
+    ],
+    "formulas": [
+      "\\text{LHL: } \\lim_{x \\to c^-} f(x)",
+      "\\text{RHL: } \\lim_{x \\to c^+} f(x)"
+    ],
+    "core_technique": "For piecewise functions, identify which sub-function to use based on whether $x$ is greater than or less than the target value $c$.",
+    "check_questions": [
+      "Find the LHL of $f(x) = |x-5|$ at $c=5$.",
+      "If $f(x) = 2x$ for $x > 1$ and $f(x) = 3$ for $x \\leq 1$, what is the RHL at $x=1$?",
+      "What is the notation for 'x approaches c from the left'?"
+    ],
+    "common_pitfalls": [
+      "Using the 'left' function for the 'right' limit calculation.",
+      "Confusing the superscript '-' and '+' with negative/positive numbers."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Existence Criterion for Limits",
+    "id": "MAT-CH12-T18",
+    "scratch_idea": "The general limit of a function exists at a point if and only if both the left-hand limit and the right-hand limit exist and are equal to each other.",
+    "prerequisites": [
+      "Left Hand Limit",
+      "Right Hand Limit"
+    ],
+    "formulas": [
+      "\\lim_{x \\to c} f(x) = L \\iff \\lim_{x \\to c^-} f(x) = \\lim_{x \\to c^+} f(x) = L"
+    ],
+    "core_technique": "Calculate LHL and RHL separately; if they match, the limit exists.",
+    "check_questions": [
+      "If LHL is 5 and RHL is 4, does the limit exist?",
+      "Determine if $\\lim_{x \\to 4} f(x)$ exists if LHL is 3 and RHL is 4.",
+      "Under what numerical condition does a limit 'fail' to exist at a finite point?"
+    ],
+    "common_pitfalls": [
+      "Concluding the limit exists just because one side exists.",
+      "Ignoring the hole/jump in the graph."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Continuity of a Function at a Point",
+    "id": "MAT-CH12-T19",
+    "scratch_idea": "A function is continuous at $x=c$ if the graph has no holes, jumps, or breaks. Formally: $f(c)$ is defined, the limit exists, and the limit equals $f(c)$.",
+    "prerequisites": [
+      "Domain",
+      "Existence of Limits"
+    ],
+    "formulas": [
+      "\\lim_{x \\to c} f(x) = f(c)"
+    ],
+    "core_technique": "Check three checkpoints: 1. Is it defined? 2. Does the limit exist? 3. Are they the same?",
+    "check_questions": [
+      "State the three conditions for continuity at a point.",
+      "Is $f(x) = \\frac{x^2-1}{x-1}$ continuous at $x=1$?",
+      "If $\\lim_{x \\to 2} f(x) = 5$ but $f(2) = 6$, is the function continuous?"
+    ],
+    "common_pitfalls": [
+      "Thinking existence of limit alone guarantees continuity.",
+      "Forgetting to check if the function is defined at that specific point."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Discontinuity Types",
+    "id": "MAT-CH12-T20",
+    "scratch_idea": "A function is discontinuous if any of the continuity conditions are not met. This can result in a 'hole' (removable) or a 'jump' (non-removable) in the graph.",
+    "prerequisites": [
+      "Continuity conditions",
+      "Graph interpretation"
+    ],
+    "formulas": [
+      "\\text{Discontinuous if } \\lim_{x \\to c} f(x) \\neq f(c)"
+    ],
+    "core_technique": "Look for denominators that become zero or points where piecewise definitions change values abruptly.",
+    "check_questions": [
+      "What causes a 'break' in a graph?",
+      "Define a discontinuous function.",
+      "If $f(x)$ is not defined at $x=3$, can it be continuous at $x=3$?"
+    ],
+    "common_pitfalls": [
+      "Assuming all rational functions are continuous everywhere.",
+      "Mistaking a removable hole for a continuous point."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Application: Radioactive Decay Limits",
+    "id": "MAT-CH12-T21",
+    "scratch_idea": "Limits are used to predict the long-term behavior of substances. For radioactive decay, we look at the amount remaining as time approaches infinity.",
+    "prerequisites": [
+      "Exponential decay",
+      "Limits at infinity"
+    ],
+    "formulas": [
+      "$\\lim_{t \\to \\infty} A_0 e^{-kt} = 0$"
+    ],
+    "core_technique": "Substitute infinity into the time variable of a decay function to find the steady-state or 'vanishing' amount.",
+    "check_questions": [
+      "What happens to a radioactive substance as $t \\to \\infty$?",
+      "In $A(t) = A_0 e^{-0.1t}$, what is the limit as $t \\to \\infty$?",
+      "What does a limit of 0 represent in terms of substance amount?"
+    ],
+    "common_pitfalls": [
+      "Thinking the amount becomes negative.",
+      "Confusion between decay (negative exponent) and growth (positive exponent)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Application: Continuous Compound Interest",
+    "id": "MAT-CH12-T22",
+    "scratch_idea": "Calculates the growth of an investment over an infinite time horizon. Since it involves $e^{rt}$, the limit as time goes to infinity is infinite.",
+    "prerequisites": [
+      "Compound interest formula",
+      "Exponential growth"
+    ],
+    "formulas": [
+      "$\\lim_{t \\to \\infty} P_0 e^{rt} = \\infty$"
+    ],
+    "core_technique": "Apply the limit as $t \\to \\infty$ to the exponential growth model.",
+    "check_questions": [
+      "What is the limit of $A(t) = P_0 e^{rt}$ as $t$ grows indefinitely?",
+      "Does money grow to a fixed value or infinity in a continuous compounding model with no withdrawals?",
+      "What role does $e$ play in finance?"
+    ],
+    "common_pitfalls": [
+      "Assuming the limit is zero because of the decimal interest rate.",
+      "Confusing growth limits with decay limits."
+    ],
+    "difficulty": "Easy"
+  }
+]

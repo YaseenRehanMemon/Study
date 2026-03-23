@@ -1,0 +1,320 @@
+[
+  {
+    "topic_name": "Hans Christian Oersted's Discovery",
+    "id": "PHY-CH10-T1",
+    "scratch_idea": "The fundamental observation that an electric current flowing through a conductor generates a magnetic field in its surroundings. This established the link between electricity and magnetism in 1820.",
+    "prerequisites": [
+      "Electric Current",
+      "Magnetic Field Lines"
+    ],
+    "formulas": [],
+    "core_technique": "Visualize the magnetic field as concentric circles around the wire using the right-hand grip rule.",
+    "check_questions": [
+      "Who discovered the correlation between electricity and magnetism?",
+      "What is the shape of the magnetic field around a straight current-carrying wire?",
+      "In what year was the link between electricity and magnetism established?"
+    ],
+    "common_pitfalls": [
+      "Assuming the magnetic field is parallel to the wire.",
+      "Thinking the field exists even when there is no current."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Fleming's Left-Hand Rule",
+    "id": "PHY-CH10-T2",
+    "scratch_idea": "A mnemonic used to determine the direction of the magnetic force on a current-carrying conductor in a magnetic field. It aligns three mutually perpendicular fingers to represent Force, Field, and Current.",
+    "prerequisites": [
+      "Conventional Current",
+      "Magnetic Field Direction"
+    ],
+    "formulas": [],
+    "core_technique": "Mnemonic: 'First finger for Field, seCond finger for Current, Thumb for Thrust (Force)'.",
+    "check_questions": [
+      "Which finger represents the direction of the magnetic field in Fleming's left-hand rule?",
+      "How must the thumb, first finger, and second finger be positioned relative to each other?",
+      "What does the thumb indicate in this rule?"
+    ],
+    "common_pitfalls": [
+      "Using the right hand instead of the left hand.",
+      "Misidentifying the direction of conventional current for electron flow."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Magnetic Induction (B)",
+    "id": "PHY-CH10-T3",
+    "scratch_idea": "A measure of the strength of a magnetic field, defined as the force per unit current per unit length on a conductor placed perpendicular to the field. Its SI unit is the Tesla (T).",
+    "prerequisites": [
+      "Magnetic Force",
+      "SI Units"
+    ],
+    "formulas": [
+      "$B = \\frac{F}{IL}$",
+      "$1 \\text{ T} = 1 \\text{ NA}^{-1}\\text{m}^{-1}$"
+    ],
+    "core_technique": "Remember that 1 Tesla is the field strength that exerts 1 Newton of force on 1 meter of wire carrying 1 Ampere.",
+    "check_questions": [
+      "What is the SI unit of magnetic induction?",
+      "Define magnetic induction in terms of force on a conductor.",
+      "How is Tesla expressed in terms of Newton, Ampere, and Meter?"
+    ],
+    "common_pitfalls": [
+      "Confusing magnetic induction (B) with magnetic flux (phi).",
+      "Forgetting that B is a vector quantity."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Force on a Current-Carrying Conductor",
+    "id": "PHY-CH10-T4",
+    "scratch_idea": "The calculation of the magnitude of force experienced by a wire in a magnetic field, which depends on the current, the length of the wire, the field strength, and the angle between them.",
+    "prerequisites": [
+      "Vector Cross Product",
+      "Trigonometry (Sine)"
+    ],
+    "formulas": [
+      "$F = BIL \\sin \\theta$",
+      "$\\mathbf{F} = I(\\mathbf{L} \\times \\mathbf{B})$"
+    ],
+    "core_technique": "Always use the component of length perpendicular to the magnetic field.",
+    "check_questions": [
+      "Under what condition is the magnetic force on a conductor zero?",
+      "At what angle is the magnetic force on a current-carrying conductor maximum?",
+      "Write the vector form of the force equation for a conductor."
+    ],
+    "common_pitfalls": [
+      "Using cosine instead of sine in the force formula.",
+      "Applying the formula when the wire is not in a magnetic field."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Magnetic Flux",
+    "id": "PHY-CH10-T5",
+    "scratch_idea": "The total number of magnetic field lines passing through a specific surface area. It is calculated as the dot product of the magnetic induction vector and the vector area.",
+    "prerequisites": [
+      "Magnetic Induction",
+      "Vector Area"
+    ],
+    "formulas": [
+      "$\\phi_B = BA \\cos \\theta$",
+      "$\\phi_B = \\mathbf{B} \\cdot \\mathbf{A}$"
+    ],
+    "core_technique": "Note that theta is the angle between the magnetic field and the 'Normal' to the surface.",
+    "check_questions": [
+      "What is the SI unit of magnetic flux?",
+      "What is the magnetic flux when the field is parallel to the plane of the area?",
+      "How is magnetic flux related to magnetic flux density?"
+    ],
+    "common_pitfalls": [
+      "Measuring the angle from the surface plane rather than the normal.",
+      "Treating magnetic flux as a vector (it is a scalar)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Magnetic Flux Linkage",
+    "id": "PHY-CH10-T6",
+    "scratch_idea": "The total magnetic flux associated with a coil consisting of multiple turns. It is the product of the number of turns and the flux through a single loop.",
+    "prerequisites": [
+      "Magnetic Flux",
+      "Solenoid/Coil Basics"
+    ],
+    "formulas": [
+      "$\\Phi = N \\phi_B$"
+    ],
+    "core_technique": "Multiply the single-loop flux by the total number of turns to get the total 'linkage'.",
+    "check_questions": [
+      "Define magnetic flux linkage.",
+      "If a coil has 50 turns and the flux per turn is 2 Wb, what is the flux linkage?",
+      "In what device is magnetic flux linkage a crucial design factor?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply by the number of turns (N).",
+      "Confusing total linkage with flux density."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Magnetic Force on a Moving Charge",
+    "id": "PHY-CH10-T7",
+    "scratch_idea": "The force exerted on a single point charge moving through a magnetic field. This force is always perpendicular to both the velocity of the charge and the magnetic field direction.",
+    "prerequisites": [
+      "Electric Charge",
+      "Vector Cross Product"
+    ],
+    "formulas": [
+      "$F = qvB \\sin \\theta$",
+      "$\\mathbf{F} = q(\\mathbf{v} \\times \\mathbf{B})$"
+    ],
+    "core_technique": "Use the Right-Hand Rule for positive charges and reverse the direction for negative charges (electrons).",
+    "check_questions": [
+      "What is the force on a stationary charge in a magnetic field?",
+      "How does the force direction on an electron differ from a proton moving in the same field?",
+      "Calculate the force if a charge moves parallel to the magnetic field."
+    ],
+    "common_pitfalls": [
+      "Applying the rule directly to electrons without reversing the result.",
+      "Assuming the magnetic field changes the speed of the particle (it only changes direction)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Circular Motion of Charges in Magnetic Fields",
+    "id": "PHY-CH10-T8",
+    "scratch_idea": "When a charged particle enters a magnetic field perpendicularly, the magnetic force acts as a centripetal force, causing the particle to move in a circular path.",
+    "prerequisites": [
+      "Centripetal Force",
+      "Magnetic Force on Charge"
+    ],
+    "formulas": [
+      "$qvB = \\frac{mv^2}{r}$",
+      "$r = \\frac{mv}{qB}$"
+    ],
+    "core_technique": "Equate the magnetic force to the centripetal force formula to solve for radius or mass.",
+    "check_questions": [
+      "Why do charged particles move in circles in a uniform magnetic field?",
+      "How does increasing the mass of the particle affect the radius of its path?",
+      "What happens to the radius if the magnetic field strength is doubled?"
+    ],
+    "common_pitfalls": [
+      "Forgetting that this only happens when velocity is perpendicular to the field.",
+      "Incorrectly rearranging the formula $r = mv/qB$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Velocity Selector",
+    "id": "PHY-CH10-T9",
+    "scratch_idea": "A device that uses crossed electric and magnetic fields to allow only particles with a specific velocity to pass through undeflected.",
+    "prerequisites": [
+      "Electric Force (qE)",
+      "Magnetic Force (qvB)"
+    ],
+    "formulas": [
+      "$qE = qvB$",
+      "$v = \\frac{E}{B}$"
+    ],
+    "core_technique": "For a particle to be undeflected, the upward magnetic force must exactly balance the downward electric force.",
+    "check_questions": [
+      "What is the condition for a particle to pass undeflected through a velocity selector?",
+      "If E = 1000 V/m and B = 0.5 T, what is the selected velocity?",
+      "Does the mass of the particle affect the velocity selected?"
+    ],
+    "common_pitfalls": [
+      "Thinking the selector filters by charge; it only filters by velocity.",
+      "Confusing the units of E and B."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Motional EMF",
+    "id": "PHY-CH10-T10",
+    "scratch_idea": "The electromotive force (emf) induced across a conductor when it is moved through a magnetic field. It is caused by the magnetic force on the free charges within the conductor.",
+    "prerequisites": [
+      "Magnetic Force on Charge",
+      "Potential Difference"
+    ],
+    "formulas": [
+      "$\\varepsilon = vBL \\sin \\theta$"
+    ],
+    "core_technique": "Visualize the moving rod as a battery where charge accumulation creates a potential difference.",
+    "check_questions": [
+      "Define motional emf.",
+      "What factors determine the magnitude of motional emf?",
+      "If a rod moves parallel to the field lines, what is the induced emf?"
+    ],
+    "common_pitfalls": [
+      "Confusing motional emf with static potential difference.",
+      "Neglecting the angle between velocity and field."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Faraday's Law of Electromagnetic Induction",
+    "id": "PHY-CH10-T11",
+    "scratch_idea": "The law stating that the magnitude of induced emf in a circuit is proportional to the rate of change of magnetic flux through the circuit.",
+    "prerequisites": [
+      "Magnetic Flux",
+      "Differentiation/Rate of Change"
+    ],
+    "formulas": [
+      "$\\varepsilon = -N \\frac{\\Delta \\phi_B}{\\Delta t}$"
+    ],
+    "core_technique": "Focus on 'change' in flux; if flux is constant, induced emf is zero regardless of how strong the field is.",
+    "check_questions": [
+      "State Faraday's Law.",
+      "What does the negative sign in Faraday's Law represent?",
+      "How can you increase the induced emf in a coil according to this law?"
+    ],
+    "common_pitfalls": [
+      "Assuming emf is produced by flux itself rather than the 'change' in flux.",
+      "Calculating the change in flux incorrectly when the area changes."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Lenz's Law",
+    "id": "PHY-CH10-T12",
+    "scratch_idea": "A principle stating that the direction of an induced current is such that it creates a magnetic field that opposes the change in magnetic flux that produced it.",
+    "prerequisites": [
+      "Faraday's Law",
+      "Conservation of Energy"
+    ],
+    "formulas": [],
+    "core_technique": "Determine what the 'change' is (e.g., North pole approaching) and create a field to 'oppose' it (e.g., create a North pole).",
+    "check_questions": [
+      "State Lenz's Law.",
+      "Which fundamental law of physics is Lenz's Law a manifestation of?",
+      "What happens to the direction of current if a magnet is pulled away from a coil vs pushed in?"
+    ],
+    "common_pitfalls": [
+      "Thinking the induced field opposes the flux itself rather than the 'change' in flux.",
+      "Forgetting that it only applies to closed loops."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Ferrofluids",
+    "id": "PHY-CH10-T13",
+    "scratch_idea": "Colloidal liquids containing nanoscale ferromagnetic particles. These fluids become strongly magnetized in the presence of a magnetic field and can form complex 'spike' patterns.",
+    "prerequisites": [
+      "Colloids",
+      "Magnetism"
+    ],
+    "formulas": [],
+    "core_technique": "Recognize that the 'spikes' are a balance between magnetic forces, gravity, and surface tension.",
+    "check_questions": [
+      "What are the main components of a ferrofluid?",
+      "What prevents the nanoparticles in a ferrofluid from clumping together?",
+      "Name two applications of ferrofluids in electronics."
+    ],
+    "common_pitfalls": [
+      "Thinking ferrofluids are permanent magnets; they are only temporarily magnetic.",
+      "Confusing ferrofluids with simple mixtures of iron filings and water."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Seismometer Working Principle",
+    "id": "PHY-CH10-T14",
+    "scratch_idea": "An application of electromagnetic induction where relative motion between a stationary mass (magnet) and a moving frame (coil) during an earthquake generates a measurable electric current.",
+    "prerequisites": [
+      "Inertia",
+      "Faraday's Law"
+    ],
+    "formulas": [],
+    "core_technique": "The induced emf is directly proportional to the velocity of the ground displacement.",
+    "check_questions": [
+      "How does a seismometer use electromagnetic induction to detect earthquakes?",
+      "Why does the weight in a seismometer tend to stay stationary during a tremor?",
+      "What is a 'vault' in the context of seismic monitoring?"
+    ],
+    "common_pitfalls": [
+      "Assuming the magnet moves because of the earth (it stays still due to inertia; the coil moves with the earth).",
+      "Thinking it measures static position rather than motion."
+    ],
+    "difficulty": "Medium"
+  }
+]

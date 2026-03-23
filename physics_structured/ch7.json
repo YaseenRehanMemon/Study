@@ -1,0 +1,432 @@
+[
+  {
+    "topic_name": "Definition of a Wave",
+    "id": "PHY-CH07-T01",
+    "scratch_idea": "A wave is a disturbance that transfers energy from one point to another without the transport of matter. It involves the periodic oscillation of particles or fields around a mean position.",
+    "prerequisites": [
+      "Energy transfer",
+      "Simple Harmonic Motion"
+    ],
+    "formulas": [],
+    "core_technique": "Always distinguish between the motion of the wave (energy) and the motion of the medium's particles.",
+    "check_questions": [
+      "What is the primary physical quantity transported by a wave?",
+      "How do particles in a medium behave when a wave passes through them?",
+      "Can a wave exist without the physical movement of matter from source to destination?"
+    ],
+    "common_pitfalls": [
+      "Thinking that particles move along with the wave to the destination.",
+      "Assuming all waves require a physical medium."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Wave Amplitude",
+    "id": "PHY-CH07-T02",
+    "scratch_idea": "Amplitude is the maximum displacement of a particle from its rest or equilibrium position. It represents the 'height' of a crest or the 'depth' of a trough in a transverse wave.",
+    "prerequisites": [
+      "Equilibrium position",
+      "Displacement"
+    ],
+    "formulas": [],
+    "core_technique": "Amplitude is measured from the center line to the peak, not from the trough to the peak.",
+    "check_questions": [
+      "Where is the amplitude measured from on a displacement-distance graph?",
+      "How does increasing the energy of a wave affect its amplitude?",
+      "What is the displacement of a particle at the equilibrium position?"
+    ],
+    "common_pitfalls": [
+      "Measuring amplitude as the total vertical distance between crest and trough.",
+      "Confusing amplitude with wavelength."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Frequency and Time Period",
+    "id": "PHY-CH07-T03",
+    "scratch_idea": "Frequency is the number of wave cycles passing a point per second, while the time period is the duration of one complete cycle. They are mathematically reciprocal to each other.",
+    "prerequisites": [
+      "Periodic motion",
+      "Standard units of time"
+    ],
+    "formulas": [
+      "$T = \\frac{1}{f}$",
+      "$f = \\frac{1}{T}$"
+    ],
+    "core_technique": "If frequency is given in kHz or MHz, always convert to Hz before calculating the time period.",
+    "check_questions": [
+      "If a wave has a frequency of 50 Hz, what is its time period?",
+      "Define the unit 'Hertz' in terms of base SI units.",
+      "How does the time period change if the frequency is doubled?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to use seconds as the unit for time period.",
+      "Incorrectly dividing 1 by the frequency due to simple calculation errors."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Wave Speed and the Wave Equation",
+    "id": "PHY-CH07-T04",
+    "scratch_idea": "Wave speed is the distance a wave travels per unit time. The universal wave equation relates speed to the frequency and wavelength of the wave.",
+    "prerequisites": [
+      "Wavelength",
+      "Frequency"
+    ],
+    "formulas": [
+      "$v = f\\lambda$"
+    ],
+    "core_technique": "Remember that wave speed is determined by the properties of the medium, not the source frequency.",
+    "check_questions": [
+      "Calculate the speed of a wave with a frequency of 10 Hz and wavelength of 2 meters.",
+      "What happens to the wavelength if frequency increases while speed remains constant?",
+      "State the relationship between wave speed, frequency, and time period."
+    ],
+    "common_pitfalls": [
+      "Using the wrong units for wavelength (must be in meters).",
+      "Confusing wave speed with the speed of individual particles in the medium."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Mechanical vs. Electromagnetic Waves",
+    "id": "PHY-CH07-T05",
+    "scratch_idea": "Mechanical waves require a physical medium to propagate, whereas electromagnetic waves consist of oscillating electric and magnetic fields and can travel through a vacuum.",
+    "prerequisites": [
+      "Vacuum properties",
+      "Medium (Solid/Liquid/Gas)"
+    ],
+    "formulas": [],
+    "core_technique": "Check if the wave can travel through outer space to identify if it is electromagnetic.",
+    "check_questions": [
+      "Why can't sound waves travel through a vacuum?",
+      "Give an example of a wave that does not require a medium.",
+      "Classify seismic waves as mechanical or electromagnetic."
+    ],
+    "common_pitfalls": [
+      "Thinking light requires air to travel.",
+      "Classifying all transverse waves as electromagnetic."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Transverse vs. Longitudinal Waves",
+    "id": "PHY-CH07-T06",
+    "scratch_idea": "In transverse waves, particle vibration is perpendicular to the direction of energy flow. In longitudinal waves, particle vibration is parallel to the direction of energy flow.",
+    "prerequisites": [
+      "Direction of propagation",
+      "Oscillation"
+    ],
+    "formulas": [],
+    "core_technique": "Visualize 'Crests and Troughs' for transverse waves and 'Compressions and Rarefactions' for longitudinal waves.",
+    "check_questions": [
+      "In which type of wave do particles move back and forth along the path of the wave?",
+      "Are waves in a plucked guitar string transverse or longitudinal?",
+      "Describe the relative angle between vibration and propagation in a transverse wave."
+    ],
+    "common_pitfalls": [
+      "Labeling sound waves as transverse.",
+      "Confusing the direction of particle motion with the direction of the wave's velocity."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Principle of Superposition",
+    "id": "PHY-CH07-T07",
+    "scratch_idea": "When two or more waves meet at a point, the resultant displacement is the algebraic sum of the individual displacements of the waves at that point.",
+    "prerequisites": [
+      "Vector addition",
+      "Displacement"
+    ],
+    "formulas": [
+      "$y = y_1 + y_2 + \\dots + y_n$"
+    ],
+    "core_technique": "Pay close attention to the signs (positive for crests, negative for troughs) when summing displacements.",
+    "check_questions": [
+      "What is the resultant displacement if a crest of 3cm meets a trough of 2cm?",
+      "State the mathematical condition for the superposition of two waves.",
+      "Does the principle of superposition apply to more than two waves?"
+    ],
+    "common_pitfalls": [
+      "Adding amplitudes without considering the phase/direction (sign) of displacement.",
+      "Thinking waves destroy each other permanently after they pass through each other."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Constructive Interference",
+    "id": "PHY-CH07-T08",
+    "scratch_idea": "Constructive interference occurs when waves meet in phase (crest to crest), resulting in a wave with a larger amplitude. This happens when the path difference is a whole number of wavelengths.",
+    "prerequisites": [
+      "Phase",
+      "Path Difference"
+    ],
+    "formulas": [
+      "$\\Delta S = n\\lambda$",
+      "where $n = 0, 1, 2, \\dots$"
+    ],
+    "core_technique": "Look for 'maximum intensity' or 'loudest sound' in problems to identify constructive interference.",
+    "check_questions": [
+      "What is the path difference required for the second order constructive interference?",
+      "What happens to the resultant amplitude during constructive interference?",
+      "If path difference is $2\\lambda$, is the interference constructive or destructive?"
+    ],
+    "common_pitfalls": [
+      "Using $(n + 1/2)\\lambda$ for constructive interference.",
+      "Confusing path difference with phase difference."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Destructive Interference",
+    "id": "PHY-CH07-T09",
+    "scratch_idea": "Destructive interference occurs when waves meet out of phase (crest to trough), resulting in a reduced or zero amplitude. This happens when the path difference is an odd multiple of half-wavelengths.",
+    "prerequisites": [
+      "Phase difference of 180 degrees",
+      "Superposition"
+    ],
+    "formulas": [
+      "$\\Delta S = (2n + 1) \\frac{\\lambda}{2}$",
+      "where $n = 0, 1, 2, \\dots$"
+    ],
+    "core_technique": "Noise-canceling headphones are a primary real-world application of this specific concept.",
+    "check_questions": [
+      "What is the smallest non-zero path difference for destructive interference?",
+      "What is the phase relationship between two waves for complete cancellation?",
+      "How is the anti-noise signal in headphones related to ambient noise?"
+    ],
+    "common_pitfalls": [
+      "Assuming destructive interference only results in zero amplitude (it can just be a smaller amplitude).",
+      "Using even multiples of $\\lambda/2$ for destructive conditions."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Stationary Waves - General",
+    "id": "PHY-CH07-T10",
+    "scratch_idea": "Stationary waves are formed by the superposition of two waves of the same frequency and amplitude traveling in opposite directions. They do not transfer energy forward.",
+    "prerequisites": [
+      "Interference",
+      "Reflection"
+    ],
+    "formulas": [],
+    "core_technique": "Remember that stationary waves have points that never move (nodes) and points that move the most (antinodes).",
+    "check_questions": [
+      "How is a stationary wave different from a progressive wave regarding energy transfer?",
+      "Define Nodes and Antinodes.",
+      "What is the distance between two consecutive nodes in terms of wavelength?"
+    ],
+    "common_pitfalls": [
+      "Thinking stationary waves don't vibrate at all.",
+      "Confusing the distance between a node and an adjacent antinode ($\\lambda/4$) with the distance between two nodes ($\\lambda/2$)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Wave Speed on a Stretched String",
+    "id": "PHY-CH07-T11",
+    "scratch_idea": "The speed of a transverse wave on a string depends on the tension applied to the string and its mass per unit length (linear density).",
+    "prerequisites": [
+      "Tension",
+      "Linear mass density"
+    ],
+    "formulas": [
+      "$v = \\sqrt{\\frac{F}{m}}$"
+    ],
+    "core_technique": "In this formula, 'm' represents mass per unit length ($M/L$), not the total mass of the string.",
+    "check_questions": [
+      "How does increasing the tension in a guitar string affect the wave speed?",
+      "If the linear density of a string increases, what happens to the wave speed?",
+      "Calculate speed if tension is 100N and mass per unit length is 0.01 kg/m."
+    ],
+    "common_pitfalls": [
+      "Using total mass instead of mass per unit length in the formula.",
+      "Forgetting to take the square root of the ratio."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Harmonics in Stretched Strings",
+    "id": "PHY-CH07-T12",
+    "scratch_idea": "Stretched strings can vibrate in multiple modes called harmonics. The fundamental frequency is the lowest frequency, and higher harmonics are integer multiples of the fundamental.",
+    "prerequisites": [
+      "Stationary Waves",
+      "String Length"
+    ],
+    "formulas": [
+      "$f_n = n f_1 = n \\left( \\frac{v}{2l} \\right)$",
+      "$\\lambda_n = \\frac{2l}{n}$"
+    ],
+    "core_technique": "The number of loops in the stationary wave corresponds to the harmonic number 'n'.",
+    "check_questions": [
+      "What is the frequency of the 3rd harmonic if the fundamental frequency is 100 Hz?",
+      "How many nodes are present in the second harmonic of a string fixed at both ends?",
+      "Write the formula for the wavelength of the nth harmonic."
+    ],
+    "common_pitfalls": [
+      "Miscounting the number of nodes (it is always $n+1$).",
+      "Confusing 'overtones' with 'harmonics' (though for strings they align)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Air Columns - Open Pipes",
+    "id": "PHY-CH07-T13",
+    "scratch_idea": "In a pipe open at both ends, antinodes form at the openings. It supports all harmonics (both even and odd).",
+    "prerequisites": [
+      "Longitudinal Stationary Waves",
+      "Pressure Nodes"
+    ],
+    "formulas": [
+      "$f_n = n \\frac{v}{2l}$",
+      "where $n = 1, 2, 3, \\dots$"
+    ],
+    "core_technique": "Visualize the fundamental mode as having half a wave inside the pipe length.",
+    "check_questions": [
+      "Which harmonics are present in an organ pipe open at both ends?",
+      "What is the position of antinodes in an open pipe?",
+      "If the length of an open pipe is doubled, how does the fundamental frequency change?"
+    ],
+    "common_pitfalls": [
+      "Thinking open pipes only produce odd harmonics.",
+      "Neglecting 'end correction' in practical experiments (though often ignored in basic theory)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Air Columns - Closed Pipes",
+    "id": "PHY-CH07-T14",
+    "scratch_idea": "In a pipe closed at one end, a node forms at the closed end and an antinode at the open end. This configuration only supports odd harmonics.",
+    "prerequisites": [
+      "Reflection at boundaries",
+      "Harmonics"
+    ],
+    "formulas": [
+      "$f_n = n \\frac{v}{4l}$",
+      "where $n = 1, 3, 5, \\dots$"
+    ],
+    "core_technique": "Remember the divisor is '4l' for closed pipes compared to '2l' for open pipes.",
+    "check_questions": [
+      "Why are only odd harmonics present in a closed organ pipe?",
+      "Compare the fundamental frequency of an open and closed pipe of the same length.",
+      "What forms at the closed end of the pipe: a node or an antinode?"
+    ],
+    "common_pitfalls": [
+      "Using $n=2$ or $n=4$ for a closed pipe (these harmonics don't exist).",
+      "Forgetting that the fundamental wavelength is $4l$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Diffraction",
+    "id": "PHY-CH07-T15",
+    "scratch_idea": "Diffraction is the bending of waves around obstacles or the spreading of waves through narrow openings. It is most noticeable when the wavelength is comparable to the size of the opening.",
+    "prerequisites": [
+      "Wavelength",
+      "Wave propagation"
+    ],
+    "formulas": [],
+    "core_technique": "To increase diffraction, either increase the wavelength or decrease the size of the gap.",
+    "check_questions": [
+      "Under what condition is diffraction most prominent?",
+      "Why can we hear someone talking around a corner but not see them?",
+      "What happens to the amount of diffraction if the gap width is much larger than the wavelength?"
+    ],
+    "common_pitfalls": [
+      "Confusing diffraction with refraction (bending due to medium change).",
+      "Thinking diffraction only happens with light waves."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Beats",
+    "id": "PHY-CH07-T16",
+    "scratch_idea": "Beats are periodic variations in sound intensity caused by the interference of two sound waves with slightly different frequencies.",
+    "prerequisites": [
+      "Interference",
+      "Frequency"
+    ],
+    "formulas": [
+      "$f_{beat} = |f_1 - f_2|$"
+    ],
+    "core_technique": "The number of beats per second is exactly equal to the difference between the two source frequencies.",
+    "check_questions": [
+      "Calculate the beat frequency produced by two tuning forks of 256 Hz and 260 Hz.",
+      "What is the maximum frequency difference the human ear can detect as distinct beats?",
+      "How can beats be used to tune a musical instrument?"
+    ],
+    "common_pitfalls": [
+      "Adding the frequencies instead of subtracting them.",
+      "Confusing beat frequency with the average frequency heard."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Wave Intensity",
+    "id": "PHY-CH07-T17",
+    "scratch_idea": "Intensity is the power transmitted by a wave per unit area. It is directly proportional to the square of the amplitude of the wave.",
+    "prerequisites": [
+      "Power",
+      "Area"
+    ],
+    "formulas": [
+      "$I = \\frac{P}{A}$",
+      "$I \\propto A^2$"
+    ],
+    "core_technique": "If the amplitude of a wave is tripled, the intensity increases by a factor of nine ($3^2$).",
+    "check_questions": [
+      "What is the SI unit for wave intensity?",
+      "How does intensity change if the distance from a point source is doubled (Inverse Square Law)?",
+      "What is the relationship between the amplitude of a wave and its intensity?"
+    ],
+    "common_pitfalls": [
+      "Thinking intensity is linearly proportional to amplitude.",
+      "Forgetting that area for a spherical wave is $4\\pi r^2$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Doppler Effect - Moving Source",
+    "id": "PHY-CH07-T18",
+    "scratch_idea": "The Doppler Effect is the apparent change in frequency of a wave due to the relative motion between the source and the observer.",
+    "prerequisites": [
+      "Relative Velocity",
+      "Wave Speed"
+    ],
+    "formulas": [
+      "$f_{towards} = \\left( \\frac{v}{v - u_s} \\right) f$",
+      "$f_{away} = \\left( \\frac{v}{v + u_s} \\right) f$"
+    ],
+    "core_technique": "Use the minus sign in the denominator when the source is moving 'Towards' (to make the frequency higher).",
+    "check_questions": [
+      "What happens to the observed pitch of a siren as an ambulance approaches you?",
+      "Calculate the observed frequency if a source (1000 Hz) moves away at 30 m/s (speed of sound = 340 m/s).",
+      "Does the actual frequency emitted by the source change during the Doppler Effect?"
+    ],
+    "common_pitfalls": [
+      "Using the wrong sign in the denominator.",
+      "Confusing source speed ($u_s$) with wave speed ($v$)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Doppler Effect Applications",
+    "id": "PHY-CH07-T19",
+    "scratch_idea": "The Doppler Effect is utilized in various technologies to measure velocity, including RADAR for aircraft, SONAR for underwater objects, and Redshift in astronomy.",
+    "prerequisites": [
+      "Doppler Effect Theory"
+    ],
+    "formulas": [],
+    "core_technique": "In astronomy, Redshift indicates an object is moving away, while Blueshift indicates it is approaching.",
+    "check_questions": [
+      "How do police RADAR guns use the Doppler Effect to measure car speed?",
+      "What does a 'Redshift' in light from a distant star suggest about its motion?",
+      "How is Doppler ultrasound used in medical diagnostics?"
+    ],
+    "common_pitfalls": [
+      "Thinking RADAR uses sound waves (it uses radio waves).",
+      "Assuming the Doppler Effect only applies to sound."
+    ],
+    "difficulty": "Medium"
+  }
+]

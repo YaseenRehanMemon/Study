@@ -1,0 +1,508 @@
+[
+  {
+    "topic_name": "Scalar Quantities",
+    "id": "PHY-CH2-T01",
+    "scratch_idea": "Scalars are physical quantities that are completely described by a magnitude and a unit without any reference to direction. Examples include mass, time, and temperature.",
+    "prerequisites": [
+      "Physical Quantities",
+      "Measurement Units"
+    ],
+    "formulas": [],
+    "core_technique": "Always remember that scalars follow simple algebraic addition rules.",
+    "check_questions": [
+      "Can a scalar quantity be negative?",
+      "List three examples of scalar quantities from the text.",
+      "Does changing the direction of motion affect a scalar quantity like speed?"
+    ],
+    "common_pitfalls": [
+      "Confusing distance (scalar) with displacement (vector).",
+      "Assigning direction to quantities like mass or time."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Vector Quantities",
+    "id": "PHY-CH2-T02",
+    "scratch_idea": "Vectors are physical quantities that require both magnitude and a specific direction for their complete description. They represent quantities like force, velocity, and displacement.",
+    "prerequisites": [
+      "Scalar Quantities",
+      "Cartesian Coordinates"
+    ],
+    "formulas": [],
+    "core_technique": "Think of a vector as an instruction to move a certain distance in a certain direction.",
+    "check_questions": [
+      "What two things are necessary to fully describe a vector?",
+      "Why is velocity considered a vector while speed is a scalar?",
+      "How is a vector represented graphically?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to specify the direction when stating a vector value.",
+      "Assuming vectors can be added like simple numbers."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Rectangular Components of a Vector",
+    "id": "PHY-CH2-T03",
+    "scratch_idea": "A vector can be split into two mutually perpendicular parts, usually along the x and y axes. These are its effective values in those specific directions.",
+    "prerequisites": [
+      "Trigonometry (Sine, Cosine)",
+      "Vector Representation"
+    ],
+    "formulas": [
+      "$A_x = A \\cos \\theta$",
+      "$A_y = A \\sin \\theta$"
+    ],
+    "core_technique": "Always measure the angle $\\theta$ from the positive x-axis to ensure correct signs for components.",
+    "check_questions": [
+      "What are rectangular components?",
+      "If a vector makes an angle of $90^\\circ$ with the x-axis, what is its x-component?",
+      "Write the formula for the vertical component of a force vector F."
+    ],
+    "common_pitfalls": [
+      "Swapping $\\sin$ and $\\cos$ when the angle is given with the y-axis instead of the x-axis.",
+      "Ignoring the unit vector notation during vector resolution."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Magnitude and Direction from Components",
+    "id": "PHY-CH2-T04",
+    "scratch_idea": "If the horizontal and vertical components of a vector are known, the original vector's magnitude and angle can be reconstructed using the Pythagorean theorem and trigonometry.",
+    "prerequisites": [
+      "Pythagorean Theorem",
+      "Inverse Trigonometric Functions"
+    ],
+    "formulas": [
+      "$A = \\sqrt{A_x^2 + A_y^2}$",
+      "$\\theta = \\tan^{-1} (\\frac{A_y}{A_x})$"
+    ],
+    "core_technique": "Check the signs of $A_x$ and $A_y$ to determine which quadrant the vector resides in.",
+    "check_questions": [
+      "How do you find the magnitude of a vector from its rectangular components?",
+      "What trigonometric ratio is used to find the direction of a vector?",
+      "If $A_x = 3$ and $A_y = 4$, what is the magnitude of vector A?"
+    ],
+    "common_pitfalls": [
+      "Using the wrong component in the numerator of the tangent function.",
+      "Calculating only the reference angle without considering the quadrant."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Scalar (Dot) Product",
+    "id": "PHY-CH2-T05",
+    "scratch_idea": "The scalar product of two vectors results in a scalar quantity. It is defined as the product of the magnitudes of the two vectors and the cosine of the angle between them.",
+    "prerequisites": [
+      "Vector Quantities",
+      "Trigonometry"
+    ],
+    "formulas": [
+      "$\\mathbf{A \\cdot B} = AB \\cos \\theta$",
+      "$\\mathbf{A \\cdot B} = A_x B_x + A_y B_y + A_z B_z$"
+    ],
+    "core_technique": "Use the dot product to find the angle between two vectors or to find work done.",
+    "check_questions": [
+      "What is the scalar product of two perpendicular vectors?",
+      "Is the dot product commutative?",
+      "Calculate $\\mathbf{A \\cdot B}$ if $A=5, B=10$ and $\\theta=60^\\circ$."
+    ],
+    "common_pitfalls": [
+      "Confusing the dot product result (scalar) with the cross product result (vector).",
+      "Using $\\sin$ instead of $\\cos$ in the formula."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Vector (Cross) Product",
+    "id": "PHY-CH2-T06",
+    "scratch_idea": "The vector product of two vectors results in a third vector perpendicular to the plane containing the original vectors. Its direction is determined by the right-hand rule.",
+    "prerequisites": [
+      "Vector Quantities",
+      "Right-Hand Rule"
+    ],
+    "formulas": [
+      "$\\mathbf{A \\times B} = AB \\sin \\theta \\hat{n}$"
+    ],
+    "core_technique": "Remember that $\\mathbf{A \\times B}$ is the negative of $\\mathbf{B \\times A}$ (non-commutative).",
+    "check_questions": [
+      "What does the unit vector $\\hat{n}$ represent in the cross product?",
+      "How do you find the direction of a cross product?",
+      "What is the cross product of two parallel vectors?"
+    ],
+    "common_pitfalls": [
+      "Applying the right-hand rule incorrectly, leading to the wrong sign.",
+      "Assuming the result is a scalar."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "First Equation of Motion",
+    "id": "PHY-CH2-T07",
+    "scratch_idea": "This equation relates final velocity to initial velocity, acceleration, and time for an object moving with constant acceleration.",
+    "prerequisites": [
+      "Definition of Acceleration",
+      "Linear Motion"
+    ],
+    "formulas": [
+      "$v_f = v_i + at$"
+    ],
+    "core_technique": "This equation is best used when displacement $S$ is not given or required.",
+    "check_questions": [
+      "Under what condition can this equation be applied?",
+      "Define all symbols in $v_f = v_i + at$.",
+      "If an object starts from rest, how is the first equation simplified?"
+    ],
+    "common_pitfalls": [
+      "Applying it to cases with non-uniform acceleration.",
+      "Mixing up units (e.g., using km/h for velocity and $m/s^2$ for acceleration)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Second Equation of Motion",
+    "id": "PHY-CH2-T08",
+    "scratch_idea": "This equation determines the displacement of an object based on its initial velocity, the time elapsed, and its constant acceleration.",
+    "prerequisites": [
+      "Average Velocity",
+      "First Equation of Motion"
+    ],
+    "formulas": [
+      "$S = v_i t + \\frac{1}{2} at^2$"
+    ],
+    "core_technique": "The distance is proportional to the square of the time when initial velocity is zero.",
+    "check_questions": [
+      "Calculate displacement if $v_i=0, a=2, t=3$.",
+      "What part of the velocity-time graph represents displacement?",
+      "How does the equation change for a body falling freely from rest?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the time ($t^2$).",
+      "Using final velocity instead of initial velocity in the first term."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Third Equation of Motion",
+    "id": "PHY-CH2-T09",
+    "scratch_idea": "This equation provides a relationship between the velocities, acceleration, and displacement, independent of the time variable.",
+    "prerequisites": [
+      "First and Second Equations of Motion"
+    ],
+    "formulas": [
+      "$2aS = v_f^2 - v_i^2$"
+    ],
+    "core_technique": "Use this equation when time $t$ is neither given nor required in the problem.",
+    "check_questions": [
+      "Relate final velocity and displacement using constant acceleration.",
+      "A car stops from $20 m/s$ over $50 m$; what formula helps find acceleration without time?",
+      "Solve for $v_f$ if $a$, $S$, and $v_i$ are known."
+    ],
+    "common_pitfalls": [
+      "Arithmetic errors when squaring large velocity values.",
+      "Forgetting the factor of 2 on the left side of the equation."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Motion Under Gravity",
+    "id": "PHY-CH2-T10",
+    "scratch_idea": "Free fall is a special case of linear motion where acceleration is equal to $g$ ($9.8 m/s^2$). It applies to bodies moving vertically near Earth's surface in a vacuum.",
+    "prerequisites": [
+      "Equations of Motion",
+      "Acceleration due to Gravity"
+    ],
+    "formulas": [
+      "$v_f = v_i + gt$",
+      "$h = v_i t + \\frac{1}{2} gt^2$",
+      "$2gh = v_f^2 - v_i^2$"
+    ],
+    "core_technique": "Take $g$ as negative for upward motion and positive for downward motion (if $v_i$ is downward).",
+    "check_questions": [
+      "What is the value of $g$ in SI units?",
+      "What is the velocity of an object at its maximum height when thrown upward?",
+      "Does a heavier object fall faster than a lighter one in a vacuum?"
+    ],
+    "common_pitfalls": [
+      "Using a positive $g$ for an object thrown upwards, leading to an increasing velocity.",
+      "Ignoring the sign of displacement when using equations for vertical motion."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Projectile Motion: Basic Concept",
+    "id": "PHY-CH2-T11",
+    "scratch_idea": "Projectile motion is two-dimensional motion under the constant influence of gravity. The horizontal and vertical components of the motion are independent of each other.",
+    "prerequisites": [
+      "Vector Resolution",
+      "Motion Under Gravity"
+    ],
+    "formulas": [
+      "$a_x = 0$",
+      "$a_y = -g$"
+    ],
+    "core_technique": "Treat the horizontal motion as constant velocity and the vertical motion as constant acceleration.",
+    "check_questions": [
+      "Define projectile motion.",
+      "Why is the horizontal acceleration of a projectile zero?",
+      "What is the shape of the path followed by a projectile?"
+    ],
+    "common_pitfalls": [
+      "Thinking that gravity affects the horizontal component of velocity.",
+      "Assuming acceleration is zero at the peak of the trajectory."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Maximum Height of Projectile",
+    "id": "PHY-CH2-T12",
+    "scratch_idea": "The maximum height is the vertical distance reached by a projectile when its vertical velocity component becomes zero.",
+    "prerequisites": [
+      "Vertical Component of Velocity",
+      "3rd Equation of Motion"
+    ],
+    "formulas": [
+      "$h = \\frac{v_i^2 \\sin^2 \\theta}{2g}$"
+    ],
+    "core_technique": "Height depends solely on the initial vertical component of velocity.",
+    "check_questions": [
+      "What happens to the vertical velocity at maximum height?",
+      "How does the launch angle affect the maximum height?",
+      "Calculate height if $v_i = 10 m/s$ and $\\theta = 90^\\circ$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the $\\sin \\theta$ term.",
+      "Confusing total velocity with the vertical component at the peak."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Time of Flight",
+    "id": "PHY-CH2-T13",
+    "scratch_idea": "The time of flight is the total time a projectile remains in the air from the moment of launch until it returns to the same horizontal level.",
+    "prerequisites": [
+      "Vertical Motion",
+      "1st Equation of Motion"
+    ],
+    "formulas": [
+      "$t = \\frac{2 v_i \\sin \\theta}{g}$"
+    ],
+    "core_technique": "The time to reach maximum height is exactly half of the total time of flight.",
+    "check_questions": [
+      "Define time of flight.",
+      "If the angle of projection is $0^\\circ$, what is the time of flight?",
+      "What factors determine the time a projectile stays in the air?"
+    ],
+    "common_pitfalls": [
+      "Using the total time of flight to calculate maximum height instead of half the time.",
+      "Ignoring the $2$ in the numerator of the formula."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Range of Projectile",
+    "id": "PHY-CH2-T14",
+    "scratch_idea": "Range is the maximum horizontal distance covered by a projectile. It is determined by the horizontal velocity and the total time of flight.",
+    "prerequisites": [
+      "Horizontal Component of Velocity",
+      "Time of Flight"
+    ],
+    "formulas": [
+      "$R = \\frac{v_i^2 \\sin 2\\theta}{g}$"
+    ],
+    "core_technique": "Range is identical for complementary angles (e.g., $30^\\circ$ and $60^\\circ$).",
+    "check_questions": [
+      "What is meant by the range of a projectile?",
+      "Show that range is same for angles $\\theta$ and $90-\\theta$.",
+      "How does doubling the initial velocity affect the range?"
+    ],
+    "common_pitfalls": [
+      "Using $\\sin^2 \\theta$ instead of $\\sin 2\\theta$ in the formula.",
+      "Assuming range is maximum at $90^\\circ$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Maximum Range of Projectile",
+    "id": "PHY-CH2-T15",
+    "scratch_idea": "The horizontal range of a projectile is maximized when the launch angle is exactly $45^\\circ$, assuming no air resistance.",
+    "prerequisites": [
+      "Range of Projectile Formula",
+      "Trigonometry"
+    ],
+    "formulas": [
+      "$R_{max} = \\frac{v_i^2}{g}$"
+    ],
+    "core_technique": "At $45^\\circ$, $\\sin 2\\theta = \\sin 90^\\circ = 1$, which is the maximum possible value for the sine function.",
+    "check_questions": [
+      "At what angle is the range of a projectile maximum?",
+      "What is the value of $\\sin 2\\theta$ for maximum range?",
+      "If $R_{max}$ is $100m$, what is the range at $90^\\circ$?"
+    ],
+    "common_pitfalls": [
+      "Thinking maximum height occurs at the same angle as maximum range.",
+      "Forgetting that this rule only applies when the launch and landing heights are the same."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Linear Momentum",
+    "id": "PHY-CH2-T16",
+    "scratch_idea": "Linear momentum is a vector quantity defined as the product of an object's mass and its velocity. It represents the 'quantity of motion'.",
+    "prerequisites": [
+      "Mass",
+      "Velocity"
+    ],
+    "formulas": [
+      "$\\mathbf{p} = m \\mathbf{v}$"
+    ],
+    "core_technique": "Momentum always has the same direction as the velocity vector.",
+    "check_questions": [
+      "Define linear momentum and give its SI unit.",
+      "Is momentum a scalar or vector quantity?",
+      "How does momentum change if a car's speed doubles but its mass stays the same?"
+    ],
+    "common_pitfalls": [
+      "Using the formula for kinetic energy instead of momentum.",
+      "Ignoring the vector nature (direction) in 2D problems."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Momentum and Newton's Second Law",
+    "id": "PHY-CH2-T17",
+    "scratch_idea": "Newton's second law can be restated: the net force acting on a body is equal to the time rate of change of its linear momentum.",
+    "prerequisites": [
+      "Newton's Second Law",
+      "Linear Momentum"
+    ],
+    "formulas": [
+      "$\\mathbf{F} = \\frac{\\Delta \\mathbf{p}}{t}$",
+      "$\\mathbf{F} \\times t = m\\mathbf{v}_f - m\\mathbf{v}_i$"
+    ],
+    "core_technique": "This form of the law is more useful when mass is changing, such as in rocket motion.",
+    "check_questions": [
+      "State Newton's Second Law in terms of momentum.",
+      "Show that the unit of force is equivalent to the unit of rate of change of momentum.",
+      "If the rate of change of momentum is zero, what is the net force?"
+    ],
+    "common_pitfalls": [
+      "Confusing change in momentum with the rate of change of momentum.",
+      "Forgetting that force and momentum are both vectors."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Impulse",
+    "id": "PHY-CH2-T18",
+    "scratch_idea": "Impulse is the product of a large force and the very short time for which it acts. It is equal to the change in momentum produced by that force.",
+    "prerequisites": [
+      "Force",
+      "Change in Momentum"
+    ],
+    "formulas": [
+      "$\\text{Impulse} = \\mathbf{F} \\times t = \\Delta \\mathbf{p}$"
+    ],
+    "core_technique": "To reduce impact force (like in car crashes), increase the time interval of the collision.",
+    "check_questions": [
+      "Define Impulse.",
+      "How is impulse related to momentum?",
+      "Why do cricketers pull their hands back while catching a fast ball?"
+    ],
+    "common_pitfalls": [
+      "Thinking impulse is just another word for force.",
+      "Using the wrong time interval (it must be the duration of the contact)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Law of Conservation of Momentum",
+    "id": "PHY-CH2-T19",
+    "scratch_idea": "In an isolated system (no external forces), the total linear momentum of the system remains constant regardless of internal interactions.",
+    "prerequisites": [
+      "Isolated System",
+      "Newton's Third Law"
+    ],
+    "formulas": [
+      "$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$"
+    ],
+    "core_technique": "Always define a 'before' and 'after' state for the system and equate their total momenta.",
+    "check_questions": [
+      "What is an isolated system?",
+      "State the Law of Conservation of Momentum.",
+      "Two balls collide and stop; was momentum conserved if they were moving toward each other with equal momentum?"
+    ],
+    "common_pitfalls": [
+      "Applying the law when external forces (like friction) are significant.",
+      "Adding magnitudes of momentum without considering their directions."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Elastic and Inelastic Collisions",
+    "id": "PHY-CH2-T20",
+    "scratch_idea": "Collisions are classified based on whether Kinetic Energy (KE) is conserved. Momentum is conserved in both, but KE is only conserved in elastic collisions.",
+    "prerequisites": [
+      "Kinetic Energy",
+      "Conservation of Momentum"
+    ],
+    "formulas": [],
+    "core_technique": "Total energy is always conserved; 'lost' KE in inelastic collisions usually turns into heat or sound.",
+    "check_questions": [
+      "Differentiate between elastic and inelastic collisions.",
+      "Is momentum conserved in an inelastic collision?",
+      "Give an example of a perfectly inelastic collision."
+    ],
+    "common_pitfalls": [
+      "Assuming KE is conserved in every collision.",
+      "Thinking that 'total energy' and 'kinetic energy' are the same thing."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Elastic Collision in One Dimension",
+    "id": "PHY-CH2-T21",
+    "scratch_idea": "In a 1D elastic collision, both momentum and kinetic energy are conserved, and the relative velocity of approach equals the relative velocity of separation.",
+    "prerequisites": [
+      "Conservation of KE",
+      "Conservation of Momentum"
+    ],
+    "formulas": [
+      "$v_1 - v_2 = -(v_1' - v_2')$"
+    ],
+    "core_technique": "The relative velocity equation is often easier to solve than the KE squared equation.",
+    "check_questions": [
+      "State the relation between relative velocities in a 1D elastic collision.",
+      "Write the momentum conservation equation for two masses in 1D.",
+      "If two identical masses collide elastically in 1D, what happens to their velocities?"
+    ],
+    "common_pitfalls": [
+      "Getting the signs wrong in the relative velocity equation.",
+      "Forgetting that this only applies to 'elastic' cases."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Rocket Propulsion",
+    "id": "PHY-CH2-T22",
+    "scratch_idea": "Rockets accelerate by ejecting mass (exhaust gases) at high velocity. This is an application of the law of conservation of momentum and Newton's third law.",
+    "prerequisites": [
+      "Conservation of Momentum",
+      "Newton's Third Law"
+    ],
+    "formulas": [
+      "$a = \\frac{mv}{M}$"
+    ],
+    "core_technique": "The acceleration increases as the rocket travels because its mass $M$ decreases as fuel is consumed.",
+    "check_questions": [
+      "How does a rocket gain momentum?",
+      "Why does a rocket's acceleration increase even if the engine thrust is constant?",
+      "What provides the 'thrust' in a rocket engine?"
+    ],
+    "common_pitfalls": [
+      "Thinking the rocket needs air to 'push against'.",
+      "Treating the rocket mass $M$ as a constant."
+    ],
+    "difficulty": "Medium"
+  }
+]

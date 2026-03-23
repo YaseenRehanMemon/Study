@@ -1,0 +1,491 @@
+[
+  {
+    "topic_name": "Radian Measurement",
+    "id": "PHY-CH3-T1",
+    "scratch_idea": "The radian is the standard SI unit of angular measurement. It is defined as the angle subtended at the center of a circle by an arc length equal to the radius of that circle.",
+    "prerequisites": [
+      "Geometry of circles",
+      "Definition of an arc"
+    ],
+    "formulas": [
+      "$\\theta = \\frac{S}{r}$",
+      "$1 \\text{ rad} = \\frac{360^{\\circ}}{2\\pi} \\approx 57.3^{\\circ}$",
+      "$1 \\text{ revolution} = 2\\pi \\text{ rad} = 360^{\\circ}$"
+    ],
+    "core_technique": "Always ensure the angle is in radians before using the $S = r\\theta$ formula.",
+    "check_questions": [
+      "What is the SI unit of angular measurement?",
+      "How many degrees are in one radian?",
+      "What is the angular displacement in radians for one complete revolution?"
+    ],
+    "common_pitfalls": [
+      "Using degrees instead of radians in the arc length formula",
+      "Confusing the radius with the diameter when calculating radians"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Angular Displacement",
+    "id": "PHY-CH3-T2",
+    "scratch_idea": "Angular displacement is the angle through which an object rotates about a fixed axis. It is considered a vector quantity only for infinitesimally small values.",
+    "prerequisites": [
+      "Radian measurement",
+      "Axis of rotation"
+    ],
+    "formulas": [
+      "$\\Delta \\theta = \\theta_f - \\theta_i$"
+    ],
+    "core_technique": "Use the Right-Hand Rule to determine the direction: curl fingers in the direction of rotation, the thumb points along the axis.",
+    "check_questions": [
+      "When is angular displacement treated as a vector quantity?",
+      "State the Right-Hand Rule for angular displacement.",
+      "What is the sign of angular displacement for counter-clockwise rotation?"
+    ],
+    "common_pitfalls": [
+      "Treating large angular displacements as vectors",
+      "Mistaking the direction of rotation for the direction of the vector"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Angular Velocity",
+    "id": "PHY-CH3-T3",
+    "scratch_idea": "Angular velocity is the rate of change of angular displacement over time. It describes how fast an object is rotating and in what direction.",
+    "prerequisites": [
+      "Angular displacement",
+      "Time interval"
+    ],
+    "formulas": [
+      "$\\omega_{av} = \\frac{\\Delta \\theta}{\\Delta t}$",
+      "$\\omega = \\lim_{\\Delta t \\to 0} \\frac{\\Delta \\theta}{\\Delta t}$"
+    ],
+    "core_technique": "Instantaneous angular velocity is a vector along the axis of rotation, following the Right-Hand Rule.",
+    "check_questions": [
+      "Define instantaneous angular velocity.",
+      "What is the SI unit of angular velocity?",
+      "How do you calculate average angular velocity?"
+    ],
+    "common_pitfalls": [
+      "Confusing angular velocity with frequency (rev/s)",
+      "Ignoring the vector nature of angular velocity"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Angular Acceleration",
+    "id": "PHY-CH3-T4",
+    "scratch_idea": "Angular acceleration is the rate at which the angular velocity of a rotating body changes. It occurs when a body speeds up or slows down its rotation.",
+    "prerequisites": [
+      "Angular velocity",
+      "Concept of acceleration"
+    ],
+    "formulas": [
+      "$\\alpha_{av} = \\frac{\\Delta \\omega}{\\Delta t}$",
+      "$\\alpha = \\lim_{\\Delta t \\to 0} \\frac{\\Delta \\omega}{\\Delta t}$"
+    ],
+    "core_technique": "Angular acceleration is expressed in $rad \\cdot s^{-2}$ and acts along the axis of rotation.",
+    "check_questions": [
+      "Define angular acceleration.",
+      "What are the units of angular acceleration?",
+      "Does a body rotating at a constant speed have angular acceleration?"
+    ],
+    "common_pitfalls": [
+      "Confusing centripetal acceleration with angular acceleration",
+      "Forgetting that angular acceleration is zero for uniform circular motion"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Relation between Linear and Angular Velocity",
+    "id": "PHY-CH3-T5",
+    "scratch_idea": "This concept links the speed of a particle moving along a circular path (linear velocity) to the rotational speed of the reference line (angular velocity).",
+    "prerequisites": [
+      "Angular velocity",
+      "Arc length formula"
+    ],
+    "formulas": [
+      "$v = r\\omega$"
+    ],
+    "core_technique": "Linear velocity is always tangential to the circular path at any point.",
+    "check_questions": [
+      "Derive the relation between linear and angular velocity.",
+      "What is the direction of linear velocity in circular motion?",
+      "Why is linear velocity in circular motion often called tangential velocity?"
+    ],
+    "common_pitfalls": [
+      "Assuming all points on a rigid body have the same linear velocity",
+      "Using the diameter instead of the radius in $v = r\\omega$"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Tangential Acceleration",
+    "id": "PHY-CH3-T6",
+    "scratch_idea": "Tangential acceleration is the component of linear acceleration directed along the tangent to the circular path, representing the change in magnitude of linear velocity.",
+    "prerequisites": [
+      "Angular acceleration",
+      "Linear velocity"
+    ],
+    "formulas": [
+      "$a_t = r\\alpha$"
+    ],
+    "core_technique": "Distinguish between tangential acceleration (changing speed) and centripetal acceleration (changing direction).",
+    "check_questions": [
+      "Relate linear acceleration to angular acceleration.",
+      "Under what condition is tangential acceleration zero?",
+      "What is the direction of tangential acceleration?"
+    ],
+    "common_pitfalls": [
+      "Confusing tangential acceleration with centripetal acceleration",
+      "Assuming a point has zero acceleration if $\\alpha = 0$ (it still has $a_c$)"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Equations of Angular Motion",
+    "id": "PHY-CH3-T7",
+    "scratch_idea": "These equations describe the motion of a rotating body under constant angular acceleration, acting as direct analogues to the linear equations of motion.",
+    "prerequisites": [
+      "Constant acceleration",
+      "Linear equations of motion"
+    ],
+    "formulas": [
+      "$\\omega_f = \\omega_i + \\alpha t$",
+      "$2\\alpha\\theta = \\omega_f^2 - \\omega_i^2$",
+      "$\\theta = \\omega_i t + \\frac{1}{2}\\alpha t^2$"
+    ],
+    "core_technique": "These equations only apply when the axis of rotation is fixed and $\\alpha$ is constant.",
+    "check_questions": [
+      "State the three equations of angular motion.",
+      "What linear variable is analogous to angular displacement $\\theta$?",
+      "When can these equations be treated as scalar equations?"
+    ],
+    "common_pitfalls": [
+      "Using these equations when angular acceleration is not constant",
+      "Failing to convert initial values to SI units (e.g., rpm to rad/s)"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Centripetal Force",
+    "id": "PHY-CH3-T8",
+    "scratch_idea": "Centripetal force is the 'center-seeking' force required to keep an object moving in a circular path. It changes the direction of the velocity without changing its speed.",
+    "prerequisites": [
+      "Newton's Second Law",
+      "Circular motion"
+    ],
+    "formulas": [
+      "$F_c = \\frac{mv^2}{r}$",
+      "$F_c = mr\\omega^2$"
+    ],
+    "core_technique": "Identify the physical source of centripetal force (e.g., tension, gravity, friction) in any given problem.",
+    "check_questions": [
+      "What happens to a moving body if the centripetal force is suddenly removed?",
+      "Define centripetal force.",
+      "In what direction does the centripetal force act?"
+    ],
+    "common_pitfalls": [
+      "Thinking centripetal force is an 'extra' force rather than a requirement fulfilled by other forces",
+      "Mistaking centripetal force for centrifugal force"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Centripetal Acceleration",
+    "id": "PHY-CH3-T9",
+    "scratch_idea": "The acceleration of an object moving in a circle, directed toward the center, caused by the continuous change in the direction of velocity.",
+    "prerequisites": [
+      "Centripetal force",
+      "Kinematics of circular motion"
+    ],
+    "formulas": [
+      "$a_c = \\frac{v^2}{r}$",
+      "$a_c = r\\omega^2$"
+    ],
+    "core_technique": "Centripetal acceleration is always perpendicular to the tangential velocity.",
+    "check_questions": [
+      "What is the formula for radial acceleration in terms of angular velocity?",
+      "Why does a body moving with constant speed in a circle still have acceleration?",
+      "Calculate the radial acceleration if $v = 10 \\text{ m/s}$ and $r = 2 \\text{ m}$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the velocity in the formula",
+      "Confusion between $a_c$ and $a_t$"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Banking of Roads",
+    "id": "PHY-CH3-T10",
+    "scratch_idea": "Banking involves raising the outer edge of a curved road to provide the necessary centripetal force through a component of the normal force, reducing reliance on friction.",
+    "prerequisites": [
+      "Centripetal force",
+      "Friction"
+    ],
+    "formulas": [
+      "$\\tan\\theta = \\frac{v^2}{rg}$"
+    ],
+    "core_technique": "Banking allows vehicles to take turns safely at higher speeds even when the road is slippery.",
+    "check_questions": [
+      "Why are highway roads banked at turns?",
+      "What provides the centripetal force for a car on a level road?",
+      "What determines the banking angle of a road?"
+    ],
+    "common_pitfalls": [
+      "Incorrectly identifying which force component provides $F_c$",
+      "Ignoring the role of friction on unbanked roads"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Centrifuge and Cream Separator",
+    "id": "PHY-CH3-T11",
+    "scratch_idea": "A device that uses high-speed rotation to separate substances of different densities. Denser particles move outward due to the lack of sufficient centripetal force.",
+    "prerequisites": [
+      "Centripetal force principle",
+      "Density"
+    ],
+    "formulas": [],
+    "core_technique": "Heavier/denser particles require more centripetal force and thus settle at the bottom/outer edges if that force is not met.",
+    "check_questions": [
+      "On what principle does a centrifuge work?",
+      "Explain how a cream separator works.",
+      "How does a washing machine dryer remove water from clothes?"
+    ],
+    "common_pitfalls": [
+      "Thinking the centrifuge 'pushes' particles out; it's actually their inertia and lack of $F_c$",
+      "Confusing the location of light vs heavy particles"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Critical Velocity of Satellites",
+    "id": "PHY-CH3-T12",
+    "scratch_idea": "The minimum velocity required to put a satellite into a stable orbit near the Earth's surface.",
+    "prerequisites": [
+      "Centripetal force",
+      "Gravitational acceleration"
+    ],
+    "formulas": [
+      "$v = \\sqrt{gR}$",
+      "$T = 2\\pi \\sqrt{\\frac{R}{g}}$"
+    ],
+    "core_technique": "For low-flying satellites, the orbital radius is approximately equal to the Earth's radius ($R$).",
+    "check_questions": [
+      "Define critical velocity.",
+      "Calculate the critical velocity of a satellite near Earth (Take $R=6400 \\text{ km}$ and $g=9.8 \\text{ m/s}^2$).",
+      "What is the approximate period of a low-flying satellite?"
+    ],
+    "common_pitfalls": [
+      "Using $g=9.8$ for satellites at very high altitudes",
+      "Incorrectly converting km to meters in calculations"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Orbital Velocity",
+    "id": "PHY-CH3-T13",
+    "scratch_idea": "The general velocity required for a satellite to stay in orbit at a specific distance $r$ from the center of a planet.",
+    "prerequisites": [
+      "Newton's Law of Gravitation",
+      "Centripetal force"
+    ],
+    "formulas": [
+      "$v = \\sqrt{\\frac{GM}{r}}$"
+    ],
+    "core_technique": "Note that orbital velocity is independent of the mass of the satellite.",
+    "check_questions": [
+      "How does orbital velocity change as the distance from Earth increases?",
+      "Derive the expression for orbital velocity.",
+      "Does a heavier satellite require more speed to stay in the same orbit?"
+    ],
+    "common_pitfalls": [
+      "Using the satellite's mass in the orbital velocity equation",
+      "Confusing $r$ (distance from center) with $h$ (altitude above surface)"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Weightlessness in Satellites",
+    "id": "PHY-CH3-T14",
+    "scratch_idea": "Weightlessness occurs because the satellite and everything inside it are in a state of free fall toward the Earth, meaning no normal support force exists.",
+    "prerequisites": [
+      "Free fall",
+      "Normal force"
+    ],
+    "formulas": [
+      "$F_n = m(g - a)$"
+    ],
+    "core_technique": "Apparent weight is zero when the acceleration of the frame equals the local acceleration of gravity.",
+    "check_questions": [
+      "Why do astronauts feel weightless in a satellite?",
+      "Is the gravitational force on an astronaut in orbit zero?",
+      "What happens to a spring balance reading inside an orbiting satellite?"
+    ],
+    "common_pitfalls": [
+      "Believing there is no gravity in space",
+      "Confusing actual weight ($mg$) with apparent weight (supporting force)"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Artificial Gravity",
+    "id": "PHY-CH3-T15",
+    "scratch_idea": "Gravity simulated in a spacecraft by rotating it. The rotation creates a centripetal acceleration that mimics the sensation of weight for the inhabitants.",
+    "prerequisites": [
+      "Centripetal acceleration",
+      "Frequency and Period"
+    ],
+    "formulas": [
+      "$f = \\frac{1}{2\\pi} \\sqrt{\\frac{g}{R}}$"
+    ],
+    "core_technique": "The frequency of rotation must be adjusted based on the radius of the ship to match Earth's gravity ($g$).",
+    "check_questions": [
+      "How can artificial gravity be created in a spaceship?",
+      "Derive the formula for the frequency of rotation to produce gravity $g$.",
+      "Where in a rotating spacecraft would the gravity be strongest?"
+    ],
+    "common_pitfalls": [
+      "Confusing frequency ($f$) with angular velocity ($\\omega$) in the final result",
+      "Assuming gravity is created by the rocket's engines rather than rotation"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Moment of Inertia",
+    "id": "PHY-CH3-T16",
+    "scratch_idea": "Moment of inertia is the rotational equivalent of mass. It measures an object's resistance to changes in its rotational motion.",
+    "prerequisites": [
+      "Mass",
+      "Torque"
+    ],
+    "formulas": [
+      "$I = \\sum m_i r_i^2$"
+    ],
+    "core_technique": "Moment of inertia depends on both the mass and the distribution of that mass relative to the axis of rotation.",
+    "check_questions": [
+      "Define moment of inertia.",
+      "What is the SI unit of moment of inertia?",
+      "Why is it harder to rotate a long rod about its end than its center?"
+    ],
+    "common_pitfalls": [
+      "Thinking moment of inertia is constant for a body regardless of the axis",
+      "Ignoring the $r^2$ factor in calculations"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Torque and Angular Acceleration Relationship",
+    "id": "PHY-CH3-T17",
+    "scratch_idea": "This is the rotational version of Newton's Second Law ($F=ma$), stating that torque is the product of moment of inertia and angular acceleration.",
+    "prerequisites": [
+      "Torque",
+      "Moment of inertia"
+    ],
+    "formulas": [
+      "$\\tau = I\\alpha$"
+    ],
+    "core_technique": "Use this formula to solve for angular acceleration when the applied turning force is known.",
+    "check_questions": [
+      "Prove that $\\tau = I\\alpha$.",
+      "What is the rotational analogue of Newton's second law?",
+      "If the same torque is applied to two bodies, which one accelerates less?"
+    ],
+    "common_pitfalls": [
+      "Using linear mass instead of moment of inertia",
+      "Confusing torque with work or energy"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Angular Momentum of a Particle",
+    "id": "PHY-CH3-T18",
+    "scratch_idea": "The rotational momentum of a particle, defined as the cross product of its position vector and its linear momentum.",
+    "prerequisites": [
+      "Linear momentum",
+      "Vector cross product"
+    ],
+    "formulas": [
+      "$L = r \\times p$",
+      "$L = mrv \\sin\\theta$"
+    ],
+    "core_technique": "Direction is determined by the Right-Hand Rule of the cross product.",
+    "check_questions": [
+      "Define angular momentum for a single particle.",
+      "What are the units of angular momentum?",
+      "When is angular momentum maximized for a moving particle relative to an origin?"
+    ],
+    "common_pitfalls": [
+      "Calculating it as a scalar without considering the angle $\\theta$",
+      "Using the wrong reference point for the position vector $r$"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Angular Momentum of a Rigid Body",
+    "id": "PHY-CH3-T19",
+    "scratch_idea": "The total angular momentum of a system of particles (rigid body) rotating about an axis, calculated as the product of moment of inertia and angular velocity.",
+    "prerequisites": [
+      "Moment of inertia",
+      "Angular velocity"
+    ],
+    "formulas": [
+      "$L = I\\omega$"
+    ],
+    "core_technique": "This formula is analogous to $p = mv$.",
+    "check_questions": [
+      "Relate angular momentum to moment of inertia.",
+      "Does every point on a rigid body have the same angular momentum?",
+      "Show that $L = I\\omega$."
+    ],
+    "common_pitfalls": [
+      "Confusing $L$ with torque ($\\tau$)",
+      "Using linear velocity instead of angular velocity"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Law of Conservation of Angular Momentum",
+    "id": "PHY-CH3-T20",
+    "scratch_idea": "If the net external torque acting on a system is zero, the total angular momentum of that system remains constant.",
+    "prerequisites": [
+      "Torque",
+      "Angular momentum"
+    ],
+    "formulas": [
+      "$I_1\\omega_1 = I_2\\omega_2$"
+    ],
+    "core_technique": "When an object's moment of inertia decreases, its angular velocity must increase to conserve momentum.",
+    "check_questions": [
+      "State the Law of Conservation of Angular Momentum.",
+      "How does a diver increase their spin rate in mid-air?",
+      "What happens to an ice skater's speed when they stretch their arms?"
+    ],
+    "common_pitfalls": [
+      "Applying the law when an external torque is present",
+      "Thinking kinetic energy is also conserved (it usually increases when $I$ decreases)"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Flywheels and Gyroscopes",
+    "id": "PHY-CH3-T21",
+    "scratch_idea": "Practical devices that use high angular momentum and moment of inertia to store energy and maintain orientation/stability.",
+    "prerequisites": [
+      "Moment of inertia",
+      "Conservation of angular momentum"
+    ],
+    "formulas": [],
+    "core_technique": "Large angular momentum makes a body resistant to changes in the direction of its axis.",
+    "check_questions": [
+      "What is a flywheel used for?",
+      "How does a gyroscope maintain its orientation?",
+      "Mention two applications of gyroscopes."
+    ],
+    "common_pitfalls": [
+      "Misunderstanding how stability is linked to angular momentum",
+      "Confusing the storage of rotational energy with torque"
+    ],
+    "difficulty": "Medium"
+  }
+]

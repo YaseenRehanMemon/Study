@@ -1,0 +1,744 @@
+[
+  {
+    "topic_name": "Nucleons",
+    "id": "PHY-CH12-T1",
+    "scratch_idea": "Nucleons are the collective term for the particles found within the atomic nucleus. These include both the positively charged protons and the neutral neutrons.",
+    "prerequisites": [
+      "Atomic Structure",
+      "Protons and Neutrons"
+    ],
+    "formulas": [],
+    "core_technique": "Remember that the mass of a nucleus is almost entirely composed of nucleons, while electrons are excluded.",
+    "check_questions": [
+      "What two particles are collectively called nucleons?",
+      "Where are nucleons located in an atom?",
+      "Which nucleon has no electrical charge?"
+    ],
+    "common_pitfalls": [
+      "Including electrons in the nucleon count.",
+      "Assuming nucleons only refer to protons."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Atomic Number (Z)",
+    "id": "PHY-CH12-T2",
+    "scratch_idea": "The atomic number represents the total number of protons in the nucleus of an atom. It defines the chemical identity of an element.",
+    "prerequisites": [
+      "Protons"
+    ],
+    "formulas": [
+      "$Z = \\text{Number of Protons}$"
+    ],
+    "core_technique": "In neutral atoms, the atomic number also equals the number of orbiting electrons.",
+    "check_questions": [
+      "What does the symbol Z represent in nuclear physics?",
+      "If an element has 6 protons, what is its atomic number?",
+      "Does the atomic number change if a neutron is added to the nucleus?"
+    ],
+    "common_pitfalls": [
+      "Confusing Z with the total mass of the atom.",
+      "Thinking Z includes the number of neutrons."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Atomic Mass Number (A)",
+    "id": "PHY-CH12-T3",
+    "scratch_idea": "The mass number is the total count of protons and neutrons in a nucleus. It indicates the approximate mass of the atom in unified mass units.",
+    "prerequisites": [
+      "Atomic Number (Z)",
+      "Neutron Number (N)"
+    ],
+    "formulas": [
+      "$A = Z + N$"
+    ],
+    "core_technique": "To find the number of neutrons, subtract Z from A ($N = A - Z$).",
+    "check_questions": [
+      "Define the atomic mass number.",
+      "Calculate A for a nucleus with 8 protons and 9 neutrons.",
+      "What is the relationship between A, Z, and N?"
+    ],
+    "common_pitfalls": [
+      "Assuming A is the exact weight in grams.",
+      "Forgetting that A is always an integer count of particles."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Unified Mass Scale (u)",
+    "id": "PHY-CH12-T4",
+    "scratch_idea": "The unified atomic mass unit is defined as exactly 1/12th of the mass of a Carbon-12 atom. It is used to express the tiny masses of subatomic particles.",
+    "prerequisites": [
+      "Mass of Carbon-12"
+    ],
+    "formulas": [
+      "$1\\text{u} = 1.6606 \\times 10^{-27} \\text{ kg}$",
+      "$1\\text{u} = 931 \\text{ MeV}$"
+    ],
+    "core_technique": "Use 931 MeV as the conversion factor when calculating energy released from mass defects.",
+    "check_questions": [
+      "Define 1u in terms of the Carbon-12 atom.",
+      "What is the value of 1u in kilograms?",
+      "How much energy in MeV corresponds to 1u?"
+    ],
+    "common_pitfalls": [
+      "Using the mass of a single proton as the definition of 1u.",
+      "Confusing the MeV value with the kg value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Isotopes",
+    "id": "PHY-CH12-T5",
+    "scratch_idea": "Isotopes are atoms of the same element that have the same number of protons but different numbers of neutrons. This gives them identical chemical properties but different physical masses.",
+    "prerequisites": [
+      "Atomic Number (Z)",
+      "Atomic Mass Number (A)"
+    ],
+    "formulas": [],
+    "core_technique": "Identify isotopes by looking for the same element symbol but different top-left superscripts.",
+    "check_questions": [
+      "What remains constant among all isotopes of Carbon?",
+      "Why do isotopes have different mass numbers?",
+      "Give an example of three isotopes of Carbon."
+    ],
+    "common_pitfalls": [
+      "Thinking isotopes have different chemical behaviors.",
+      "Assuming isotopes of an element must all be radioactive."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Gravitational Force in Nuclei",
+    "id": "PHY-CH12-T6",
+    "scratch_idea": "Gravity is an attractive, long-range fundamental force acting between masses. In the context of atomic nuclei, it is the weakest force and is considered negligible.",
+    "prerequisites": [
+      "Newton's Law of Gravitation"
+    ],
+    "formulas": [
+      "$F_g = G \\frac{m_1 m_2}{r^2}$"
+    ],
+    "core_technique": "Recognize that while gravity dominates at planetary scales, it plays no significant role in holding a nucleus together.",
+    "check_questions": [
+      "Is the gravitational force attractive or repulsive?",
+      "Why is gravity ignored at the atomic level?",
+      "What is the range of the gravitational force?"
+    ],
+    "common_pitfalls": [
+      "Thinking gravity holds the protons and neutrons together.",
+      "Assuming the range of gravity is short like nuclear forces."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Electromagnetic Force in Nuclei",
+    "id": "PHY-CH12-T7",
+    "scratch_idea": "The electromagnetic force acts between charged particles. In the nucleus, it causes protons to repel each other, which must be overcome by the strong nuclear force to maintain stability.",
+    "prerequisites": [
+      "Coulomb's Law",
+      "Electric Charge"
+    ],
+    "formulas": [
+      "$F_e = k \\frac{q_1 q_2}{r^2}$"
+    ],
+    "core_technique": "Understand that electromagnetism is the primary force preventing the nucleus from being stable if only protons were present.",
+    "check_questions": [
+      "How does the electromagnetic force affect two protons in a nucleus?",
+      "Who unified electricity and magnetism into one force?",
+      "Is the range of electromagnetic force finite or infinite?"
+    ],
+    "common_pitfalls": [
+      "Forgetting that electromagnetic force acts on protons but not on neutrons.",
+      "Confusing the repulsive nature of proton-proton interaction with the nuclear force."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Strong Nuclear Force",
+    "id": "PHY-CH12-T8",
+    "scratch_idea": "The strong nuclear force is the most powerful fundamental force, acting only over very short distances ($< 10^{-15}$ m). It binds protons and neutrons together in the nucleus.",
+    "prerequisites": [
+      "Nucleons",
+      "Short-range forces"
+    ],
+    "formulas": [],
+    "core_technique": "Note that this force is charge-independent; it attracts p-p, n-n, and p-n equally.",
+    "check_questions": [
+      "What is the range of the strong nuclear force?",
+      "Why is this force called 'short-range'?",
+      "Does the strong nuclear force depend on the charge of the nucleons?"
+    ],
+    "common_pitfalls": [
+      "Thinking the strong force acts on electrons.",
+      "Assuming the strong force works over macroscopic distances."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Weak Nuclear Force",
+    "id": "PHY-CH12-T9",
+    "scratch_idea": "The weak nuclear force is responsible for certain types of radioactive decay, such as beta decay. It is much weaker than the strong force and has an extremely short range.",
+    "prerequisites": [
+      "Radioactive decay"
+    ],
+    "formulas": [],
+    "core_technique": "Associate the weak force with the transformation of flavor (e.g., a neutron turning into a proton).",
+    "check_questions": [
+      "Which fundamental force is responsible for beta decay?",
+      "How does the range of the weak force compare to the strong force?",
+      "What is the relative strength of the weak force compared to the strong force?"
+    ],
+    "common_pitfalls": [
+      "Confusing the weak nuclear force with the electromagnetic force.",
+      "Assuming it is 'weak' enough to be ignored like gravity."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Antiparticles",
+    "id": "PHY-CH12-T10",
+    "scratch_idea": "For every fundamental particle, there exists an antiparticle with the same mass but opposite physical properties like charge and magnetic moment.",
+    "prerequisites": [
+      "Fundamental Particles"
+    ],
+    "formulas": [],
+    "core_technique": "Identify an antiparticle by a bar over its symbol (e.g., $\\bar{p}$) or by a change in charge sign (e.g., $e^+$).",
+    "check_questions": [
+      "What properties do a particle and its antiparticle share?",
+      "Name the antiparticle of the electron.",
+      "Who predicted the existence of antiparticles in 1928?"
+    ],
+    "common_pitfalls": [
+      "Thinking antiparticles have negative mass.",
+      "Confusing an antiparticle with an isotope."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Pair Production",
+    "id": "PHY-CH12-T11",
+    "scratch_idea": "Pair production occurs when a high-energy gamma photon interacts with a nucleus and vanishes to create a particle-antiparticle pair (usually electron and positron).",
+    "prerequisites": [
+      "Gamma Radiation",
+      "Mass-Energy Equivalence"
+    ],
+    "formulas": [
+      "$hf = 2m_o c^2 + K.E._+ + K.E._-$",
+      "$E_{min} = 1.02 \\text{ MeV}$"
+    ],
+    "core_technique": "Conservation of momentum requires the presence of a nucleus for this process to occur; it cannot happen in a vacuum.",
+    "check_questions": [
+      "What is the minimum energy required for electron-positron pair production?",
+      "Why is a nucleus necessary for pair production?",
+      "What happens to the excess energy of the photon if its energy is greater than 1.02 MeV?"
+    ],
+    "common_pitfalls": [
+      "Thinking pair production can occur with visible light.",
+      "Forgetting that charge is conserved (one negative, one positive particle produced)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Annihilation of Matter",
+    "id": "PHY-CH12-T12",
+    "scratch_idea": "Annihilation is the reverse of pair production. When a particle and its antiparticle meet, they destroy each other, converting their mass entirely into energy (usually two gamma photons).",
+    "prerequisites": [
+      "Antiparticles",
+      "Conservation Laws"
+    ],
+    "formulas": [
+      "$e^- + e^+ \\rightarrow \\gamma + \\gamma$",
+      "$E_{\\gamma} = 0.51 \\text{ MeV}$"
+    ],
+    "core_technique": "Note that two photons are emitted in opposite directions to conserve linear momentum.",
+    "check_questions": [
+      "What is produced when an electron and a positron annihilate?",
+      "Why are two photons produced instead of just one?",
+      "What is the energy of each photon produced in electron-positron annihilation?"
+    ],
+    "common_pitfalls": [
+      "Thinking the particles just 'disappear' without energy release.",
+      "Assuming only electrons and positrons can annihilate."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Natural Radioactivity",
+    "id": "PHY-CH12-T13",
+    "scratch_idea": "Natural radioactivity is the spontaneous emission of radiation (alpha, beta, or gamma) from unstable nuclei, typically those with an atomic number greater than 82.",
+    "prerequisites": [
+      "Atomic Stability"
+    ],
+    "formulas": [],
+    "core_technique": "Stability is determined by the neutron-to-proton ratio; once the ratio is off or the nucleus is too large, it becomes radioactive.",
+    "check_questions": [
+      "What is the threshold atomic number for naturally occurring radioactive elements?",
+      "Name the three types of radiation emitted during natural radioactivity.",
+      "Is radioactivity affected by external physical conditions like temperature?"
+    ],
+    "common_pitfalls": [
+      "Thinking radioactivity is always caused by external human factors.",
+      "Assuming all atoms are radioactive."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Alpha (\u03b1) Decay",
+    "id": "PHY-CH12-T14",
+    "scratch_idea": "In alpha decay, an unstable nucleus emits an alpha particle (a Helium nucleus). This reduces the mass number by 4 and the atomic number by 2.",
+    "prerequisites": [
+      "Nucleon Conservation"
+    ],
+    "formulas": [
+      "$^{A}_{Z} X \\rightarrow ^{A-4}_{Z-2} Y + ^{4}_{2} He$"
+    ],
+    "core_technique": "Always check that the sum of Z and A on the left side equals the sum of Z and A on the right side.",
+    "check_questions": [
+      "What is the composition of an alpha particle?",
+      "How does alpha decay affect the atomic number of the parent element?",
+      "If Radium-226 (Z=88) undergoes alpha decay, what is the Z of the daughter nucleus?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to decrease both A and Z.",
+      "Confusing the alpha particle with a lithium nucleus."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Beta-minus (\u03b2-) Decay",
+    "id": "PHY-CH12-T15",
+    "scratch_idea": "Beta-minus decay occurs when a neutron in the nucleus converts into a proton, an electron (beta particle), and an anti-neutrino.",
+    "prerequisites": [
+      "Weak Nuclear Force",
+      "Antineutrino"
+    ],
+    "formulas": [
+      "$^{1}_{0} n \\rightarrow ^{1}_{1} p + ^{0}_{-1} e + \\bar{\\nu}$",
+      "$^{A}_{Z} X \\rightarrow ^{A}_{Z+1} Y + ^{0}_{-1} e + \\bar{\\nu}$"
+    ],
+    "core_technique": "The mass number A remains constant while the atomic number Z increases by 1.",
+    "check_questions": [
+      "What happens to a neutron during beta-minus decay?",
+      "What is the purpose of the anti-neutrino in this process?",
+      "How does the atomic number change in $\\beta^-$ decay?"
+    ],
+    "common_pitfalls": [
+      "Assuming the mass number A increases.",
+      "Forgetting to include the anti-neutrino in the equation."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Beta-plus (\u03b2+) Decay",
+    "id": "PHY-CH12-T16",
+    "scratch_idea": "Beta-plus decay involves a proton converting into a neutron, a positron, and a neutrino. This happens in nuclei with too many protons.",
+    "prerequisites": [
+      "Positron",
+      "Neutrino"
+    ],
+    "formulas": [
+      "$^{1}_{1} p \\rightarrow ^{1}_{0} n + ^{0}_{+1} e + \\nu$",
+      "$^{A}_{Z} X \\rightarrow ^{A}_{Z-1} Y + ^{0}_{+1} e + \\nu$"
+    ],
+    "core_technique": "Note that A remains the same, but the atomic number Z decreases by 1.",
+    "check_questions": [
+      "What particle is emitted alongside a neutrino in $\\beta^+$ decay?",
+      "How does the N/P ratio change during positron emission?",
+      "Write the general equation for $\\beta^+$ decay."
+    ],
+    "common_pitfalls": [
+      "Confusing the positron with a proton.",
+      "Forgetting that a neutrino is emitted, not an anti-neutrino."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Gamma (\u03b3) Decay",
+    "id": "PHY-CH12-T17",
+    "scratch_idea": "Gamma decay is the emission of high-energy electromagnetic radiation from an excited nucleus as it transitions to a lower energy state. No change in A or Z occurs.",
+    "prerequisites": [
+      "Excited States",
+      "Photons"
+    ],
+    "formulas": [
+      "$^{A}_{Z} X^* \\rightarrow ^{A}_{Z} X + \\gamma$"
+    ],
+    "core_technique": "Look for the asterisk (*) symbol which denotes an excited state of the nucleus.",
+    "check_questions": [
+      "Does gamma decay change the identity of the element?",
+      "What is the nature of gamma radiation?",
+      "Why does a nucleus undergo gamma decay?"
+    ],
+    "common_pitfalls": [
+      "Thinking gamma rays have charge.",
+      "Expecting a change in the mass number."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Discrete Energy of Alpha Particles",
+    "id": "PHY-CH12-T18",
+    "scratch_idea": "Alpha particles emitted from a specific radionuclide all possess fixed, distinct kinetic energy values, appearing as sharp lines on an energy spectrum.",
+    "prerequisites": [
+      "Alpha Decay",
+      "Energy Levels"
+    ],
+    "formulas": [],
+    "core_technique": "Contrast this with beta decay; alpha decay is a two-body problem (daughter nucleus + alpha), hence fixed energies.",
+    "check_questions": [
+      "Describe the energy spectrum of alpha particles.",
+      "What does 'discrete energy' mean in the context of decay?",
+      "Why do alpha particles have fixed energies?"
+    ],
+    "common_pitfalls": [
+      "Confusing the discrete spectrum of alpha with the continuous spectrum of beta.",
+      "Assuming the energy of alpha particles from different sources is the same."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Continuous Energy of Beta Particles",
+    "id": "PHY-CH12-T19",
+    "scratch_idea": "Beta particles are emitted with a range of energies from zero to a maximum because the decay energy is shared between the beta particle and the (anti)neutrino.",
+    "prerequisites": [
+      "Beta Decay",
+      "Neutrinos"
+    ],
+    "formulas": [],
+    "core_technique": "The three-body nature of beta decay (daughter + beta + neutrino) allows for variable energy distribution.",
+    "check_questions": [
+      "Why is the beta energy spectrum continuous rather than discrete?",
+      "Who proposed the neutrino to explain this energy sharing?",
+      "What happens to the total energy in a beta decay event?"
+    ],
+    "common_pitfalls": [
+      "Assuming all beta particles from the same source have the same speed.",
+      "Thinking the missing energy violates conservation of energy laws."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Hadrons",
+    "id": "PHY-CH12-T20",
+    "scratch_idea": "Hadrons are complex particles made of quarks that interact via the strong nuclear force. They are divided into baryons and mesons.",
+    "prerequisites": [
+      "Strong Nuclear Force",
+      "Quarks"
+    ],
+    "formulas": [],
+    "core_technique": "If a particle experiences the strong force, it must be a hadron.",
+    "check_questions": [
+      "What defines a hadron?",
+      "Give two examples of hadrons.",
+      "Into what two categories are hadrons divided?"
+    ],
+    "common_pitfalls": [
+      "Including electrons in the hadron family.",
+      "Assuming all hadrons are stable."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Leptons",
+    "id": "PHY-CH12-T21",
+    "scratch_idea": "Leptons are truly fundamental particles that do not experience the strong nuclear force. Examples include electrons, muons, and neutrinos.",
+    "prerequisites": [
+      "Fundamental Particles"
+    ],
+    "formulas": [],
+    "core_technique": "Leptons are characterized by their lack of internal quark structure.",
+    "check_questions": [
+      "List three particles belonging to the lepton family.",
+      "Do leptons interact via the strong nuclear force?",
+      "Are leptons considered composite or fundamental particles?"
+    ],
+    "common_pitfalls": [
+      "Confusing leptons with mesons.",
+      "Thinking protons are leptons because they are small."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Baryons",
+    "id": "PHY-CH12-T22",
+    "scratch_idea": "Baryons are a type of hadron made of exactly three quarks. Protons and neutrons are the most common baryons.",
+    "prerequisites": [
+      "Hadrons",
+      "Quarks"
+    ],
+    "formulas": [],
+    "core_technique": "Check for an odd number of quarks (specifically 3) to identify a baryon.",
+    "check_questions": [
+      "How many quarks make up a baryon?",
+      "Is a proton a baryon or a meson?",
+      "What is the baryon number of a proton?"
+    ],
+    "common_pitfalls": [
+      "Confusing the term baryon with nucleon (though they overlap).",
+      "Thinking mesons are baryons."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Mesons",
+    "id": "PHY-CH12-T23",
+    "scratch_idea": "Mesons are hadrons composed of one quark and one anti-quark. They are typically short-lived and act as mediators of forces between nucleons.",
+    "prerequisites": [
+      "Hadrons",
+      "Antiquarks"
+    ],
+    "formulas": [],
+    "core_technique": "Remember the quark-antiquark pair structure ($q\\bar{q}$).",
+    "check_questions": [
+      "What is the quark composition of a meson?",
+      "Name one example of a meson.",
+      "Are mesons considered fermions or bosons?"
+    ],
+    "common_pitfalls": [
+      "Thinking mesons are made of three quarks.",
+      "Confusing mesons with muons (which are leptons)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Quark Flavors",
+    "id": "PHY-CH12-T24",
+    "scratch_idea": "There are six types of quarks, known as flavors: up (u), down (d), strange (s), charm (c), bottom (b), and top (t).",
+    "prerequisites": [
+      "Elementary Particles"
+    ],
+    "formulas": [
+      "$Q_u = +\\frac{2}{3}e$",
+      "$Q_d = -\\frac{1}{3}e$"
+    ],
+    "core_technique": "Memorize the charges: Up-type (u, c, t) are +2/3, and Down-type (d, s, b) are -1/3.",
+    "check_questions": [
+      "How many quark flavors exist?",
+      "What is the electric charge of a 'down' quark?",
+      "Which quark has the highest mass?"
+    ],
+    "common_pitfalls": [
+      "Thinking quarks have integer charges.",
+      "Confusing flavor with color charge."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Quark Composition of Proton",
+    "id": "PHY-CH12-T25",
+    "scratch_idea": "A proton consists of two up quarks and one down quark (uud). The fractional charges add up to a net charge of +1.",
+    "prerequisites": [
+      "Quark Flavors",
+      "Protons"
+    ],
+    "formulas": [
+      "Charge $= \\frac{2}{3} + \\frac{2}{3} + (-\\frac{1}{3}) = +1$"
+    ],
+    "core_technique": "Use the uud formula to derive why the proton has a +1 charge.",
+    "check_questions": [
+      "What is the quark content of a proton?",
+      "Show how the fractional charges of quarks result in a charge of +1 for the proton.",
+      "How many 'down' quarks are in a proton?"
+    ],
+    "common_pitfalls": [
+      "Mixing up the composition with that of the neutron (udd).",
+      "Forgetting that quarks are held together by gluons."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Quark Composition of Neutron",
+    "id": "PHY-CH12-T26",
+    "scratch_idea": "A neutron is composed of one up quark and two down quarks (udd). These fractional charges cancel out to a net charge of zero.",
+    "prerequisites": [
+      "Quark Flavors",
+      "Neutrons"
+    ],
+    "formulas": [
+      "Charge $= \\frac{2}{3} + (-\\frac{1}{3}) + (-\\frac{1}{3}) = 0$"
+    ],
+    "core_technique": "Use the udd formula to prove the neutron's neutrality.",
+    "check_questions": [
+      "Identify the three quarks that form a neutron.",
+      "Why is a neutron electrically neutral in terms of quarks?",
+      "Which quark is more prevalent in a neutron, up or down?"
+    ],
+    "common_pitfalls": [
+      "Confusing 'udd' with 'uud'.",
+      "Thinking the neutron has no internal charge structure."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Color Charge (Quantum Chromodynamics)",
+    "id": "PHY-CH12-T27",
+    "scratch_idea": "Quarks possess a property called 'color charge' (red, green, blue). The strong force between quarks is called the color force, and all observed hadrons must be 'colorless' (white).",
+    "prerequisites": [
+      "Quarks",
+      "Strong Nuclear Force"
+    ],
+    "formulas": [],
+    "core_technique": "Baryons contain one red, one green, and one blue quark, while mesons contain a color and its anti-color.",
+    "check_questions": [
+      "What are the three types of color charges?",
+      "What does 'colorless' mean in the context of a baryon?",
+      "Which theory describes the interaction of color charges?"
+    ],
+    "common_pitfalls": [
+      "Thinking quarks are actually colored like light.",
+      "Confusing color charge with electric charge."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Beta Decay at Quark Level",
+    "id": "PHY-CH12-T28",
+    "scratch_idea": "At the most fundamental level, beta-minus decay is the conversion of a 'down' quark into an 'up' quark, releasing an electron and an anti-neutrino.",
+    "prerequisites": [
+      "Beta-minus Decay",
+      "Quark Flavors"
+    ],
+    "formulas": [
+      "$d \\rightarrow u + e^- + \\bar{\\nu}$"
+    ],
+    "core_technique": "Focus on the change from udd (neutron) to uud (proton).",
+    "check_questions": [
+      "Which quark changes its flavor during beta-minus decay?",
+      "Write the fundamental quark equation for $\\beta^-$ decay.",
+      "How does the quark composition change when a neutron becomes a proton?"
+    ],
+    "common_pitfalls": [
+      "Thinking the whole nucleon disappears.",
+      "Assuming the 'up' quark turns into a 'down' quark in $\\beta^-$ decay."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Higgs Boson",
+    "id": "PHY-CH12-T29",
+    "scratch_idea": "The Higgs boson is a fundamental particle that interacts with the Higgs field. This interaction is what gives other fundamental particles their mass.",
+    "prerequisites": [
+      "Fundamental Particles",
+      "Concept of Mass"
+    ],
+    "formulas": [],
+    "core_technique": "Think of the Higgs field as a 'syrup' that permeates space; particles that 'drag' more in it become heavier.",
+    "check_questions": [
+      "What is the primary role of the Higgs Boson in particle physics?",
+      "In which year was the Higgs Boson discovered at CERN?",
+      "Why do photons have no rest mass according to Higgs theory?"
+    ],
+    "common_pitfalls": [
+      "Thinking the Higgs Boson 'is' mass.",
+      "Assuming it gives mass to composite objects like humans directly (most of our mass comes from binding energy)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Exchange Particles (Force Carriers)",
+    "id": "PHY-CH12-T30",
+    "scratch_idea": "Forces are transmitted between particles by the exchange of gauge bosons. For example, photons carry the electromagnetic force and gluons carry the strong force.",
+    "prerequisites": [
+      "Fundamental Forces"
+    ],
+    "formulas": [],
+    "core_technique": "Match the boson to the force: Photon (EM), Gluon (Strong), W/Z (Weak), Graviton (Gravity).",
+    "check_questions": [
+      "What particle mediates the electromagnetic interaction?",
+      "Name the force carrier for the strong nuclear force.",
+      "Which particles are responsible for the weak nuclear force?"
+    ],
+    "common_pitfalls": [
+      "Confusing the mediator with the particle being acted upon.",
+      "Thinking the graviton has been experimentally confirmed like the photon."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Conservation of Nucleon and Charge Number",
+    "id": "PHY-CH12-T31",
+    "scratch_idea": "In all nuclear processes, the total number of nucleons (A) and the total electric charge (Z) must remain constant from the beginning to the end of the reaction.",
+    "prerequisites": [
+      "Atomic Number",
+      "Mass Number"
+    ],
+    "formulas": [
+      "$\\sum A_{initial} = \\sum A_{final}$",
+      "$\\sum Z_{initial} = \\sum Z_{final}$"
+    ],
+    "core_technique": "Use this law to find 'missing' particles in nuclear equations by balancing the top and bottom numbers.",
+    "check_questions": [
+      "State the law of conservation of nucleon number.",
+      "If a nucleus with Z=90 decays and an alpha particle (Z=2) is released, what is the Z of the remaining nucleus?",
+      "Does the total mass-energy always remain conserved in nuclear reactions?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to include the charge of emitted electrons or positrons in the Z balance.",
+      "Thinking mass is conserved separately from energy."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Asymmetry of Matter and Anti-matter",
+    "id": "PHY-CH12-T32",
+    "scratch_idea": "The observable universe is composed almost entirely of matter. The reason why there isn't an equal amount of anti-matter (which would lead to total annihilation) is an unsolved mystery in physics.",
+    "prerequisites": [
+      "Matter and Anti-matter"
+    ],
+    "formulas": [],
+    "core_technique": "Understand that the imbalance likely stems from a violation of baryon number conservation in the early universe.",
+    "check_questions": [
+      "What percentage of the observable universe is matter vs anti-matter?",
+      "What is the 'mystery' regarding matter and anti-matter in the Big Bang theory?",
+      "Why doesn't the universe contain equal parts of hydrogen and anti-hydrogen?"
+    ],
+    "common_pitfalls": [
+      "Assuming anti-matter doesn't exist at all.",
+      "Confusing dark matter with anti-matter."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Plasma in the Universe",
+    "id": "PHY-CH12-T33",
+    "scratch_idea": "Most of the visible matter in the universe (stars, nebulae) exists in the plasma state\u2014a gas of ions and free electrons. 95% of ordinary matter is estimated to be plasma.",
+    "prerequisites": [
+      "States of Matter"
+    ],
+    "formulas": [],
+    "core_technique": "Distinguish between the total universe (mostly dark energy/matter) and the 'observable' ordinary matter (mostly plasma).",
+    "check_questions": [
+      "What is the most common state of ordinary matter in the universe?",
+      "Why is most matter in stars in the plasma state?",
+      "What percentage of ordinary matter is estimated to be plasma?"
+    ],
+    "common_pitfalls": [
+      "Thinking solids are the most common state of matter in the universe.",
+      "Forgetting that the 95% figure refers to the 5% of 'ordinary' matter."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "The Standard Model",
+    "id": "PHY-CH12-T34",
+    "scratch_idea": "The Standard Model is the theoretical framework that organizes all known fundamental particles (quarks, leptons, and bosons) and their interactions, excluding gravity.",
+    "prerequisites": [
+      "Quarks",
+      "Leptons",
+      "Bosons"
+    ],
+    "formulas": [],
+    "core_technique": "Identify the Standard Model as a 'Periodic Table' for subatomic particles.",
+    "check_questions": [
+      "Which three categories of particles form the Standard Model?",
+      "What major force is not currently explained by the Standard Model?",
+      "What role does the Higgs boson play in the Standard Model?"
+    ],
+    "common_pitfalls": [
+      "Thinking the Standard Model is a complete 'Theory of Everything'.",
+      "Assuming it includes a description of Dark Matter."
+    ],
+    "difficulty": "Medium"
+  }
+]

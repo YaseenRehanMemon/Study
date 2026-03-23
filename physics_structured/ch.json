@@ -1,0 +1,444 @@
+[
+  {
+    "topic_name": "Assumptions of the Kinetic Theory of Gases",
+    "id": "PHY-CH6-T1",
+    "scratch_idea": "This topic outlines the fundamental postulates required to model gas behavior mathematically. It treats gas molecules as point masses in constant random motion with negligible volume and no intermolecular forces.",
+    "prerequisites": [
+      "Particle nature of matter",
+      "Newtonian mechanics"
+    ],
+    "formulas": [],
+    "core_technique": "Remember that these assumptions describe an 'ideal' gas, which does not exist in reality but simplifies calculations.",
+    "check_questions": [
+      "What is the nature of collisions between gas molecules according to kinetic theory?",
+      "How is the volume of individual gas particles compared to the total volume of the gas?",
+      "What determines the average kinetic energy of gas particles?"
+    ],
+    "common_pitfalls": [
+      "Assuming intermolecular forces exist in the ideal model",
+      "Forgetting that collisions must be perfectly elastic"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Ideal Gas Equation (Molar Form)",
+    "id": "PHY-CH6-T2",
+    "scratch_idea": "This is the equation of state for an ideal gas that relates macroscopic variables: pressure, volume, temperature, and the number of moles.",
+    "prerequisites": [
+      "Definition of a mole",
+      "Standard temperature and pressure"
+    ],
+    "formulas": [
+      "$PV = nRT$"
+    ],
+    "core_technique": "Always convert temperature to Kelvin ($K = ^\\circ C + 273$) before plugging it into the equation.",
+    "check_questions": [
+      "What does the constant 'R' represent and what is its value?",
+      "If the number of moles and temperature are constant, what happens to volume if pressure doubles?",
+      "What are the SI units for each variable in the ideal gas equation?"
+    ],
+    "common_pitfalls": [
+      "Using Celsius instead of Kelvin for temperature",
+      "Using the wrong value of R for non-SI units"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Ideal Gas Equation (Molecular Form)",
+    "id": "PHY-CH6-T3",
+    "scratch_idea": "This variation of the gas equation uses the actual number of molecules ($N$) instead of moles, introducing the Boltzmann constant ($k_B$).",
+    "prerequisites": [
+      "Avogadro's number",
+      "Ideal Gas Equation (Molar Form)"
+    ],
+    "formulas": [
+      "$k_B = \\frac{R}{N_A}$",
+      "$PV = Nk_BT$"
+    ],
+    "core_technique": "Use this form when the problem provides the total count of particles rather than the mass or moles.",
+    "check_questions": [
+      "Define the Boltzmann constant in terms of the Universal Gas Constant.",
+      "What is the numerical value of $k_B$?",
+      "How is $N$ (number of molecules) related to $n$ (number of moles)?"
+    ],
+    "common_pitfalls": [
+      "Confusing lowercase 'n' (moles) with uppercase 'N' (molecules)",
+      "Misplacing the power of 10 in the Boltzmann constant value"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Real Gas Deviations",
+    "id": "PHY-CH6-T4",
+    "scratch_idea": "Real gases only behave ideally under specific conditions because real molecules have finite volume and experience attractive forces.",
+    "prerequisites": [
+      "Assumptions of Kinetic Theory",
+      "Intermolecular forces"
+    ],
+    "formulas": [
+      "$\\rho = \\frac{PM}{RT}$",
+      "$\\rho \\propto \\frac{P}{T}$"
+    ],
+    "core_technique": "Identify that 'Low Pressure' and 'High Temperature' are the 'Golden Conditions' for ideal behavior.",
+    "check_questions": [
+      "Under what pressure conditions does a real gas behave like an ideal gas?",
+      "Why does high temperature favor ideal behavior?",
+      "How does the density of a gas relate to its pressure and temperature?"
+    ],
+    "common_pitfalls": [
+      "Thinking real gases are ideal at high pressure",
+      "Forgetting that real molecules actually occupy space"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Boyle's Law",
+    "id": "PHY-CH6-T5",
+    "scratch_idea": "This law describes the inverse relationship between pressure and volume of a gas when temperature and mass are held constant.",
+    "prerequisites": [
+      "Definition of Pressure",
+      "Variables of state"
+    ],
+    "formulas": [
+      "$P \\propto \\frac{1}{V}$",
+      "$P_1V_1 = P_2V_2$"
+    ],
+    "core_technique": "On a P-V graph, Boyle's Law is represented by a curve called an isotherm.",
+    "check_questions": [
+      "What variable must remain constant for Boyle's Law to apply?",
+      "If the volume of a gas is halved at constant temperature, what happens to the pressure?",
+      "What is the shape of a P-V graph for an isothermal process?"
+    ],
+    "common_pitfalls": [
+      "Applying the law when temperature is changing",
+      "Assuming a linear relationship instead of an inverse one"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Charles' Law",
+    "id": "PHY-CH6-T6",
+    "scratch_idea": "This law states that the volume of a fixed mass of gas is directly proportional to its absolute temperature at constant pressure.",
+    "prerequisites": [
+      "Absolute zero concept",
+      "Definition of Pressure"
+    ],
+    "formulas": [
+      "$V \\propto T$",
+      "$\\frac{V_1}{T_1} = \\frac{V_2}{T_2}$"
+    ],
+    "core_technique": "Ensure the temperature is in the Kelvin scale; volume does not double if Celsius temperature doubles.",
+    "check_questions": [
+      "At what temperature does the theoretical volume of a gas become zero?",
+      "How is volume related to absolute temperature at constant pressure?",
+      "What does a V-T graph look like for Charles' Law?"
+    ],
+    "common_pitfalls": [
+      "Using Celsius in the ratio $V/T$",
+      "Confusing constant pressure with constant volume"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Gay-Lussac's Law",
+    "id": "PHY-CH6-T7",
+    "scratch_idea": "This law relates the pressure of a gas directly to its absolute temperature, provided the volume and mass remain constant.",
+    "prerequisites": [
+      "Kinetic energy of molecules",
+      "Ideal gas assumptions"
+    ],
+    "formulas": [
+      "$P \\propto T$",
+      "$\\frac{P_1}{T_1} = \\frac{P_2}{T_2}$"
+    ],
+    "core_technique": "This explains why pressure increases in a car tire on a hot day.",
+    "check_questions": [
+      "If the temperature of a gas in a rigid container is tripled, what happens to the pressure?",
+      "What must be kept constant for Gay-Lussac's Law to hold?",
+      "Describe the P-T graph for a fixed volume of gas."
+    ],
+    "common_pitfalls": [
+      "Failing to convert Celsius to Kelvin",
+      "Applying this to flexible containers where volume can change"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Thermal Equilibrium",
+    "id": "PHY-CH6-T8",
+    "scratch_idea": "A state reached by two or more systems in thermal contact where there is no net flow of heat because they are at the same temperature.",
+    "prerequisites": [
+      "Definition of Heat",
+      "Definition of Temperature"
+    ],
+    "formulas": [],
+    "core_technique": "Thermal equilibrium is the condition required for the Zeroth Law of Thermodynamics.",
+    "check_questions": [
+      "What defines the state of thermal equilibrium between two bodies?",
+      "What is the net heat flow between two bodies at the same temperature?",
+      "Give a daily life example of reaching thermal equilibrium."
+    ],
+    "common_pitfalls": [
+      "Confusing heat with temperature",
+      "Thinking that bodies must have the same internal energy to be in equilibrium"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Internal Energy",
+    "id": "PHY-CH6-T9",
+    "scratch_idea": "Internal energy is the sum of all microscopic kinetic and potential energies of the molecules in a system. For an ideal gas, it depends only on temperature.",
+    "prerequisites": [
+      "Kinetic Energy",
+      "Potential Energy"
+    ],
+    "formulas": [
+      "$\\langle K.E. \\rangle = \\frac{3}{2} k_B T$",
+      "\\Delta U \\propto \\Delta T"
+    ],
+    "core_technique": "Treat internal energy as a state function; it only depends on the current state, not how the system got there.",
+    "check_questions": [
+      "Why is the internal energy of an ideal gas only kinetic?",
+      "How is the change in internal energy related to a change in temperature?",
+      "Is internal energy a path function or a state function?"
+    ],
+    "common_pitfalls": [
+      "Including macroscopic motion of the container in internal energy",
+      "Forgetting that internal energy includes potential energy for real gases"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Work Done by a Gas",
+    "id": "PHY-CH6-T10",
+    "scratch_idea": "In thermodynamics, work is performed when a gas expands against an external pressure, causing a change in volume.",
+    "prerequisites": [
+      "Definition of Mechanical Work",
+      "Pressure-Force relation"
+    ],
+    "formulas": [
+      "$W = P \\Delta V$"
+    ],
+    "core_technique": "The area under a P-V curve always represents the work done during that process.",
+    "check_questions": [
+      "What is the formula for work done at constant pressure?",
+      "What does the area under a P-V graph represent?",
+      "If the volume of a gas decreases, is the work done by the gas positive or negative?"
+    ],
+    "common_pitfalls": [
+      "Calculating work when volume is constant (Work is zero)",
+      "Confusing 'work done by the system' with 'work done on the system'"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "First Law of Thermodynamics",
+    "id": "PHY-CH6-T11",
+    "scratch_idea": "A statement of energy conservation for thermodynamic systems, relating heat added, work done, and change in internal energy.",
+    "prerequisites": [
+      "Internal Energy",
+      "Work Done by a Gas",
+      "Conservation of Energy"
+    ],
+    "formulas": [
+      "$Q = \\Delta U + W$"
+    ],
+    "core_technique": "Strict adherence to sign conventions is vital: +Q is heat added, +W is work done BY the gas.",
+    "check_questions": [
+      "State the first law of thermodynamics in words.",
+      "How does the first law relate to the principle of conservation of energy?",
+      "If 50J of heat is added and 30J of work is done by the gas, what is the change in internal energy?"
+    ],
+    "common_pitfalls": [
+      "Mixing up signs for heat entering/leaving or work done on/by",
+      "Applying the law without considering all three variables"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Isothermal Process",
+    "id": "PHY-CH6-T12",
+    "scratch_idea": "A thermodynamic process that occurs at a constant temperature. Since temperature is constant, the internal energy of an ideal gas does not change.",
+    "prerequisites": [
+      "First Law of Thermodynamics",
+      "Boyle's Law"
+    ],
+    "formulas": [
+      "$\\Delta U = 0$",
+      "$Q = W$"
+    ],
+    "core_technique": "For an isothermal process to occur, the system must be in a conducting container and the process must be very slow.",
+    "check_questions": [
+      "What happens to the internal energy of an ideal gas during an isothermal expansion?",
+      "In an isothermal compression, what happens to the heat generated by work?",
+      "Why must an isothermal process be slow?"
+    ],
+    "common_pitfalls": [
+      "Assuming heat is zero because temperature is constant",
+      "Forgetting that internal energy change is zero only for ideal gases"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Adiabatic Process",
+    "id": "PHY-CH6-T13",
+    "scratch_idea": "A process where no heat is exchanged between the system and the surroundings. Work is done entirely at the expense of internal energy.",
+    "prerequisites": [
+      "First Law of Thermodynamics",
+      "Molar Specific Heats"
+    ],
+    "formulas": [
+      "$Q = 0$",
+      "$W = -\\Delta U$",
+      "$PV^\\gamma = \\text{constant}$"
+    ],
+    "core_technique": "Adiabatic processes occur when the system is perfectly insulated or the process happens so fast that heat has no time to flow.",
+    "check_questions": [
+      "What is the condition for a process to be adiabatic?",
+      "Why does a gas cool down during adiabatic expansion?",
+      "Is an adiabat steeper or flatter than an isotherm on a P-V graph?"
+    ],
+    "common_pitfalls": [
+      "Thinking no heat exchange means no temperature change",
+      "Confusing adiabatic with isothermal"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Reversible and Irreversible Processes",
+    "id": "PHY-CH6-T14",
+    "scratch_idea": "A reversible process can be returned to its original state without affecting the universe, while an irreversible process involves losses (like friction) that prevent this.",
+    "prerequisites": [
+      "Thermodynamic Equilibrium",
+      "Entropy concept"
+    ],
+    "formulas": [],
+    "core_technique": "Real-world processes are always irreversible; reversible processes are idealizations occurring infinitely slowly.",
+    "check_questions": [
+      "What is the main requirement for a process to be reversible?",
+      "Give an example of an irreversible process in nature.",
+      "Why is friction a cause of irreversibility?"
+    ],
+    "common_pitfalls": [
+      "Assuming a cyclic process is always reversible",
+      "Thinking rapid processes can be reversible"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Heat Engine",
+    "id": "PHY-CH6-T15",
+    "scratch_idea": "A device that converts thermal energy from a high-temperature source into mechanical work, while exhausting waste heat to a low-temperature sink.",
+    "prerequisites": [
+      "First Law of Thermodynamics",
+      "Cyclic processes"
+    ],
+    "formulas": [
+      "$W = Q_1 - Q_2$",
+      "$\\eta = \\frac{W}{Q_1}$"
+    ],
+    "core_technique": "Identify $Q_1$ as heat absorbed (Input) and $Q_2$ as heat rejected (Waste).",
+    "check_questions": [
+      "What are the three essential parts of a heat engine?",
+      "Can a heat engine convert all absorbed heat into work?",
+      "How is efficiency defined for a heat engine?"
+    ],
+    "common_pitfalls": [
+      "Thinking efficiency can be 100%",
+      "Confusing the roles of the source and the sink"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Second Law of Thermodynamics (Kelvin Statement)",
+    "id": "PHY-CH6-T16",
+    "scratch_idea": "It states that it is impossible to construct an engine that operates in a cycle and produces no effect other than the extraction of heat from a single reservoir and the performance of an equivalent amount of work.",
+    "prerequisites": [
+      "Heat Engine",
+      "Direction of heat flow"
+    ],
+    "formulas": [],
+    "core_technique": "This law sets the 'quality' of energy, proving that you cannot turn all 'disordered' heat into 'ordered' work.",
+    "check_questions": [
+      "Why is a single reservoir not enough to run a heat engine?",
+      "What does the Second Law imply about the efficiency of heat engines?",
+      "How does this law differ from the First Law in terms of energy conversion?"
+    ],
+    "common_pitfalls": [
+      "Thinking the Second Law contradicts the First Law",
+      "Forgetting the requirement of a 'cycle'"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Carnot Cycle and Theorem",
+    "id": "PHY-CH6-T17",
+    "scratch_idea": "The Carnot cycle is an ideal, reversible cycle consisting of two isothermal and two adiabatic processes. It provides the maximum possible efficiency for any engine.",
+    "prerequisites": [
+      "Isothermal Process",
+      "Adiabatic Process",
+      "Reversible Process"
+    ],
+    "formulas": [
+      "$\\eta = 1 - \\frac{T_2}{T_1}$"
+    ],
+    "core_technique": "To maximize Carnot efficiency, the temperature difference between the source and sink must be as large as possible.",
+    "check_questions": [
+      "List the four steps of the Carnot cycle in order.",
+      "On what factors does the efficiency of a Carnot engine depend?",
+      "State Carnot's Theorem regarding engine efficiency."
+    ],
+    "common_pitfalls": [
+      "Using Celsius for temperatures in the efficiency formula",
+      "Thinking the Carnot engine is a real, buildable device"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Refrigerator",
+    "id": "PHY-CH6-T18",
+    "scratch_idea": "A heat engine operating in reverse, where external work is used to transfer heat from a cold body to a hot body.",
+    "prerequisites": [
+      "Heat Engine",
+      "Work Done on a system"
+    ],
+    "formulas": [
+      "$Q_H = Q_c + W$",
+      "$E = \\frac{Q_c}{W} = \\frac{T_1}{T_2 - T_1}$"
+    ],
+    "core_technique": "Note that for refrigerators, we calculate 'Coefficient of Performance' (COP) instead of 'Efficiency', which can be greater than 1.",
+    "check_questions": [
+      "What is the main function of a refrigerator in terms of heat transfer?",
+      "Define the Coefficient of Performance (COP).",
+      "Does a refrigerator violate the natural flow of heat? Explain."
+    ],
+    "common_pitfalls": [
+      "Confusing efficiency with COP",
+      "Assuming a refrigerator creates cold (it actually removes heat)"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Entropy",
+    "id": "PHY-CH6-T19",
+    "scratch_idea": "Entropy is a thermodynamic property that measures the degree of disorder or randomness in a system. Natural processes tend to increase total entropy.",
+    "prerequisites": [
+      "Second Law of Thermodynamics",
+      "Reversible Process"
+    ],
+    "formulas": [
+      "$\\Delta S = \\frac{\\Delta Q}{T}$"
+    ],
+    "core_technique": "When heat is added, entropy change is positive; when heat is removed, entropy change is negative.",
+    "check_questions": [
+      "Define entropy in terms of heat and temperature.",
+      "What happens to the total entropy of the universe in a natural process?",
+      "How is entropy related to the 'degradation of energy'?"
+    ],
+    "common_pitfalls": [
+      "Thinking entropy can decrease in an isolated system",
+      "Forgetting that temperature must be in Kelvin"
+    ],
+    "difficulty": "Hard"
+  }
+]

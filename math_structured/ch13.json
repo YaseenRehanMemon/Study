@@ -1,0 +1,353 @@
+[
+  {
+    "topic_name": "Slope of a Secant Line",
+    "id": "MAT-CH13-T01",
+    "scratch_idea": "The secant line is a straight line that joins two distinct points on a curve. Its slope represents the average rate of change between those two points.",
+    "prerequisites": [
+      "Slope of a linear line",
+      "Function notation $f(x)$"
+    ],
+    "formulas": [
+      "$m_{sec} = \\frac{f(x+\\delta x)-f(x)}{\\delta x}$"
+    ],
+    "core_technique": "View the denominator $\\delta x$ as the total horizontal distance between two points $P$ and $Q$.",
+    "check_questions": [
+      "What geometric feature does a secant line represent on a graph?",
+      "If $f(x) = x^2$, write the expression for the slope of the secant line between $x=2$ and $x=2+\\delta x$.",
+      "Explain the difference between $f(x+\\delta x)$ and $f(x)+\\delta x$."
+    ],
+    "common_pitfalls": [
+      "Confusing the secant slope with the tangent slope.",
+      "Incorrectly distributing the function notation in the numerator."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Slope of a Tangent Line",
+    "id": "MAT-CH13-T02",
+    "scratch_idea": "As the distance between two points on a secant line approaches zero, the secant line rotates to become a tangent line at a single point. The slope of this tangent represents the instantaneous rate of change.",
+    "prerequisites": [
+      "Slope of a secant line",
+      "Concept of Limits"
+    ],
+    "formulas": [
+      "$m_{tan} = \\operatorname{Lim}_{\\delta x \\to 0} \\frac{f(x+\\delta x)-f(x)}{\\delta x}$"
+    ],
+    "core_technique": "Evaluate the limit of the difference quotient as the increment $\\delta x$ vanishes.",
+    "check_questions": [
+      "What happens to the point $Q$ relative to $P$ as $\\delta x \\to 0$?",
+      "Define the gradient of a curve at a specific point.",
+      "Is the tangent line a secant line? Explain in terms of limits."
+    ],
+    "common_pitfalls": [
+      "Setting $\\delta x = 0$ before simplifying the expression, leading to a division by zero error.",
+      "Assuming every point on a curve must have a unique tangent line (corners)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Derivative as a Limit of a Difference Quotient",
+    "id": "MAT-CH13-T03",
+    "scratch_idea": "The derivative is formally defined as the limit of the average rate of change as the interval of change becomes infinitesimally small.",
+    "prerequisites": [
+      "Function continuity",
+      "Difference quotient"
+    ],
+    "formulas": [
+      "$f'(x) = \\operatorname{Lim}_{\\delta x \\to 0} \\frac{f(x+\\delta x)-f(x)}{\\delta x}$"
+    ],
+    "core_technique": "The derivative $f'(x)$ exists only if the limit of the difference quotient is finite and unique.",
+    "check_questions": [
+      "What is the mathematical definition of a derivative?",
+      "What does the term 'instantaneous rate of change' signify in calculus?",
+      "If the limit of the difference quotient does not exist, what can we say about the function at that point?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to write the limit symbol in each step of the derivation.",
+      "Confusing the average rate of change with the instantaneous rate of change."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Average and Instantaneous Velocity",
+    "id": "MAT-CH13-T04",
+    "scratch_idea": "In physics, average velocity is the change in position over a time interval, while instantaneous velocity is the derivative of the position function with respect to time.",
+    "prerequisites": [
+      "Position function $s(t)$",
+      "Rate of change"
+    ],
+    "formulas": [
+      "$v_{avg} = \\frac{s(t_1)-s(t)}{t_1-t}$",
+      "$v_{inst} = \\operatorname{Lim}_{\\delta t \\to 0} \\frac{s(t+\\delta t)-s(t)}{\\delta t}$"
+    ],
+    "core_technique": "To find velocity at a specific moment, differentiate the position function; for an interval, use the slope of the secant.",
+    "check_questions": [
+      "A particle's position is $s(t) = t^2$. Find the average velocity between $t=2$ and $t=4$.",
+      "How is instantaneous velocity related to the slope of a position-time graph?",
+      "Estimate $v_{inst}$ at $t=3$ if the average velocity over $[3, 3.001]$ is 7.001."
+    ],
+    "common_pitfalls": [
+      "Using the average velocity formula when asked for velocity at a specific time 't'.",
+      "Mixing up units (e.g., meters/sec vs miles/hour) during calculation."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Differentiation Notations",
+    "id": "MAT-CH13-T05",
+    "scratch_idea": "Different mathematicians developed various symbols to represent the derivative, including Leibniz's operator notation and Lagrange's prime notation.",
+    "prerequisites": [
+      "Definition of derivative"
+    ],
+    "formulas": [
+      "Leibniz: $\\frac{dy}{dx}$",
+      "Lagrange: $f'(x)$",
+      "Newton: $\\dot{y}$",
+      "Euler: $D_f(x)$"
+    ],
+    "core_technique": "Recognize that $\\frac{dy}{dx}$ is an operator symbol, not a fraction of $dy$ divided by $dx$.",
+    "check_questions": [
+      "Which mathematician introduced the prime notation $f'(x)$?",
+      "What does the dot above a variable (Newton's notation) usually represent?",
+      "Is $\\frac{dy}{dx}$ a quotient? Justify your answer based on the text."
+    ],
+    "common_pitfalls": [
+      "Treating $dy$ and $dx$ as independent algebraic variables that can be cancelled individually in early stages.",
+      "Confusing Euler\u2019s $D$ notation with integral notation."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "The Ab-Initio Method (First Principles)",
+    "id": "MAT-CH13-T06",
+    "scratch_idea": "This is a four-step systematic process to find the derivative of any function directly from the definition.",
+    "prerequisites": [
+      "Algebraic simplification",
+      "Limit laws"
+    ],
+    "formulas": [
+      "Step 1: $f(x+\\delta x)$",
+      "Step 2: $f(x+\\delta x) - f(x)$",
+      "Step 3: $\\frac{f(x+\\delta x)-f(x)}{\\delta x}$",
+      "Step 4: $\\operatorname{Lim}_{\\delta x \\to 0} [\\text{Step 3 result}]$"
+    ],
+    "core_technique": "Always simplify the numerator to factor out $\\delta x$ so it can be cancelled with the denominator before applying the limit.",
+    "check_questions": [
+      "List the four steps of differentiation by definition.",
+      "What is another name for the 'Ab-initio' method?",
+      "Use first principles to find the derivative of $f(x) = x^2$."
+    ],
+    "common_pitfalls": [
+      "Incorrectly expanding $(x+\\delta x)^n$.",
+      "Failure to rationalize the numerator when dealing with square root functions."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Derivative of a Constant Function",
+    "id": "MAT-CH13-T07",
+    "scratch_idea": "A constant function does not change as $x$ varies, so its rate of change (derivative) is always zero.",
+    "prerequisites": [
+      "Definition of a constant",
+      "Slope of a horizontal line"
+    ],
+    "formulas": [
+      "$\\frac{d}{dx}(c) = 0$"
+    ],
+    "core_technique": "Remember that a horizontal line has zero steepness; thus, the derivative is zero.",
+    "check_questions": [
+      "What is the derivative of $f(x) = 5$?",
+      "Explain graphically why the derivative of a constant is zero.",
+      "Find $\\frac{dy}{dx}$ if $y = \\pi$."
+    ],
+    "common_pitfalls": [
+      "Mistakenly applying the power rule and getting a non-zero result.",
+      "Confusing a constant with a variable $x$ when $c$ is a letter (e.g., $\\frac{d}{dx}(a)$)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "The Power Rule",
+    "id": "MAT-CH13-T08",
+    "scratch_idea": "The power rule provides a shortcut for differentiating functions where $x$ is raised to any real power $n$.",
+    "prerequisites": [
+      "Exponents",
+      "Binomial Theorem"
+    ],
+    "formulas": [
+      "$\\frac{d}{dx}(x^n) = nx^{n-1}$"
+    ],
+    "core_technique": "Multiply the function by the current exponent and then subtract one from the exponent.",
+    "check_questions": [
+      "Find the derivative of $x^5$.",
+      "What is the derivative of $x^{-3}$?",
+      "Apply the power rule to $f(x) = x^{2/3}$."
+    ],
+    "common_pitfalls": [
+      "Subtracting 1 incorrectly from negative exponents (e.g., thinking the derivative of $x^{-2}$ is $-2x^{-1}$).",
+      "Forgetting to multiply the coefficient by the original power."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Continuity and Differentiability",
+    "id": "MAT-CH13-T09",
+    "scratch_idea": "While every differentiable function must be continuous, not every continuous function is differentiable (e.g., functions with sharp corners).",
+    "prerequisites": [
+      "Definition of Continuity",
+      "One-sided limits"
+    ],
+    "formulas": [
+      "$\\operatorname{Lim}_{\\delta x \\to 0^+} \\frac{f(x+\\delta x)-f(x)}{\\delta x} = \\operatorname{Lim}_{\\delta x \\to 0^-} \\frac{f(x+\\delta x)-f(x)}{\\delta x}$"
+    ],
+    "core_technique": "Check for 'sharp points' or 'cusps' where the left-hand limit and right-hand limit of the difference quotient do not match.",
+    "check_questions": [
+      "Does differentiability imply continuity?",
+      "Why is $f(x) = |x|$ not differentiable at $x=0$?",
+      "Can a function be differentiable at a point where it is discontinuous?"
+    ],
+    "common_pitfalls": [
+      "Assuming that because a graph is 'connected' (continuous), it must have a derivative everywhere.",
+      "Miscalculating one-sided limits for absolute value functions."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "The Constant Multiple Rule",
+    "id": "MAT-CH13-T10",
+    "scratch_idea": "When a function is multiplied by a constant, its derivative is simply the constant multiplied by the derivative of the function.",
+    "prerequisites": [
+      "Algebraic factoring",
+      "Power rule"
+    ],
+    "formulas": [
+      "$\\frac{d}{dx}[cf(x)] = c \\cdot \\frac{d}{dx}[f(x)]$"
+    ],
+    "core_technique": "Pull the constant 'outside' the differentiation operator before calculating the derivative of the variable part.",
+    "check_questions": [
+      "Find the derivative of $7x^4$.",
+      "If $\\frac{d}{dx}f(x) = 10$, what is $\\frac{d}{dx}[5f(x)]$?",
+      "Differentiate $y = \\frac{1}{2}x^2$."
+    ],
+    "common_pitfalls": [
+      "Differentiating the constant to zero when it is a coefficient (e.g., saying $\\frac{d}{dx}(5x) = 0$).",
+      "Only multiplying the constant by the power and forgetting to decrease the exponent."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Sum and Difference Rules",
+    "id": "MAT-CH13-T11",
+    "scratch_idea": "The derivative of a sum or difference of functions is equal to the sum or difference of their individual derivatives.",
+    "prerequisites": [
+      "Limit theorems for sums",
+      "Power rule"
+    ],
+    "formulas": [
+      "$\\frac{d}{dx}[f(x) \\pm g(x)] = f'(x) \\pm g'(x)$"
+    ],
+    "core_technique": "Differentiate a polynomial term-by-term.",
+    "check_questions": [
+      "Find the derivative of $x^3 + x^2 + 5$.",
+      "Differentiate $f(x) = 4x^5 - 2x^3$.",
+      "If $h(x) = f(x) + g(x)$, find $h'(x)$ given $f'(x)=2$ and $g'(x)=3$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to carry the negative sign through all terms in a difference.",
+      "Combining terms before differentiating when it's simpler to do them separately."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "The Product Rule",
+    "id": "MAT-CH13-T12",
+    "scratch_idea": "Used for differentiating the product of two functions; it is not simply the product of their derivatives.",
+    "prerequisites": [
+      "Sum rule",
+      "Function multiplication"
+    ],
+    "formulas": [
+      "$\\frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)$"
+    ],
+    "core_technique": "Follow the 'First-D-Second plus Second-D-First' pattern.",
+    "check_questions": [
+      "Differentiate $y = (x^2+1)(x-3)$.",
+      "True or False: The derivative of $u \\cdot v$ is $u' \\cdot v'$.",
+      "Find $\\frac{dy}{dx}$ for $y = x \\cdot \\sqrt{x}$ using the product rule."
+    ],
+    "common_pitfalls": [
+      "Incorrectly assuming $\\frac{d}{dx}(fg) = f'g'$.",
+      "Losing track of terms when both functions require the power rule."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "The Quotient Rule",
+    "id": "MAT-CH13-T13",
+    "scratch_idea": "Provides the derivative for a function expressed as one function divided by another.",
+    "prerequisites": [
+      "Product rule",
+      "Algebraic fractions"
+    ],
+    "formulas": [
+      "$\\frac{d}{dx}[\\frac{f(x)}{g(x)}] = \\frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}$"
+    ],
+    "core_technique": "Remember the order of the numerator: 'Bottom times derivative of top minus top times derivative of bottom'.",
+    "check_questions": [
+      "Find the derivative of $\\frac{x+1}{x-1}$.",
+      "What is the denominator of the derivative of $\\frac{f}{g}$?",
+      "Differentiate $y = \\frac{x^2}{x+5}$."
+    ],
+    "common_pitfalls": [
+      "Reversing the order of terms in the numerator (subtracting in the wrong order).",
+      "Forgetting to square the denominator."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Marginal Profit",
+    "id": "MAT-CH13-T14",
+    "scratch_idea": "In economics, marginal profit is the derivative of the profit function, representing the additional profit from producing one more unit.",
+    "prerequisites": [
+      "Profit function $P(x)$",
+      "Power rule"
+    ],
+    "formulas": [
+      "$P'(x) = \\frac{d}{dx}[R(x) - C(x)]$"
+    ],
+    "core_technique": "To find marginal profit at a specific production level, differentiate $P(x)$ and substitute the unit value.",
+    "check_questions": [
+      "If $P(x) = 100x - 5x^2$, find the marginal profit at $x=8$.",
+      "What does a marginal profit of 20 signify?",
+      "How is marginal profit related to Revenue and Cost functions?"
+    ],
+    "common_pitfalls": [
+      "Confusing total profit with marginal profit.",
+      "Forgetting to subtract the derivative of cost from the derivative of revenue."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Instantaneous Acceleration",
+    "id": "MAT-CH13-T15",
+    "scratch_idea": "Acceleration is the rate of change of velocity with respect to time, which is the second derivative of the position function.",
+    "prerequisites": [
+      "Instantaneous velocity",
+      "Function notation"
+    ],
+    "formulas": [
+      "$a(t) = \\frac{dv}{dt} = \\frac{d^2s}{dt^2}$"
+    ],
+    "core_technique": "Differentiate the position function twice to obtain the acceleration function.",
+    "check_questions": [
+      "Find the acceleration if $s(t) = 4t^3 - 3t^2$.",
+      "What are the units of acceleration if distance is in meters and time in seconds?",
+      "If velocity is constant, what is the acceleration?"
+    ],
+    "common_pitfalls": [
+      "Stopping after the first derivative (calculating velocity instead of acceleration).",
+      "Incorrectly applying the power rule during the second differentiation step."
+    ],
+    "difficulty": "Medium"
+  }
+]

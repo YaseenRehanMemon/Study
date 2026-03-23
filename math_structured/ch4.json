@@ -1,0 +1,684 @@
+[
+  {
+    "topic_name": "Definition of a Matrix",
+    "id": "MAT-CH4-T1",
+    "scratch_idea": "A matrix is a rectangular array or arrangement of numbers enclosed within brackets. It is used as a mathematical notation to represent data or coefficients of linear systems efficiently.",
+    "prerequisites": [
+      "Real Numbers",
+      "Linear Equations"
+    ],
+    "formulas": [
+      "A = [a_{ij}]"
+    ],
+    "core_technique": "Always use capital letters to name a matrix and small letters with double subscripts for its entries.",
+    "check_questions": [
+      "What is the definition of a matrix?",
+      "Who is credited with the development of matrix theory?",
+      "How are the entries of a matrix usually represented?"
+    ],
+    "common_pitfalls": [
+      "Confusing the brackets [ ] with determinant bars | |.",
+      "Incorrectly identifying the subscript order (should be row first, then column)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Order of a Matrix",
+    "id": "MAT-CH4-T2",
+    "scratch_idea": "The order describes the dimensions of a matrix by specifying the number of rows and columns it contains. It is written as m cross n, where m is rows and n is columns.",
+    "prerequisites": [
+      "Counting rows and columns"
+    ],
+    "formulas": [
+      "Order = m \\times n"
+    ],
+    "core_technique": "To find the number of elements in a matrix, simply calculate the product of m and n.",
+    "check_questions": [
+      "What is the order of a matrix with 4 rows and 3 columns?",
+      "If a matrix has 12 elements, list three possible orders for it.",
+      "In the notation $a_{23}$, which number represents the row?"
+    ],
+    "common_pitfalls": [
+      "Reversing the order as $n \\times m$ (columns first).",
+      "Treating the multiplication sign in $m \\times n$ as a requirement to perform multiplication rather than as a label."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Row and Column Matrices",
+    "id": "MAT-CH4-T3",
+    "scratch_idea": "A row matrix consists of only one horizontal line of elements, whereas a column matrix consists of only one vertical line of elements. These are also called row and column vectors.",
+    "prerequisites": [
+      "Matrix Order"
+    ],
+    "formulas": [
+      "Row Matrix: [a_{11} \\ a_{12} \\ \\dots \\ a_{1n}]",
+      "Column Matrix: \\begin{bmatrix} a_{11} \\\\ a_{21} \\\\ \\dots \\end{bmatrix}"
+    ],
+    "core_technique": "A row matrix always has an order of $1 \\times n$, and a column matrix always has an order of $m \\times 1$.",
+    "check_questions": [
+      "What is another name for a row matrix?",
+      "Give an example of a column matrix of order $3 \\times 1$.",
+      "Can a matrix be both a row and a column matrix?"
+    ],
+    "common_pitfalls": [
+      "Confusing a single-element matrix $[a]$ as only one type; it is technically both.",
+      "Miscounting the number of columns in a row matrix."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Square and Rectangular Matrices",
+    "id": "MAT-CH4-T4",
+    "scratch_idea": "A matrix is square if the number of rows equals the number of columns ($m=n$). If the rows and columns are not equal ($m \\neq n$), it is called a rectangular matrix.",
+    "prerequisites": [
+      "Matrix Order"
+    ],
+    "formulas": [
+      "Square Matrix: m = n",
+      "Rectangular Matrix: m \\neq n"
+    ],
+    "core_technique": "Identify the shape: rectangular matrices look elongated, while square matrices look symmetrical.",
+    "check_questions": [
+      "Define a square matrix.",
+      "Is a $2 \\times 3$ matrix rectangular or square?",
+      "What is the order of a square matrix that contains 9 elements?"
+    ],
+    "common_pitfalls": [
+      "Thinking all matrices must be square.",
+      "Incorrectly assuming a $1 \\times 1$ matrix is not square."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Principal and Secondary Diagonals",
+    "id": "MAT-CH4-T5",
+    "scratch_idea": "In a square matrix, the principal (or leading) diagonal consists of entries $a_{ii}$ (top-left to bottom-right). The secondary diagonal runs from top-right to bottom-left.",
+    "prerequisites": [
+      "Square Matrix"
+    ],
+    "formulas": [
+      "Principal Diagonal: a_{11}, a_{22}, \\dots, a_{nn}",
+      "Secondary Diagonal: a_{1n}, a_{2,n-1}, \\dots, a_{n1}"
+    ],
+    "core_technique": "The principal diagonal is only defined for square matrices.",
+    "check_questions": [
+      "What is another name for the principal diagonal?",
+      "In a $3 \\times 3$ matrix, which entry is part of both the principal and secondary diagonals?",
+      "List the principal diagonal entries of $\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$."
+    ],
+    "common_pitfalls": [
+      "Identifying diagonals in rectangular matrices.",
+      "Confusing the 'leading' diagonal with the 'secondary' diagonal."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Diagonal Matrix",
+    "id": "MAT-CH4-T6",
+    "scratch_idea": "A square matrix where all entries outside the principal diagonal are zero, and at least one entry on the principal diagonal is non-zero.",
+    "prerequisites": [
+      "Principal Diagonal",
+      "Square Matrix"
+    ],
+    "formulas": [
+      "a_{ij} = 0 \\text{ for all } i \\neq j"
+    ],
+    "core_technique": "Check that all elements above and below the main diagonal are exactly zero.",
+    "check_questions": [
+      "Can a diagonal matrix have a zero on its principal diagonal?",
+      "Is a null square matrix a diagonal matrix?",
+      "Define a diagonal matrix in terms of its entries $a_{ij}$."
+    ],
+    "common_pitfalls": [
+      "Forgetting that a diagonal matrix must be square.",
+      "Thinking all diagonal entries must be non-zero (only one needs to be)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Scalar Matrix",
+    "id": "MAT-CH4-T7",
+    "scratch_idea": "A specific type of diagonal matrix where all the elements on the principal diagonal are the same non-zero scalar value.",
+    "prerequisites": [
+      "Diagonal Matrix"
+    ],
+    "formulas": [
+      "a_{ij} = k \\text{ for } i=j, \\text{ and } a_{ij}=0 \\text{ for } i \\neq j"
+    ],
+    "core_technique": "Look for a diagonal matrix where the diagonal entries are 'twins' or identical.",
+    "check_questions": [
+      "What is the difference between a diagonal matrix and a scalar matrix?",
+      "Is $\\begin{bmatrix} 5 & 0 \\\\ 0 & 5 \\end{bmatrix}$ a scalar matrix?",
+      "Can the scalar $k$ in a scalar matrix be zero?"
+    ],
+    "common_pitfalls": [
+      "Confusing scalar matrices with the identity matrix (where $k$ must be 1).",
+      "Assuming non-diagonal elements can be non-zero."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Unit or Identity Matrix",
+    "id": "MAT-CH4-T8",
+    "scratch_idea": "A scalar matrix where the diagonal entries are all equal to 1. It acts as the multiplicative identity in matrix algebra.",
+    "prerequisites": [
+      "Scalar Matrix"
+    ],
+    "formulas": [
+      "I_n = [a_{ij}] \\text{ where } a_{ij}=1 \\text{ if } i=j \\text{ else } 0"
+    ],
+    "core_technique": "Recognize $I_2, I_3$ as the standard building blocks for matrix equations.",
+    "check_questions": [
+      "What is the notation for an identity matrix of order 3?",
+      "Why is it called an identity matrix?",
+      "Is the identity matrix a square matrix?"
+    ],
+    "common_pitfalls": [
+      "Using $I$ for a non-square matrix.",
+      "Placing the 1s on the secondary diagonal instead of the principal diagonal."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Null or Zero Matrix",
+    "id": "MAT-CH4-T9",
+    "scratch_idea": "A matrix in which every single entry is zero. Unlike identity matrices, null matrices can be of any order (rectangular or square).",
+    "prerequisites": [
+      "Matrix Entries"
+    ],
+    "formulas": [
+      "O_{m \\times n} = [0]"
+    ],
+    "core_technique": "Represented by the capital letter $O$, it serves as the additive identity.",
+    "check_questions": [
+      "Does a null matrix have to be square?",
+      "What is the result of adding a null matrix to a matrix $A$?",
+      "Write a null matrix of order $2 \\times 3$."
+    ],
+    "common_pitfalls": [
+      "Thinking the order of a null matrix doesn't matter when adding to another matrix.",
+      "Confusing the number 0 with the matrix $O$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Equal Matrices",
+    "id": "MAT-CH4-T10",
+    "scratch_idea": "Two matrices are equal if and only if they have the same order and every corresponding entry is identical.",
+    "prerequisites": [
+      "Matrix Order",
+      "Corresponding Entries"
+    ],
+    "formulas": [
+      "A = B \\iff a_{ij} = b_{ij} \\text{ and } \\text{ord}(A) = \\text{ord}(B)"
+    ],
+    "core_technique": "To check for equality, first verify the order, then compare elements position by position.",
+    "check_questions": [
+      "Can a $2 \\times 3$ matrix be equal to a $3 \\times 2$ matrix?",
+      "If $[x \\ 2] = [5 \\ y]$, what are the values of $x$ and $y$?",
+      "What two conditions must be met for matrix equality?"
+    ],
+    "common_pitfalls": [
+      "Ignoring the order and only checking if the elements are the same.",
+      "Assuming matrices are equal if they contain the same numbers but in different positions."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Transpose of a Matrix",
+    "id": "MAT-CH4-T11",
+    "scratch_idea": "The transpose is formed by interchanging the rows and columns of a matrix. The first row becomes the first column, the second row becomes the second column, and so on.",
+    "prerequisites": [
+      "Rows and Columns"
+    ],
+    "formulas": [
+      "A^t = [a_{ji}] \\text{ for } A = [a_{ij}]"
+    ],
+    "core_technique": "Pivot the matrix: the horizontal lines of the original become vertical lines in the transpose.",
+    "check_questions": [
+      "If $A$ is $2 \\times 3$, what is the order of $A^t$?",
+      "Find the transpose of $[1 \\ 2 \\ 3]$.",
+      "What is the result of $(A^t)^t$?"
+    ],
+    "common_pitfalls": [
+      "Interchanging only some rows but not all.",
+      "Forgetting to change the order dimensions (e.g., $m \\times n$ becomes $n \\times m$)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Matrix Addition and Subtraction",
+    "id": "MAT-CH4-T12",
+    "scratch_idea": "Two matrices can be added or subtracted if they have the same order. The operation is performed by adding or subtracting corresponding elements.",
+    "prerequisites": [
+      "Matrix Order",
+      "Arithmetic of Real/Complex Numbers"
+    ],
+    "formulas": [
+      "A \\pm B = [a_{ij} \\pm b_{ij}]"
+    ],
+    "core_technique": "Ensure 'Conformability': Check that orders match perfectly before starting.",
+    "check_questions": [
+      "When are two matrices conformable for addition?",
+      "If $A$ is $2 \\times 2$ and $B$ is $2 \\times 3$, can you find $A+B$?",
+      "How is matrix subtraction defined in terms of addition?"
+    ],
+    "common_pitfalls": [
+      "Adding matrices of different orders.",
+      "Mistakes in sign when subtracting negative entries."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Scalar Multiplication of a Matrix",
+    "id": "MAT-CH4-T13",
+    "scratch_idea": "Multiplying a matrix by a scalar (a real or complex number) involves multiplying every single entry of the matrix by that number.",
+    "prerequisites": [
+      "Matrix Entries",
+      "Multiplication"
+    ],
+    "formulas": [
+      "kA = [k \\cdot a_{ij}]"
+    ],
+    "core_technique": "Distribute the scalar to every 'room' (entry) in the matrix 'house'.",
+    "check_questions": [
+      "If $k=2$ and $A = [1 \\ 3]$, what is $kA$?",
+      "Does scalar multiplication change the order of the matrix?",
+      "What is the result of $0 \\cdot A$?"
+    ],
+    "common_pitfalls": [
+      "Only multiplying the first row or first element by the scalar.",
+      "Incorrectly applying scalar multiplication to determinants (which follows different rules)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Matrix Multiplication (Conformability)",
+    "id": "MAT-CH4-T14",
+    "scratch_idea": "Two matrices $A$ and $B$ can be multiplied to find $AB$ only if the number of columns in $A$ equals the number of rows in $B$.",
+    "prerequisites": [
+      "Matrix Order"
+    ],
+    "formulas": [
+      "(m \\times n) \\cdot (n \\times p) \\to (m \\times p)"
+    ],
+    "core_technique": "Check the 'inner' dimensions: If they match, multiplication is possible. The 'outer' dimensions give the result's order.",
+    "check_questions": [
+      "Can a $3 \\times 2$ matrix be multiplied by a $2 \\times 5$ matrix?",
+      "If $A$ is $1 \\times 3$ and $B$ is $3 \\times 1$, what is the order of $AB$?",
+      "Under what condition is $A^2$ defined?"
+    ],
+    "common_pitfalls": [
+      "Assuming $AB$ is possible just because $A+B$ is possible.",
+      "Thinking $AB$ and $BA$ have the same conformability requirements."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Matrix Multiplication (Process)",
+    "id": "MAT-CH4-T15",
+    "scratch_idea": "The entry in the $i$-th row and $j$-th column of $AB$ is the sum of products of the $i$-th row of $A$ and the $j$-th column of $B$.",
+    "prerequisites": [
+      "Conformability",
+      "Arithmetic"
+    ],
+    "formulas": [
+      "c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \\dots + a_{in}b_{nj}"
+    ],
+    "core_technique": "Use the 'Dot Product' style: Multiply row by column, then add the results.",
+    "check_questions": [
+      "Explain how the element in the 2nd row and 1st column of a product is calculated.",
+      "Compute $[1 \\ 2] \\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}$.",
+      "Is matrix multiplication generally commutative?"
+    ],
+    "common_pitfalls": [
+      "Multiplying corresponding elements (like addition) instead of row-by-column.",
+      "Forgetting to sum the products within a single entry calculation."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Minor of an Element",
+    "id": "MAT-CH4-T16",
+    "scratch_idea": "The minor $M_{ij}$ of an element $a_{ij}$ is the determinant of the sub-matrix left after deleting the $i$-th row and $j$-th column containing that element.",
+    "prerequisites": [
+      "Determinants (2x2)",
+      "Square Matrix"
+    ],
+    "formulas": [
+      "M_{ij} = |\\text{Sub-matrix after removing row } i, \\text{ col } j|"
+    ],
+    "core_technique": "Physically or mentally 'cross out' the row and column of the element to see the remaining values.",
+    "check_questions": [
+      "Find the minor $M_{11}$ of $\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$.",
+      "What is the order of a minor for a matrix of order $n$?",
+      "How many minors does a $3 \\times 3$ matrix have?"
+    ],
+    "common_pitfalls": [
+      "Including the element itself in the minor calculation.",
+      "Forgetting that the minor is a single value (a determinant), not a matrix."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Cofactor of an Element",
+    "id": "MAT-CH4-T17",
+    "scratch_idea": "A cofactor is a minor with an attached sign based on the element's position. The sign is positive if the sum of row and column indices is even, and negative if odd.",
+    "prerequisites": [
+      "Minor of an Element"
+    ],
+    "formulas": [
+      "A_{ij} = (-1)^{i+j} M_{ij}"
+    ],
+    "core_technique": "Remember the sign checkerboard: $+ - + \\dots$",
+    "check_questions": [
+      "Define cofactor.",
+      "If $M_{12} = 5$, what is $A_{12}$?",
+      "In a $3 \\times 3$ matrix, which positions have a negative sign factor?"
+    ],
+    "common_pitfalls": [
+      "Calculating the minor correctly but forgetting to apply the $(-1)^{i+j}$ sign.",
+      "Confusing the index sum $i+j$ with the element's value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Determinant of a 3x3 Matrix",
+    "id": "MAT-CH4-T18",
+    "scratch_idea": "The determinant of a $3 \\times 3$ matrix is evaluated by expanding along any row or column using the sum of elements multiplied by their corresponding cofactors.",
+    "prerequisites": [
+      "Cofactors",
+      "2x2 Determinants"
+    ],
+    "formulas": [
+      "|A| = a_{11}A_{11} + a_{12}A_{12} + a_{13}A_{13}"
+    ],
+    "core_technique": "Choose a row or column with the most zeros to simplify expansion.",
+    "check_questions": [
+      "Expand $|A|$ along the first column.",
+      "Evaluate the determinant of $I_3$.",
+      "Does the choice of row for expansion change the final result?"
+    ],
+    "common_pitfalls": [
+      "Arithmetic errors during the expansion of the $2 \\times 2$ sub-determinants.",
+      "Incorrect signs in the $a_{12}$ position during expansion."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Adjoint of a Square Matrix",
+    "id": "MAT-CH4-T19",
+    "scratch_idea": "The adjoint (or adjugate) of a matrix is the transpose of the matrix formed by the cofactors of all its elements.",
+    "prerequisites": [
+      "Cofactors",
+      "Transpose"
+    ],
+    "formulas": [
+      "\\text{adj } A = [A_{ij}]^t = [A_{ji}]"
+    ],
+    "core_technique": "Step 1: Replace elements with cofactors. Step 2: Transpose the resulting matrix.",
+    "check_questions": [
+      "What is the first step in finding the adjoint?",
+      "For a $2 \\times 2$ matrix, what is the shortcut for finding the adjoint?",
+      "Is the adjoint of a matrix always square?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to transpose the cofactor matrix.",
+      "Confusing adjoint with the inverse itself."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Multiplicative Inverse of a Matrix",
+    "id": "MAT-CH4-T20",
+    "scratch_idea": "The inverse $A^{-1}$ is a matrix that, when multiplied by $A$, results in the identity matrix. It only exists for non-singular square matrices ($|A| \\neq 0$).",
+    "prerequisites": [
+      "Determinant",
+      "Adjoint"
+    ],
+    "formulas": [
+      "A^{-1} = \\frac{1}{|A|} \\text{adj } A"
+    ],
+    "core_technique": "Always check if $|A|=0$ first; if it is, stop\u2014the inverse does not exist.",
+    "check_questions": [
+      "Define a non-singular matrix.",
+      "What happens if you try to find the inverse of a singular matrix?",
+      "Calculate the inverse of $\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}$."
+    ],
+    "common_pitfalls": [
+      "Multiplying by $|A|$ instead of dividing by it.",
+      "Applying the inverse formula to rectangular matrices."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Elementary Row Operations",
+    "id": "MAT-CH4-T21",
+    "scratch_idea": "These are operations applied to rows of a matrix to produce equivalent matrices: interchanging rows, multiplying a row by a non-zero constant, or adding a multiple of one row to another.",
+    "prerequisites": [
+      "Matrix Rows"
+    ],
+    "formulas": [
+      "R_i \\leftrightarrow R_j",
+      "kR_i \\to R'_i",
+      "R_i + kR_j \\to R'_i"
+    ],
+    "core_technique": "Used to simplify matrices into Echelon forms or solve linear systems.",
+    "check_questions": [
+      "What are the three types of elementary row operations?",
+      "What is the notation for interchanging row 1 and row 2?",
+      "Do row operations change the solution set of a system?"
+    ],
+    "common_pitfalls": [
+      "Using column operations by mistake when row operations are required.",
+      "Multiplying a row by zero (not allowed)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Echelon Form of a Matrix",
+    "id": "MAT-CH4-T22",
+    "scratch_idea": "A matrix is in echelon form if the number of leading zeros increases in each successive row, any zero rows are at the bottom, and the first non-zero entry in each row is 1.",
+    "prerequisites": [
+      "Elementary Row Operations"
+    ],
+    "formulas": [
+      "\\text{Leading entry} = 1"
+    ],
+    "core_technique": "Work column by column from left to right, creating 1s and then using them to create 0s below.",
+    "check_questions": [
+      "What are the three conditions for a matrix to be in echelon form?",
+      "What is a 'leading entry'?",
+      "Is $\\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}$ in echelon form?"
+    ],
+    "common_pitfalls": [
+      "Neglecting to make the leading entry 1.",
+      "Having a zero row above a non-zero row."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Reduced Echelon Form",
+    "id": "MAT-CH4-T23",
+    "scratch_idea": "An extension of echelon form where each column containing a leading 1 has zeros in every other position (both above and below the 1).",
+    "prerequisites": [
+      "Echelon Form"
+    ],
+    "formulas": [
+      "\\text{Col with leading 1} = [0 \\ \\dots \\ 1 \\ \\dots \\ 0]^t"
+    ],
+    "core_technique": "Once in echelon form, work backwards from the bottom-most leading 1 to clear entries above it.",
+    "check_questions": [
+      "How does reduced echelon form differ from standard echelon form?",
+      "What is the reduced echelon form of a non-singular $3 \\times 3$ matrix?",
+      "Convert $\\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}$ to reduced echelon form."
+    ],
+    "common_pitfalls": [
+      "Stopping at echelon form and forgetting to clear the entries above the leading 1s.",
+      "Calculating values incorrectly during the 'upward' elimination."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Rank of a Matrix",
+    "id": "MAT-CH4-T24",
+    "scratch_idea": "The rank is the number of non-zero rows remaining after a matrix has been reduced to its echelon form.",
+    "prerequisites": [
+      "Echelon Form"
+    ],
+    "formulas": [
+      "\\rho(A) = \\text{Number of non-zero rows in Echelon form}"
+    ],
+    "core_technique": "The rank identifies the number of linearly independent rows in the matrix.",
+    "check_questions": [
+      "Find the rank of $\\begin{bmatrix} 1 & 0 \\\\ 0 & 0 \\end{bmatrix}$.",
+      "What is the maximum possible rank for a $3 \\times 4$ matrix?",
+      "If the rank of a $3 \\times 3$ matrix is 3, is it singular?"
+    ],
+    "common_pitfalls": [
+      "Determining rank before reducing the matrix to echelon form.",
+      "Counting rows that contain non-zero entries but are not leading rows."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Matrix Inversion Method (Systems)",
+    "id": "MAT-CH4-T25",
+    "scratch_idea": "A method to solve a system of linear equations $AX=B$ by finding the inverse of the coefficient matrix $A$ and multiplying it by the constant matrix $B$.",
+    "prerequisites": [
+      "Matrix Inverse",
+      "Matrix Multiplication"
+    ],
+    "formulas": [
+      "X = A^{-1}B"
+    ],
+    "core_technique": "Set up the equation as $AX=B$, find $A^{-1}$, then calculate $A^{-1} \\times B$.",
+    "check_questions": [
+      "What is the matrix form of the system $x+y=2, x-y=0$?",
+      "Can this method be used if $|A|=0$?",
+      "Does the order of multiplication matter in $A^{-1}B$?"
+    ],
+    "common_pitfalls": [
+      "Calculating $BA^{-1}$ instead of $A^{-1}B$.",
+      "Incorrectly setting up the $X$ or $B$ matrices."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Cramer's Rule",
+    "id": "MAT-CH4-T26",
+    "scratch_idea": "A method for solving systems of linear equations using determinants. Each variable is found by the ratio of the determinant of a modified matrix to the determinant of the coefficient matrix.",
+    "prerequisites": [
+      "Determinants (3x3)"
+    ],
+    "formulas": [
+      "x_i = \\frac{|A_i|}{|A|}"
+    ],
+    "core_technique": "To find $A_i$, replace the $i$-th column of the coefficient matrix with the constants from matrix $B$.",
+    "check_questions": [
+      "Use Cramer's Rule to find $x$ in $2x+y=5, x-y=1$.",
+      "What is $|A_2|$ for a system of 3 equations?",
+      "When does Cramer's Rule fail?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to divide by the main determinant $|A|$.",
+      "Replacing the wrong column when calculating $|A_i|$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Homogeneous Linear Equations",
+    "id": "MAT-CH4-T27",
+    "scratch_idea": "A system where all constant terms are zero ($AX=0$). Such systems are always consistent because they always have at least the trivial solution $(0,0,0)$.",
+    "prerequisites": [
+      "Linear Systems"
+    ],
+    "formulas": [
+      "AX = 0"
+    ],
+    "core_technique": "Determine if a non-trivial solution exists by checking the rank or determinant of $A$.",
+    "check_questions": [
+      "What is a trivial solution?",
+      "Under what condition does a homogeneous system have non-trivial solutions?",
+      "Is a homogeneous system ever inconsistent?"
+    ],
+    "common_pitfalls": [
+      "Assuming a homogeneous system has no solution.",
+      "Thinking the trivial solution is only for square matrices."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Gaussian Elimination Method",
+    "id": "MAT-CH4-T28",
+    "scratch_idea": "A systematic method for solving linear systems by reducing the augmented matrix to row-echelon form and then using back-substitution to find variable values.",
+    "prerequisites": [
+      "Echelon Form",
+      "Augmented Matrix"
+    ],
+    "formulas": [
+      "[A|B] \\approx [E|B']"
+    ],
+    "core_technique": "Once in echelon form, start from the last row to find the last variable, then move upward.",
+    "check_questions": [
+      "What is an augmented matrix?",
+      "How does Gaussian elimination differ from Gauss-Jordan elimination?",
+      "Explain the process of back-substitution."
+    ],
+    "common_pitfalls": [
+      "Error in back-substitution math.",
+      "Forgetting to apply row operations to the constant column in the augmented matrix."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Transformation (Reflection) Matrices",
+    "id": "MAT-CH4-T29",
+    "scratch_idea": "Matrices can be used to reflect geometric points across axes. Multiplying a coordinate vector by a transformation matrix yields the reflected coordinates.",
+    "prerequisites": [
+      "Matrix Multiplication",
+      "Coordinates"
+    ],
+    "formulas": [
+      "\\text{x-axis}: \\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}",
+      "\\text{y-axis}: \\begin{bmatrix} -1 & 0 \\\\ 0 & 1 \\end{bmatrix}",
+      "y=x: \\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}"
+    ],
+    "core_technique": "Always treat the point as a column vector $[x \\ y]^t$ when multiplying by the transformation matrix.",
+    "check_questions": [
+      "What is the reflection of $(2, 3)$ over the $y$-axis?",
+      "Which matrix reflects a point across the line $y=x$?",
+      "Multiply $\\begin{bmatrix} 1 & 0 \\\\ 0 & -1 \\end{bmatrix}$ by $\\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix}$."
+    ],
+    "common_pitfalls": [
+      "Multiplying the point on the left of the matrix.",
+      "Confusing the $x$-axis and $y$-axis transformation matrices."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Matrix Coding and Cryptography",
+    "id": "MAT-CH4-T30",
+    "scratch_idea": "Matrices are used to encode messages by converting text to numbers and multiplying by an encoding matrix. Decoding is done using the inverse matrix.",
+    "prerequisites": [
+      "Matrix Multiplication",
+      "Matrix Inverse"
+    ],
+    "formulas": [
+      "\\text{Encoded} = A \\cdot \\text{Message}",
+      "\\text{Decoded} = A^{-1} \\cdot \\text{Encoded}"
+    ],
+    "core_technique": "Ensure the message is broken into vectors of a size matching the encoding matrix's dimension.",
+    "check_questions": [
+      "If $A$ is the encoding matrix, how is the message decoded?",
+      "Encode the letter pair 'AT' if $A=1, T=20$ using a given $2 \\times 2$ matrix.",
+      "Why must the encoding matrix be non-singular?"
+    ],
+    "common_pitfalls": [
+      "Trying to decode without finding the inverse first.",
+      "Mismatching the number-to-letter assignment (e.g., $A=0$ vs $A=1$)."
+    ],
+    "difficulty": "Hard"
+  }
+]

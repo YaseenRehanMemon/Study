@@ -1,0 +1,412 @@
+[
+  {
+    "topic_name": "Domain and Range of Sine Function",
+    "id": "MATH-CH11-T1",
+    "scratch_idea": "The sine function maps every real number to a y-coordinate on the unit circle. Because the unit circle's vertical reach is limited, the output is restricted between -1 and 1.",
+    "prerequisites": [
+      "Unit Circle",
+      "Standard Position of Angles"
+    ],
+    "formulas": [
+      "Domain: $\\mathbb{R}$",
+      "Range: $[-1, 1]$"
+    ],
+    "core_technique": "Remember that for any real $\\theta$, $\\sin \\theta$ always represents the y-coordinate of a point on the unit circle.",
+    "check_questions": [
+      "What is the maximum value the sine function can attain?",
+      "Is there any real number for which $\\sin \\theta$ is undefined?",
+      "Express the range of $y = \\sin x$ in interval notation."
+    ],
+    "common_pitfalls": [
+      "Mistakenly assuming the range is $(-\\infty, \\infty)$.",
+      "Confusing the input angle with the output ratio."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Domain and Range of Cosine Function",
+    "id": "MATH-CH11-T2",
+    "scratch_idea": "Like sine, the cosine function accepts any real number as an input. However, its output corresponds to the x-coordinate of a point on the unit circle, which never exceeds 1 or falls below -1.",
+    "prerequisites": [
+      "Unit Circle",
+      "Definition of $\\cos \\theta$ as $x$"
+    ],
+    "formulas": [
+      "Domain: $\\mathbb{R}$",
+      "Range: $[-1, 1]$"
+    ],
+    "core_technique": "Visualize the cosine function as the horizontal displacement of a point rotating around the origin.",
+    "check_questions": [
+      "What is the domain of the function $f(x) = \\cos x$?",
+      "If $\\cos \\theta = 1.5$, is the value of $\\theta$ real? Explain.",
+      "Identify the range of the cosine function."
+    ],
+    "common_pitfalls": [
+      "Thinking the range excludes 0.",
+      "Confusing the range of cosine with the range of tangent."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Domain and Range of Tangent Function",
+    "id": "MATH-CH11-T3",
+    "scratch_idea": "The tangent function is the ratio $y/x$. It becomes undefined whenever $x=0$, which occurs at odd multiples of $\\pi/2$. Unlike sine and cosine, its range covers all real numbers.",
+    "prerequisites": [
+      "Ratio of Sine to Cosine",
+      "Division by Zero Concept"
+    ],
+    "formulas": [
+      "Domain: $\\mathbb{R} - \\{x \\mid x = (2n + 1)\\frac{\\pi}{2}, n \\in \\mathbb{Z}\\}$ ",
+      "Range: $\\mathbb{R}$"
+    ],
+    "core_technique": "Identify vertical asymptotes by finding where $\\cos x = 0$.",
+    "check_questions": [
+      "At what points is the tangent function undefined?",
+      "Why does the tangent function have a range of all real numbers?",
+      "What is the value of $\\tan x$ as $x$ approaches $\\pi/2$ from the left?"
+    ],
+    "common_pitfalls": [
+      "Including $\\pi/2$ in the domain.",
+      "Thinking the range is limited to $[-1, 1]$ like sine."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Domain and Range of Cotangent Function",
+    "id": "MATH-CH11-T4",
+    "scratch_idea": "The cotangent function is the ratio $x/y$. It is undefined whenever $y=0$, which happens at integer multiples of $\\pi$. Its values can be any real number.",
+    "prerequisites": [
+      "Definition of $\\cot \\theta$ as $x/y$",
+      "Multiples of $\\pi$"
+    ],
+    "formulas": [
+      "Domain: $\\mathbb{R} - \\{x \\mid x = n\\pi, n \\in \\mathbb{Z}\\}$ ",
+      "Range: $\\mathbb{R}$"
+    ],
+    "core_technique": "Exclude values of $\\theta$ where the terminal side lies on the X-axis.",
+    "check_questions": [
+      "What is the domain of $\\cot x$?",
+      "If $\\cot x = 1,000,000$, is $x$ a valid real number?",
+      "Where does the terminal side $OP$ lie when $\\cot \\theta$ is undefined?"
+    ],
+    "common_pitfalls": [
+      "Confusing the exclusion points with those of the tangent function.",
+      "Assuming the range is restricted."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Domain and Range of Secant Function",
+    "id": "MATH-CH11-T5",
+    "scratch_idea": "Secant is the reciprocal of cosine ($1/x$). It is undefined where cosine is zero and its values are always outside the open interval $(-1, 1)$.",
+    "prerequisites": [
+      "Reciprocal Functions",
+      "Domain of Cosine"
+    ],
+    "formulas": [
+      "Domain: $\\mathbb{R} - \\{x \\mid x = (2n + 1)\\frac{\\pi}{2}, n \\in \\mathbb{Z}\\}$ ",
+      "Range: $\\mathbb{R} - (-1, 1)$ or $(-\\infty, -1] \\cup [1, \\infty)$"
+    ],
+    "core_technique": "The range of secant consists of all values 'outside' the range of cosine.",
+    "check_questions": [
+      "Can $\\sec x$ ever be equal to 0.5?",
+      "Which trigonometric function shares the same domain as $\\sec x$?",
+      "State the range of the secant function using set notation."
+    ],
+    "common_pitfalls": [
+      "Including 0 in the range.",
+      "Using the domain of $\\csc x$ instead of $\\sec x$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Domain and Range of Cosecant Function",
+    "id": "MATH-CH11-T6",
+    "scratch_idea": "Cosecant is the reciprocal of sine ($1/y$). It is undefined where sine is zero and, like secant, it only takes values $\\ge 1$ or $\\le -1$.",
+    "prerequisites": [
+      "Reciprocal Functions",
+      "Domain of Sine"
+    ],
+    "formulas": [
+      "Domain: $\\mathbb{R} - \\{x \\mid x = n\\pi, n \\in \\mathbb{Z}\\}$ ",
+      "Range: $\\mathbb{R} - (-1, 1)$ or $(-\\infty, -1] \\cup [1, \\infty)$"
+    ],
+    "core_technique": "Cosecant is undefined at $0, \\pm\\pi, \\pm 2\\pi, \\dots$ because $\\sin \\theta = 0$ at those points.",
+    "check_questions": [
+      "What is the range of $y = \\csc x$?",
+      "Find the domain of the cosecant function.",
+      "Why is $\\csc 0$ undefined?"
+    ],
+    "common_pitfalls": [
+      "Confusing the domain with odd multiples of $\\pi/2$.",
+      "Forgetting that the values -1 and 1 are included in the range."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Even and Odd Functions",
+    "id": "MATH-CH11-T7",
+    "scratch_idea": "Trigonometric functions exhibit specific symmetries. Even functions reflect across the y-axis, while odd functions are symmetric about the origin.",
+    "prerequisites": [
+      "Symmetry",
+      "Algebraic substitution of $-x$"
+    ],
+    "formulas": [
+      "Even: $f(-x) = f(x)$ (e.g., $\\cos x, \\sec x$)",
+      "Odd: $f(-x) = -f(x)$ (e.g., $\\sin x, \\csc x, \\tan x, \\cot x$)"
+    ],
+    "core_technique": "To test, replace $\\theta$ with $-\\theta$ and see if the sign of the function remains the same or changes.",
+    "check_questions": [
+      "Which trigonometric functions are even?",
+      "Is the function $f(x) = \\sin x + \\cos x$ even, odd, or neither?",
+      "Describe the symmetry of an odd function's graph."
+    ],
+    "common_pitfalls": [
+      "Assuming all trigonometric functions are odd.",
+      "Misidentifying $\\cos(-x)$ as $-\\cos x$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Periodicity of Trigonometric Functions",
+    "id": "MATH-CH11-T8",
+    "scratch_idea": "Trigonometric functions are periodic, meaning their values repeat at regular intervals. The period is the smallest positive value $p$ that satisfies $f(\\theta + p) = f(\\theta)$.",
+    "prerequisites": [
+      "Rotation on Circle",
+      "Function notation"
+    ],
+    "formulas": [
+      "Period of $\\sin, \\cos, \\sec, \\csc$: $2\\pi$",
+      "Period of $\\tan, \\cot$: $\\pi$"
+    ],
+    "core_technique": "Understand that adding a full revolution ($2\\pi$) to an angle returns to the same point on the unit circle.",
+    "check_questions": [
+      "What is the definition of the period of a function?",
+      "Why is the period of $\\tan \\theta$ equal to $\\pi$ rather than $2\\pi$?",
+      "Prove that $2\\pi$ is the period of $\\sin \\theta$."
+    ],
+    "common_pitfalls": [
+      "Saying the period of tangent is $2\\pi$.",
+      "Using negative values for the period (the period must be positive)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Finding the Period of $f(kx)$",
+    "id": "MATH-CH11-T9",
+    "scratch_idea": "When the variable $x$ is multiplied by a constant $k$, the function's period is divided by the absolute value of that constant.",
+    "prerequisites": [
+      "Basic periods of trig functions",
+      "Algebraic manipulation"
+    ],
+    "formulas": [
+      "Period of $\\sin(kx)$ or $\\cos(kx) = \\frac{2\\pi}{|k|}$",
+      "Period of $\\tan(kx) = \\frac{\\pi}{|k|}$"
+    ],
+    "core_technique": "To find the period of $f(kx)$, set the argument $kx$ equal to the standard period and solve for $x$.",
+    "check_questions": [
+      "Find the period of $\\sin 5x$.",
+      "What is the period of $\\tan (x/3)$?",
+      "Does adding a constant like in $3 + \\tan(x/3)$ change the period? Why?"
+    ],
+    "common_pitfalls": [
+      "Multiplying the period by $k$ instead of dividing.",
+      "Forgetting to use the absolute value of $k$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Graphing the Sine and Cosine Functions",
+    "id": "MATH-CH11-T10",
+    "scratch_idea": "Sine and Cosine graphs are continuous smooth waves called sinusoids. They oscillate between -1 and 1 with a repeating cycle of $2\\pi$.",
+    "prerequisites": [
+      "Table of values for $0^\\circ$ to $90^\\circ$",
+      "Coordinate Plane"
+    ],
+    "formulas": [
+      "Amplitude: $1$",
+      "Cycle: $[0, 2\\pi]$"
+    ],
+    "core_technique": "Plot the 5 key points of a cycle: Intercepts, Maximums, and Minimums.",
+    "check_questions": [
+      "Describe the y-intercept of the sine and cosine graphs.",
+      "What is the maximum height of $y = \\sin x$ above its midline called?",
+      "Are there any sharp corners or breaks in the sine graph?"
+    ],
+    "common_pitfalls": [
+      "Drawing the wave as a series of straight lines (V-shapes).",
+      "Starting the sine graph at $(0, 1)$ instead of $(0, 0)$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Graphing the Tangent Function",
+    "id": "MATH-CH11-T11",
+    "scratch_idea": "The tangent graph consists of periodic branches separated by vertical asymptotes. It is discontinuous and has no defined amplitude.",
+    "prerequisites": [
+      "Vertical Asymptotes",
+      "Limits approaching infinity"
+    ],
+    "formulas": [
+      "Asymptotes: $x = (2n+1)\\frac{\\pi}{2}$",
+      "x-intercepts: $x = n\\pi$"
+    ],
+    "core_technique": "Draw vertical dashed lines for asymptotes first, then plot the origin and curves that approach the asymptotes.",
+    "check_questions": [
+      "Why does the tangent graph have vertical asymptotes?",
+      "What is the amplitude of the tangent function?",
+      "Does the tangent graph cross the x-axis? If so, where?"
+    ],
+    "common_pitfalls": [
+      "Drawing the graph as a continuous line.",
+      "Misplacing asymptotes at $n\\pi$ instead of $(2n+1)\\pi/2$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Vertical Shift and Amplitude of Sinusoidal Functions",
+    "id": "MATH-CH11-T12",
+    "scratch_idea": "In the function $y = a + b \\sin \\theta$, 'a' shifts the graph vertically (new midline) and '|b|' determines the height of the peaks from that midline.",
+    "prerequisites": [
+      "Graph transformations",
+      "Absolute value"
+    ],
+    "formulas": [
+      "Vertical Shift = $a$",
+      "Amplitude = $|b|$",
+      "Amplitude = $\\frac{\\text{Max} - \\text{Min}}{2}$"
+    ],
+    "core_technique": "Identify 'a' as the average of the maximum and minimum values.",
+    "check_questions": [
+      "In $y = 5 - 2\\cos 3x$, what is the vertical shift?",
+      "Calculate the amplitude of $y = 3 + 4\\sin x$.",
+      "If a wave goes from $y=2$ to $y=10$, what is its amplitude?"
+    ],
+    "common_pitfalls": [
+      "Including a negative sign in the amplitude value (amplitude is always positive).",
+      "Confusing vertical shift with amplitude."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Phase Shift in Sinusoidal Functions",
+    "id": "MATH-CH11-T13",
+    "scratch_idea": "Phase shift refers to the horizontal translation of the graph. It determines where the wave 'starts' relative to the y-axis.",
+    "prerequisites": [
+      "Horizontal translations",
+      "Function arguments"
+    ],
+    "formulas": [
+      "Function: $a + b \\sin(c\\theta + d)$",
+      "Shift Direction: Left if $d > 0$, Right if $d < 0$"
+    ],
+    "core_technique": "The starting point of the basic cycle shifts by determining when the argument $c\\theta + d = 0$.",
+    "check_questions": [
+      "In $\\sin(x + \\pi/4)$, which way does the graph shift?",
+      "Does phase shift change the period or shape of the wave?",
+      "Explain the difference between a vertical shift and a phase shift."
+    ],
+    "common_pitfalls": [
+      "Shifting in the wrong direction (right for positive $d$).",
+      "Forgetting that phase shift relates to the x-axis."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Maximum and Minimum Values of Sinusoidal Functions",
+    "id": "MATH-CH11-T14",
+    "scratch_idea": "The extreme values of $a + b \\sin(c\\theta + d)$ depend solely on the vertical shift and the amplitude, since the sine/cosine part ranges from -1 to 1.",
+    "prerequisites": [
+      "Range of basic sine/cosine",
+      "Arithmetic"
+    ],
+    "formulas": [
+      "Maximum ($M$) = $a + |b|$ ",
+      "Minimum ($m$) = $a - |b|$"
+    ],
+    "core_technique": "Set the trig term to 1 for the maximum and -1 for the minimum (adjusting for signs of $b$).",
+    "check_questions": [
+      "Find the maximum value of $f(x) = 2 + 3 \\sin x$.",
+      "What is the minimum value of $g(x) = 5 - 2 \\cos 3x$?",
+      "For what value of $\\sin x$ does $a + b \\sin x$ reach its minimum if $b > 0$?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to add the vertical shift 'a'.",
+      "Using the coefficient $c$ (inside the bracket) to calculate the max/min."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Extrema of Reciprocal Sinusoidal Functions",
+    "id": "MATH-CH11-T15",
+    "scratch_idea": "For functions like $1/f(x)$, the maximum value of the original function becomes the minimum of the reciprocal, and vice versa.",
+    "prerequisites": [
+      "Reciprocals",
+      "Sinusoidal Extrema"
+    ],
+    "formulas": [
+      "Max of $\\frac{1}{f(x)} = \\frac{1}{\\text{Min of } f(x)}$",
+      "Min of $\\frac{1}{f(x)} = \\frac{1}{\\text{Max of } f(x)}$"
+    ],
+    "core_technique": "Always calculate the max and min of the denominator first before taking reciprocals.",
+    "check_questions": [
+      "If the range of $f(x)$ is $[3, 7]$, what is the range of $1/f(x)$?",
+      "Find the maximum value of $y = \\frac{1}{10 - 2\\sin 3x}$.",
+      "Why does the reciprocal of the maximum denominator value become the minimum of the function?"
+    ],
+    "common_pitfalls": [
+      "Assuming the maximum of the reciprocal is the reciprocal of the maximum.",
+      "Failing to check if the denominator can be zero."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Modeling Periodic Motion (Ferris Wheel)",
+    "id": "MATH-CH11-T16",
+    "scratch_idea": "Circular motion over time, like a Ferris wheel, can be modeled using sine or cosine functions where height depends on radius (amplitude) and center height (vertical shift).",
+    "prerequisites": [
+      "Circularity to Waveform conversion",
+      "Time as a variable"
+    ],
+    "formulas": [
+      "$h(t) = a + b \\cos(ct + d)$",
+      "Vertical Shift ($a$) = Radius + Ground Clearance",
+      "Amplitude ($b$) = Radius"
+    ],
+    "core_technique": "Use a negative cosine function if the motion starts at the lowest point.",
+    "check_questions": [
+      "A Ferris wheel has a radius of 45ft and is 5ft off the ground. What is its vertical shift?",
+      "If a wheel rotates in 60 seconds, what is the value of 'c' in the equation?",
+      "Model the height equation for a wheel starting at the bottom."
+    ],
+    "common_pitfalls": [
+      "Using the diameter as the amplitude instead of the radius.",
+      "Miscalculating the vertical shift by forgetting the ground clearance."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Applications to Elevation and Depression",
+    "id": "MATH-CH11-T17",
+    "scratch_idea": "Trigonometric ratios are used to calculate heights and distances by setting up equations from angles of elevation (looking up) and depression (looking down).",
+    "prerequisites": [
+      "Right Triangle Trig",
+      "Componendo and Dividendo property"
+    ],
+    "formulas": [
+      "$\\tan \\theta = \\frac{\\text{Opposite}}{\\text{Adjacent}}$",
+      "Height $h = \\frac{\\tan \\alpha + \\tan \\beta}{\\tan \\alpha - \\tan \\beta} \\times \\text{dist}$ (in specific contexts)"
+    ],
+    "core_technique": "Draw a clear geometric diagram and identify common sides (usually the horizontal distance) between two triangles.",
+    "check_questions": [
+      "Define angle of depression.",
+      "How do you find the height of a cliff using angles of elevation and depression from a point above a lake?",
+      "Two ships have angles of depression $17^\\circ$ and $19^\\circ$ from a 100m tower. How do you find the distance between them?"
+    ],
+    "common_pitfalls": [
+      "Confusing the angle of depression with the internal angle of the triangle.",
+      "Arithmetic errors when using multiple tangent values."
+    ],
+    "difficulty": "Hard"
+  }
+]

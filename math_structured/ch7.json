@@ -1,0 +1,235 @@
+[
+  {
+    "topic_name": "Fundamental Principle of Counting",
+    "id": "MAT-CH07-T01",
+    "scratch_idea": "The multiplication principle states that if one event can occur in m ways and a second event can occur in n ways, the total number of ways both events can occur in sequence is the product of m and n.",
+    "prerequisites": [
+      "Basic multiplication",
+      "Concept of independent events"
+    ],
+    "formulas": [
+      "\\text{Total ways} = m \\times n",
+      "\\text{Total ways for k events} = n_1 \\times n_2 \\times \\dots \\times n_k"
+    ],
+    "core_technique": "Use a tree diagram to visualize small sample spaces, but multiply the number of options at each stage for larger sets.",
+    "check_questions": [
+      "If a menu has 5 drinks and 3 snacks, how many ways can a student choose one of each?",
+      "How many total outcomes are possible if three six-sided dice are rolled simultaneously?",
+      "A person has 4 shirts and 2 pants; how many different outfits can be formed?"
+    ],
+    "common_pitfalls": [
+      "Adding the possibilities instead of multiplying them.",
+      "Mistakenly counting outcomes when stages are dependent without adjusting the count."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Factorial Notation",
+    "id": "MAT-CH07-T02",
+    "scratch_idea": "The factorial of a non-negative integer n is the product of all positive integers less than or equal to n. It represents the total ways to arrange n distinct objects in a line.",
+    "prerequisites": [
+      "Natural numbers",
+      "Fundamental Principle of Counting"
+    ],
+    "formulas": [
+      "n! = n(n-1)(n-2) \\dots 3 \\cdot 2 \\cdot 1",
+      "0! = 1",
+      "n! = n(n-1)!"
+    ],
+    "core_technique": "Simplify factorial fractions by expanding the larger factorial until it matches the smaller one in the denominator to cancel terms.",
+    "check_questions": [
+      "Evaluate the expression \\frac{8!}{6!}.",
+      "Express the product 8 \\cdot 7 \\cdot 6 \\cdot 5 in factorial form.",
+      "What is the value of 0! and why is it defined that way?"
+    ],
+    "common_pitfalls": [
+      "Thinking 0! is 0 instead of 1.",
+      "Attempting to distribute factorials across addition, e.g., (3+2)! is not 3! + 2!."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Linear Permutations",
+    "id": "MAT-CH07-T03",
+    "scratch_idea": "A permutation is an ordered arrangement of a set of objects. Linear permutations specifically deal with arranging objects in a straight line where the position matters.",
+    "prerequisites": [
+      "Factorial Notation",
+      "Fundamental Principle of Counting"
+    ],
+    "formulas": [
+      "{^n P_r} = \\frac{n!}{(n-r)!}"
+    ],
+    "core_technique": "Always identify 'n' (total items) and 'r' (items being arranged) before applying the formula.",
+    "check_questions": [
+      "How many 4-digit numbers can be formed from the digits 1-6 if no repetition is allowed?",
+      "In how many ways can 5 people be seated on a bench with 5 seats?",
+      "Calculate the value of {^{10} P_3}."
+    ],
+    "common_pitfalls": [
+      "Using the permutation formula when order does not actually matter.",
+      "Confusing 'n' and 'r' values in the formula."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Permutations with Constraints (Grouped Objects)",
+    "id": "MAT-CH07-T04",
+    "scratch_idea": "When specific items must be kept together in an arrangement, treat that group as a single unit to find the external arrangement, then multiply by the internal permutations of that unit.",
+    "prerequisites": [
+      "Linear Permutations",
+      "Fundamental Principle of Counting"
+    ],
+    "formulas": [
+      "\\text{Total Ways} = (n - k + 1)! \\times k!"
+    ],
+    "core_technique": "Tie the 'must-be-together' objects into a single 'mega-object' to simplify the problem.",
+    "check_questions": [
+      "In how many ways can 4 Math books and 3 Physics books be arranged if all Math books must stay together?",
+      "5 people A, B, C, D, E are on a bench; how many ways can they sit if A and B must be neighbors?",
+      "Find the arrangements of the word PYTHON where P and Y are always adjacent."
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply by the internal arrangements (k!) of the grouped items.",
+      "Miscalculating the remaining 'units' to be arranged after grouping."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Permutations of Identical Objects",
+    "id": "MAT-CH07-T05",
+    "scratch_idea": "When some objects in a set are indistinguishable, the total number of permutations is reduced by dividing by the factorials of the counts of each identical group.",
+    "prerequisites": [
+      "Factorial Notation",
+      "Linear Permutations"
+    ],
+    "formulas": [
+      "P = \\frac{n!}{n_1! n_2! \\dots n_k!}"
+    ],
+    "core_technique": "Count the total number of items first, then count the frequency of each repeated item to populate the denominator.",
+    "check_questions": [
+      "How many distinct arrangements can be made using all the letters in 'BITTER'?",
+      "Find the number of ways to arrange the letters of 'MISSISSIPPI'.",
+      "How many 6-digit numbers can be formed from the digits 7, 7, 8, 8, 9, 9?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to include the factorial on the denominator counts.",
+      "Missing a repeated letter in a long word like PROBABILITY."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Circular Permutations (Distinct Directions)",
+    "id": "MAT-CH07-T06",
+    "scratch_idea": "In a circular arrangement, rotating the entire group doesn't create a new permutation. One position must be fixed, reducing the total arrangements of n objects to (n-1)!.",
+    "prerequisites": [
+      "Linear Permutations",
+      "Concept of relative position"
+    ],
+    "formulas": [
+      "P_c = (n-1)!"
+    ],
+    "core_technique": "Assume one person is already seated to 'break' the circle and turn it into a linear problem.",
+    "check_questions": [
+      "How many ways can 8 people be seated at a round table?",
+      "In how many ways can 5 couples sit around a table if no two women sit together?",
+      "If 11 DCOs meet at a round table, how many ways can they be seated?"
+    ],
+    "common_pitfalls": [
+      "Using n! instead of (n-1)! for circular seating.",
+      "Confusing circular permutations with linear permutations when a 'fixed' point like a door is mentioned."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Circular Permutations (Identical Directions)",
+    "id": "MAT-CH07-T07",
+    "scratch_idea": "When a circular arrangement can be flipped (like a necklace or keychain), clockwise and anti-clockwise orders are considered identical, requiring the result to be divided by 2.",
+    "prerequisites": [
+      "Circular Permutations (Distinct Directions)"
+    ],
+    "formulas": [
+      "P_c = \\frac{(n-1)!}{2}"
+    ],
+    "core_technique": "Check if the object can be viewed from both sides (flipped) to decide if division by 2 is necessary.",
+    "check_questions": [
+      "How many different necklaces can be made using 10 unique beads?",
+      "In how many ways can 8 distinct keys be arranged on a circular ring?",
+      "Why do we divide by 2 when arranging beads compared to people at a table?"
+    ],
+    "common_pitfalls": [
+      "Dividing by 2 for people at a table (where CW and ACW are usually distinct).",
+      "Forgetting the (n-1) step before dividing by 2."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Combinations (Selection)",
+    "id": "MAT-CH07-T08",
+    "scratch_idea": "A combination is a selection of items where the order does not matter. It focuses on the membership of the group rather than the sequence of items.",
+    "prerequisites": [
+      "Permutations",
+      "Factorial Notation"
+    ],
+    "formulas": [
+      "{^n C_r} = \\frac{n!}{r!(n-r)!}",
+      "{^n C_r} = \\frac{^n P_r}{r!}"
+    ],
+    "core_technique": "Use combinations when the problem uses words like 'select', 'choose', or 'committee'.",
+    "check_questions": [
+      "How many ways can a team of 5 be selected from 12 students?",
+      "Evaluate {^{50} C_{50}} and {^{1000} C_0}.",
+      "A bag has 8 red balls; how many ways can you select 5?"
+    ],
+    "common_pitfalls": [
+      "Using permutation formulas when the order of selection is irrelevant.",
+      "Confusing the definition of combination with the definition of a subset."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Complementary Combinations",
+    "id": "MAT-CH07-T09",
+    "scratch_idea": "The number of ways to choose r objects from n is the same as the number of ways to leave (n-r) objects behind.",
+    "prerequisites": [
+      "Combinations (Selection)"
+    ],
+    "formulas": [
+      "{^n C_r} = {^n C_{n-r}}"
+    ],
+    "core_technique": "Use this property to simplify calculations when r is more than half of n (e.g., calculate 10C8 as 10C2).",
+    "check_questions": [
+      "Prove that {^{12} C_{10}} is equal to {^{12} C_2}.",
+      "If {^n C_{10}} = {^n C_{12}}, find the value of n.",
+      "Simplify the calculation of {^{20} C_{17}} using the complementary theorem."
+    ],
+    "common_pitfalls": [
+      "Applying this logic to permutations (it only works for combinations).",
+      "Incorrectly subtracting r from n."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Geometric Applications of Combinations",
+    "id": "MAT-CH07-T10",
+    "scratch_idea": "Combinations can be used to count geometric components like diagonals or triangles in polygons, where vertices are the objects being selected.",
+    "prerequisites": [
+      "Combinations (Selection)",
+      "Properties of Polygons"
+    ],
+    "formulas": [
+      "\\text{Number of Diagonals} = {^n C_2} - n",
+      "\\text{Number of Triangles} = {^n C_3}"
+    ],
+    "core_technique": "To find diagonals, calculate all possible lines between vertices and subtract the lines that form the outer boundary (sides).",
+    "check_questions": [
+      "How many diagonals are in a 6-sided figure (hexagon)?",
+      "How many triangles can be formed from 15 points if no three points are collinear?",
+      "If a polygon has 104 diagonals, how many sides does it have?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to subtract 'n' when calculating diagonals.",
+      "Not accounting for collinear points which cannot form triangles."
+    ],
+    "difficulty": "Hard"
+  }
+]

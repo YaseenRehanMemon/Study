@@ -1,0 +1,349 @@
+[
+  {
+    "topic_name": "Mathematical Counter Examples",
+    "id": "MAT-CH08-T01",
+    "scratch_idea": "A counter example is a specific case or exception that proves a general mathematical statement or formula false. Even if a formula works for many values, a single failure is sufficient to invalidate the general claim.",
+    "prerequisites": [
+      "Natural numbers",
+      "Prime numbers"
+    ],
+    "formulas": [],
+    "core_technique": "Always test extreme values or specific numbers (like $n=41$ in Euler's formula) to check if a pattern holds universally.",
+    "check_questions": [
+      "What is the definition of a counter example?",
+      "For the statement $S(n) = n^2 - n + 41$, which value of $n$ serves as a counter example to the claim that $S(n)$ is always prime?",
+      "Can a formula be considered valid if it works for the first 1,000 cases but fails on the 1,001st?"
+    ],
+    "common_pitfalls": [
+      "Assuming a pattern is universally true just because it works for the first few natural numbers.",
+      "Misidentifying a supporting example as proof of a general statement."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Hypothesis and Induction of Hypothesis",
+    "id": "MAT-CH08-T02",
+    "scratch_idea": "A hypothesis is an educated guess based on specific observed patterns. Induction of hypothesis is the process of formulating a general rule or conjecture from specific instances before rigorous proof is applied.",
+    "prerequisites": [
+      "Pattern recognition",
+      "Algebraic sequences"
+    ],
+    "formulas": [
+      "$1 + 3 + 5 + \\dots + (2n - 1) = n^2$"
+    ],
+    "core_technique": "Observe the first few terms of a sequence to identify a repeating mathematical relationship or pattern.",
+    "check_questions": [
+      "Define 'Induction of Hypothesis' in the context of mathematical reasoning.",
+      "What is the $n^{th}$ term of the sum of the first $n$ odd natural numbers?",
+      "Why is observation alone insufficient to prove a mathematical formula for all natural numbers?"
+    ],
+    "common_pitfalls": [
+      "Confusing an 'educated guess' with a 'rigorous proof'.",
+      "Incorrectly identifying the $n^{th}$ term from a sequence of sums."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Principle of Mathematical Induction (Standard)",
+    "id": "MAT-CH08-T03",
+    "scratch_idea": "A proof method for statements involving natural numbers. It requires proving a base case ($n=1$) and then showing that if the statement holds for an arbitrary integer $k$, it must also hold for $k+1$.",
+    "prerequisites": [
+      "Algebraic manipulation",
+      "Logic of implication"
+    ],
+    "formulas": [
+      "$S(1) \\text{ is true}$",
+      "$S(k) \\implies S(k+1)$"
+    ],
+    "core_technique": "In the inductive step, explicitly use the assumption $S(k)$ to simplify the expression for $S(k+1)$.",
+    "check_questions": [
+      "What are the three steps involved in the Principle of Mathematical Induction?",
+      "During the induction step, what do we assume to be true?",
+      "If $S(1)$ is true and $S(k) \\implies S(k+1)$, for which set of numbers is $S(n)$ true?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to verify the base case ($n=1$).",
+      "Failing to actually use the inductive hypothesis $S(k)$ when trying to prove $S(k+1)$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Mathematical Induction for Divisibility",
+    "id": "MAT-CH08-T04",
+    "scratch_idea": "Using induction to prove that a specific algebraic expression is divisible by a certain integer for all natural numbers. The key is to rewrite $S(k+1)$ in terms of $S(k)$ and a multiple of the divisor.",
+    "prerequisites": [
+      "Division algorithm",
+      "Factoring expressions"
+    ],
+    "formulas": [
+      "$S(k) = d \\cdot k_1 \\text{ (where } d \\text{ is the divisor)}$"
+    ],
+    "core_technique": "Isolate the term from $S(k)$ in the expression for $S(k+1)$ to substitute the divisibility assumption.",
+    "check_questions": [
+      "Show that $4^n + 6n - 1$ is divisible by 9 for $n=1$.",
+      "If $4^k + 6k - 1 = 9k_1$, express $4^{k+1}$ in terms of $k_1$.",
+      "How do you conclude that $S(k+1)$ is divisible by 9 if it can be written as $9(\\text{integer})$?"
+    ],
+    "common_pitfalls": [
+      "Errors in expanding terms like $(k+1)^3$ or $a^{k+1}$.",
+      "Forgetting to state that the resulting term must be an integer."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Principle of Extended Mathematical Induction",
+    "id": "MAT-CH08-T05",
+    "scratch_idea": "An extension of induction where the base case starts at an integer $i$ other than 1 (often $n=0$ or negative integers). The proof then proceeds to show the property holds for all $n \\geq i$.",
+    "prerequisites": [
+      "Standard Mathematical Induction",
+      "Set of integers $\\mathbb{Z}$"
+    ],
+    "formulas": [
+      "S(i) \\text{ is true for } n=i",
+      "S(k) \\implies S(k+1) \\text{ for } k \\geq i"
+    ],
+    "core_technique": "Carefully identify the starting value $i$ from the problem statement and use it as the base case.",
+    "check_questions": [
+      "How does Extended Induction differ from Standard Induction?",
+      "If a statement is true for $n \\geq -2$, what is the base case value?",
+      "Prove the base case for $1 + 3 + 5 + \\dots + (2n+5) = (n+3)^2$ when $n=-2$."
+    ],
+    "common_pitfalls": [
+      "Starting the base case at $n=1$ when the domain is defined for $n \\geq i$.",
+      "Incorrectly calculating the number of terms in the base case for negative start values."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Induction for Inequalities",
+    "id": "MAT-CH08-T06",
+    "scratch_idea": "Applying induction to prove that one expression is always greater than or less than another. This requires careful use of inequality properties (like multiplying by positive constants) during the inductive step.",
+    "prerequisites": [
+      "Properties of inequalities",
+      "Exponential functions"
+    ],
+    "formulas": [
+      "a > b \\implies ac > bc \\text{ (for } c > 0 \\text{)}"
+    ],
+    "core_technique": "In the $S(k+1)$ step, use the fact that if $A > B$ and $B > C$, then $A > C$ (transitivity).",
+    "check_questions": [
+      "Verify the base case $n=2$ for the inequality $4^n > 3^n + 4$.",
+      "In the inductive step for $4^k > 3^k + 4$, why do we multiply by 4?",
+      "Explain why $4 \\cdot 3^k + 12$ being greater than 0 is necessary to prove the inequality $4^{k+1} > 3^{k+1} + 4$."
+    ],
+    "common_pitfalls": [
+      "Multiplying an inequality by a negative number and forgetting to flip the sign.",
+      "Losing the direction of the inequality during algebraic simplification."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Binomial Expression and Theorem (Positive Index)",
+    "id": "MAT-CH08-T07",
+    "scratch_idea": "A binomial is an algebraic expression with two terms. The Binomial Theorem provides a formula to expand $(a+b)^n$ into a sum involving terms of the form $\\binom{n}{r}a^{n-r}b^r$ for any positive integer $n$.",
+    "prerequisites": [
+      "Combinations $\\binom{n}{r}$",
+      "Factorials"
+    ],
+    "formulas": [
+      "$(a+b)^n = \\sum_{r=0}^n \\binom{n}{r} a^{n-r}b^r$",
+      "$\\binom{n}{r} = \\frac{n!}{r!(n-r)!}$"
+    ],
+    "core_technique": "Remember that the expansion always has $n+1$ terms, and the sum of exponents in each term must equal $n$.",
+    "check_questions": [
+      "Define a 'binomial expression' with an example.",
+      "How many terms are there in the expansion of $(a+x)^{10}$?",
+      "State the Binomial Theorem for a positive integral index $n$."
+    ],
+    "common_pitfalls": [
+      "Thinking there are $n$ terms instead of $n+1$.",
+      "Applying the formula when $n$ is not a positive integer without checking validity."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "General Term of Binomial Expansion",
+    "id": "MAT-CH08-T08",
+    "scratch_idea": "The General Term formula $T_{r+1}$ allows for the calculation of any specific term in a binomial expansion without expanding the entire expression.",
+    "prerequisites": [
+      "Binomial Theorem",
+      "Algebraic indices"
+    ],
+    "formulas": [
+      "$T_{r+1} = \\binom{n}{r}a^{n-r}b^r$"
+    ],
+    "core_technique": "To find the $k^{th}$ term, set $r = k - 1$ in the formula.",
+    "check_questions": [
+      "What is the formula for the $(r+1)^{th}$ term in $(a+b)^n$?",
+      "Find the value of $r$ if you are looking for the 5th term.",
+      "Find the general term of $(\\frac{a}{2} - \\frac{2}{a})^6$."
+    ],
+    "common_pitfalls": [
+      "Setting $r$ equal to the term number instead of (term number - 1).",
+      "Forgetting to include the negative sign of $b$ in the formula."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Middle Term in Binomial Expansion",
+    "id": "MAT-CH08-T09",
+    "scratch_idea": "The middle term depends on whether $n$ is even or odd. If $n$ is even, there is one middle term; if $n$ is odd, there are two.",
+    "prerequisites": [
+      "General Term formula",
+      "Parity of numbers"
+    ],
+    "formulas": [
+      "\\text{Even } n: (\\frac{n}{2} + 1)^{th} \\text{ term}",
+      "\\text{Odd } n: (\\frac{n+1}{2})^{th} \\text{ and } (\\frac{n+3}{2})^{th} \\text{ terms}"
+    ],
+    "core_technique": "Check the value of $n$ first to determine how many middle terms exist before applying $T_{r+1}$.",
+    "check_questions": [
+      "How many middle terms are in the expansion of $(x+y)^{11}$?",
+      "Which term is the middle term for $(x+y)^{12}$?",
+      "Calculate the middle term of $(2x - \\frac{1}{2x})^{10}$."
+    ],
+    "common_pitfalls": [
+      "Using the even $n$ formula for an odd $n$.",
+      "Confusing the term index ($r+1$) with the value of $r$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Binomial Coefficients and Identities",
+    "id": "MAT-CH08-T10",
+    "scratch_idea": "Deductions from the binomial theorem, such as the sum of all coefficients being $2^n$ and the sum of even coefficients equaling the sum of odd coefficients.",
+    "prerequisites": [
+      "Binomial Theorem",
+      "Substitution in polynomials"
+    ],
+    "formulas": [
+      "$\\sum_{r=0}^n \\binom{n}{r} = 2^n$",
+      "$\\sum_{r=0}^n (-1)^r \\binom{n}{r} = 0$"
+    ],
+    "core_technique": "Substitute $a=1, b=1$ to find the sum of coefficients, and $a=1, b=-1$ to find the alternating sum.",
+    "check_questions": [
+      "Prove that the sum of coefficients in $(1+x)^n$ is $2^n$.",
+      "What is the result of $\\binom{n}{0} - \\binom{n}{1} + \\binom{n}{2} - \\dots$?",
+      "If $n=5$, what is the sum of all binomial coefficients?"
+    ],
+    "common_pitfalls": [
+      "Thinking the sum starts from $\\binom{n}{1}$ instead of $\\binom{n}{0}$.",
+      "Confusing the coefficients with the terms of the expansion."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Binomial Theorem for Negative or Fractional Index",
+    "id": "MAT-CH08-T11",
+    "scratch_idea": "When $n$ is negative or a fraction, the expansion becomes an infinite series. This expansion is valid only if the absolute value of the variable $x$ is less than 1 ($|x| < 1$).",
+    "prerequisites": [
+      "Convergence of series",
+      "Absolute values"
+    ],
+    "formulas": [
+      "$(1+x)^n = 1 + nx + \\frac{n(n-1)}{2!}x^2 + \\dots$",
+      "\\text{Validity condition: } |x| < 1"
+    ],
+    "core_technique": "Always ensure the expression is in the form $(1+x)^n$ before expanding; if it is $(a+x)^n$, factor out $a$.",
+    "check_questions": [
+      "What is the condition for the validity of the binomial series $(1+x)^n$ for $n < 0$?",
+      "Expand $(1-x)^{-1}$ up to four terms.",
+      "Why are $\\binom{n}{r}$ symbols considered 'meaningless' for fractional indices?"
+    ],
+    "common_pitfalls": [
+      "Expanding the series without checking if $|x| < 1$.",
+      "Attempting to use the formula on $(a+x)^n$ without factoring out $a$ first."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Binomial Approximations",
+    "id": "MAT-CH08-T12",
+    "scratch_idea": "For very small values of $x$, higher powers like $x^2$ or $x^3$ can be neglected to find an approximate value of a binomial expression.",
+    "prerequisites": [
+      "Binomial series",
+      "Significant figures"
+    ],
+    "formulas": [
+      "$(1+x)^n \\approx 1 + nx \\text{ (for very small } x \\text{)}"
+    ],
+    "core_technique": "Identify how many terms are needed based on the powers of $x$ to be neglected (e.g., if $x^2$ is neglected, use only $1+nx$).",
+    "check_questions": [
+      "Approximate $\\sqrt{1+x}$ when $x$ is very small.",
+      "Show that $\\frac{1-x}{\\sqrt{1+x}} \\approx 1 - \\frac{3}{2}x$ by neglecting $x^2$.",
+      "Evaluate $(0.8)^{1/3}$ to three decimal places using binomial expansion."
+    ],
+    "common_pitfalls": [
+      "Neglecting too few or too many terms.",
+      "Incorrectly simplifying the approximation when multiple binomials are multiplied."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Pascal's Triangle",
+    "id": "MAT-CH08-T13",
+    "scratch_idea": "A triangular array of binomial coefficients. Each interior number is the sum of the two numbers directly above it. It provides a visual and computational alternative to the factorial formula.",
+    "prerequisites": [
+      "Basic addition",
+      "Binomial expansion"
+    ],
+    "formulas": [
+      "$\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$"
+    ],
+    "core_technique": "Use the $(n)^{th}$ row of the triangle to find all coefficients for the expansion of $(a+b)^n$.",
+    "check_questions": [
+      "What are the entries for the 4th row ($n=4$) of Pascal's Triangle?",
+      "State Pascal's Rule mathematically.",
+      "Use Pascal's Triangle to expand $(x+y)^4$."
+    ],
+    "common_pitfalls": [
+      "Starting the row count at 1 instead of 0.",
+      "Adding the wrong adjacent numbers when constructing the triangle."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Finding Remainder using Binomial Theorem",
+    "id": "MAT-CH08-T14",
+    "scratch_idea": "Using the binomial theorem to find remainders of large powers by expressing the base as $(d \\pm r)$, where $d$ is the divisor.",
+    "prerequisites": [
+      "Binomial Theorem",
+      "Modular arithmetic basics"
+    ],
+    "formulas": [
+      "$(a+b)^n = \\text{multiple of } a + b^n$"
+    ],
+    "core_technique": "Rewrite the base of the power as a sum or difference where one term is a multiple of the divisor (e.g., $5^{99} = 5(26-1)^{49}$ for divisor 13).",
+    "check_questions": [
+      "Find the remainder when $5^{99}$ is divided by 13.",
+      "Show that $11^n - 10n$ leaves a remainder of 1 when divided by 100.",
+      "Find the remainder when $2^{100}$ is divided by 3."
+    ],
+    "common_pitfalls": [
+      "Not accounting for the coefficient outside the binomial expansion.",
+      "Miscalculating the last term ($b^n$) which usually determines the remainder."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Finding Last Digits of a Number",
+    "id": "MAT-CH08-T15",
+    "scratch_idea": "The last digits of a large power can be determined by expanding the number using the binomial theorem (base $10+1$, $20-1$, etc.) and looking at the terms that are not multiples of 100.",
+    "prerequisites": [
+      "Binomial expansion",
+      "Place value system"
+    ],
+    "formulas": [],
+    "core_technique": "Terms containing $10^2$ or higher can be ignored when looking for the last two digits.",
+    "check_questions": [
+      "Explain why only the last two terms of $(10+1)^{12}$ matter for finding the last two digits.",
+      "Find the last two digits of $11^{12}$.",
+      "Using binomial theorem, find the last digit of $(32)^{32}$."
+    ],
+    "common_pitfalls": [
+      "Ignoring the carrying value from the sum of the last few terms.",
+      "Calculating more terms than necessary for the required number of digits."
+    ],
+    "difficulty": "Hard"
+  }
+]

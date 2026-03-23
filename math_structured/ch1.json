@@ -1,0 +1,542 @@
+[
+  {
+    "topic_name": "Definition of Complex Numbers",
+    "id": "MATH-CH01-T01",
+    "scratch_idea": "A complex number is an extension of the real number system that allows for the square root of negative numbers. It is expressed in the standard form $a + ib$.",
+    "prerequisites": [
+      "Real Numbers",
+      "Square Roots"
+    ],
+    "formulas": [
+      "$z = a + ib$",
+      "$i = \\sqrt{-1}$",
+      "$i^2 = -1$"
+    ],
+    "core_technique": "Always identify the real part ($a$) and the imaginary part ($b$) before performing operations.",
+    "check_questions": [
+      "What is the value of $i^2$?",
+      "If $z = -7 + 2i$, identify $a$ and $b$.",
+      "Why were complex numbers invented?"
+    ],
+    "common_pitfalls": [
+      "Thinking $i$ is a real variable rather than the imaginary unit.",
+      "Misidentifying the imaginary part as $ib$ instead of just $b$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Recognition of Real and Imaginary Parts",
+    "id": "MATH-CH01-T02",
+    "scratch_idea": "Every complex number $z = a + ib$ consists of two distinct components: the real part and the imaginary part. Real numbers are complex numbers where the imaginary part is zero.",
+    "prerequisites": [
+      "Definition of Complex Numbers"
+    ],
+    "formulas": [
+      "$\\text{Re}(z) = a$",
+      "$\\text{Im}(z) = b$"
+    ],
+    "core_technique": "The real part is the term without $i$, and the imaginary part is the coefficient of $i$.",
+    "check_questions": [
+      "Find $\\text{Im}(z)$ if $z = 3 + 4i$.",
+      "True or False: Every real number is a complex number.",
+      "What is the real part of the imaginary number $2i$?"
+    ],
+    "common_pitfalls": [
+      "Including $i$ when stating the imaginary part (e.g., saying $\\text{Im}(z) = 4i$ instead of $4$).",
+      "Confusing the real part with the imaginary part if the terms are swapped."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Conjugate of Complex Numbers",
+    "id": "MATH-CH01-T03",
+    "scratch_idea": "The complex conjugate of a number is obtained by reversing the sign of its imaginary part. It is used to simplify quotients and find moduli.",
+    "prerequisites": [
+      "Imaginary Part"
+    ],
+    "formulas": [
+      "$\\bar{z} = a - ib$",
+      "$\\overline{a - ib} = a + ib$"
+    ],
+    "core_technique": "Only the sign of the imaginary term changes; the real part remains exactly the same.",
+    "check_questions": [
+      "What is the conjugate of $-2 - 3i$?",
+      "What is the conjugate of a real number $5$?",
+      "Find $\\bar{z}$ if $z = i - 4$."
+    ],
+    "common_pitfalls": [
+      "Changing the sign of the real part instead of the imaginary part.",
+      "Changing both signs in the expression $a + ib$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Addition and Subtraction of Complex Numbers",
+    "id": "MATH-CH01-T04",
+    "scratch_idea": "Adding or subtracting complex numbers involves combining the real parts together and the imaginary parts together separately.",
+    "prerequisites": [
+      "Real and Imaginary Parts",
+      "Algebraic Combining of Terms"
+    ],
+    "formulas": [
+      "$(a + ib) + (c + id) = (a + c) + i(b + d)$",
+      "$(a + ib) - (c + id) = (a - c) + i(b - d)$"
+    ],
+    "core_technique": "Treat $i$ like a variable (like $x$) and combine 'like terms' (real with real, imaginary with imaginary).",
+    "check_questions": [
+      "Simplify $(3 + 4i) + (2 - 5i)$.",
+      "Subtract $(-7 - 2i)$ from $(1 + i)$.",
+      "What is the sum of $z$ and its conjugate $\\bar{z}$?"
+    ],
+    "common_pitfalls": [
+      "Mistakenly adding a real part to an imaginary part.",
+      "Forgetting to distribute the negative sign during subtraction."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Multiplication of Complex Numbers",
+    "id": "MATH-CH01-T05",
+    "scratch_idea": "Complex multiplication follows the distributive property (FOIL method), with the critical substitution that $i^2 = -1$.",
+    "prerequisites": [
+      "Distributive Property",
+      "Definition of $i^2$"
+    ],
+    "formulas": [
+      "$(a + ib)(c + id) = (ac - bd) + i(ad + bc)$"
+    ],
+    "core_technique": "Always replace $i^2$ with $-1$ immediately after expanding to simplify the real part.",
+    "check_questions": [
+      "Find the product of $(2 + 3i)$ and $(1 - 2i)$.",
+      "What is the result of $i(4 + 5i)$?",
+      "Calculate $(a + ib)(a - ib)$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to change the sign of the $bd$ term when replacing $i^2$.",
+      "Leaving the answer in an unsimplified form containing $i^2$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Complex Numbers as Ordered Pairs",
+    "id": "MATH-CH01-T06",
+    "scratch_idea": "A complex number $a + ib$ can be uniquely represented as an ordered pair $(a, b)$ of real numbers on a 2D plane.",
+    "prerequisites": [
+      "Cartesian Coordinates"
+    ],
+    "formulas": [
+      "$(a, b) = a + ib$",
+      "$(a, b) + (c, d) = (a+c, b+d)$",
+      "$(a, b)(c, d) = (ac-bd, ad+bc)$"
+    ],
+    "core_technique": "Use ordered pair notation to treat complex numbers as points in a vector-like space.",
+    "check_questions": [
+      "Write $(8, -9)$ in the form $a + ib$.",
+      "Perform multiplication: $(0, 1) \\times (0, 1)$.",
+      "What is the additive identity in ordered pair form?"
+    ],
+    "common_pitfalls": [
+      "Using $(a, bi)$ instead of $(a, b)$.",
+      "Treating $(a, b)(c, d)$ as $(ac, bd)$, which is incorrect for complex multiplication."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Multiplicative Inverse of a Complex Number",
+    "id": "MATH-CH01-T07",
+    "scratch_idea": "The multiplicative inverse $z^{-1}$ is a number that, when multiplied by $z$, results in the multiplicative identity $(1, 0)$.",
+    "prerequisites": [
+      "Multiplication of Complex Numbers",
+      "Rationalization"
+    ],
+    "formulas": [
+      "$z^{-1} = (\\frac{a}{a^2 + b^2}, \\frac{-b}{a^2 + b^2})$"
+    ],
+    "core_technique": "To find the inverse of $a+ib$, multiply the numerator and denominator of $\\frac{1}{a+ib}$ by the conjugate $a-ib$.",
+    "check_questions": [
+      "Find the multiplicative inverse of $(-4, 7)$.",
+      "What is the inverse of the complex number $i$?",
+      "What is the product of a complex number and its multiplicative inverse?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to square both $a$ and $b$ in the denominator.",
+      "Ignoring the negative sign in the imaginary part of the formula."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Argand Diagram (The Complex Plane)",
+    "id": "MATH-CH01-T08",
+    "scratch_idea": "The Argand diagram is a geometric representation of complex numbers where the x-axis represents the real part and the y-axis represents the imaginary part.",
+    "prerequisites": [
+      "Ordered Pairs",
+      "Graphing"
+    ],
+    "formulas": [
+      "\\text{x-axis} = \\text{Real Axis}",
+      "\\text{y-axis} = \\text{Imaginary Axis}"
+    ],
+    "core_technique": "Map the complex number $x+iy$ to the coordinates $(x, y)$ to visualize its position.",
+    "check_questions": [
+      "In which quadrant does the complex number $-3 - 2i$ lie?",
+      "What is the geometric meaning of the real axis?",
+      "Where is the number $5i$ located on the Argand diagram?"
+    ],
+    "common_pitfalls": [
+      "Plotting the imaginary part on the x-axis.",
+      "Confusing the complex plane with a standard 3D space."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Modulus of a Complex Number",
+    "id": "MATH-CH01-T09",
+    "scratch_idea": "The modulus represents the absolute value or the distance of a complex number from the origin $(0,0)$ in the complex plane.",
+    "prerequisites": [
+      "Pythagorean Theorem",
+      "Argand Diagram"
+    ],
+    "formulas": [
+      "$|z| = |x + iy| = \\sqrt{x^2 + y^2}$",
+      "$|z|^2 = z \\cdot \\bar{z}$"
+    ],
+    "core_technique": "Always ensure $x$ and $y$ are real numbers before plugging into the square root formula.",
+    "check_questions": [
+      "Calculate the modulus of $3 + 4i$.",
+      "Find $|z|$ if $z = -2 + i$.",
+      "True or False: The modulus can be a negative number."
+    ],
+    "common_pitfalls": [
+      "Including $i^2$ inside the square root (e.g., $\\sqrt{x^2 + (iy)^2}$), which is wrong.",
+      "Calculating the modulus as $x^2 + y^2$ without taking the square root."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Equality of Complex Numbers",
+    "id": "MATH-CH01-T10",
+    "scratch_idea": "Two complex numbers are equal if and only if their real parts are equal and their imaginary parts are equal.",
+    "prerequisites": [
+      "Real and Imaginary Parts"
+    ],
+    "formulas": [
+      "$a + bi = c + di \\iff a = c \\land b = d$"
+    ],
+    "core_technique": "Set up a system of two independent equations: one for the real components and one for the imaginary components.",
+    "check_questions": [
+      "If $x + iy = 5 - 3i$, find $x$ and $y$.",
+      "Solve for $x$: $(x + 2) + 4i = 10 + 4i$.",
+      "Can $3 + 2i$ be equal to $2 + 3i$?"
+    ],
+    "common_pitfalls": [
+      "Attempting to solve for $x$ and $y$ using only one equation.",
+      "Comparing the real part of one side to the imaginary part of the other."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Square Root of a Complex Number",
+    "id": "MATH-CH01-T11",
+    "scratch_idea": "Finding the square root of $x+iy$ involves finding a complex number $p+iq$ such that $(p+iq)^2 = x+iy$.",
+    "prerequisites": [
+      "Algebraic Identities",
+      "Modulus"
+    ],
+    "formulas": [
+      "$\\sqrt{z} = \\pm [ \\sqrt{\\frac{|z|+x}{2}} + i\\frac{y}{|y|} \\sqrt{\\frac{|z|-x}{2}} ]$"
+    ],
+    "core_technique": "The sign of the imaginary part in the square root depends on the sign of the original imaginary part ($y$).",
+    "check_questions": [
+      "Find the square root of $5 + 12i$.",
+      "How many square roots does a non-zero complex number have?",
+      "Find the square root of $-7 - 24i$."
+    ],
+    "common_pitfalls": [
+      "Forgetting the $\\pm$ sign in the final answer.",
+      "Using the wrong sign between the real and imaginary parts of the root."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Complex Polynomials and Linear Factors",
+    "id": "MATH-CH01-T12",
+    "scratch_idea": "Every complex polynomial of degree $n$ can be factored into exactly $n$ linear factors over the set of complex numbers.",
+    "prerequisites": [
+      "Polynomial Basics",
+      "Factorization"
+    ],
+    "formulas": [
+      "$P(z) = a(z - z_1)(z - z_2) \\dots (z - z_n)$"
+    ],
+    "core_technique": "If a polynomial has no real roots, use the quadratic formula to find complex roots and then write them as $(z - \\text{root})$.",
+    "check_questions": [
+      "Factorize $z^2 + 4$ into linear factors.",
+      "According to the Fundamental Theorem of Algebra, how many roots does a cubic polynomial have?",
+      "Factorize $z^2 - 4iz + 12$."
+    ],
+    "common_pitfalls": [
+      "Assuming a polynomial with real coefficients cannot have complex factors.",
+      "Misplacing signs when writing the factor $(z - \\text{root})$ for negative roots."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Rational Root Theorem",
+    "id": "MATH-CH01-T13",
+    "scratch_idea": "A tool used to identify possible rational roots of a polynomial by examining the factors of the constant term and the leading coefficient.",
+    "prerequisites": [
+      "Factors",
+      "Polynomial Division"
+    ],
+    "formulas": [
+      "\\text{Possible roots} = \\frac{\\text{factors of } a_0}{\\text{factors of } a_n}$"
+    ],
+    "core_technique": "Test possible roots using synthetic division or direct substitution to find the first factor.",
+    "check_questions": [
+      "List the possible rational roots of $z^3 - 3z^2 + z + 5 = 0$.",
+      "Is $z = -1$ a root of $z^3 - 3z^2 + z + 5$?",
+      "If $z=2$ is a root, what is the corresponding linear factor?"
+    ],
+    "common_pitfalls": [
+      "Only considering positive factors of the constant term.",
+      "Inverting the ratio (factors of leading coefficient over constant term)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Solving Quadratic Equations by Completing the Square",
+    "id": "MATH-CH01-T14",
+    "scratch_idea": "Completing the square allows us to solve any quadratic equation by transforming it into a perfect square, revealing complex roots when the constant is negative.",
+    "prerequisites": [
+      "Quadratic Equations",
+      "Perfect Square Trinomials"
+    ],
+    "formulas": [
+      "$(z + \\frac{b}{2a})^2 = \\frac{b^2 - 4ac}{4a^2}$"
+    ],
+    "core_technique": "Move the constant to the other side, and add $(\\frac{1}{2} \\times \\text{coefficient of } z)^2$ to both sides.",
+    "check_questions": [
+      "Solve $z^2 - 6z + 25 = 0$ by completing the square.",
+      "What term must be added to $z^2 + 4z$ to make it a perfect square?",
+      "Solve $2z^2 - 12z + 50 = 0$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to divide the entire equation by the leading coefficient $a$ before starting.",
+      "Failing to take the square root of the negative constant correctly (using $i$)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Cube Roots of Unity",
+    "id": "MATH-CH01-T15",
+    "scratch_idea": "The three values that, when cubed, equal 1. They consist of one real root and two complex conjugate roots.",
+    "prerequisites": [
+      "Solving Equations",
+      "Quadratic Formula"
+    ],
+    "formulas": [
+      "$x = 1, \\omega = \\frac{-1 + i\\sqrt{3}}{2}, \\omega^2 = \\frac{-1 - i\\sqrt{3}}{2}$"
+    ],
+    "core_technique": "Remember the specific complex values for $\\omega$ and $\\omega^2$ as they appear frequently in algebraic proofs.",
+    "check_questions": [
+      "What are the three cube roots of unity?",
+      "Find the cube roots of 8.",
+      "Identify the imaginary cube roots of unity."
+    ],
+    "common_pitfalls": [
+      "Confusing the signs in the numerator of $\\omega$.",
+      "Thinking there is only one cube root of 1 (the real number 1)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Properties of Cube Roots of Unity",
+    "id": "MATH-CH01-T16",
+    "scratch_idea": "The cube roots of unity have unique properties: their sum is zero and their product is one.",
+    "prerequisites": [
+      "Cube Roots of Unity"
+    ],
+    "formulas": [
+      "$1 + \\omega + \\omega^2 = 0$",
+      "$\\omega^3 = 1$",
+      "$\\omega^2 = \\frac{1}{\\omega}$"
+    ],
+    "core_technique": "Substitute $\\omega^3 = 1$ to reduce high powers of $\\omega$.",
+    "check_questions": [
+      "Simplify $\\omega^{14}$.",
+      "What is the value of $1 + \\omega + \\omega^2$?",
+      "Prove that each imaginary cube root of unity is the square of the other."
+    ],
+    "common_pitfalls": [
+      "Mistakenly thinking $\\omega + \\omega^2 = 1$ (it is actually $-1$).",
+      "Forgetting that $\\omega^3$ is exactly 1."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Fourth Roots of Unity",
+    "id": "MATH-CH01-T17",
+    "scratch_idea": "The four values that satisfy the equation $x^4 = 1$. They are located at $90^\\circ$ intervals on the unit circle in the complex plane.",
+    "prerequisites": [
+      "Difference of Squares"
+    ],
+    "formulas": [
+      "$x = 1, -1, i, -i$"
+    ],
+    "core_technique": "Solve $x^4 - 1 = 0$ by factoring into $(x^2-1)(x^2+1)=0$.",
+    "check_questions": [
+      "List the four fourth roots of unity.",
+      "What is the sum of all fourth roots of unity?",
+      "What is the product of all fourth roots of unity?"
+    ],
+    "common_pitfalls": [
+      "Missing the imaginary roots $i$ and $-i$.",
+      "Thinking the roots are only $\\pm 1$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Polar Coordinate System",
+    "id": "MATH-CH01-T18",
+    "scratch_idea": "A 2D coordinate system where each point is determined by a distance $r$ from the pole and an angle $\\theta$ from the polar axis.",
+    "prerequisites": [
+      "Trigonometry Basics",
+      "Angles in Radians"
+    ],
+    "formulas": [
+      "Point = $(r, \\theta)$",
+      "$x = r \\cos \\theta$",
+      "$y = r \\sin \\theta$"
+    ],
+    "core_technique": "When $r$ is negative, plot the point in the direction opposite to $\\theta$ (i.e., $\\theta + \\pi$).",
+    "check_questions": [
+      "Convert the polar point $(5, \\pi/4)$ to a direction in degrees.",
+      "What does the point $(-5, \\pi/4)$ represent?",
+      "True or False: Polar coordinates for a single point are unique."
+    ],
+    "common_pitfalls": [
+      "Measuring the angle from the y-axis instead of the positive x-axis.",
+      "Confusing the radial distance $r$ with the x-coordinate."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Polar Form of a Complex Number",
+    "id": "MATH-CH01-T19",
+    "scratch_idea": "The polar form represents a complex number using its modulus $r$ and its argument $\\theta$. It is highly useful for multiplication and division.",
+    "prerequisites": [
+      "Modulus",
+      "Polar Coordinates"
+    ],
+    "formulas": [
+      "$z = r(\\cos \\theta + i \\sin \\theta)$",
+      "$r = \\sqrt{x^2 + y^2}$",
+      "$\\theta = \\tan^{-1}(\\frac{y}{x})$"
+    ],
+    "core_technique": "Always check the quadrant of $(x, y)$ to determine the correct value of $\\theta$.",
+    "check_questions": [
+      "Express $1 + i\\sqrt{3}$ in polar form.",
+      "What is the polar form of the number $i$?",
+      "If $x < 0$ and $y > 0$, in which quadrant does $\\theta$ lie?"
+    ],
+    "common_pitfalls": [
+      "Using the wrong inverse tangent value for points in the 2nd and 3rd quadrants.",
+      "Using degrees in a formula that requires radians (or vice versa)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Principal Argument of a Complex Number",
+    "id": "MATH-CH01-T20",
+    "scratch_idea": "The Principal Argument $\\text{Arg}(z)$ is the unique value of the angle $\\theta$ that falls within the standard interval $(-\\pi, \\pi]$.",
+    "prerequisites": [
+      "Polar Form"
+    ],
+    "formulas": [
+      "$\\text{Arg}(z) \\in (-\\pi, \\pi]$"
+    ],
+    "core_technique": "Adjust your calculated $\\tan^{-1}(y/x)$ by adding or subtracting $\\pi$ if the point is in the left half-plane.",
+    "check_questions": [
+      "Find $\\text{Arg}(z)$ for $z = -1 - i$.",
+      "Why is the range restricted to $(-\\pi, \\pi]$?",
+      "What is $\\text{Arg}(z)$ if $z$ is a negative real number?"
+    ],
+    "common_pitfalls": [
+      "Providing an answer like $270^\\circ$, which is outside the principal range.",
+      "Forgetting to handle the $x=0$ case (undefined tangent)."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Multiplication and Division in Polar Form",
+    "id": "MATH-CH01-T21",
+    "scratch_idea": "Multiplying complex numbers in polar form adds their arguments and multiplies their moduli. Division subtracts arguments and divides moduli.",
+    "prerequisites": [
+      "Polar Form",
+      "Trigonometric Identities"
+    ],
+    "formulas": [
+      "$z_1 z_2 = r_1 r_2 [\\cos(\\theta_1 + \\theta_2) + i \\sin(\\theta_1 + \\theta_2)]$",
+      "$\\frac{z_1}{z_2} = \\frac{r_1}{r_2} [\\cos(\\theta_1 - \\theta_2) + i \\sin(\\theta_1 - \\theta_2)]$"
+    ],
+    "core_technique": "Convert rectangular numbers to polar form first to make high-power multiplications or divisions much easier.",
+    "check_questions": [
+      "If $|z_1|=5, \\theta_1=30^\\circ$ and $|z_2|=2, \\theta_2=40^\\circ$, find $z_1 z_2$.",
+      "What is the argument of $z_1/z_2$ in terms of $\\theta_1$ and $\\theta_2$?",
+      "Divide $6(\\cos 150^\\circ + i \\sin 150^\\circ)$ by $3(\\cos 30^\\circ + i \\sin 30^\\circ)$."
+    ],
+    "common_pitfalls": [
+      "Adding the moduli instead of multiplying them.",
+      "Subtracting arguments in the wrong order during division."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Application: Ohm's Law in AC Circuits",
+    "id": "MATH-CH01-T22",
+    "scratch_idea": "Complex numbers represent impedance in AC circuits, where the real part is resistance and the imaginary part is reactance.",
+    "prerequisites": [
+      "Ohm's Law",
+      "Polar Form"
+    ],
+    "formulas": [
+      "$V = I \\cdot Z$",
+      "$Z = R + iX$"
+    ],
+    "core_technique": "Use the polar form for $V, I, Z$ to solve circuit problems involving phase shifts easily.",
+    "check_questions": [
+      "If $V = 100\\angle 30^\\circ$ and $Z = 50\\angle 10^\\circ$, find $I$.",
+      "What does the imaginary part of impedance represent?",
+      "Define Impedance in terms of $R$ and $X$."
+    ],
+    "common_pitfalls": [
+      "Using DC Ohm's law with scalars when phase angles are present.",
+      "Confusing voltage $V$ and current $I$ in the ratio."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Application: Complex Number Cryptography",
+    "id": "MATH-CH01-T23",
+    "scratch_idea": "Information can be encrypted by treating characters as numbers and multiplying them by a complex 'key' $k$. Decryption is done using the multiplicative inverse $k^{-1}$.",
+    "prerequisites": [
+      "Multiplicative Inverse",
+      "Complex Multiplication"
+    ],
+    "formulas": [
+      "\\text{Cipher} = \\text{Plain} \\times k",
+      "\\text{Plain} = \\text{Cipher} / k"
+    ],
+    "core_technique": "Assign numerical values to the alphabet ($A=1, B=2$) before performing complex operations.",
+    "check_questions": [
+      "How is a message decrypted in complex cryptography?",
+      "Encrypt the value 10 using key $k = 1 + i$.",
+      "Why is the multiplicative inverse necessary for decryption?"
+    ],
+    "common_pitfalls": [
+      "Using the wrong key for decryption.",
+      "Arithmetic errors when multiplying the character value by the complex key."
+    ],
+    "difficulty": "Medium"
+  }
+]

@@ -1,0 +1,351 @@
+[
+  {
+    "topic_name": "Work Done by a Constant Force",
+    "id": "PHY-CH04-T01",
+    "scratch_idea": "Work is defined as the product of the magnitude of the force and the magnitude of the displacement in the direction of the force. It describes energy transfer through motion caused by a constant push or pull.",
+    "prerequisites": [
+      "Vector Force",
+      "Displacement"
+    ],
+    "formulas": [
+      "$W = Fd$"
+    ],
+    "core_technique": "Always ensure that the force and displacement are measured in the same direction before multiplying their magnitudes.",
+    "check_questions": [
+      "How much work is done if a person pushes a stationary wall with 500 N of force for 10 minutes?",
+      "Identify the two essential components required for work to be done in Physics.",
+      "What is the work done if a 10 N force moves an object 5 meters in the direction of the force?"
+    ],
+    "common_pitfalls": [
+      "Assuming work is done even if there is no displacement.",
+      "Using the total force magnitude instead of the component in the direction of displacement."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Work Done at an Angle",
+    "id": "PHY-CH04-T02",
+    "scratch_idea": "When force and displacement are not in the same direction, work is calculated using the component of force parallel to the displacement. It is mathematically expressed as a scalar product.",
+    "prerequisites": [
+      "Trigonometric Components",
+      "Scalar (Dot) Product"
+    ],
+    "formulas": [
+      "$W = Fd \\cos \\theta$",
+      "$W = \\mathbf{F} \\cdot \\mathbf{d}$"
+    ],
+    "core_technique": "Use the cosine of the angle between the force and displacement vectors to find the effective work component.",
+    "check_questions": [
+      "A child pulls a toy with a force of 10 N at an angle of $60^\\circ$ to the floor; find the work done for a 2 m displacement.",
+      "Define work in terms of the scalar product of two vectors.",
+      "What happens to the work done if the angle between force and displacement is exactly $90^\\circ$?"
+    ],
+    "common_pitfalls": [
+      "Using $\\sin \\theta$ instead of $\\cos \\theta$ for horizontal work components.",
+      "Miscalculating the angle $\\theta$ by measuring it from the vertical instead of the displacement direction."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Units and Nature of Work",
+    "id": "PHY-CH04-T03",
+    "scratch_idea": "Work is a scalar quantity, meaning it has magnitude but no direction. Its SI unit is the Joule, defined as one Newton-meter.",
+    "prerequisites": [
+      "SI Units",
+      "Scalars and Vectors"
+    ],
+    "formulas": [
+      "$1 \\text{ J} = 1 \\text{ N m}$"
+    ],
+    "core_technique": "Remember that while work is a scalar, its value can be positive, negative, or zero based on the direction of force relative to motion.",
+    "check_questions": [
+      "What is the SI unit of work?",
+      "Explain why work is considered a scalar quantity despite involving two vectors.",
+      "Express 1 Joule in terms of base SI units (kg, m, s)."
+    ],
+    "common_pitfalls": [
+      "Assigning a spatial direction (like 'North') to a work value.",
+      "Confusing the unit Joule with the unit of Power (Watt)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Graphical Representation of Constant Work",
+    "id": "PHY-CH04-T04",
+    "scratch_idea": "Work done can be calculated by finding the area under a Force-Displacement graph. For a constant force, this graph is a horizontal line forming a rectangle.",
+    "prerequisites": [
+      "Area of Rectangles",
+      "Graph Interpretation"
+    ],
+    "formulas": [
+      "$\\text{Work} = \\text{Area of Rectangle} = \\text{Force} \\times \\text{Displacement}$"
+    ],
+    "core_technique": "The area under the $F \\cos \\theta$ vs $d$ curve always represents the total work done.",
+    "check_questions": [
+      "How do you find work done from a force-displacement graph?",
+      "If a graph shows a constant force of 5 N from 0 to 4 meters, what is the area representing work?",
+      "What variable should be plotted on the y-axis to represent work as an area if the force is at an angle?"
+    ],
+    "common_pitfalls": [
+      "Calculating the slope of the graph instead of the area.",
+      "Forgetting to include the $\\cos \\theta$ factor in the y-axis values if the force is not parallel."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Work Done by a Variable Force",
+    "id": "PHY-CH04-T05",
+    "scratch_idea": "For forces that change during motion (like spring force or gravity in space), work is found by dividing the path into tiny intervals where the force is nearly constant and summing the work of each interval.",
+    "prerequisites": [
+      "Summation Notation",
+      "Limits"
+    ],
+    "formulas": [
+      "$W_{\\text{total}} = \\lim_{\\Delta d \\to 0} \\sum_{i=1}^n F_i \\cos \\theta_i \\Delta d_i$"
+    ],
+    "core_technique": "Treat the variable force as a series of many small constant forces acting over infinitesimal distances.",
+    "check_questions": [
+      "Why must we divide the path into small intervals when calculating work for a variable force?",
+      "What is the mathematical limit of the sum of work intervals as the displacement interval approaches zero?",
+      "Give two real-world examples of forces that vary with distance."
+    ],
+    "common_pitfalls": [
+      "Using the initial or final force value only, rather than the sum of intervals.",
+      "Incorrectly applying constant force formulas to variable force problems."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Conservative Forces",
+    "id": "PHY-CH04-T06",
+    "scratch_idea": "A force is conservative if the work done by it in moving an object between two points is independent of the path taken, or if the work done in a closed path is zero.",
+    "prerequisites": [
+      "Path Independence",
+      "Gravitational Potential"
+    ],
+    "formulas": [
+      "$W_{\\text{closed path}} = 0$"
+    ],
+    "core_technique": "To identify a conservative force, check if the total work done depends only on the starting and ending positions.",
+    "check_questions": [
+      "Define a conservative force.",
+      "List three examples of conservative forces mentioned in the text.",
+      "Show that the work done by gravity in a closed loop (A to B and back to A) is zero."
+    ],
+    "common_pitfalls": [
+      "Confusing 'conservative force' with 'conservation of energy'.",
+      "Assuming all fields are conservative."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Non-Conservative Forces",
+    "id": "PHY-CH04-T07",
+    "scratch_idea": "Forces where the work done depends on the path length and the total work in a closed path is not zero. Friction is the most common example.",
+    "prerequisites": [
+      "Friction",
+      "Kinetic Energy"
+    ],
+    "formulas": [
+      "$W_{\\text{friction}} = -f \\cdot d$"
+    ],
+    "core_technique": "Non-conservative forces usually dissipate energy from the system as heat or sound.",
+    "check_questions": [
+      "Why is friction considered a non-conservative force?",
+      "Does the work done against friction increase or decrease with a longer path between two points?",
+      "Name two examples of non-conservative forces other than friction."
+    ],
+    "common_pitfalls": [
+      "Assuming work done by friction is zero in a closed path.",
+      "Thinking that non-conservative forces don't follow the laws of physics because they 'lose' energy."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Average and Instantaneous Power",
+    "id": "PHY-CH04-T08",
+    "scratch_idea": "Power measures the rate at which work is done. Average power covers a duration, while instantaneous power is the rate at a specific moment.",
+    "prerequisites": [
+      "Work",
+      "Time intervals"
+    ],
+    "formulas": [
+      "$P_{av} = \\frac{\\Delta W}{\\Delta t}$",
+      "$P = \\mathbf{F} \\cdot \\mathbf{v}$"
+    ],
+    "core_technique": "Use the dot product of force and velocity to quickly find power without needing the total work or time.",
+    "check_questions": [
+      "Define Power and its SI unit.",
+      "How is instantaneous power related to force and velocity?",
+      "Calculate the power of an engine that does 5000 J of work in 10 seconds."
+    ],
+    "common_pitfalls": [
+      "Using 'Work' and 'Power' interchangeably.",
+      "Forgetting to convert time into seconds before calculating power."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Commercial Unit of Energy (kWh)",
+    "id": "PHY-CH04-T09",
+    "scratch_idea": "The kilowatt-hour (kWh) is a large unit of energy used for commercial electricity. It represents the work done in one hour at a rate of one kilowatt.",
+    "prerequisites": [
+      "Power units",
+      "Unit conversion"
+    ],
+    "formulas": [
+      "$1 \\text{ kWh} = 3.6 \\times 10^6 \\text{ J}$",
+      "$1 \\text{ kWh} = 3.6 \\text{ MJ}$"
+    ],
+    "core_technique": "Remember that kWh is a unit of Energy ($P \\times t$), not Power.",
+    "check_questions": [
+      "Show that 1 kWh is equal to 3.6 Million Joules.",
+      "If a device uses 2 kW for 3 hours, how many kWh of energy are consumed?",
+      "Why do we use kWh instead of Joules for household electricity bills?"
+    ],
+    "common_pitfalls": [
+      "Thinking kilowatt-hour is a unit of power because 'watt' is in the name.",
+      "Dividing kilowatts by hours instead of multiplying."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Kinetic Energy",
+    "id": "PHY-CH04-T10",
+    "scratch_idea": "Kinetic energy is the energy an object possesses due to its motion. It is derived from the work required to accelerate a mass from rest to a specific velocity.",
+    "prerequisites": [
+      "Newton's Second Law",
+      "Equations of Motion"
+    ],
+    "formulas": [
+      "$K.E. = \\frac{1}{2}mv^2$"
+    ],
+    "core_technique": "K.E. is always non-negative because mass is positive and velocity is squared.",
+    "check_questions": [
+      "State the formula for kinetic energy and define each variable.",
+      "How does doubling the velocity of an object affect its kinetic energy?",
+      "Derive $K.E. = \\frac{1}{2}mv^2$ using the third equation of motion."
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the velocity.",
+      "Using weight instead of mass in the formula."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Absolute Potential Energy",
+    "id": "PHY-CH04-T11",
+    "scratch_idea": "The absolute gravitational potential energy at a point is the work done to move an object from that point to infinity. It accounts for the varying nature of gravity over long distances.",
+    "prerequisites": [
+      "Newton's Law of Gravitation",
+      "Work by Variable Force"
+    ],
+    "formulas": [
+      "$U = -\\frac{GMm}{r}$"
+    ],
+    "core_technique": "The negative sign indicates that the object is bound in the gravitational field; as distance $r$ increases, the energy becomes less negative (increases).",
+    "check_questions": [
+      "What is the physical significance of the negative sign in the absolute P.E. formula?",
+      "Define absolute potential energy and state the reference point where it is zero.",
+      "What is the absolute P.E. on the surface of the Earth?"
+    ],
+    "common_pitfalls": [
+      "Using $mgh$ for cosmic distances where gravity is not constant.",
+      "Thinking that potential energy decreases as you move away from Earth."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Escape Velocity",
+    "id": "PHY-CH04-T12",
+    "scratch_idea": "Escape velocity is the minimum speed needed for an object to break free from Earth's gravitational pull without further propulsion.",
+    "prerequisites": [
+      "Absolute Potential Energy",
+      "Kinetic Energy"
+    ],
+    "formulas": [
+      "$v_{esc} = \\sqrt{\\frac{2GM}{R}}$",
+      "$v_{esc} = \\sqrt{2gR}$"
+    ],
+    "core_technique": "Equate the initial Kinetic Energy to the work required to move the mass to infinity (Absolute P.E.).",
+    "check_questions": [
+      "What is the approximate numerical value of escape velocity from Earth's surface?",
+      "Does the escape velocity depend on the mass of the escaping object? Explain.",
+      "Derive the expression for escape velocity in terms of $g$ and $R$."
+    ],
+    "common_pitfalls": [
+      "Confusing the Earth's radius $R$ with the distance $r$.",
+      "Using $g$ as a universal constant instead of surface gravity."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Work-Energy Theorem",
+    "id": "PHY-CH04-T13",
+    "scratch_idea": "This theorem states that the work done by a net force on an object is exactly equal to the change in its kinetic energy.",
+    "prerequisites": [
+      "Net Force",
+      "Kinetic Energy"
+    ],
+    "formulas": [
+      "$W = \\Delta K.E. = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2$"
+    ],
+    "core_technique": "Use this theorem to solve problems where forces and velocities are known but time is not given.",
+    "check_questions": [
+      "State the Work-Energy Theorem.",
+      "A force does 100 J of work on a 2 kg mass initially at rest. What is its final kinetic energy?",
+      "Can the work-energy theorem be applied to variable forces?"
+    ],
+    "common_pitfalls": [
+      "Using the total energy instead of only the change in kinetic energy.",
+      "Neglecting work done by resistive forces like friction when calculating net work."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Interconversion of P.E. and K.E.",
+    "id": "PHY-CH04-T14",
+    "scratch_idea": "In a closed system without friction, the loss in potential energy equals the gain in kinetic energy. This demonstrates the conservation of mechanical energy.",
+    "prerequisites": [
+      "Conservation of Energy",
+      "Gravitational P.E."
+    ],
+    "formulas": [
+      "$mg(h_1 - h_2) = \\frac{1}{2}m(v_2^2 - v_1^2)$"
+    ],
+    "core_technique": "Total energy at the top must equal the total energy at the bottom for any free-falling body ignoring air resistance.",
+    "check_questions": [
+      "What happens to the potential energy of a body as it falls toward the Earth?",
+      "Calculate the velocity of a body hitting the ground after falling from height $h$ (no friction).",
+      "Is total mechanical energy conserved during the fall of a body in a vacuum?"
+    ],
+    "common_pitfalls": [
+      "Forgetting that velocity is zero at the maximum height.",
+      "Ignoring the mass cancellation on both sides of the equation."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Energy Conservation in Resistive Media",
+    "id": "PHY-CH04-T15",
+    "scratch_idea": "In real environments, air friction does work against the motion, converting some mechanical energy into heat. Total energy is still conserved, but mechanical energy is not.",
+    "prerequisites": [
+      "Work against Friction",
+      "Mechanical Energy"
+    ],
+    "formulas": [
+      "$mgh = \\frac{1}{2}mv^2 + fh$"
+    ],
+    "core_technique": "Account for 'lost' energy by adding the work done against friction ($f \\times h$) to the kinetic energy side of the equation.",
+    "check_questions": [
+      "Explain why a falling body in air does not reach the same speed as it would in a vacuum.",
+      "Write the equation for energy conservation when a frictional force $f$ is present.",
+      "If loss in P.E. is 100 J and work done against friction is 20 J, what is the gain in K.E.?"
+    ],
+    "common_pitfalls": [
+      "Subtracting the work against friction from the wrong side of the equation.",
+      "Confusing the total height $h$ with the distance $d$ over which friction acts if the path is curved."
+    ],
+    "difficulty": "Hard"
+  }
+]

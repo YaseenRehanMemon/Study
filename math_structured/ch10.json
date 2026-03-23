@@ -1,0 +1,268 @@
+[
+  {
+    "topic_name": "Distance Formula",
+    "id": "MAT-CH10-T1",
+    "scratch_idea": "The distance formula calculates the linear separation between two points in a 2D coordinate plane. It is derived from the Pythagorean theorem and serves as the geometric basis for proving the Fundamental Law of Trigonometry.",
+    "prerequisites": [
+      "Coordinate Geometry",
+      "Pythagorean Theorem"
+    ],
+    "formulas": [
+      "$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$"
+    ],
+    "core_technique": "Always square the differences of coordinates to ensure the result is non-negative before taking the square root.",
+    "check_questions": [
+      "Find the distance between $A(3, 8)$ and $B(5, 6)$.",
+      "Calculate the distance between the origin and point $P(\\cos x, \\sin x)$.",
+      "If the distance between $(x, 3)$ and $(2, 5)$ is $\\sqrt{5}$, find the value of $x$."
+    ],
+    "common_pitfalls": [
+      "Subtracting x-coordinates from y-coordinates by mistake.",
+      "Forgetting to square the individual differences before adding.",
+      "Incorrectly simplifying the square root of a sum."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Fundamental Law of Trigonometry",
+    "id": "MAT-CH10-T2",
+    "scratch_idea": "This law provides the expansion for the cosine of the difference between two angles. It is proven using a unit circle where coordinates of points are represented by $(\\cos \\theta, \\sin \\theta)$.",
+    "prerequisites": [
+      "Unit Circle Definition",
+      "Distance Formula"
+    ],
+    "formulas": [
+      "$\\cos(\\alpha - \\beta) = \\cos \\alpha \\cos \\beta + \\sin \\alpha \\sin \\beta$"
+    ],
+    "core_technique": "Visualize $\\alpha - \\beta$ as the rotation between two vectors originating from the center of a unit circle.",
+    "check_questions": [
+      "State the Fundamental Law of Trigonometry.",
+      "Find the exact value of $\\cos 15^\\circ$ using $45^\\circ - 30^\\circ$.",
+      "If $\\alpha = \\pi/2$ and $\\beta = 0$, verify the Fundamental Law."
+    ],
+    "common_pitfalls": [
+      "Confusing the sign in the middle; for $\\cos(\\alpha - \\beta)$, the expansion uses a plus sign.",
+      "Mixing up sine and cosine functions in the expansion."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Cosine of Sum of Two Angles",
+    "id": "MAT-CH10-T3",
+    "scratch_idea": "This identity is a deduction from the Fundamental Law where $\\beta$ is replaced by $-\\beta$. It expresses the cosine of the sum of two angles in terms of their individual sines and cosines.",
+    "prerequisites": [
+      "Fundamental Law of Trigonometry",
+      "Even/Odd Identities"
+    ],
+    "formulas": [
+      "$\\cos(\\alpha + \\beta) = \\cos \\alpha \\cos \\beta - \\sin \\alpha \\sin \\beta$"
+    ],
+    "core_technique": "Remember that for Cosine Sum/Difference, the internal sign of the formula is the opposite of the operation between angles.",
+    "check_questions": [
+      "Expand $\\cos(x + 2y)$.",
+      "Calculate $\\cos 75^\\circ$ by using $45^\\circ + 30^\\circ$.",
+      "Simplify $\\cos(60^\\circ + \\theta)$."
+    ],
+    "common_pitfalls": [
+      "Using a plus sign in the expansion instead of a minus sign.",
+      "Incorrectly applying $\\cos(-\\beta) = -\\cos \\beta$ (it should be $\\cos \\beta$)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Sine of Sum and Difference of Angles",
+    "id": "MAT-CH10-T4",
+    "scratch_idea": "These identities allow for the calculation of the sine of a compound angle. They are derived by applying the co-ratio identity $\\sin \\theta = \\cos(\\pi/2 - \\theta)$ to the cosine compound angle formulas.",
+    "prerequisites": [
+      "Fundamental Law of Trigonometry",
+      "Co-ratio Identities"
+    ],
+    "formulas": [
+      "$\\sin(\\alpha + \\beta) = \\sin \\alpha \\cos \\beta + \\cos \\alpha \\sin \\beta$",
+      "$\\sin(\\alpha - \\beta) = \\sin \\alpha \\cos \\beta - \\cos \\alpha \\sin \\beta$"
+    ],
+    "core_technique": "Notice that sine expansions maintain the same sign as the compound angle (sum uses plus, difference uses minus).",
+    "check_questions": [
+      "Find the exact value of $\\sin 105^\\circ$.",
+      "Prove that $\\sin(180^\\circ - \\alpha) = \\sin \\alpha$.",
+      "Expand $\\sin(\\theta - 45^\\circ)$."
+    ],
+    "common_pitfalls": [
+      "Swapping the sine and cosine products in the expansion terms.",
+      "Changing the sign in the middle (thinking it behaves like cosine)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Tangent of Sum and Difference of Angles",
+    "id": "MAT-CH10-T5",
+    "scratch_idea": "These formulas express the tangent of a compound angle as a ratio involving the tangents of the individual angles. They are derived by dividing the sine expansion by the cosine expansion.",
+    "prerequisites": [
+      "Sine and Cosine Sum/Difference Formulas",
+      "Definition of $\\tan \\theta$"
+    ],
+    "formulas": [
+      "$\\tan(\\alpha + \\beta) = \\frac{\\tan \\alpha + \\tan \\beta}{1 - \\tan \\alpha \\tan \\beta}$",
+      "$\\tan(\\alpha - \\beta) = \\frac{\\tan \\alpha - \\tan \\beta}{1 + \\tan \\alpha \\tan \\beta}$"
+    ],
+    "core_technique": "For the sum formula, the numerator has a plus and the denominator has a minus; for the difference, it is reversed.",
+    "check_questions": [
+      "Find the value of $\\tan 15^\\circ$.",
+      "If $\\tan \\alpha = 1/2$ and $\\tan \\beta = 1/3$, find $\\tan(\\alpha + \\beta)$.",
+      "Simplify $\\frac{\\tan 45^\\circ - \\tan \\theta}{1 + \\tan 45^\\circ \\tan \\theta}$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply the tangents in the denominator.",
+      "Using the wrong sign in the denominator relative to the numerator."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Trigonometric Ratios of Allied Angles",
+    "id": "MAT-CH10-T6",
+    "scratch_idea": "Allied angles are angles related to a base angle $\\theta$ by multiples of $90^\\circ$. This topic provides a systemic method to reduce complex angles to simple ones using the concept of co-ratios and quadrant signs.",
+    "prerequisites": [
+      "ASTC Quadrant Rule",
+      "Co-ratios concepts"
+    ],
+    "formulas": [
+      "$\\text{Ratio}(n \\cdot 90^\\circ \\pm \\theta) = \\pm \\text{Co-ratio}(\\theta) \\text{ if } n \\text{ is odd}$",
+      "$\\text{Ratio}(n \\cdot 90^\\circ \\pm \\theta) = \\pm \\text{Ratio}(\\theta) \\text{ if } n \\text{ is even}$"
+    ],
+    "core_technique": "First determine the sign based on the quadrant of the original angle, then check if the multiple of $90^\\circ$ is odd (change ratio) or even (keep ratio).",
+    "check_questions": [
+      "Find the value of $\\sin 225^\\circ$ without a calculator.",
+      "Simplify $\\cos(270^\\circ - \\theta)$.",
+      "Which quadrant does $600^\\circ$ lie in, and what is the sign of its tangent?"
+    ],
+    "common_pitfalls": [
+      "Changing the ratio when $n$ is even.",
+      "Determining the sign based on the resulting co-ratio instead of the original ratio."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Double Angle Identities",
+    "id": "MAT-CH10-T7",
+    "scratch_idea": "Double angle identities express trigonometric functions of $2\\alpha$ in terms of functions of $\\alpha$. They are derived by setting $\\beta = \\alpha$ in the sum formulas.",
+    "prerequisites": [
+      "Sum Identities",
+      "Pythagorean Identity ($\\sin^2 + \\cos^2 = 1$)"
+    ],
+    "formulas": [
+      "$\\sin 2\\alpha = 2 \\sin \\alpha \\cos \\alpha$",
+      "$\\cos 2\\alpha = \\cos^2 \\alpha - \\sin^2 \\alpha = 2 \\cos^2 \\alpha - 1 = 1 - 2 \\sin^2 \\alpha$",
+      "$\\tan 2\\alpha = \\frac{2 \\tan \\alpha}{1 - \\tan^2 \\alpha}$"
+    ],
+    "core_technique": "Cosine has three forms; choose the one that matches the given information or simplifies the specific equation.",
+    "check_questions": [
+      "If $\\sin \\alpha = 3/5$, find $\\sin 2\\alpha$.",
+      "Express $\\cos 2\\theta$ only in terms of $\\sin \\theta$.",
+      "Prove $\\frac{\\sin 2\\alpha}{1 + \\cos 2\\alpha} = \\tan \\alpha$."
+    ],
+    "common_pitfalls": [
+      "Thinking $\\sin 2\\alpha$ is equal to $2 \\sin \\alpha$.",
+      "Mixing up the signs in the cosine double angle variations."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Half Angle Identities",
+    "id": "MAT-CH10-T8",
+    "scratch_idea": "Half angle identities allow the calculation of trigonometric values for $\\alpha/2$ if the value of $\\cos \\alpha$ is known. They are derived from the power-reduction versions of double angle formulas.",
+    "prerequisites": [
+      "Double Angle Identities for Cosine"
+    ],
+    "formulas": [
+      "$\\sin \\frac{\\alpha}{2} = \\pm \\sqrt{\\frac{1 - \\cos \\alpha}{2}}$",
+      "$\\cos \\frac{\\alpha}{2} = \\pm \\sqrt{\\frac{1 + \\cos \\alpha}{2}}$",
+      "$\\tan \\frac{\\alpha}{2} = \\pm \\sqrt{\\frac{1 - \\cos \\alpha}{1 + \\cos \\alpha}}$"
+    ],
+    "core_technique": "The $\\pm$ sign is determined by the quadrant in which the angle $\\alpha/2$ actually lies, not the quadrant of $\\alpha$.",
+    "check_questions": [
+      "Find the exact value of $\\sin 22.5^\\circ$.",
+      "If $\\cos \\theta = 1/2$, find $\\cos(\\theta/2)$.",
+      "Prove that $2 \\cos^2(\\alpha/2) = 1 + \\cos \\alpha$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to check the quadrant of the half-angle to decide the sign.",
+      "Swapping the minus and plus signs between sine and cosine formulas."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Triple Angle Identities",
+    "id": "MAT-CH10-T9",
+    "scratch_idea": "These identities express $\\sin 3\\alpha$, $\\cos 3\\alpha$, and $\\tan 3\\alpha$ in terms of functions of $\\alpha$. They are proven by splitting $3\\alpha$ into $(2\\alpha + \\alpha)$.",
+    "prerequisites": [
+      "Double Angle Identities",
+      "Sum Identities"
+    ],
+    "formulas": [
+      "$\\sin 3\\alpha = 3 \\sin \\alpha - 4 \\sin^3 \\alpha$",
+      "$\\cos 3\\alpha = 4 \\cos^3 \\alpha - 3 \\cos \\alpha$",
+      "$\\tan 3\\alpha = \\frac{3 \\tan \\alpha - \\tan^3 \\alpha}{1 - 3 \\tan^2 \\alpha}$"
+    ],
+    "core_technique": "In sine, the '3' is with the linear term; in cosine, the '3' is with the cubic term and the sign is reversed.",
+    "check_questions": [
+      "Expand $\\sin 3x$ and identify the power of the sine terms.",
+      "Simplify $\\frac{\\sin 3\\theta}{\\sin \\theta}$.",
+      "Prove $\\cos 3\\alpha = 4 \\cos^3 \\alpha - 3 \\cos \\alpha$."
+    ],
+    "common_pitfalls": [
+      "Using $3 \\cos \\alpha - 4 \\cos^3 \\alpha$ for the cosine formula (getting the terms in the wrong order).",
+      "Confusing the coefficients 3 and 4 between sine and cosine."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Product to Sum or Difference Formulas",
+    "id": "MAT-CH10-T10",
+    "scratch_idea": "These formulas convert the product of two trigonometric functions into a sum or difference. They are highly useful in calculus and simplifying complex expressions.",
+    "prerequisites": [
+      "Sum and Difference Identities"
+    ],
+    "formulas": [
+      "$2 \\sin \\alpha \\cos \\beta = \\sin(\\alpha + \\beta) + \\sin(\\alpha - \\beta)$",
+      "$2 \\cos \\alpha \\sin \\beta = \\sin(\\alpha + \\beta) - \\sin(\\alpha - \\beta)$",
+      "$2 \\cos \\alpha \\cos \\beta = \\cos(\\alpha + \\beta) + \\cos(\\alpha - \\beta)$",
+      "$-2 \\sin \\alpha \\sin \\beta = \\cos(\\alpha + \\beta) - \\cos(\\alpha - \\beta)$"
+    ],
+    "core_technique": "Look for the factor of 2 (or $-2$ for sine-sine) before applying the formula.",
+    "check_questions": [
+      "Express $2 \\sin 5\\theta \\cos 3\\theta$ as a sum.",
+      "Convert $\\cos 40^\\circ \\cos 20^\\circ$ into a sum/difference form.",
+      "Simplify $-2 \\sin 75^\\circ \\sin 15^\\circ$."
+    ],
+    "common_pitfalls": [
+      "Forgetting the factor of 2 required to use the formula directly.",
+      "Missing the negative sign in the $2 \\sin \\alpha \\sin \\beta$ formula."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Sum or Difference to Product Formulas",
+    "id": "MAT-CH10-T11",
+    "scratch_idea": "These identities, also known as Factorization Formulas, transform sums or differences of sines or cosines into products. They are derived by substituting $P = \\alpha + \\beta$ and $Q = \\alpha - \\beta$ into product formulas.",
+    "prerequisites": [
+      "Product to Sum Formulas"
+    ],
+    "formulas": [
+      "$\\sin P + \\sin Q = 2 \\sin \\frac{P + Q}{2} \\cos \\frac{P - Q}{2}$",
+      "$\\sin P - \\sin Q = 2 \\cos \\frac{P + Q}{2} \\sin \\frac{P - Q}{2}$",
+      "$\\cos P + \\cos Q = 2 \\cos \\frac{P + Q}{2} \\cos \\frac{P - Q}{2}$",
+      "$\\cos P - \\cos Q = -2 \\sin \\frac{P + Q}{2} \\sin \\frac{P - Q}{2}$"
+    ],
+    "core_technique": "Always identify the larger angle as $P$ to avoid dealing with negative angles inside the functions after subtraction.",
+    "check_questions": [
+      "Convert $\\sin 7x + \\sin 3x$ into a product.",
+      "Simplify $\\frac{\\sin 8\\theta - \\sin 4\\theta}{\\cos 8\\theta + \\cos 4\\theta}$.",
+      "Express $\\cos 12^\\circ - \\cos 48^\\circ$ as a product."
+    ],
+    "common_pitfalls": [
+      "Forgetting the negative sign in the difference of cosines formula.",
+      "Forgetting to divide the sum and difference of angles by 2."
+    ],
+    "difficulty": "Hard"
+  }
+]

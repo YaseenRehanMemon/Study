@@ -1,0 +1,406 @@
+[
+  {
+    "topic_name": "Definition of a Function",
+    "id": "MAT-CH02-T01",
+    "scratch_idea": "A function is a mathematical rule that connects two sets. It ensures that every single input from the first set (domain) corresponds to exactly one unique output in the second set.",
+    "prerequisites": [
+      "Set Theory",
+      "Ordered Pairs"
+    ],
+    "formulas": [],
+    "core_technique": "Check if any single input maps to more than one output; if it does, the relation is not a function.",
+    "check_questions": [
+      "What is the unique condition for a rule of correspondence to be a function?",
+      "Who was the mathematician who first recognized the concept of a function?",
+      "If one input $x$ maps to two different values of $y$, is it a function?"
+    ],
+    "common_pitfalls": [
+      "Confusing a general relation with a function.",
+      "Thinking that two different inputs cannot have the same output."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Domain of a Function",
+    "id": "MAT-CH02-T02",
+    "scratch_idea": "The domain is the set of all possible input values (usually $x$) for which the function is defined and produces a real number.",
+    "prerequisites": [
+      "Real Number System",
+      "Inequalities"
+    ],
+    "formulas": [],
+    "core_technique": "Look for values that cause division by zero or square roots of negative numbers and exclude them from the set of real numbers.",
+    "check_questions": [
+      "What is the domain of $f(x) = x^2$?",
+      "Find the domain of $f(x) = \\frac{1}{x-2}$.",
+      "In a function $f: X \\to Y$, which set represents the domain?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to exclude values that make the denominator zero.",
+      "Including values that result in imaginary numbers for square root functions."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Codomain vs. Range",
+    "id": "MAT-CH02-T03",
+    "scratch_idea": "The codomain is the set of all possible potential outputs, while the range is the set of actual outputs produced by the function.",
+    "prerequisites": [
+      "Concept of Set",
+      "Mapping"
+    ],
+    "formulas": [
+      "$\\text{Range} \\subseteq \\text{Codomain}$"
+    ],
+    "core_technique": "Identify the range by observing the actual values the function takes over its entire domain.",
+    "check_questions": [
+      "Is the range always equal to the codomain?",
+      "If $f: R \\to R$ and $f(x) = x^2$, what is the range?",
+      "Define the term 'codomain' in the context of a function mapping."
+    ],
+    "common_pitfalls": [
+      "Using the terms range and codomain interchangeably.",
+      "Including values in the range that the function never actually reaches."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Function Notation and Evaluation",
+    "id": "MAT-CH02-T04",
+    "scratch_idea": "Using the notation $y = f(x)$ introduced by Euler, we can treat a function as a machine where an input $x$ is processed to produce an output $f(x)$.",
+    "prerequisites": [
+      "Algebraic Substitution",
+      "Variables"
+    ],
+    "formulas": [
+      "$y = f(x)$"
+    ],
+    "core_technique": "Substitute the given value or expression into every instance of the variable $x$ in the function rule.",
+    "check_questions": [
+      "If $f(x) = x^3 - 1$, find $f(2)$.",
+      "Who invented the symbolic notation $y = f(x)$?",
+      "Calculate $f(1+x)$ for $f(x) = 2x + 3$."
+    ],
+    "common_pitfalls": [
+      "Incorrectly applying powers to substituted binomials (e.g., failing to expand $(1+x)^2$ correctly).",
+      "Confusing the variable name with the function name."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Independent and Dependent Variables",
+    "id": "MAT-CH02-T05",
+    "scratch_idea": "In the equation $y = f(x)$, $x$ is the variable you choose (independent), and $y$ is the variable that results from that choice (dependent).",
+    "prerequisites": [
+      "Algebraic Expressions"
+    ],
+    "formulas": [],
+    "core_technique": "Identify the 'cause' (independent) and the 'effect' (dependent) in a mathematical relationship.",
+    "check_questions": [
+      "In the formula for the area of a circle $A = \\pi r^2$, which is the independent variable?",
+      "Is the output of a computing machine analogy the independent or dependent variable?",
+      "Identify the dependent variable in $V = f(r)$."
+    ],
+    "common_pitfalls": [
+      "Swapping the variables when interpreting real-world problems.",
+      "Thinking the independent variable is always on the left side of the equation."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Interval Notation",
+    "id": "MAT-CH02-T06",
+    "scratch_idea": "Intervals describe sets of real numbers between two endpoints. Open intervals exclude endpoints, while closed intervals include them.",
+    "prerequisites": [
+      "Real Number Line"
+    ],
+    "formulas": [
+      "$\\text{Open: } (a, b)$",
+      "$\\text{Closed: } [a, b]$"
+    ],
+    "core_technique": "Use square brackets for $\\leq$ or $\\geq$ (inclusion) and parentheses for $<$ or $>$ (exclusion).",
+    "check_questions": [
+      "Does the interval $(3, 5)$ include the number 3?",
+      "Write the set of numbers from -2 to 2, including both, in interval notation.",
+      "What is the difference between $[a, b]$ and $(a, b)$?"
+    ],
+    "common_pitfalls": [
+      "Using square brackets for infinity (infinity always uses parentheses).",
+      "Confusing coordinate points $(x, y)$ with open intervals $(a, b)$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Vertical Line Test",
+    "id": "MAT-CH02-T07",
+    "scratch_idea": "A graphical method to check if a curve is a function. If any vertical line crosses the graph more than once, it fails to be a function.",
+    "prerequisites": [
+      "Cartesian Coordinates",
+      "Graphing Basics"
+    ],
+    "formulas": [],
+    "core_technique": "Visualize or draw vertical lines across the entire width of the graph to see if they intersect at multiple points.",
+    "check_questions": [
+      "If a vertical line intersects a circle at two points, is the circle a function of $x$?",
+      "Why does a vertical line test identify non-functions?",
+      "Can a function's graph be intersected by a horizontal line more than once?"
+    ],
+    "common_pitfalls": [
+      "Applying the test horizontally instead of vertically.",
+      "Assuming a vertical line itself is a function (it is not, it fails its own test)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "One-to-One (Injective) Functions",
+    "id": "MAT-CH02-T08",
+    "scratch_idea": "A function where every unique input gives a unique output. No two different inputs result in the same value.",
+    "prerequisites": [
+      "Function Definition",
+      "Algebraic Proofs"
+    ],
+    "formulas": [
+      "$f(x_1) = f(x_2) \\implies x_1 = x_2$"
+    ],
+    "core_technique": "To prove a function is injective, assume $f(x_1) = f(x_2)$ and solve to see if $x_1$ must equal $x_2$.",
+    "check_questions": [
+      "Is $f(x) = x^2$ one-to-one for all real numbers?",
+      "Prove $f(x) = 5x + 7$ is an injective function.",
+      "What is the graphical requirement for a function to be one-to-one?"
+    ],
+    "common_pitfalls": [
+      "Assuming all functions are one-to-one.",
+      "Forgetting that $x^2 = y^2$ implies $x = \\pm y$, failing the injective test."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Onto (Surjective) Functions",
+    "id": "MAT-CH02-T09",
+    "scratch_idea": "A function where the range equals the codomain. Every element in the codomain set $Y$ is the 'image' of at least one element in domain $X$.",
+    "prerequisites": [
+      "Codomain and Range",
+      "Solving for x"
+    ],
+    "formulas": [
+      "$\\text{Range } f = Y$"
+    ],
+    "core_technique": "Solve the equation $y = f(x)$ for $x$ in terms of $y$ and check if $x$ exists in the domain for every $y$ in the codomain.",
+    "check_questions": [
+      "Define a surjective function.",
+      "If the codomain is all real numbers, is $f(x) = x^2$ onto?",
+      "Find if $f(x) = 2x + 3$ is onto for the set of real numbers."
+    ],
+    "common_pitfalls": [
+      "Ignoring the specified codomain when checking for onto-ness.",
+      "Confusing 'at least one' pre-image with 'exactly one' pre-image."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Bijective Functions",
+    "id": "MAT-CH02-T10",
+    "scratch_idea": "A function that is both Injective (One-to-One) and Surjective (Onto) at the same time.",
+    "prerequisites": [
+      "Injective Functions",
+      "Surjective Functions"
+    ],
+    "formulas": [],
+    "core_technique": "Verify both the injective and surjective conditions independently to confirm bijectivity.",
+    "check_questions": [
+      "What two conditions must a function satisfy to be bijective?",
+      "Is $f(x) = x + 1$ defined on real numbers a bijective function?",
+      "Why is $f(x) = x^2$ on $R \\to R$ not bijective?"
+    ],
+    "common_pitfalls": [
+      "Declaring a function bijective after checking only one condition.",
+      "Assuming bijectivity depends on the formula only, without looking at the domain and codomain."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Piecewise Functions",
+    "id": "MAT-CH02-T11",
+    "scratch_idea": "Functions that use different formulas for different parts of the domain.",
+    "prerequisites": [
+      "Function Notation",
+      "Domain Intervals"
+    ],
+    "formulas": [
+      "$f(x) = \\begin{cases} \\text{rule 1} & x \\in D_1 \\\\ \\text{rule 2} & x \\in D_2 \\end{cases}$"
+    ],
+    "core_technique": "Identify which interval the input $x$ falls into first, then use the corresponding rule for that specific interval.",
+    "check_questions": [
+      "Given $f(x) = 2x+1$ for $x < 0$ and $x^2-1$ for $x \\geq 0$, find $f(2)$.",
+      "Can a piecewise function have overlapping domain intervals?",
+      "How do you graph a piecewise function?"
+    ],
+    "common_pitfalls": [
+      "Using the wrong formula for a given value of $x$.",
+      "Failing to check the boundaries where the function changes rules."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Intersections with Coordinate Axes",
+    "id": "MAT-CH02-T12",
+    "scratch_idea": "The points where a function's graph crosses the x-axis ($y=0$) and y-axis ($x=0$).",
+    "prerequisites": [
+      "Linear Equations",
+      "Cartesian Plane"
+    ],
+    "formulas": [
+      "\\text{x-intercept: set } y=0",
+      "\\text{y-intercept: set } x=0"
+    ],
+    "core_technique": "To find the x-intercept, solve for $x$ when $f(x)=0$. To find the y-intercept, evaluate $f(0)$.",
+    "check_questions": [
+      "Find the y-intercept of $y = 2x + 6$.",
+      "At what point does $y = 3x - 9$ cross the x-axis?",
+      "What is the coordinate form of a y-intercept?"
+    ],
+    "common_pitfalls": [
+      "Confusing the x-intercept condition ($y=0$) with the y-intercept condition ($x=0$).",
+      "Writing intercepts as single numbers instead of coordinate pairs $(x, y)$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Intersection of Two Linear Functions",
+    "id": "MAT-CH02-T13",
+    "scratch_idea": "The unique point $(x, y)$ where two straight lines cross, representing the simultaneous solution to both equations.",
+    "prerequisites": [
+      "Simultaneous Equations",
+      "Linear Graphing"
+    ],
+    "formulas": [
+      "$f(x) = g(x)$"
+    ],
+    "core_technique": "Set the two linear expressions equal to each other to solve for $x$, then substitute $x$ back into either equation to find $y$.",
+    "check_questions": [
+      "Graphically find the intersection of $y = 3x + 2$ and $y = -x + 6$.",
+      "How many intersection points can two non-parallel straight lines have?",
+      "What does the intersection point represent in a system of equations?"
+    ],
+    "common_pitfalls": [
+      "Assuming parallel lines will intersect.",
+      "Finding only the $x$ value and forgetting to solve for the $y$ value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Intersection of Linear and Quadratic Functions",
+    "id": "MAT-CH02-T14",
+    "scratch_idea": "Finding the meeting points of a line and a parabola. This can result in two, one (tangent), or zero intersection points.",
+    "prerequisites": [
+      "Quadratic Formula",
+      "Parabola Properties"
+    ],
+    "formulas": [
+      "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$"
+    ],
+    "core_technique": "Equate the linear and quadratic expressions to form a new quadratic equation, then solve for $x$ using the quadratic formula or factoring.",
+    "check_questions": [
+      "How many points of intersection occur if a line is tangent to a parabola?",
+      "Find the intersection points of $y = -x + 3$ and $y = x^2 - 6x + 3$.",
+      "What does it mean if the discriminant is negative when solving for intersection?"
+    ],
+    "common_pitfalls": [
+      "Miscalculating the vertex of the parabola, leading to an incorrect graph.",
+      "Forgetting to check if the calculated $x$ values produce real $y$ values."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Graphing Square Root Functions",
+    "id": "MAT-CH02-T15",
+    "scratch_idea": "Square root functions produce a curve starting from a specific point (where the radicand is zero) and extending in one direction.",
+    "prerequisites": [
+      "Square Roots",
+      "Domain Restrictions"
+    ],
+    "formulas": [
+      "$y = a\\sqrt{x-h} + k$"
+    ],
+    "core_technique": "Determine the starting point by finding where the term inside the root equals zero, then pick values of $x$ that make perfect squares for easy plotting.",
+    "check_questions": [
+      "What is the domain of $y = 2\\sqrt{x} + 1$?",
+      "Why does the graph of $y = \\sqrt{x}$ not exist for $x < 0$?",
+      "Describe the shape of a square root function graph."
+    ],
+    "common_pitfalls": [
+      "Drawing the graph in the negative x-region when the domain is $x \\geq 0$.",
+      "Misinterpreting the vertical shift as a horizontal shift."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Graphing Cube Root Functions",
+    "id": "MAT-CH02-T16",
+    "scratch_idea": "Cube root functions are defined for all real numbers, including negative values, resulting in an S-shaped curve passing through the origin or a shifted point.",
+    "prerequisites": [
+      "Cube Roots",
+      "Graph Plotting"
+    ],
+    "formulas": [
+      "$y = \\sqrt[3]{x}$"
+    ],
+    "core_technique": "Since the domain is all real numbers, pick both positive and negative $x$ values to capture the full S-shape of the curve.",
+    "check_questions": [
+      "What is the domain of $y = \\sqrt[3]{x - 1}$?",
+      "How does the cube root graph differ from the square root graph regarding negative inputs?",
+      "Identify the point of symmetry for $y = \\sqrt[3]{x}$."
+    ],
+    "common_pitfalls": [
+      "Incorrectly assuming the domain is restricted like a square root function.",
+      "Plotting the curve too 'flat' or missing the inflection point."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Exponential Growth Model",
+    "id": "MAT-CH02-T17",
+    "scratch_idea": "Models quantities that increase rapidly over time at a rate proportional to their current value, often used in finance and population studies.",
+    "prerequisites": [
+      "Exponents",
+      "Natural Logarithms"
+    ],
+    "formulas": [
+      "$P(t) = P_0 e^{rt}$"
+    ],
+    "core_technique": "Use the formula to find the future value, and use natural logarithms (ln) when you need to solve for the time $t$.",
+    "check_questions": [
+      "What does $P_0$ represent in the exponential growth formula?",
+      "If a stock grows at 5%, what value of $r$ should be used in the formula?",
+      "How do you find the doubling time for an exponential growth model?"
+    ],
+    "common_pitfalls": [
+      "Using the percentage (e.g., 5) instead of the decimal (0.05) for $r$.",
+      "Confusing the base $e$ with a variable."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Exponential Decay Model",
+    "id": "MAT-CH02-T18",
+    "scratch_idea": "Models quantities that decrease over time, such as radioactive decay or pollutant concentration, typically approaching zero but never reaching it.",
+    "prerequisites": [
+      "Fractional Exponents",
+      "Half-life concepts"
+    ],
+    "formulas": [
+      "$Q(t) = Q_0 (\\frac{1}{2})^{\\frac{t}{h}}$"
+    ],
+    "core_technique": "Ensure the time $t$ and half-life $h$ are in the same units before calculating.",
+    "check_questions": [
+      "A substance has a half-life of 2 years. What fraction remains after 6 years?",
+      "How is decay different from growth in terms of the formula behavior?",
+      "Calculate the remaining quantity if $Q_0 = 200g$ and $t = 2h$."
+    ],
+    "common_pitfalls": [
+      "Confusing the total time $t$ with the half-life period $h$.",
+      "Forgetting that the result of a decay function should be smaller than the initial amount."
+    ],
+    "difficulty": "Hard"
+  }
+]

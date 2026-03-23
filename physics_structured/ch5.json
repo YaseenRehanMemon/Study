@@ -1,0 +1,341 @@
+[
+  {
+    "topic_name": "Crystalline Solids",
+    "id": "PHY-CH5-T1",
+    "scratch_idea": "Crystalline solids are materials where atoms, molecules, or ions are arranged in a regular, repeating three-dimensional pattern. This long-range order results in sharp melting points and distinct geometric shapes.",
+    "prerequisites": [
+      "Atomic structure",
+      "Thermal vibration"
+    ],
+    "formulas": [],
+    "core_technique": "Identify them by their definite melting point and the existence of a long-range ordered lattice structure.",
+    "check_questions": [
+      "What defines the internal structure of a crystalline solid?",
+      "Why do crystalline solids have abrupt melting points?",
+      "How does temperature affect the atoms within a crystal lattice?"
+    ],
+    "common_pitfalls": [
+      "Assuming atoms in a crystal are stationary (they actually vibrate).",
+      "Confusing long-range order with short-range order."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Amorphous Solids",
+    "id": "PHY-CH5-T2",
+    "scratch_idea": "Amorphous solids, also known as glassy solids, lack a regular internal arrangement of particles. Their structure is disordered, resembling a 'frozen' liquid.",
+    "prerequisites": [
+      "States of matter",
+      "Viscosity"
+    ],
+    "formulas": [],
+    "core_technique": "Distinguish them from crystals by their gradual softening over a range of temperatures instead of a fixed melting point.",
+    "check_questions": [
+      "What does the word 'amorphous' literally mean?",
+      "Why are amorphous solids often referred to as glassy solids?",
+      "How do amorphous solids behave when heated?"
+    ],
+    "common_pitfalls": [
+      "Thinking all solids have a crystalline structure.",
+      "Assuming glass has a definite melting point."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Polymeric Solids",
+    "id": "PHY-CH5-T3",
+    "scratch_idea": "Polymeric solids are materials composed of long-chain molecules formed through polymerization. They exhibit properties intermediate between crystalline and amorphous states, often showing high strength-to-weight ratios.",
+    "prerequisites": [
+      "Chemical bonding",
+      "Molecular weight"
+    ],
+    "formulas": [],
+    "core_technique": "Associate polymers with complex, massive chain molecules and low specific gravity.",
+    "check_questions": [
+      "What is the defining structural feature of a polymer?",
+      "Name three examples of synthetic polymeric solids.",
+      "Why are polymers preferred in engineering for weight-sensitive applications?"
+    ],
+    "common_pitfalls": [
+      "Believing polymers are strictly amorphous; they can be partially crystalline.",
+      "Assuming all polymers are synthetic (natural rubber is a polymer)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Stress",
+    "id": "PHY-CH5-T4",
+    "scratch_idea": "Stress is the internal restoring force per unit area that develops in a body when it is subjected to an external deforming force. It is the cause of deformation.",
+    "prerequisites": [
+      "Force",
+      "Pressure"
+    ],
+    "formulas": [
+      "$\\sigma = \\frac{F}{A}$"
+    ],
+    "core_technique": "Always use the cross-sectional area perpendicular to the applied force for tensile stress.",
+    "check_questions": [
+      "Define stress and state its SI unit.",
+      "What is the difference between tensile stress and shear stress?",
+      "How does stress relate to the Pascal unit?"
+    ],
+    "common_pitfalls": [
+      "Confusing stress with pressure (stress is internal, pressure is external).",
+      "Using the wrong area (surface area instead of cross-sectional area)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Strain",
+    "id": "PHY-CH5-T5",
+    "scratch_idea": "Strain is the fractional change in the dimensions of a body (length, volume, or shape) resulting from applied stress. It is a dimensionless quantity representing the extent of deformation.",
+    "prerequisites": [
+      "Stress",
+      "Deformation"
+    ],
+    "formulas": [
+      "$\\epsilon = \\frac{\\Delta L}{L_o}$",
+      "$\\epsilon_v = \\frac{\\Delta V}{V_o}$",
+      "$\\gamma = \\tan \\theta \\approx \\theta$"
+    ],
+    "core_technique": "Remember that strain has no units because it is a ratio of similar quantities.",
+    "check_questions": [
+      "Why is strain a dimensionless quantity?",
+      "How is volumetric strain calculated?",
+      "Under what condition is shear strain approximately equal to the angle $\\theta$?"
+    ],
+    "common_pitfalls": [
+      "Assigning units like meters or Pascals to strain.",
+      "Confusing the change in dimension with the ratio of change."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Young's Modulus",
+    "id": "PHY-CH5-T6",
+    "scratch_idea": "Young's Modulus is the ratio of tensile stress to tensile strain within the elastic limit. It measures the stiffness of a material and its ability to resist longitudinal deformation.",
+    "prerequisites": [
+      "Stress",
+      "Strain"
+    ],
+    "formulas": [
+      "$Y = \\frac{\\sigma}{\\epsilon} = \\frac{F L_o}{A \\Delta L}$"
+    ],
+    "core_technique": "Young's Modulus is a property of the material, not the object; it doesn't change with length or area.",
+    "check_questions": [
+      "What physical property of a material does Young's Modulus quantify?",
+      "Calculate the Young's Modulus if a stress of $10^8 \\text{ Pa}$ produces a strain of $0.001$.",
+      "What are the units of Young's Modulus?"
+    ],
+    "common_pitfalls": [
+      "Thinking a longer wire has a higher Young's Modulus.",
+      "Miscalculating the area of a wire ($A = \\pi r^2$ not $\\pi d^2$)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Elastic Limit and Yield Point",
+    "id": "PHY-CH5-T7",
+    "scratch_idea": "The elastic limit is the maximum stress a material can handle before permanent deformation occurs. The yield point follows the proportional limit and marks where the material begins to behave plastically.",
+    "prerequisites": [
+      "Hooke's Law",
+      "Stress-Strain Curve"
+    ],
+    "formulas": [],
+    "core_technique": "On a graph, identify the point where the curve starts to deviate from a straight line and eventually doesn't return to zero.",
+    "check_questions": [
+      "Define the proportional limit of a material.",
+      "What happens to a material if it is stressed beyond its elastic limit?",
+      "What is the difference between elastic and plastic deformation?"
+    ],
+    "common_pitfalls": [
+      "Assuming the proportional limit and elastic limit are exactly the same point (they are very close but distinct).",
+      "Confusing the yield point with the breaking point."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Strain Energy",
+    "id": "PHY-CH5-T8",
+    "scratch_idea": "Strain energy is the potential energy stored in a body when it is deformed within its elastic limit. It is equal to the work done by the deforming force.",
+    "prerequisites": [
+      "Work-Energy Principle",
+      "Hooke's Law"
+    ],
+    "formulas": [
+      "$W = \\frac{1}{2} F x$",
+      "$E_p = \\frac{1}{2} k x^2$"
+    ],
+    "core_technique": "Calculate strain energy as the area under the Force-Extension ($F$-$x$) graph.",
+    "check_questions": [
+      "How is work done related to the area of a force-extension graph?",
+      "Derive the formula for energy stored in a stretched spring.",
+      "In what form is energy stored in a deformed solid?"
+    ],
+    "common_pitfalls": [
+      "Forgetting the factor of $1/2$ in the energy formula.",
+      "Using the full force $F$ instead of the average force $F/2$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Archimedes' Principle",
+    "id": "PHY-CH5-T9",
+    "scratch_idea": "Archimedes' Principle states that an object submerged in a fluid experiences an upward force (upthrust) equal to the weight of the fluid it displaces.",
+    "prerequisites": [
+      "Fluid Pressure",
+      "Density"
+    ],
+    "formulas": [
+      "$F_{up} = \\rho g V$"
+    ],
+    "core_technique": "The volume $V$ in the formula refers strictly to the volume of the *submerged* part of the object.",
+    "check_questions": [
+      "State Archimedes' Principle.",
+      "What causes the upthrust force in a fluid?",
+      "How does the upthrust relate to the density of the fluid?"
+    ],
+    "common_pitfalls": [
+      "Using the density of the object instead of the density of the fluid in the upthrust formula.",
+      "Using total volume instead of submerged volume for partially floating objects."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Equation of Continuity",
+    "id": "PHY-CH5-T10",
+    "scratch_idea": "The equation of continuity states that for an incompressible fluid in steady flow, the product of the cross-sectional area and the fluid speed is constant throughout the pipe. It is based on the conservation of mass.",
+    "prerequisites": [
+      "Conservation of Mass",
+      "Steady Flow"
+    ],
+    "formulas": [
+      "$A_1 v_1 = A_2 v_2$",
+      "$\\text{Flow Rate} = A v$"
+    ],
+    "core_technique": "When area decreases, velocity must increase proportionally to maintain a constant flow rate.",
+    "check_questions": [
+      "What conservation law is the basis of the equation of continuity?",
+      "Explain why water flows faster from a hose when the nozzle is partially covered.",
+      "Define 'volume flow rate' and state its SI unit."
+    ],
+    "common_pitfalls": [
+      "Applying the equation to compressible gases without accounting for density changes.",
+      "Forgetting to square the radius when calculating area from diameter."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Bernoulli's Equation",
+    "id": "PHY-CH5-T11",
+    "scratch_idea": "Bernoulli's Equation relates the pressure, speed, and height of an ideal fluid in steady flow. It states that the sum of static pressure, kinetic energy per unit volume, and potential energy per unit volume is constant.",
+    "prerequisites": [
+      "Conservation of Energy",
+      "Fluid Dynamics"
+    ],
+    "formulas": [
+      "$P + \\frac{1}{2} \\rho v^2 + \\rho g h = \\text{constant}$"
+    ],
+    "core_technique": "Understand that high speed in a fluid flow results in low pressure (and vice versa) for horizontal flow.",
+    "check_questions": [
+      "State Bernoulli's Equation.",
+      "What are the three conditions for a fluid to be considered 'ideal'?",
+      "Explain how the pressure changes when an ideal fluid moves to a higher elevation in a pipe."
+    ],
+    "common_pitfalls": [
+      "Neglecting the potential energy term ($\\rho g h$) even when the pipe changes height.",
+      "Confusing static pressure with dynamic pressure."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Torricelli's Theorem",
+    "id": "PHY-CH5-T12",
+    "scratch_idea": "Torricelli's Theorem is a specific application of Bernoulli's equation that determines the speed of efflux of a liquid from an orifice at a certain depth below the surface.",
+    "prerequisites": [
+      "Bernoulli's Equation",
+      "Free fall motion"
+    ],
+    "formulas": [
+      "$v = \\sqrt{2g(h_1 - h_2)}$"
+    ],
+    "core_technique": "The speed of efflux is identical to the speed a body would acquire in free fall from the same height.",
+    "check_questions": [
+      "Define the speed of efflux.",
+      "How does the size of the orifice affect the application of Torricelli's Theorem?",
+      "Calculate the speed of water from a hole 5m below the surface of a tank."
+    ],
+    "common_pitfalls": [
+      "Measuring height from the bottom of the tank instead of the depth from the surface.",
+      "Using the wrong value for $g$ or failing to square root the final value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Viscosity and Stokes' Law",
+    "id": "PHY-CH5-T13",
+    "scratch_idea": "Viscosity is the internal friction of a fluid that opposes the relative motion of its layers. Stokes' Law provides the drag force on a spherical object moving through a viscous fluid at low speeds.",
+    "prerequisites": [
+      "Friction",
+      "Fluid Layers"
+    ],
+    "formulas": [
+      "$F = 6 \\pi \\eta r v$"
+    ],
+    "core_technique": "Remember that drag force is directly proportional to both the radius of the sphere and its velocity.",
+    "check_questions": [
+      "What does the coefficient of viscosity ($\\eta$) represent?",
+      "State Stokes' Law and its conditions of applicability.",
+      "How does the viscosity of liquids usually change with temperature?"
+    ],
+    "common_pitfalls": [
+      "Applying Stokes' Law to non-spherical objects.",
+      "Using Stokes' Law for high-speed (turbulent) flow where it no longer applies."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Terminal Velocity",
+    "id": "PHY-CH5-T14",
+    "scratch_idea": "Terminal velocity is the maximum constant velocity attained by an object falling through a fluid when the upward drag force equals the downward force of gravity.",
+    "prerequisites": [
+      "Stokes' Law",
+      "Equilibrium of forces"
+    ],
+    "formulas": [
+      "$v_t = \\frac{2 g r^2 \\rho}{9 \\eta}$"
+    ],
+    "core_technique": "At terminal velocity, the net force on the object is zero, and acceleration is zero.",
+    "check_questions": [
+      "Under what condition does a falling body reach terminal velocity?",
+      "How is terminal velocity related to the radius of a spherical drop?",
+      "Explain why fog droplets appear to hang in the air."
+    ],
+    "common_pitfalls": [
+      "Thinking the object stops moving when forces are balanced.",
+      "Assuming all falling objects reach the same terminal velocity regardless of size."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Superfluidity",
+    "id": "PHY-CH5-T15",
+    "scratch_idea": "Superfluidity is a state of matter occurring at extremely low temperatures where a fluid exhibits zero viscosity, allowing it to flow without friction and even climb container walls.",
+    "prerequisites": [
+      "Viscosity",
+      "Absolute Zero"
+    ],
+    "formulas": [],
+    "core_technique": "Focus on the 'frictionless flow' property and the lack of kinetic energy loss during motion.",
+    "check_questions": [
+      "What is the primary characteristic of a superfluid?",
+      "Name a substance that exhibits superfluidity and the temperature range required.",
+      "Why can superfluids empty themselves from a container?"
+    ],
+    "common_pitfalls": [
+      "Confusing superfluidity with superconductivity (one is fluid flow, the other is charge flow).",
+      "Assuming any cold liquid is a superfluid."
+    ],
+    "difficulty": "Medium"
+  }
+]

@@ -1,0 +1,423 @@
+[
+  {
+    "topic_name": "Definition of a Sequence",
+    "id": "MAT-CH6-T1",
+    "scratch_idea": "A sequence is a mathematical function where the input domain is the set of natural numbers. Each output value in this mapping is called a term, arranged in a specific ordered pattern.",
+    "prerequisites": [
+      "Set of Natural Numbers",
+      "Concept of Functions"
+    ],
+    "formulas": [
+      "$a_n = f(n)$"
+    ],
+    "core_technique": "Always start the index $n$ from 1 unless otherwise specified to find the first term.",
+    "check_questions": [
+      "What is the domain of any sequence function?",
+      "How is the general term of a sequence denoted?",
+      "If a set of numbers follows a clear rule for the next term, what is it called?"
+    ],
+    "common_pitfalls": [
+      "Confusing the index $n$ with the value of the term $a_n$.",
+      "Using non-integer values for the domain."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Finite and Infinite Sequences",
+    "id": "MAT-CH6-T2",
+    "scratch_idea": "Sequences are categorized based on the number of terms they contain. A finite sequence has a specific end point, while an infinite sequence continues without bound.",
+    "prerequisites": [
+      "Definition of a Sequence"
+    ],
+    "formulas": [],
+    "core_technique": "Look for an ellipsis ($\\\\dots$) at the end of a sequence to identify if it is infinite.",
+    "check_questions": [
+      "Define a finite sequence with an example.",
+      "How can you represent the generation rule in an infinite sequence?",
+      "Is $2, 5, 8, 11$ a finite or infinite sequence?"
+    ],
+    "common_pitfalls": [
+      "Assuming a sequence is infinite just because it has many terms.",
+      "Misinterpreting a general term expression at the end as the final term of a finite sequence."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Finding Terms from the General Term",
+    "id": "MAT-CH6-T3",
+    "scratch_idea": "Given a formula for the $n^{th}$ term ($a_n$), specific terms are found by substituting integers for $n$. This allows the reconstruction of the entire sequence pattern.",
+    "prerequisites": [
+      "Algebraic Substitution",
+      "Order of Operations"
+    ],
+    "formulas": [
+      "$a_n = 3n + 1$",
+      "$a_n = 3n^2 - 3$"
+    ],
+    "core_technique": "To find the first four terms, systematically substitute $n=1, 2, 3, 4$ into the given expression.",
+    "check_questions": [
+      "Find the first term of $a_n = 3n + 1$.",
+      "Calculate $a_3$ if $a_n = 3n^2 - 3$.",
+      "If $a_n = (-2n)^2$, what is the second term?"
+    ],
+    "common_pitfalls": [
+      "Calculating the first term by substituting $n=0$ instead of $n=1$.",
+      "Incorrectly applying exponents before multiplication in formulas like $3n^2$."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Arithmetic Progression (A.P.) and Common Difference",
+    "id": "MAT-CH6-T4",
+    "scratch_idea": "An Arithmetic Progression is a sequence where the difference between any two consecutive terms is a constant. this constant is known as the common difference ($d$).",
+    "prerequisites": [
+      "Basic Subtraction",
+      "Sequence Definition"
+    ],
+    "formulas": [
+      "$d = a_n - a_{n-1}$",
+      "$d = a_2 - a_1$"
+    ],
+    "core_technique": "Subtract the first term from the second term to find the common difference $d$.",
+    "check_questions": [
+      "What is the common difference of the sequence $54, 51, 48, \\\\dots$?",
+      "If $d=0$, what kind of sequence is formed?",
+      "Define Arithmetic Progression in terms of $a_n$ and $a_{n-1}$."
+    ],
+    "common_pitfalls": [
+      "Subtracting $a_2$ from $a_1$ instead of $a_1$ from $a_2$.",
+      "Assuming a sequence is A.P. without checking the difference between multiple pairs of terms."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "General Term of an Arithmetic Progression",
+    "id": "MAT-CH6-T5",
+    "scratch_idea": "The general term formula allows us to find any specific term in an A.P. without listing all preceding terms. It depends on the first term, the term position, and the common difference.",
+    "prerequisites": [
+      "Common Difference",
+      "Linear Equations"
+    ],
+    "formulas": [
+      "$a_n = a_1 + (n - 1)d$"
+    ],
+    "core_technique": "Use the formula $a_n = a_m + (n - m)d$ if the first term is unknown but another term $a_m$ is provided.",
+    "check_questions": [
+      "Find the 11th term of an A.P. where $a_1 = 2$ and $d = -3$.",
+      "Derive the general term for the sequence $5, 11, 17, \\\\dots$.",
+      "If $a_n = 59, a_1 = 3, d = 7$, find the number of terms $n$."
+    ],
+    "common_pitfalls": [
+      "Using $n$ instead of $(n-1)$ in the formula.",
+      "Errors in sign when $d$ is a negative value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Middle Terms of an Arithmetic Progression",
+    "id": "MAT-CH6-T6",
+    "scratch_idea": "The number of middle terms in an A.P. depends on whether the total number of terms ($n$) is even or odd. This is critical for finding central values in data sets.",
+    "prerequisites": [
+      "General Term of A.P.",
+      "Parity (Even/Odd numbers)"
+    ],
+    "formulas": [
+      "Odd $n$: $(\\\\frac{n+1}{2})^{th}$ term",
+      "Even $n$: $(\\\\frac{n}{2})^{th}$ and $(\\\\frac{n}{2} + 1)^{th}$ terms"
+    ],
+    "core_technique": "Always determine the total count of terms $n$ before attempting to locate the middle terms.",
+    "check_questions": [
+      "If an A.P. has 7 terms, which term is the middle term?",
+      "Identify the two middle terms for an A.P. with $n=6$.",
+      "In the sequence $1, 3, 5, 7, 9, 11, 13$, what is the middle term value?"
+    ],
+    "common_pitfalls": [
+      "Thinking there is only one middle term when $n$ is even.",
+      "Confusing the position of the middle term with its actual value."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Arithmetic Mean (A.M.)",
+    "id": "MAT-CH6-T7",
+    "scratch_idea": "The Arithmetic Mean is a single number $A$ that, when placed between two numbers $a$ and $b$, creates an arithmetic progression. It represents the average of the two numbers.",
+    "prerequisites": [
+      "Definition of A.P.",
+      "Average calculation"
+    ],
+    "formulas": [
+      "$A = \\\\frac{a + b}{2}$"
+    ],
+    "core_technique": "Three numbers $a, b, c$ are in A.P. if and only if $2b = a + c$.",
+    "check_questions": [
+      "Find the A.M. between $2 + \\\\sqrt{3}i$ and $2 - \\\\sqrt{3}i$.",
+      "Prove that if $A$ is the A.M. of $a$ and $b$, then $a, A, b$ are in A.P.",
+      "What is the A.M. of $(a+b)^2$ and $(a-b)^2$?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to divide the sum by 2.",
+      "Treating geometric means and arithmetic means as the same calculation."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Inserting n-Arithmetic Means",
+    "id": "MAT-CH6-T8",
+    "scratch_idea": "Multiple arithmetic means can be inserted between two numbers such that the entire sequence forms an A.P. The process involves finding a specific common difference for the expanded sequence.",
+    "prerequisites": [
+      "Arithmetic Mean",
+      "A.P. General Term"
+    ],
+    "formulas": [
+      "$d = \\\\frac{b - a}{n + 1}$"
+    ],
+    "core_technique": "When inserting $n$ means between $a$ and $b$, the total number of terms in the resulting A.P. becomes $n+2$.",
+    "check_questions": [
+      "Insert three A.Ms. between $\\\\sqrt{2}$ and $3\\\\sqrt{2}$.",
+      "If $6, 11, 16$ are three A.Ms. between $a$ and $b$, find $a$.",
+      "Derive the formula for $d$ when inserting $n$ A.Ms. between $a$ and $b$."
+    ],
+    "common_pitfalls": [
+      "Using $n$ instead of $n+1$ in the denominator when calculating $d$.",
+      "Miscounting the total number of terms as $n$ instead of $n+2$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Arithmetic Series and Partial Sums",
+    "id": "MAT-CH6-T9",
+    "scratch_idea": "An arithmetic series is the sum of the terms of an arithmetic progression. The partial sum $S_n$ represents the sum of the first $n$ terms.",
+    "prerequisites": [
+      "Arithmetic Progression",
+      "Summation concepts"
+    ],
+    "formulas": [
+      "$S_n = \\\\frac{n}{2}[2a_1 + (n - 1)d]$",
+      "$S_n = \\\\frac{n}{2}(a_1 + a_n)$"
+    ],
+    "core_technique": "Use the $a_n$ version of the formula if the last term is already known to save computation time.",
+    "check_questions": [
+      "Find the sum of the first 100 positive integers.",
+      "Calculate $S_{19}$ for the series $2 + \\\\frac{7}{2} + 5 + \\\\dots$.",
+      "If $a_1=9, a_n=105, S_n=741$, find $n$."
+    ],
+    "common_pitfalls": [
+      "Using the wrong formula for $a_n$ inside the sum formula.",
+      "Misidentifying the number of terms $n$ in a series like $1, 3, \\\\dots, 99$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Geometric Progression (G.P.) and Common Ratio",
+    "id": "MAT-CH6-T10",
+    "scratch_idea": "A Geometric Progression is a sequence where each term is found by multiplying the previous term by a fixed non-zero constant called the common ratio ($r$).",
+    "prerequisites": [
+      "Multiplication/Division",
+      "Sequence Definition"
+    ],
+    "formulas": [
+      "$r = \\\\frac{a_n}{a_{n-1}}$",
+      "$a_n = a_1r^{n-1}$"
+    ],
+    "core_technique": "Find $r$ by dividing any term by its immediate predecessor.",
+    "check_questions": [
+      "Find the common ratio for the sequence $3, 12, 48, \\\\dots$.",
+      "If $a_1 = -3$ and $r = -2$, what is the 8th term?",
+      "State the general term formula for a G.P."
+    ],
+    "common_pitfalls": [
+      "Dividing the wrong way (preceding by current).",
+      "Assuming a sequence is G.P. without checking if $r$ is constant across all terms."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Geometric Mean (G.M.)",
+    "id": "MAT-CH6-T11",
+    "scratch_idea": "The Geometric Mean $G$ between two numbers $a$ and $b$ is a number such that $a, G, b$ form a geometric progression. It can be positive or negative.",
+    "prerequisites": [
+      "Geometric Progression",
+      "Square Roots"
+    ],
+    "formulas": [
+      "$G = \\\\pm \\\\sqrt{ab}$"
+    ],
+    "core_technique": "Remember that the G.M. of two numbers with different signs is imaginary.",
+    "check_questions": [
+      "Find the G.M. between $-2$ and $8$.",
+      "Insert four real G.Ms. between 3 and 96.",
+      "Prove that for positive $x, y$, the G.M. is less than the A.M."
+    ],
+    "common_pitfalls": [
+      "Forgetting the $\\\\pm$ sign when calculating a single G.M.",
+      "Attempting to find a real G.M. for two numbers with opposite signs."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Geometric Series Sum",
+    "id": "MAT-CH6-T12",
+    "scratch_idea": "A geometric series is the sum of terms in a geometric progression. The formula changes if the common ratio $r$ is equal to 1.",
+    "prerequisites": [
+      "Geometric Progression",
+      "Exponents"
+    ],
+    "formulas": [
+      "$S_n = \\\\frac{a_1(1-r^n)}{1-r}, r \\\\neq 1$",
+      "$S_n = na_1, r = 1$"
+    ],
+    "core_technique": "Ensure $r$ is not 1 before using the standard fractional sum formula.",
+    "check_questions": [
+      "Find the sum of the first 15 terms of $1, \\\\frac{1}{3}, \\\\frac{1}{9}, \\\\dots$.",
+      "If $a_n = (-3)(\\\\frac{2}{5})^n$, find the sum of $n$ terms.",
+      "What is the sum of $n$ terms if $r=1$?"
+    ],
+    "common_pitfalls": [
+      "Miscalculating $1-r^n$ as $(1-r)^n$.",
+      "Using the formula for infinite series when only a finite $n$ is requested."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Arithmetico-Geometric Progression (A.G.P.)",
+    "id": "MAT-CH6-T13",
+    "scratch_idea": "An A.G.P. is a sequence where each term is the product of the corresponding terms of an Arithmetic Progression and a Geometric Progression.",
+    "prerequisites": [
+      "Arithmetic Progression",
+      "Geometric Progression"
+    ],
+    "formulas": [
+      "$T_n = [a+(n-1)d]br^{n-1}$"
+    ],
+    "core_technique": "Identify the 'a' and 'd' from the arithmetic part and 'b' and 'r' from the geometric part separately.",
+    "check_questions": [
+      "Define the $n^{th}$ term of an arithmetico-geometric sequence.",
+      "Find the 8th term if the A.P. part is $1, 4, 7$ and G.P. part is $5, 10, 20$.",
+      "Sum $1 \\\\cdot 2 + 3 \\\\cdot 4 + 5 \\\\cdot 8 + 7 \\\\cdot 16 + \\\\dots$ to $n$ terms."
+    ],
+    "common_pitfalls": [
+      "Treating it as a simple G.P. or A.P.",
+      "Errors in term-by-term multiplication."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Harmonic Progression (H.P.)",
+    "id": "MAT-CH6-T14",
+    "scratch_idea": "A sequence is harmonic if the reciprocals of its terms form an arithmetic progression. Zero cannot be a term in a harmonic sequence.",
+    "prerequisites": [
+      "Arithmetic Progression",
+      "Reciprocals"
+    ],
+    "formulas": [
+      "$a_n(H.P.) = \\\\frac{1}{a_1 + (n-1)d}$"
+    ],
+    "core_technique": "Convert the H.P. to an A.P. by taking reciprocals, solve for the desired term in A.P., then take the reciprocal back.",
+    "check_questions": [
+      "Find the 8th term of the H.P. $\\\\frac{1}{2}, \\\\frac{1}{5}, \\\\frac{1}{8}, \\\\dots$.",
+      "If the 4th and 7th terms of an H.P. are $\\\\frac{2}{13}$ and $\\\\frac{2}{25}$, find the sequence.",
+      "Why can zero not be a term in H.P.?"
+    ],
+    "common_pitfalls": [
+      "Trying to find a 'common difference' directly between H.P. terms.",
+      "Forgetting to take the reciprocal of the final A.P. result."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Harmonic Mean (H.M.)",
+    "id": "MAT-CH6-T15",
+    "scratch_idea": "The Harmonic Mean $H$ between two numbers $a$ and $b$ is such that $a, H, b$ are in harmonic progression.",
+    "prerequisites": [
+      "Harmonic Progression",
+      "Algebraic Fractions"
+    ],
+    "formulas": [
+      "$H = \\\\frac{2ab}{a+b}$"
+    ],
+    "core_technique": "To insert $n$ H.Ms, find $n$ A.Ms between $1/a$ and $1/b$, then invert them.",
+    "check_questions": [
+      "Find the H.M. between 3 and 7.",
+      "Find $n$ so that $\\\\frac{a^{n+1} + b^{n+1}}{a^n + b^n}$ is the H.M. between $a$ and $b$.",
+      "Insert three H.Ms. between $\\\\frac{1}{5}$ and $\\\\frac{1}{17}$."
+    ],
+    "common_pitfalls": [
+      "Confusing the H.M. formula with the A.M. formula.",
+      "Incorrect algebraic simplification of the complex fraction $\\\\frac{2}{1/a + 1/b}$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Sigma Notation and Summation Properties",
+    "id": "MAT-CH6-T16",
+    "scratch_idea": "Sigma notation ($\\\\Sigma$) is a shorthand for expressing long sums. It uses an index, a lower limit, and an upper limit.",
+    "prerequisites": [
+      "General Term of a series",
+      "Basic Addition"
+    ],
+    "formulas": [
+      "$\\\\sum_{k=1}^n (a_k + b_k) = \\\\sum_{k=1}^n a_k + \\\\sum_{k=1}^n b_k$",
+      "$\\\\sum_{k=1}^n \\\\alpha a_k = \\\\alpha \\\\sum_{k=1}^n a_k$"
+    ],
+    "core_technique": "The index variable only affects terms containing that variable; constants can be factored out of the summation.",
+    "check_questions": [
+      "What is the result of $\\\\sum_{k=1}^n 1$?",
+      "Expand $\\\\sum_{k=1}^4 (2k-1)$.",
+      "State the property for summing two different general terms under one sigma."
+    ],
+    "common_pitfalls": [
+      "Incorrectly factoring out variables that are dependent on the index.",
+      "Miscounting the number of terms when the lower limit is not 1."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Sum of Power Series (Natural Numbers)",
+    "id": "MAT-CH6-T17",
+    "scratch_idea": "These are specific formulas for the sums of the first $n$ natural numbers, their squares, and their cubes.",
+    "prerequisites": [
+      "Sigma Notation",
+      "Mathematical Induction basics"
+    ],
+    "formulas": [
+      "$\\\\sum k = \\\\frac{n(n+1)}{2}$",
+      "$\\\\sum k^2 = \\\\frac{n(n+1)(2n+1)}{6}$",
+      "$\\\\sum k^3 = [\\\\frac{n(n+1)}{2}]^2$"
+    ],
+    "core_technique": "Use these formulas to evaluate sums of polynomials in $n$ by breaking them into individual power terms.",
+    "check_questions": [
+      "Find the sum of $1^2 + 2^2 + \\\\dots + 10^2$.",
+      "Show that $\\\\sum k^3$ is the square of $\\\\sum k$.",
+      "Find the sum of the series $1^3 + 3^3 + 5^3 + \\\\dots$ to $n$ terms."
+    ],
+    "common_pitfalls": [
+      "Using the wrong formula for the wrong power (e.g., using the $k^2$ formula for $k$).",
+      "Forgetting to multiply by constants when summing terms like $5k^2$."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Real-Life Application: Interest Calculations",
+    "id": "MAT-CH6-T18",
+    "scratch_idea": "Sequences and series are used to model financial growth. Simple interest follows an arithmetic progression, while compound interest follows a geometric progression.",
+    "prerequisites": [
+      "Percentage calculation",
+      "A.P. and G.P. formulas"
+    ],
+    "formulas": [
+      "Simple Interest: $I = Prt$",
+      "Compound Amount: $A = P(1+i)^n$"
+    ],
+    "core_technique": "Identify whether the growth is on the original principal (A.P.) or on the accumulated balance (G.P.).",
+    "check_questions": [
+      "Amna invests Rs. 200,000 at 5% compound interest. Find the amount after 10 years.",
+      "Tayyab borrows Rs. 50,000 at 8% simple interest for 11 years. Calculate the total interest.",
+      "Does yearly simple interest form an A.P.? Explain why."
+    ],
+    "common_pitfalls": [
+      "Using the simple interest formula for compound interest problems.",
+      "Confusing the interest earned with the total accumulated amount."
+    ],
+    "difficulty": "Medium"
+  }
+]

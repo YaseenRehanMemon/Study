@@ -1,0 +1,327 @@
+[
+  {
+    "topic_name": "Transverse Nature of Light",
+    "id": "PHY-CH8-T1",
+    "scratch_idea": "Polarization is a unique property that distinguishes transverse waves from longitudinal waves. It demonstrates that light waves consist of vibrations occurring perpendicular to the direction of wave travel.",
+    "prerequisites": [
+      "Transverse waves",
+      "Wave propagation"
+    ],
+    "formulas": [],
+    "core_technique": "Remember that if a wave can be polarized, it must be transverse; sound waves cannot be polarized because they are longitudinal.",
+    "check_questions": [
+      "Which wave phenomenon proves that light waves are transverse in nature?",
+      "Can sound waves be polarized? Why or why not?",
+      "How do the vibrations of particles relate to the direction of propagation in polarized transverse waves?"
+    ],
+    "common_pitfalls": [
+      "Assuming interference or diffraction proves the transverse nature of light.",
+      "Thinking longitudinal waves can undergo polarization."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Plane of Polarization",
+    "id": "PHY-CH8-T2",
+    "scratch_idea": "The plane of polarization is defined by two specific directions: the direction of the vibration of the particles and the direction the wave is moving. It confines the electric field vector to a specific 2D orientation.",
+    "prerequisites": [
+      "Electric field vector",
+      "Direction of propagation"
+    ],
+    "formulas": [],
+    "core_technique": "Visualize the plane as a flat sheet that contains both the vibrating arrow and the path of the wave.",
+    "check_questions": [
+      "Define the plane of polarization.",
+      "What two components define the geometry of the plane of polarization?",
+      "In a vertically polarized wave, in which plane do the vibrations occur?"
+    ],
+    "common_pitfalls": [
+      "Confusing the plane of vibration with the plane of propagation.",
+      "Forgetting that the electric and magnetic fields are in different planes."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Unpolarized Light",
+    "id": "PHY-CH8-T3",
+    "scratch_idea": "Ordinary light from sources like the sun or light bulbs consists of waves vibrating in all possible planes perpendicular to the direction of travel. This random orientation of electric field vectors characterizes unpolarized light.",
+    "prerequisites": [
+      "Light sources",
+      "Vector components"
+    ],
+    "formulas": [],
+    "core_technique": "Imagine unpolarized light as a bundle of arrows pointing in every direction around the line of travel.",
+    "check_questions": [
+      "Name three common sources of unpolarized light.",
+      "How are the vibrations oriented in unpolarized light?",
+      "Why is light from an incandescent bulb considered unpolarized?"
+    ],
+    "common_pitfalls": [
+      "Thinking unpolarized light only has horizontal and vertical components.",
+      "Assuming light from a fire is naturally polarized."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Linear Polarization",
+    "id": "PHY-CH8-T4",
+    "scratch_idea": "Linear polarization occurs when the electric field vector of a light wave oscillates strictly along a single line in a single plane. This is the simplest form of polarization, often achieved using a polarizing filter.",
+    "prerequisites": [
+      "Vibration plane",
+      "Electric field"
+    ],
+    "formulas": [],
+    "core_technique": "Look for a sine wave that stays fixed in one plane (e.g., only the x-y plane) without rotating.",
+    "check_questions": [
+      "What is another name for linear polarization?",
+      "In which plane does the electric field vector oscillate in linearly polarized light?",
+      "Give an example of a device that produces linearly polarized light."
+    ],
+    "common_pitfalls": [
+      "Confusing linear polarization with circular polarization.",
+      "Thinking the magnetic field is also in the same plane as the electric field."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Circular and Elliptical Polarization",
+    "id": "PHY-CH8-T5",
+    "scratch_idea": "In circular polarization, the electric field vector rotates in a circle as the wave propagates, whereas in elliptical polarization, it traces an ellipse. These occur when two perpendicular components of the electric field have a specific phase difference.",
+    "prerequisites": [
+      "Phase difference",
+      "Vector addition"
+    ],
+    "formulas": [
+      "$\\Delta \\phi = 90^\\circ \\text{ (for circular)}$"
+    ],
+    "core_technique": "If the components $E_x$ and $E_y$ are equal and 90 degrees apart, it is circular; if unequal or at a different angle, it is elliptical.",
+    "check_questions": [
+      "What is the required phase difference for circular polarization?",
+      "How does the path of the electric field vector differ between circular and elliptical polarization?",
+      "Where might you observe circular polarization in daily technology?"
+    ],
+    "common_pitfalls": [
+      "Assuming $E_x$ and $E_y$ must always be equal for elliptical polarization.",
+      "Thinking the rotation can only be clockwise."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Production and Detection using Polaroids",
+    "id": "PHY-CH8-T6",
+    "scratch_idea": "A polarizer is used to create polarized light, while an analyzer is used to test for polarization. By rotating the analyzer relative to the polarizer, one can observe changes in intensity that confirm the light's polarized state.",
+    "prerequisites": [
+      "Polarizing filter",
+      "Transverse wave properties"
+    ],
+    "formulas": [],
+    "core_technique": "If the light is extinguished when the analyzer is rotated 90 degrees to the polarizer, the light is definitely polarized.",
+    "check_questions": [
+      "What happens to the light intensity when the polarizer and analyzer axes are perpendicular?",
+      "What is the purpose of an 'analyzer'?",
+      "If light intensity remains constant while rotating a filter, what can you conclude about the incident light?"
+    ],
+    "common_pitfalls": [
+      "Confusing the roles of the first filter (polarizer) and the second filter (analyzer).",
+      "Thinking the light disappears when the filters are parallel."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Brewster's Law",
+    "id": "PHY-CH8-T7",
+    "scratch_idea": "Brewster's Law relates the refractive index of a medium to the specific angle of incidence, called the polarizing angle, where reflected light becomes completely polarized. At this angle, the reflected and refracted rays are perpendicular to each other.",
+    "prerequisites": [
+      "Refractive Index",
+      "Snell's Law"
+    ],
+    "formulas": [
+      "$\\tan \\theta_p = \\frac{n_2}{n_1}$",
+      "$\\theta_p + \\theta_r = 90^\\circ$"
+    ],
+    "core_technique": "Use $\\tan \\theta_p = n$ when light travels from air into another medium.",
+    "check_questions": [
+      "What is the angle between reflected and refracted rays at the Brewster angle?",
+      "Calculate the polarizing angle for glass with $n = 1.5$.",
+      "State the relationship between the tangent of the polarizing angle and the refractive index."
+    ],
+    "common_pitfalls": [
+      "Using $\\sin$ instead of $\\tan$ in the formula.",
+      "Forgetting that $n_1$ is the incident medium (usually air, $n=1$)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Malus's Law",
+    "id": "PHY-CH8-T8",
+    "scratch_idea": "Malus's Law calculates the intensity of polarized light after it passes through an analyzer. The resulting intensity depends on the square of the cosine of the angle between the transmission axes of the polarizer and the analyzer.",
+    "prerequisites": [
+      "Intensity of light",
+      "Trigonometric functions"
+    ],
+    "formulas": [
+      "$I = I_0 \\cos^2 \\theta$",
+      "$A = A_0 \\cos \\theta$"
+    ],
+    "core_technique": "When calculating intensity, always square the cosine; when calculating amplitude, use the cosine directly.",
+    "check_questions": [
+      "What is the intensity of light when the angle $\\theta$ is $60^\\circ$?",
+      "If the incident intensity is $I_0$, what is the transmitted intensity when axes are parallel?",
+      "How is the amplitude of the wave related to the angle between the polarizer and analyzer?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the $\\cos \\theta$ term when calculating intensity.",
+      "Misidentifying $\\theta$ as the angle with the vertical instead of the angle between the two filter axes."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Optical Activity",
+    "id": "PHY-CH8-T9",
+    "scratch_idea": "Optical activity is the property of certain substances, like sugar solutions or quartz, to rotate the plane of polarization of light passing through them. The degree of rotation depends on concentration, path length, and the nature of the substance.",
+    "prerequisites": [
+      "Plane polarized light",
+      "Molecular asymmetry"
+    ],
+    "formulas": [],
+    "core_technique": "This property is often used in 'Saccharimetry' to measure sugar concentration in solutions.",
+    "check_questions": [
+      "What is an optically active substance?",
+      "List three factors that determine the angle of rotation in optical activity.",
+      "How can an analyzer be used to detect optical activity?"
+    ],
+    "common_pitfalls": [
+      "Thinking all liquids are optically active.",
+      "Confusing optical activity with simple polarization by reflection."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Applications of Polarization",
+    "id": "PHY-CH8-T10",
+    "scratch_idea": "Polarization has practical uses in reducing glare via sunglasses, enhancing sky photography, and performing stress analysis in materials (photoelasticity). It allows us to filter unwanted reflections and visualize internal material strain.",
+    "prerequisites": [
+      "Glare",
+      "Scattering of light"
+    ],
+    "formulas": [],
+    "core_technique": "Polarized sunglasses work because reflected glare from horizontal surfaces is horizontally polarized; the glasses have vertical transmission axes to block it.",
+    "check_questions": [
+      "How do polarizers improve sky photography?",
+      "What is photoelasticity and how is it useful in engineering?",
+      "Why are polarized sunglasses better than ordinary tinted ones for driving?"
+    ],
+    "common_pitfalls": [
+      "Assuming ordinary sunglasses are the same as polarized sunglasses.",
+      "Thinking stress analysis requires destructive testing when using photoelasticity."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Gravitational Waves Concept",
+    "id": "PHY-CH8-T11",
+    "scratch_idea": "Gravitational waves are ripples in the fabric of space-time caused by massive accelerating objects, such as colliding black holes. They travel at the speed of light and carry energy and information across the universe.",
+    "prerequisites": [
+      "General Relativity",
+      "Spacetime"
+    ],
+    "formulas": [
+      "$c = f\\lambda$"
+    ],
+    "core_technique": "Think of them as waves in the 'mattress' of space-time rather than waves moving through a medium.",
+    "check_questions": [
+      "Who predicted gravitational waves in 1916?",
+      "At what speed do gravitational waves travel?",
+      "What physical quantity is stretching and compressing during the passage of a gravitational wave?"
+    ],
+    "common_pitfalls": [
+      "Confusing gravitational waves with gravity itself.",
+      "Thinking they require a medium like air or water to propagate."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Types of Gravitational Waves",
+    "id": "PHY-CH8-T12",
+    "scratch_idea": "There are four main types of gravitational waves: Continuous (constant frequency), Compact Binary Inspiral (merging objects), Burst (violent sudden events), and Stochastic (random background noise).",
+    "prerequisites": [
+      "Binary systems",
+      "Supernovae"
+    ],
+    "formulas": [],
+    "core_technique": "Categorize them by their source: stars spinning (Continuous) vs. stars colliding (Inspiral).",
+    "check_questions": [
+      "What type of source produces continuous gravitational waves?",
+      "Describe 'Stochastic' gravitational waves.",
+      "Which type of wave is produced during a supernova?"
+    ],
+    "common_pitfalls": [
+      "Thinking all gravitational waves have the same frequency.",
+      "Assuming only black holes produce these waves."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Tidal Forces and Space-time Distortion",
+    "id": "PHY-CH8-T13",
+    "scratch_idea": "As a gravitational wave passes through a body, it causes a periodic stretching and compressing effect known as tidal forces. This distortion occurs perpendicular to the direction of wave travel and is typically extremely small (order of $10^{-21}$ m).",
+    "prerequisites": [
+      "Amplitude",
+      "Oscillation"
+    ],
+    "formulas": [],
+    "core_technique": "The distortion is so small that it is comparable to measuring the distance to a star with the precision of a hair's width.",
+    "check_questions": [
+      "What is meant by 'space-time distortion' in the context of GWs?",
+      "What is the typical amplitude of gravitational waves passing through Earth?",
+      "In which direction does the stretching and compressing occur relative to the wave propagation?"
+    ],
+    "common_pitfalls": [
+      "Thinking the distortion is large enough to be felt by humans.",
+      "Confusing these tidal forces with the Moon's ocean tides."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "LIGO and Interferometry",
+    "id": "PHY-CH8-T14",
+    "scratch_idea": "LIGO (Laser Interferometer Gravitational-Wave Observatory) uses the interference of laser beams to detect the tiny changes in distance caused by gravitational waves. It consists of two long perpendicular arms where laser light bounces between mirrors.",
+    "prerequisites": [
+      "Interference of light",
+      "Phase shift"
+    ],
+    "formulas": [],
+    "core_technique": "If the arm length changes even slightly due to a GW, the returning lasers will be out of phase, creating a detectable interference pattern.",
+    "check_questions": [
+      "What does LIGO stand for?",
+      "Why are the arms of LIGO perpendicular to each other?",
+      "What is the function of the beam splitter in an interferometer?"
+    ],
+    "common_pitfalls": [
+      "Thinking LIGO uses sound waves for detection.",
+      "Assuming LIGO is a small laboratory-scale device; it has arms kilometers long."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Binary Systems and GW Emission",
+    "id": "PHY-CH8-T15",
+    "scratch_idea": "A binary system involves two compact objects (like neutron stars) orbiting each other. As they accelerate in their orbits, they radiate energy in the form of gravitational waves, eventually leading to a merger.",
+    "prerequisites": [
+      "Orbital motion",
+      "Acceleration"
+    ],
+    "formulas": [],
+    "core_technique": "Higher eccentricity or faster orbital speeds result in stronger gravitational wave emissions.",
+    "check_questions": [
+      "What is a binary system in astrophysics?",
+      "What happens to the frequency of GWs as the objects in a binary system get closer?",
+      "Which factors of a binary system determine the characteristics of the emitted waves?"
+    ],
+    "common_pitfalls": [
+      "Assuming only circular orbits produce waves.",
+      "Thinking binary systems emit constant waves forever without losing energy."
+    ],
+    "difficulty": "Medium"
+  }
+]

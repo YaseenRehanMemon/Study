@@ -1,0 +1,213 @@
+[
+  {
+    "topic_name": "Definition of a Polynomial",
+    "id": "PHY-CH9-T1",
+    "scratch_idea": "A polynomial is an algebraic expression where the variable $x$ has non-negative integer powers and real number coefficients. It is written in a standard form starting from the highest power down to the constant term.",
+    "prerequisites": [
+      "Algebraic expressions",
+      "Real numbers"
+    ],
+    "formulas": [
+      "$f(x) = a_n x^n + a_{n-1} x^{n-1} + \\dots + a_1 x + a_0$"
+    ],
+    "core_technique": "Ensure all exponents are positive integers; if an exponent is negative or a fraction, the expression is not a polynomial.",
+    "check_questions": [
+      "Is $3x^2 + \\sqrt{x} - 5$ a polynomial?",
+      "Identify the coefficients in the polynomial $4x^3 - 2x + 7$.",
+      "What condition must the power $n$ satisfy in a polynomial function?"
+    ],
+    "common_pitfalls": [
+      "Including terms with variables in the denominator.",
+      "Mistaking square roots of variables as valid polynomial terms."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Degree of a Polynomial",
+    "id": "PHY-CH9-T2",
+    "scratch_idea": "The degree is defined as the highest power of the variable $x$ in a polynomial. It determines the maximum number of roots the polynomial can have.",
+    "prerequisites": [
+      "Exponents",
+      "Definition of a Polynomial"
+    ],
+    "formulas": [
+      "Degree = \\max(n) \\text{ where } a_n \\neq 0"
+    ],
+    "core_technique": "Always look for the term with the highest exponent, regardless of the order in which the terms are written.",
+    "check_questions": [
+      "What is the degree of $5x^4 - 3x^6 + 2$?",
+      "If $a_n = 0$, can $n$ be the degree of the polynomial?",
+      "State the degree of a constant polynomial like $f(x) = 7$."
+    ],
+    "common_pitfalls": [
+      "Assuming the first term always indicates the degree.",
+      "Confusing the coefficient with the exponent when identifying the degree."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Polynomial Long Division",
+    "id": "PHY-CH9-T3",
+    "scratch_idea": "This is a step-by-step process to divide a dividend polynomial by a divisor polynomial to find a quotient and a remainder. It follows the same logic as numerical long division.",
+    "prerequisites": [
+      "Polynomial subtraction",
+      "Distribution property"
+    ],
+    "formulas": [
+      "Dividend = (Divisor \\times Quotient) + Remainder"
+    ],
+    "core_technique": "Always align terms by their degrees and use placeholders (like $0x^2$) for missing powers in the dividend.",
+    "check_questions": [
+      "Divide $x^2 - 4$ by $x - 2$.",
+      "What is the quotient when $3x^3$ is divided by $x$?",
+      "When does the process of polynomial long division stop?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to change signs when subtracting the bottom row.",
+      "Misaligning terms with different powers."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "The Remainder Theorem",
+    "id": "PHY-CH9-T4",
+    "scratch_idea": "The Remainder Theorem provides a shortcut to find the remainder of a division without performing long division. If a polynomial $f(x)$ is divided by $(x - a)$, the remainder is simply $f(a)$.",
+    "prerequisites": [
+      "Polynomial evaluation",
+      "Linear divisors"
+    ],
+    "formulas": [
+      "Remainder = f(a)"
+    ],
+    "core_technique": "To find 'a', set the linear divisor $x - a = 0$ and solve for $x$.",
+    "check_questions": [
+      "Find the remainder when $x^3 - 1$ is divided by $x - 1$.",
+      "If $f(x) = x^2 + 1$ is divided by $x + 2$, what is 'a'?",
+      "State the remainder theorem."
+    ],
+    "common_pitfalls": [
+      "Using the wrong sign for 'a' (e.g., using $a=2$ for divisor $x+2$).",
+      "Arithmetic errors while calculating the power of a negative 'a'."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "The Factor Theorem",
+    "id": "PHY-CH9-T5",
+    "scratch_idea": "A specific application of the Remainder Theorem which states that $(x - a)$ is a factor of $f(x)$ if and only if the remainder $f(a)$ is zero.",
+    "prerequisites": [
+      "Remainder Theorem",
+      "Concept of factors"
+    ],
+    "formulas": [
+      "f(a) = 0 \\iff (x - a) \\text{ is a factor}"
+    ],
+    "core_technique": "Use this theorem to test potential roots or to prove that one polynomial divides another perfectly.",
+    "check_questions": [
+      "Is $(x - 1)$ a factor of $x^2 - 2x + 1$?",
+      "If $f(3) = 0$, what is the corresponding factor?",
+      "How is the factor theorem different from the remainder theorem?"
+    ],
+    "common_pitfalls": [
+      "Concluding a term is a factor even if the remainder is a non-zero small number.",
+      "Misinterpreting $f(a) = k$ as $(x-a)$ being a factor."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Synthetic Division",
+    "id": "PHY-CH9-T6",
+    "scratch_idea": "Synthetic division is a highly efficient, shorthand method of polynomial division specifically for linear divisors $(x-a)$. It uses only the coefficients of the polynomial.",
+    "prerequisites": [
+      "Polynomial coefficients",
+      "Basic arithmetic"
+    ],
+    "formulas": [
+      "\\text{Quotient coefficients: } q_{n-1}, q_{n-2} \\dots",
+      "\\text{Remainder: } R"
+    ],
+    "core_technique": "Bring down the first coefficient, multiply by 'a', add to the next coefficient, and repeat.",
+    "check_questions": [
+      "Set up the synthetic division for $(x^3 - 2x + 1) \\div (x - 3)$.",
+      "What does the last number in the bottom row of synthetic division represent?",
+      "If the divisor is $(x + 4)$, what value of 'a' is used in the grid?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to include a 0 coefficient for missing powers of $x$.",
+      "Adding instead of multiplying during the diagonal step."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Polynomial Regression and Error Calculation",
+    "id": "PHY-CH9-T7",
+    "scratch_idea": "In regression analysis, a polynomial is used to model real-world data. The difference between the actual data (observed) and the polynomial's value (predicted) is the error.",
+    "prerequisites": [
+      "Polynomial evaluation",
+      "Percentage calculations"
+    ],
+    "formulas": [
+      "\\text{Error} = \\text{Observed} - \\text{Predicted}",
+      "\\% \\text{ Error} = \\frac{|\\text{Error}|}{\\text{Observed}} \\times 100"
+    ],
+    "core_technique": "Evaluate the polynomial $P(x)$ at the specific month or week index before calculating the error.",
+    "check_questions": [
+      "If observed sales are 50 and predicted are 45, find the error.",
+      "Calculate percentage error if the error is 5 and observed is 100.",
+      "Why is polynomial regression used for curved data sets?"
+    ],
+    "common_pitfalls": [
+      "Dividing by the predicted value instead of the observed value in percentage error.",
+      "Ignoring the absolute value sign in the error percentage."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "DSP Zeros and Poles",
+    "id": "PHY-CH9-T8",
+    "scratch_idea": "In Signal Processing, the roots of the numerator polynomial are called 'zeros' (frequencies the system blocks), and the roots of the denominator polynomial are called 'poles' (determining system stability).",
+    "prerequisites": [
+      "Factor Theorem",
+      "Rational functions"
+    ],
+    "formulas": [
+      "H(z) = \\frac{B(z)}{A(z)}",
+      "\\text{Zeros: } B(z) = 0",
+      "\\text{Poles: } A(z) = 0"
+    ],
+    "core_technique": "Apply the Factor Theorem to find values of $z$ that make the numerator or denominator zero.",
+    "check_questions": [
+      "Find the zeros of $H(z) = \\frac{z-2}{z+3}$.",
+      "How do you find the poles of a transfer function?",
+      "If $B(z_0) = 0$, what is the factor of $B(z)$?"
+    ],
+    "common_pitfalls": [
+      "Confusing zeros (numerator) with poles (denominator).",
+      "Assuming poles are always real numbers."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "System Stability in DSP",
+    "id": "PHY-CH9-T9",
+    "scratch_idea": "A system is considered stable if all its poles (roots of the denominator) lie within the unit circle in the complex plane, meaning their absolute value is less than 1.",
+    "prerequisites": [
+      "Poles",
+      "Absolute value"
+    ],
+    "formulas": [
+      "|p_i| < 1 \\implies \\text{Stable}"
+    ],
+    "core_technique": "Solve the denominator polynomial for $z$ and check if the magnitude of every result is less than 1.",
+    "check_questions": [
+      "Is a system with a pole at $z = 1.2$ stable?",
+      "Determine stability for poles $z = 0.5$ and $z = -0.5$.",
+      "What condition must the absolute value of poles satisfy for stability?"
+    ],
+    "common_pitfalls": [
+      "Thinking a negative pole (like $z = -0.8$) is unstable because it is negative.",
+      "Forgetting to check every single pole; if even one is $\\geq 1$, the system is unstable."
+    ],
+    "difficulty": "Hard"
+  }
+]

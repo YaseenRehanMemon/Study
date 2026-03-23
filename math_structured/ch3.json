@@ -1,0 +1,451 @@
+[
+  {
+    "topic_name": "Standard Form of Quadratic Functions",
+    "id": "MAT-CH3-T1",
+    "scratch_idea": "A quadratic function is a polynomial of degree two. It describes a curved relationship where the highest power of the variable is squared.",
+    "prerequisites": [
+      "Polynomial degrees",
+      "Real numbers"
+    ],
+    "formulas": [
+      "$f(x) = ax^2 + bx + c, a \\neq 0$"
+    ],
+    "core_technique": "Always identify the coefficients 'a', 'b', and 'c' first to determine the function's properties.",
+    "check_questions": [
+      "What is the degree of a quadratic function?",
+      "Why must the coefficient 'a' be non-zero?",
+      "Identify a, b, and c in $f(x) = 3x - 5x^2 + 2$."
+    ],
+    "common_pitfalls": [
+      "Assuming any function with an x is quadratic",
+      "Confusing the constant term with the leading coefficient"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Parabola Orientation and Leading Coefficient",
+    "id": "MAT-CH3-T2",
+    "scratch_idea": "The sign of the leading coefficient 'a' determines if the parabola opens upwards or downwards. This establishes the overall shape of the graph.",
+    "prerequisites": [
+      "Standard form of quadratic functions",
+      "Coordinate planes"
+    ],
+    "formulas": [
+      "$a > 0 \\implies \\text{Opens Upward}$",
+      "$a < 0 \\implies \\text{Opens Downward}$"
+    ],
+    "core_technique": "Look at the sign of the $x^2$ term to immediately visualize the graph's direction.",
+    "check_questions": [
+      "If $a = -2$, does the parabola open up or down?",
+      "What is the shape of a quadratic function's graph?",
+      "Does a positive leading coefficient result in a U-shape or an n-shape?"
+    ],
+    "common_pitfalls": [
+      "Thinking a large 'b' or 'c' value changes the opening direction",
+      "Misinterpreting the sign of 'a' when it is hidden in a non-standard form"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Vertex of a Parabola",
+    "id": "MAT-CH3-T3",
+    "scratch_idea": "The vertex is the unique turning point of a parabola where the function reaches its extreme value. It is represented by the coordinates (h, k).",
+    "prerequisites": [
+      "Algebraic substitution",
+      "Coefficients a and b"
+    ],
+    "formulas": [
+      "$h = -\\frac{b}{2a}$",
+      "$k = f(h)$"
+    ],
+    "core_technique": "Calculate h first using the formula, then plug it back into the original function to find k.",
+    "check_questions": [
+      "What are the coordinates of the vertex of $y = x^2 - 2x + 1$?",
+      "True or False: The vertex is always the highest point of a parabola.",
+      "How do you find the y-coordinate of the vertex if you know the x-coordinate?"
+    ],
+    "common_pitfalls": [
+      "Forgetting the negative sign in the formula for h",
+      "Calculation errors when squaring negative values of h"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Axis of Symmetry",
+    "id": "MAT-CH3-T4",
+    "scratch_idea": "The axis of symmetry is a vertical line that passes through the vertex, dividing the parabola into two mirrored halves.",
+    "prerequisites": [
+      "Vertex coordinates",
+      "Vertical line equations"
+    ],
+    "formulas": [
+      "$x = h$",
+      "$x = -\\frac{b}{2a}$"
+    ],
+    "core_technique": "The equation of the axis of symmetry is simply 'x' set equal to the x-coordinate of the vertex.",
+    "check_questions": [
+      "Write the equation for the axis of symmetry for a vertex at (3, 5).",
+      "Is the axis of symmetry horizontal or vertical?",
+      "Find the axis of symmetry for $f(x) = x^2 + 4x + 3$."
+    ],
+    "common_pitfalls": [
+      "Writing the axis of symmetry as just a number instead of an equation 'x = ...'",
+      "Confusing the y-coordinate with the x-coordinate for the line"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Quadratic Intercepts",
+    "id": "MAT-CH3-T5",
+    "scratch_idea": "Intercepts are the points where the graph crosses the axes. The y-intercept occurs when x=0, and x-intercepts occur when f(x)=0.",
+    "prerequisites": [
+      "Factoring quadratic equations",
+      "Setting variables to zero"
+    ],
+    "formulas": [
+      "$\\text{y-intercept}: (0, c)$",
+      "$\\text{x-intercepts}: \\text{Solve } ax^2 + bx + c = 0$"
+    ],
+    "core_technique": "To find x-intercepts quickly, use the quadratic formula or factorize the trinomial.",
+    "check_questions": [
+      "What is the y-intercept of $f(x) = x^2 + 5x - 6$?",
+      "How many x-intercepts can a quadratic function have?",
+      "Solve for x-intercepts: $y = x^2 - 9$."
+    ],
+    "common_pitfalls": [
+      "Assuming every quadratic has real x-intercepts",
+      "Mixing up the x and y coordinates of the intercepts"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Increasing and Decreasing Intervals",
+    "id": "MAT-CH3-T6",
+    "scratch_idea": "A quadratic function changes from increasing to decreasing (or vice versa) at the vertex. The intervals are defined by the x-coordinate of the vertex.",
+    "prerequisites": [
+      "Vertex x-coordinate",
+      "Parabola orientation"
+    ],
+    "formulas": [
+      "$\\text{If } a > 0: \\text{Dec on } (-\\infty, h), \\text{Inc on } (h, \\infty)$",
+      "$\\text{If } a < 0: \\text{Inc on } (-\\infty, h), \\text{Dec on } (h, \\infty)$"
+    ],
+    "core_technique": "Sketch the graph or look at 'a' to decide if the function starts by going down or up as you move left-to-right.",
+    "check_questions": [
+      "On which interval is $y = -(x-1)^2 + 4$ increasing?",
+      "Where does the transition between increasing and decreasing occur?",
+      "If a parabola opens up, is it increasing or decreasing to the left of the vertex?"
+    ],
+    "common_pitfalls": [
+      "Using the y-coordinate 'k' to define the intervals instead of 'h'",
+      "Confusing the interval for 'a > 0' with 'a < 0'"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Completing the Square (Vertex Form)",
+    "id": "MAT-CH3-T7",
+    "scratch_idea": "Completing the square converts a quadratic from standard form to vertex form, making the vertex immediately visible.",
+    "prerequisites": [
+      "Standard form",
+      "Perfect square trinomials"
+    ],
+    "formulas": [
+      "$f(x) = a(x - h)^2 + k$",
+      "$k = c - \\frac{b^2}{4a}$"
+    ],
+    "core_technique": "Factor out 'a' from the x terms first, then add and subtract the square of half the coefficient of x.",
+    "check_questions": [
+      "Convert $x^2 + 6x + 5$ to vertex form.",
+      "What is the vertex of $f(x) = 2(x-3)^2 + 7$?",
+      "Explain the step where you 'add and subtract' a value."
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply the subtracted term by 'a' when it's inside parentheses",
+      "Sign errors when identifying 'h' from $(x-h)$"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Maximum and Minimum Values",
+    "id": "MAT-CH3-T8",
+    "scratch_idea": "The y-coordinate of the vertex represents the absolute highest or lowest value the quadratic function can reach.",
+    "prerequisites": [
+      "Vertex form",
+      "Parabola orientation"
+    ],
+    "formulas": [
+      "$\\text{Minimum value } k \\text{ if } a > 0$",
+      "$\\text{Maximum value } k \\text{ if } a < 0$"
+    ],
+    "core_technique": "The 'value' refers to the y-output ($k$), while the location refers to the x-input ($h$).",
+    "check_questions": [
+      "Find the maximum value of $f(x) = -2x^2 + 4x + 3$.",
+      "Does $f(x) = x^2 + 10$ have a max or a min?",
+      "At what value of x does the minimum occur for $f(x) = (x-5)^2 + 2$?"
+    ],
+    "common_pitfalls": [
+      "Giving the x-coordinate when asked for the 'value'",
+      "Misidentifying max as min due to ignoring the sign of 'a'"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Domain Restriction for Inverses",
+    "id": "MAT-CH3-T9",
+    "scratch_idea": "Since quadratics are not one-to-one, they don't have inverses over their whole domain. We must restrict the domain to half the parabola (left or right of the vertex).",
+    "prerequisites": [
+      "One-to-one functions",
+      "Vertex x-coordinate"
+    ],
+    "formulas": [
+      "\\text{Restrict to } x \\ge h \\text{ or } x \\le h"
+    ],
+    "core_technique": "Always identify the vertex x-coordinate ($h$) as the boundary for the domain restriction.",
+    "check_questions": [
+      "Why must we restrict the domain of $f(x) = x^2$ to find an inverse?",
+      "If the vertex is at (2, 4), what is a valid restricted domain for an inverse?",
+      "Is $f(x) = x^2, x \\in \\mathbb{R}$ a one-to-one function?"
+    ],
+    "common_pitfalls": [
+      "Restricting based on the y-coordinate instead of the x-coordinate",
+      "Forgetting that the restriction is necessary for the inverse to be a function"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Finding the Inverse Algebraically",
+    "id": "MAT-CH3-T10",
+    "scratch_idea": "To find the inverse, swap x and y, then solve for the new y. This typically results in a square root function.",
+    "prerequisites": [
+      "Algebraic manipulation",
+      "Quadratic formula or Completing the square"
+    ],
+    "formulas": [
+      "f^{-1}(x) = h \\pm \\sqrt{\\frac{x - k}{a}}"
+    ],
+    "core_technique": "Use the restricted domain to decide whether to keep the positive or negative square root.",
+    "check_questions": [
+      "Find the inverse of $f(x) = x^2 + 3, x \\ge 0$.",
+      "What is the first step in finding an inverse function algebraically?",
+      "How do you choose between the plus and minus sign in the result?"
+    ],
+    "common_pitfalls": [
+      "Leaving both $\\pm$ signs in the final answer",
+      "Errors in isolating y after swapping variables"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Domain and Range of Inverse Quadratic Functions",
+    "id": "MAT-CH3-T11",
+    "scratch_idea": "The domain of the inverse is the range of the original function, and the range of the inverse is the domain of the original function.",
+    "prerequisites": [
+      "Original domain/range",
+      "Inverse functions"
+    ],
+    "formulas": [
+      "$\\text{Domain } f^{-1} = \\text{Range } f$",
+      "$\\text{Range } f^{-1} = \\text{Domain } f$"
+    ],
+    "core_technique": "Find the range of the original quadratic using the vertex before swapping to find the inverse's domain.",
+    "check_questions": [
+      "If the range of $f$ is $[-1, \\infty)$, what is the domain of $f^{-1}$?",
+      "Determine the range of $f^{-1}(x)$ if the restricted domain of $f$ was $x \\le -3$.",
+      "How does the vertex help find the range of a quadratic function?"
+    ],
+    "common_pitfalls": [
+      "Mixing up domain and range during the swap",
+      "Incorrectly calculating the range of the original quadratic"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Absolute Value Definition",
+    "id": "MAT-CH3-T12",
+    "scratch_idea": "Absolute value represents the distance from zero, meaning the output is always non-negative. It is defined piece-wise.",
+    "prerequisites": [
+      "Basic algebra",
+      "Piece-wise functions"
+    ],
+    "formulas": [
+      "$|x| = x \\text{ if } x \\ge 0$",
+      "$|x| = -x \\text{ if } x < 0$"
+    ],
+    "core_technique": "Treat the absolute value bars as a grouping symbol that requires two separate cases for the expression inside.",
+    "check_questions": [
+      "What is $|-5|$?",
+      "Define $|x|$ using piece-wise notation.",
+      "Can $|x|$ ever be a negative number?"
+    ],
+    "common_pitfalls": [
+      "Thinking $|x|$ means 'change the sign' (it actually means 'ensure it is positive')",
+      "Applying absolute value only to the coefficient"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Absolute Value Quadratic Equations",
+    "id": "MAT-CH3-T13",
+    "scratch_idea": "To solve $|f(x)| = d$, set the quadratic expression inside equal to both $d$ and $-d$, then solve both resulting equations.",
+    "prerequisites": [
+      "Solving quadratic equations",
+      "Absolute value definition"
+    ],
+    "formulas": [
+      "|ax^2 + bx + c| = d \\implies ax^2 + bx + c = \\pm d"
+    ],
+    "core_technique": "Split the equation into two separate quadratic equations immediately.",
+    "check_questions": [
+      "Solve $|x^2 - 4| = 5$.",
+      "How many possible solutions can an absolute value quadratic equation have?",
+      "Solve $|x^2 + 1| = 0$."
+    ],
+    "common_pitfalls": [
+      "Only solving for the positive case",
+      "Attempting to square both sides without considering if it's necessary"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Checking Extraneous Solutions",
+    "id": "MAT-CH3-T14",
+    "scratch_idea": "Solutions derived algebraically might not satisfy the original absolute value equation. Every answer must be verified by substitution.",
+    "prerequisites": [
+      "Algebraic substitution",
+      "Solving equations"
+    ],
+    "formulas": [
+      "\\text{Substitute } x \\text{ into original: } |f(x)| = d"
+    ],
+    "core_technique": "Always plug solutions back into the original absolute value bars; if the result is negative before the absolute value, ensure the result holds.",
+    "check_questions": [
+      "What is an 'extraneous root'?",
+      "Why must we check solutions in absolute value equations?",
+      "If $x=1$ makes $|x^2-5| = -4$, is it a valid solution?"
+    ],
+    "common_pitfalls": [
+      "Assuming all roots from the quadratic formula are valid",
+      "Forgetting to check solutions in the very first version of the equation"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Absolute Value Quadratic Inequalities",
+    "id": "MAT-CH3-T15",
+    "scratch_idea": "These involve ranges of values. They are solved by splitting into two inequalities or a compound inequality and using critical values.",
+    "prerequisites": [
+      "Quadratic inequalities",
+      "Number line regions"
+    ],
+    "formulas": [
+      "$|f(x)| < d \\implies -d < f(x) < d$",
+      "$|f(x)| > d \\implies f(x) > d \\text{ or } f(x) < -d$"
+    ],
+    "core_technique": "Find the critical values by treating the inequality as an equation, then test points in the resulting regions on a number line.",
+    "check_questions": [
+      "Solve $|x^2 - 4| < 5$.",
+      "How do critical values help solve an inequality?",
+      "If $|f(x)| \\ge 3$, should the solution be one interval or a union of two intervals?"
+    ],
+    "common_pitfalls": [
+      "Flipping the inequality sign incorrectly",
+      "Forgetting to take the intersection of solutions for 'AND' cases"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Rational Equations Reducible to Quadratic",
+    "id": "MAT-CH3-T16",
+    "scratch_idea": "Rational equations have variables in the denominator. They can be turned into quadratics by multiplying by the Least Common Multiple (LCM) of the denominators.",
+    "prerequisites": [
+      "LCM of polynomials",
+      "Solving quadratic equations"
+    ],
+    "formulas": [
+      "\\text{Multiply by LCM of denominators}"
+    ],
+    "core_technique": "Identify values of x that make the denominator zero; these are excluded from the solution set.",
+    "check_questions": [
+      "Solve $\\frac{1}{x} + \\frac{2}{x+1} = 1$.",
+      "What is the first step in solving a rational equation?",
+      "Why can't $x=0$ be a solution for $\\frac{5}{x} = 2$?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply the constant term by the LCM",
+      "Including 'restricted values' (that make denominators zero) in the final solution set"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Radical Equations Reducible to Quadratic",
+    "id": "MAT-CH3-T17",
+    "scratch_idea": "Equations with square roots are solved by isolating the radical and squaring both sides, often resulting in a quadratic equation.",
+    "prerequisites": [
+      "Squaring binomials",
+      "Solving quadratics"
+    ],
+    "formulas": [
+      "(\\sqrt{f(x)})^2 = (g(x))^2"
+    ],
+    "core_technique": "If two radicals exist, you may need to square the equation twice to eliminate all radical signs.",
+    "check_questions": [
+      "Solve $\\sqrt{x+5} - \\sqrt{x-3} = 2$.",
+      "What happens to the degree of an equation when you square both sides?",
+      "Is it necessary to check for extraneous roots in radical equations?"
+    ],
+    "common_pitfalls": [
+      "Incorrectly squaring $(\\sqrt{a} + \\sqrt{b})$ as $(a + b)$ instead of $(a + b + 2\\sqrt{ab})$",
+      "Not checking for extraneous solutions which are very common in radical equations"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Real World Modeling with Quadratics",
+    "id": "MAT-CH3-T18",
+    "scratch_idea": "Real-world scenarios like area, projectile motion, and profit can be translated into quadratic equations by assigning variables to unknown quantities.",
+    "prerequisites": [
+      "Word problem translation",
+      "Geometry/Economic formulas"
+    ],
+    "formulas": [
+      "\\text{Area} = \\text{Length} \\times \\text{Width}",
+      "\\text{Profit} = \\text{Revenue} - \\text{Cost}"
+    ],
+    "core_technique": "Define 'x' clearly and reject solutions that don't make sense (e.g., negative length or time).",
+    "check_questions": [
+      "The length of a room is 3m more than the width. If the area is 180, write the equation.",
+      "Why would we reject a negative solution for the width of a field?",
+      "How do you convert a word problem into a quadratic equation?"
+    ],
+    "common_pitfalls": [
+      "Setting up the equation correctly but failing to interpret the units",
+      "Forgetting to check if the solution fits the physical constraints of the problem"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Real World Modeling with Quadratic Inequalities",
+    "id": "MAT-CH3-T19",
+    "scratch_idea": "Inequalities model scenarios where values must be 'at least', 'no more than', or 'safe', such as profit thresholds or braking distances.",
+    "prerequisites": [
+      "Quadratic inequalities",
+      "Modeling"
+    ],
+    "formulas": [
+      "P(x) \\ge \\text{Threshold}",
+      "d(s) \\le \\text{Safe distance}"
+    ],
+    "core_technique": "Translate phrases like 'at least' to $\\ge$ and 'at most' to $\\le$.",
+    "check_questions": [
+      "Find the speed range for safe braking if $0.02s^2 + 0.1s \\le 50$.",
+      "What does 'at least 40 meters above ground' mean in terms of an inequality?",
+      "Can a solution set for a real-world inequality be empty?"
+    ],
+    "common_pitfalls": [
+      "Confusing the symbols for 'greater than' and 'less than'",
+      "Not considering the practical range of the variable (e.g., speed must be positive)"
+    ],
+    "difficulty": "Hard"
+  }
+]

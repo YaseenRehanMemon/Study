@@ -1,0 +1,703 @@
+[
+  {
+    "topic_name": "Scalars and Vectors (Recall)",
+    "id": "MAT-CH14-T1",
+    "scratch_idea": "A scalar is a quantity defined only by magnitude (e.g., mass, time), while a vector requires both magnitude and direction (e.g., force, velocity). Vectors are geometrically represented by directed line segments from an initial point to a terminal point.",
+    "prerequisites": [
+      "Basic algebraic variables",
+      "Concept of physical units"
+    ],
+    "formulas": [],
+    "core_technique": "Identify a vector by checking if a change in direction changes the physical meaning of the quantity.",
+    "check_questions": [
+      "Is temperature a scalar or a vector?",
+      "How is a vector represented geometrically?",
+      "Give an example of a physical quantity that is a vector."
+    ],
+    "common_pitfalls": [
+      "Confusing speed (scalar) with velocity (vector).",
+      "Assuming magnitude alone defines a vector."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Vectors in 2D (R\u00b2)",
+    "id": "MAT-CH14-T2",
+    "scratch_idea": "In a two-dimensional plane, a vector is represented as an ordered pair [x, y]. These components correspond to the horizontal and vertical displacements from the origin.",
+    "prerequisites": [
+      "Cartesian coordinate system",
+      "Ordered pairs"
+    ],
+    "formulas": [
+      "$\\mathbf{u} = [x, y]$"
+    ],
+    "core_technique": "Treat the components as independent horizontal and vertical steps.",
+    "check_questions": [
+      "What do x and y represent in the vector [x, y]?",
+      "How do you write a vector that moves 3 units right and 4 units up?",
+      "What is the notation for the set of all 2D vectors?"
+    ],
+    "common_pitfalls": [
+      "Swapping the x and y components.",
+      "Confusing the point (x, y) with the vector [x, y] (position vs displacement)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Addition of Vectors in 2D",
+    "id": "MAT-CH14-T3",
+    "scratch_idea": "Adding two vectors in 2D involves summing their corresponding components. Geometrically, this follows the head-to-tail rule.",
+    "prerequisites": [
+      "Basic addition",
+      "Vector components"
+    ],
+    "formulas": [
+      "$\\mathbf{u} + \\mathbf{v} = [x_1 + x_2, y_1 + y_2]$"
+    ],
+    "core_technique": "Always add x to x and y to y; never mix them.",
+    "check_questions": [
+      "Add the vectors [2, 3] and [5, -1].",
+      "If $\\mathbf{u} + \\mathbf{v} = [0, 0]$, what can you say about $\\mathbf{u}$ and $\\mathbf{v}$?",
+      "Does the order of addition matter in vector sums?"
+    ],
+    "common_pitfalls": [
+      "Adding the x-component of one vector to the y-component of another.",
+      "Errors in sign when adding negative components."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Scalar Multiplication in 2D",
+    "id": "MAT-CH14-T4",
+    "scratch_idea": "Multiplying a vector by a real number (scalar) scales its magnitude. If the scalar is negative, the direction of the vector is reversed.",
+    "prerequisites": [
+      "Multiplication",
+      "Vector notation"
+    ],
+    "formulas": [
+      "$a\\mathbf{u} = [ax, ay]$"
+    ],
+    "core_technique": "Distribute the scalar to every single component of the vector.",
+    "check_questions": [
+      "Find $3[2, -4]$.",
+      "What happens to the direction of a vector if it is multiplied by -1?",
+      "If $a=0.5$, does the vector get longer or shorter?"
+    ],
+    "common_pitfalls": [
+      "Multiplying only the first component by the scalar.",
+      "Forgetting to change signs when multiplying by a negative scalar."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Equal Vectors",
+    "id": "MAT-CH14-T5",
+    "scratch_idea": "Two vectors are equal if and only if they have the same magnitude and direction, which mathematically means their corresponding components must be identical.",
+    "prerequisites": [
+      "Equality in algebra",
+      "Vector components"
+    ],
+    "formulas": [
+      "$\\mathbf{u} = \\mathbf{v} \\iff x_1 = x_2, y_1 = y_2$"
+    ],
+    "core_technique": "Set up a system of equations by equating corresponding components.",
+    "check_questions": [
+      "Are [1, 2] and [2, 1] equal vectors?",
+      "If $[x, 5] = [3, y]$, find $x$ and $y$.",
+      "Can two vectors with different initial points be equal?"
+    ],
+    "common_pitfalls": [
+      "Thinking vectors are equal just because their magnitudes are the same.",
+      "Ignoring the order of components."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Parallel Vectors",
+    "id": "MAT-CH14-T6",
+    "scratch_idea": "Vectors are parallel if they have the same or opposite direction. Mathematically, one must be a non-zero scalar multiple of the other.",
+    "prerequisites": [
+      "Scalar multiplication",
+      "Ratios"
+    ],
+    "formulas": [
+      "$\\mathbf{u} = k\\mathbf{v}$"
+    ],
+    "core_technique": "Check if the ratio of corresponding components is constant.",
+    "check_questions": [
+      "Are [1, 2] and [2, 4] parallel?",
+      "Is a vector parallel to its negative?",
+      "If $\\mathbf{v} = [3, -1]$, find a parallel vector with twice the magnitude."
+    ],
+    "common_pitfalls": [
+      "Assuming only vectors in the same direction are parallel (ignoring opposite directions).",
+      "Including the zero vector in standard parallel definitions without specific conventions."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Magnitude of a Vector in 2D",
+    "id": "MAT-CH14-T7",
+    "scratch_idea": "The magnitude (norm) is the distance from the origin to the point represented by the vector. It is calculated using the Pythagorean theorem.",
+    "prerequisites": [
+      "Pythagorean Theorem",
+      "Square roots"
+    ],
+    "formulas": [
+      "$|\\mathbf{u}| = \\sqrt{x^2 + y^2}$"
+    ],
+    "core_technique": "Always square the components first, which removes any negative signs before summing.",
+    "check_questions": [
+      "Calculate the magnitude of [3, 4].",
+      "Can the magnitude of a non-zero vector ever be negative?",
+      "What is the magnitude of the unit vector $\\mathbf{i}$?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to take the square root at the end.",
+      "Incorrectly squaring negative numbers (e.g., $-3^2$ instead of $(-3)^2$)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Rectangular Coordinate System in Space",
+    "id": "MAT-CH14-T8",
+    "scratch_idea": "3D space uses three mutually perpendicular axes (x, y, z) intersecting at the origin. Points are identified by an ordered triple (a, b, c).",
+    "prerequisites": [
+      "2D coordinate systems",
+      "Orthogonality"
+    ],
+    "formulas": [],
+    "core_technique": "Use the Right-Hand Rule to orient the positive axes correctly (x toward you, y right, z up).",
+    "check_questions": [
+      "How many axes are in a 3D rectangular system?",
+      "In the right-hand rule, if fingers curl from x to y, where does the thumb point?",
+      "What is the coordinates of the origin in space?"
+    ],
+    "common_pitfalls": [
+      "Difficulty visualizing 3D projections on a 2D page.",
+      "Misidentifying the octants."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Concept of a Vector in Space (R\u00b3)",
+    "id": "MAT-CH14-T9",
+    "scratch_idea": "A vector in 3D space is an ordered triple [x, y, z]. Every point P(x, y, z) in space corresponds to a unique position vector starting from the origin.",
+    "prerequisites": [
+      "Ordered triples",
+      "R\u00b3 notation"
+    ],
+    "formulas": [
+      "$\\mathbf{u} = [x, y, z]$"
+    ],
+    "core_technique": "Visualize the vector as a diagonal of a rectangular box with dimensions x, y, and z.",
+    "check_questions": [
+      "Define the set $R^3$.",
+      "How is a vector in space different from a vector in a plane?",
+      "What represents a vector $\\overrightarrow{OP}$ in space if $P$ is (1, 2, 3)?"
+    ],
+    "common_pitfalls": [
+      "Treating 3D vectors as 2D by ignoring the z-component.",
+      "Confusing points and vectors notationally."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Vector Addition and Scalar Multiplication in 3D",
+    "id": "MAT-CH14-T10",
+    "scratch_idea": "Operations in 3D follow the same logic as 2D: components are added or multiplied by a scalar independently across the x, y, and z directions.",
+    "prerequisites": [
+      "2D vector operations",
+      "Scalar arithmetic"
+    ],
+    "formulas": [
+      "$\\mathbf{u} + \\mathbf{v} = [x+x', y+y', z+z']$",
+      "$a\\mathbf{u} = [ax, ay, az]$"
+    ],
+    "core_technique": "Process the third component (z) exactly the same way as x and y.",
+    "check_questions": [
+      "Find $[1, 0, 5] + [2, -3, 4]$.",
+      "Calculate $5[1, 2, -1]$.",
+      "Subtract $[2, 2, 2]$ from $[5, 5, 5]$."
+    ],
+    "common_pitfalls": [
+      "Arithmetic errors specifically in the third component due to oversight.",
+      "Mixing up the scalar and the vector components."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Equality and Zero Vector in 3D",
+    "id": "MAT-CH14-T11",
+    "scratch_idea": "Two 3D vectors are equal if all three corresponding components match. The zero vector is the unique vector [0, 0, 0] with zero magnitude and no direction.",
+    "prerequisites": [
+      "R\u00b3 components",
+      "Equality"
+    ],
+    "formulas": [
+      "$\\mathbf{u} = \\mathbf{v} \\iff x=x', y=y', z=z'$",
+      "$\\mathbf{0} = [0, 0, 0]$"
+    ],
+    "core_technique": "Compare component by component; if even one differs, the vectors are not equal.",
+    "check_questions": [
+      "If $[x, 2, z] = [1, y, 3]$, find x, y, and z.",
+      "What are the components of the zero vector in $R^3$?",
+      "Can a zero vector be equal to a unit vector?"
+    ],
+    "common_pitfalls": [
+      "Assuming two vectors are equal because their first two components match.",
+      "Thinking the zero vector has a specific direction."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Position Vector in 3D",
+    "id": "MAT-CH14-T12",
+    "scratch_idea": "A position vector $\\overrightarrow{OP}$ is a directed segment from the origin O(0,0,0) to a point P(x,y,z). It effectively identifies the location of a point using vector notation.",
+    "prerequisites": [
+      "Origin concept",
+      "Vector notation"
+    ],
+    "formulas": [
+      "$\\overrightarrow{OP} = [x, y, z]$"
+    ],
+    "core_technique": "The components of the position vector are identical to the coordinates of the terminal point.",
+    "check_questions": [
+      "What is the position vector of the point (4, -2, 7)?",
+      "Where does the initial point of a position vector always lie?",
+      "If $\\overrightarrow{OP} = [0, 1, 0]$, where is point P located?"
+    ],
+    "common_pitfalls": [
+      "Confusing a general displacement vector with a position vector.",
+      "Incorrectly assuming the initial point can be something other than the origin."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Magnitude of a Vector in Space",
+    "id": "MAT-CH14-T13",
+    "scratch_idea": "The magnitude in space is the 3D distance of the point (x, y, z) from the origin. It extends the 2D formula to include the z-component.",
+    "prerequisites": [
+      "Square roots",
+      "3D coordinates"
+    ],
+    "formulas": [
+      "$|\\mathbf{u}| = \\sqrt{x^2 + y^2 + z^2}$"
+    ],
+    "core_technique": "Sum the squares of all three components before taking the square root.",
+    "check_questions": [
+      "Find the magnitude of $[1, -2, 3]$.",
+      "What is the magnitude of $[0, 0, -5]$?",
+      "Show that the magnitude of $\\mathbf{u} = [x, y, z]$ is the same as the magnitude of $-\\mathbf{u}$."
+    ],
+    "common_pitfalls": [
+      "Forgetting to square the z-component.",
+      "Treating $(-z)^2$ as $-z^2$ (sign errors during squaring)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Standard Unit Vectors (i, j, k)",
+    "id": "MAT-CH14-T14",
+    "scratch_idea": "The vectors $\\mathbf{i}, \\mathbf{j},$ and $\\mathbf{k}$ are unit vectors pointing along the x, y, and z axes respectively. Any vector in space can be written as a linear combination of these three.",
+    "prerequisites": [
+      "Unit magnitude",
+      "Axes orientation"
+    ],
+    "formulas": [
+      "$\\mathbf{i} = [1, 0, 0]$ ",
+      "$\\mathbf{j} = [0, 1, 0]$ ",
+      "$\\mathbf{k} = [0, 0, 1]$ ",
+      "$\\mathbf{u} = x\\mathbf{i} + y\\mathbf{j} + z\\mathbf{k}$"
+    ],
+    "core_technique": "Think of $\\mathbf{i, j, k}$ as the 'building blocks' or base directions for all other vectors.",
+    "check_questions": [
+      "Write [2, -3, 5] in terms of $\\mathbf{i, j, k}$.",
+      "What is the magnitude of $\\mathbf{i} + \\mathbf{j} + \\mathbf{k}$?",
+      "Which unit vector points along the z-axis?"
+    ],
+    "common_pitfalls": [
+      "Confusing the order (assigning $\\mathbf{i}$ to y or $\\mathbf{j}$ to x).",
+      "Forgetting that their magnitudes are exactly 1."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Unit Vector of a Given Vector",
+    "id": "MAT-CH14-T15",
+    "scratch_idea": "A unit vector $\\hat{u}$ in the direction of $\\mathbf{u}$ is found by dividing the vector by its magnitude. It has a magnitude of exactly 1 and points in the same direction as the original vector.",
+    "prerequisites": [
+      "Magnitude calculation",
+      "Scalar division"
+    ],
+    "formulas": [
+      "$\\hat{u} = \\frac{\\mathbf{u}}{|\\mathbf{u}|}$"
+    ],
+    "core_technique": "Normalize a vector by dividing every component by the total magnitude.",
+    "check_questions": [
+      "Find the unit vector of $[2, 5, -1]$.",
+      "What is the magnitude of any unit vector?",
+      "Can you find a unit vector for the zero vector?"
+    ],
+    "common_pitfalls": [
+      "Dividing only one component by the magnitude.",
+      "Confusing the unit vector notation $\\hat{u}$ with the vector $\\mathbf{u}$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Properties of Vector Addition",
+    "id": "MAT-CH14-T16",
+    "scratch_idea": "Vector addition follows specific algebraic laws: Commutative (order doesn't matter), Associative (grouping doesn't matter), Additive Identity (zero vector), and Additive Inverse (negative vector).",
+    "prerequisites": [
+      "Vector addition",
+      "Algebraic properties"
+    ],
+    "formulas": [
+      "$\\mathbf{u} + \\mathbf{v} = \\mathbf{v} + \\mathbf{u}$",
+      "$(\\mathbf{u} + \\mathbf{v}) + \\mathbf{w} = \\mathbf{u} + (\\mathbf{v} + \\mathbf{w})$",
+      "$\\mathbf{u} + \\mathbf{0} = \\mathbf{u}$",
+      "$\\mathbf{u} + (-\\mathbf{u}) = \\mathbf{0}$"
+    ],
+    "core_technique": "Use these properties to simplify complex vector expressions similar to scalar algebra.",
+    "check_questions": [
+      "Which property says $\\mathbf{u} + \\mathbf{v} = \\mathbf{v} + \\mathbf{u}$?",
+      "What is the additive inverse of $[1, -2, 3]$?",
+      "Does the distributive property $a(\\mathbf{u} + \\mathbf{v}) = a\\mathbf{u} + a\\mathbf{v}$ hold for vectors?"
+    ],
+    "common_pitfalls": [
+      "Assuming vector multiplication is commutative (it is for dot product, but not cross product).",
+      "Misapplying associative properties to mixed operations (like dot and cross products)."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Distance Between Two Points in Space",
+    "id": "MAT-CH14-T17",
+    "scratch_idea": "The distance between points P1 and P2 is the magnitude of the displacement vector $\\overrightarrow{P1P2}$. It is calculated by taking the square root of the sum of the squared differences of their coordinates.",
+    "prerequisites": [
+      "3D coordinates",
+      "Displacement vector"
+    ],
+    "formulas": [
+      "$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$"
+    ],
+    "core_technique": "Always subtract 'Terminal minus Initial' coordinates to find the displacement vector components before squaring.",
+    "check_questions": [
+      "Find the distance between (2, 4, 7) and (6, 1, 3).",
+      "If the distance between (0,0,0) and (x,0,0) is 5, what is x?",
+      "Does the order of points matter when calculating distance?"
+    ],
+    "common_pitfalls": [
+      "Mixing up the subtraction order ($x_1 - y_1$ instead of $x_2 - x_1$).",
+      "Forgetting to square the differences before adding."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Direction Angles and Direction Cosines",
+    "id": "MAT-CH14-T18",
+    "scratch_idea": "Direction angles (alpha, beta, gamma) are the angles a vector makes with the positive x, y, and z axes. Their cosines are called direction cosines and describe the vector's orientation.",
+    "prerequisites": [
+      "Trigonometry",
+      "Magnitude calculation"
+    ],
+    "formulas": [
+      "$\\cos \\alpha = \\frac{x}{r}$",
+      "$\\cos \\beta = \\frac{y}{r}$",
+      "$\\cos \\gamma = \\frac{z}{r}$",
+      "$\\cos^2 \\alpha + \\cos^2 \\beta + \\cos^2 \\gamma = 1$"
+    ],
+    "core_technique": "The direction cosines are actually the components of the unit vector in the direction of r.",
+    "check_questions": [
+      "What is the sum of the squares of direction cosines?",
+      "Calculate the direction cosines of $[3, -2, 6]$.",
+      "If a vector is along the z-axis, what are its direction angles?"
+    ],
+    "common_pitfalls": [
+      "Using the wrong magnitude in the denominator.",
+      "Forgetting that the angles are measured from the *positive* axes."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Dot (Scalar) Product - Geometric Definition",
+    "id": "MAT-CH14-T19",
+    "scratch_idea": "The dot product is a scalar quantity obtained by multiplying the magnitudes of two vectors and the cosine of the angle between them.",
+    "prerequisites": [
+      "Magnitude",
+      "Cosines"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}| |\\mathbf{v}| \\cos \\theta$"
+    ],
+    "core_technique": "Use this definition when the magnitudes and the angle are known, or to find the angle between vectors.",
+    "check_questions": [
+      "Find the dot product if $|u|=2, |v|=5, \\theta=60^\\circ$.",
+      "What is the dot product of two vectors if the angle between them is $90^\\circ$?",
+      "Is the result of a dot product a vector or a scalar?"
+    ],
+    "common_pitfalls": [
+      "Confusing $\\cos \\theta$ with $\\sin \\theta$.",
+      "Thinking the dot product results in a vector."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Dot (Scalar) Product - Algebraic Definition",
+    "id": "MAT-CH14-T20",
+    "scratch_idea": "In component form, the dot product is the sum of the products of the corresponding components of two vectors.",
+    "prerequisites": [
+      "Vector components",
+      "Arithmetic"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\cdot \\mathbf{v} = a_1a_2 + b_1b_2 + c_1c_2$"
+    ],
+    "core_technique": "Multiply corresponding i, j, and k components and add the results; i, j, and k disappear.",
+    "check_questions": [
+      "Find $[3, -1, -2] \\cdot [1, 2, -1]$.",
+      "What is $\\mathbf{i} \\cdot \\mathbf{i}$?",
+      "Compute $(2\\mathbf{i} + \\mathbf{j}) \\cdot (3\\mathbf{j} + \\mathbf{k})$."
+    ],
+    "common_pitfalls": [
+      "Keeping the unit vectors $\\mathbf{i, j, k}$ in the result.",
+      "Adding all components together instead of multiplying corresponding ones first."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Orthogonality (Perpendicularity) of Vectors",
+    "id": "MAT-CH14-T21",
+    "scratch_idea": "Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product is zero. This occurs because $\\cos(90^\\circ) = 0$.",
+    "prerequisites": [
+      "Dot product",
+      "Angle of 90 degrees"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\cdot \\mathbf{v} = 0 \\iff \\mathbf{u} \\perp \\mathbf{v}$"
+    ],
+    "core_technique": "To check if vectors are perpendicular, compute the dot product and see if it equals zero.",
+    "check_questions": [
+      "Are $[2, -4, 5]$ and $[4, -3, -4]$ orthogonal?",
+      "Find $a$ so that $[2, a, 5]$ and $[3, 1, a]$ are orthogonal.",
+      "Is the zero vector orthogonal to other vectors?"
+    ],
+    "common_pitfalls": [
+      "Assuming vectors are parallel when the dot product is zero.",
+      "Calculating the cross product instead of the dot product to test for perpendicularity."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Projection of a Vector",
+    "id": "MAT-CH14-T22",
+    "scratch_idea": "The projection of vector $\\mathbf{v}$ along $\\mathbf{u}$ represents the component of $\\mathbf{v}$ that lies in the direction of $\\mathbf{u}$. It is the 'shadow' of $\\mathbf{v}$ on $\\mathbf{u}$.",
+    "prerequisites": [
+      "Dot product",
+      "Magnitude"
+    ],
+    "formulas": [
+      "$\\text{Projection of } \\mathbf{v} \\text{ along } \\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{u}|}$",
+      "$\\text{Projection of } \\mathbf{u} \\text{ along } \\mathbf{v} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|}$"
+    ],
+    "core_technique": "The denominator is always the magnitude of the vector *being projected upon*.",
+    "check_questions": [
+      "Find the projection of $[2, 3, -1]$ on $[1, -2, 4]$.",
+      "What is the projection of a vector onto itself?",
+      "If two vectors are perpendicular, what is the projection of one onto the other?"
+    ],
+    "common_pitfalls": [
+      "Using the magnitude of the wrong vector in the denominator.",
+      "Forgetting that scalar projection is a number, not a vector."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Work Done by a Constant Force",
+    "id": "MAT-CH14-T23",
+    "scratch_idea": "Work is the scalar product of the force vector and the displacement vector. It measures the energy transferred by the force acting through a distance.",
+    "prerequisites": [
+      "Dot product",
+      "Displacement"
+    ],
+    "formulas": [
+      "$W = \\mathbf{F} \\cdot \\mathbf{d}$"
+    ],
+    "core_technique": "Calculate the displacement vector $\\mathbf{d}$ first by subtracting coordinates, then dot it with $\\mathbf{F}$.",
+    "check_questions": [
+      "A force $[1, 3, 5]$ displaces a body by $[2, 4, -1]$. Find the work.",
+      "If force and displacement are perpendicular, how much work is done?",
+      "Find work done moving from (4,-3,-2) to (6,1,-3) with force $[1, 3, 5]$."
+    ],
+    "common_pitfalls": [
+      "Using coordinates of points instead of the displacement vector.",
+      "Confusing total force with individual force components if multiple forces act."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Cross (Vector) Product - Geometric Definition",
+    "id": "MAT-CH14-T24",
+    "scratch_idea": "The cross product of two vectors results in a new vector that is perpendicular to the plane containing the original vectors. Its direction is determined by the right-hand rule.",
+    "prerequisites": [
+      "Sine function",
+      "Right-hand rule"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\times \\mathbf{v} = (|\\mathbf{u}| |\\mathbf{v}| \\sin \\theta) \\mathbf{n}$"
+    ],
+    "core_technique": "Use the right-hand rule: fingers curl from u to v, thumb points to the cross product.",
+    "check_questions": [
+      "What is the direction of $\\mathbf{u} \\times \\mathbf{v}$ relative to $\\mathbf{u}$ and $\\mathbf{v}$?",
+      "If two vectors are parallel, what is their cross product?",
+      "Is the cross product commutative?"
+    ],
+    "common_pitfalls": [
+      "Assuming $\\mathbf{u} \\times \\mathbf{v} = \\mathbf{v} \\times \\mathbf{u}$ (it is actually anti-commutative).",
+      "Forgetting that the result is a vector, not a scalar."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Cross Product - Determinant Formula",
+    "id": "MAT-CH14-T25",
+    "scratch_idea": "The cross product can be computed using a $3\\times 3$ determinant where the first row contains unit vectors $\\mathbf{i, j, k}$ and subsequent rows contain the components of the two vectors.",
+    "prerequisites": [
+      "Determinants",
+      "Expansion of determinants"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\times \\mathbf{v} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ \\end{vmatrix}$"
+    ],
+    "core_technique": "Be extremely careful with the negative sign for the $\\mathbf{j}$ component during expansion.",
+    "check_questions": [
+      "Calculate $[2, -1, 1] \\times [4, 2, -1]$.",
+      "How do you verify if the result of a cross product is correct?",
+      "What is $\\mathbf{i} \\times \\mathbf{j}$ using the determinant method?"
+    ],
+    "common_pitfalls": [
+      "Sign errors in the middle term ($-\\mathbf{j}$ component).",
+      "Swapping the rows of $\\mathbf{u}$ and $\\mathbf{v}$, which flips the direction."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Area of a Parallelogram and Triangle",
+    "id": "MAT-CH14-T26",
+    "scratch_idea": "The magnitude of the cross product $|\\mathbf{u} \\times \\mathbf{v}|$ equals the area of a parallelogram with sides $\\mathbf{u}$ and $\\mathbf{v}$. Half of this value gives the area of the triangle.",
+    "prerequisites": [
+      "Cross product",
+      "Magnitude"
+    ],
+    "formulas": [
+      "$\\text{Area of Parallelogram} = |\\mathbf{u} \\times \\mathbf{v}|$",
+      "$\\text{Area of Triangle} = \\frac{1}{2} |\\mathbf{u} \\times \\mathbf{v}|$"
+    ],
+    "core_technique": "Ensure the vectors $\\mathbf{u}$ and $\\mathbf{v}$ share a common vertex (adjacent sides).",
+    "check_questions": [
+      "Find the area of a triangle with vertices (1,-1,1), (2,1,-1), and (-1,1,2).",
+      "What physical quantity does $|\\mathbf{u} \\times \\mathbf{v}|$ represent?",
+      "If the cross product is $[12, 12, -3]$, find the parallelogram area."
+    ],
+    "common_pitfalls": [
+      "Using the cross product itself instead of its magnitude for the area.",
+      "Forgetting to divide by 2 when calculating the area of a triangle."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Moment of a Force (Torque)",
+    "id": "MAT-CH14-T27",
+    "scratch_idea": "Torque measures the rotational effect of a force. It is the cross product of the position vector $\\mathbf{r}$ (from the pivot to the point of application) and the force vector $\\mathbf{F}$.",
+    "prerequisites": [
+      "Cross product",
+      "Position vector"
+    ],
+    "formulas": [
+      "$\\mathbf{\\tau} = \\mathbf{r} \\times \\mathbf{F}$"
+    ],
+    "core_technique": "Order matters: $\\mathbf{r}$ first, then $\\mathbf{F}$. Point the fingers from pivot to force application.",
+    "check_questions": [
+      "Find the moment of force $[2, -6, 5]$ about a point if $\\mathbf{r} = [3, -2, 3]$.",
+      "What happens to torque if the force is applied directly at the pivot?",
+      "Calculate torque for force $F=-30\\mathbf{j}$ applied at $(1.2, 0.5, 0)$."
+    ],
+    "common_pitfalls": [
+      "Reversing the order to $\\mathbf{F} \\times \\mathbf{r}$.",
+      "Using the absolute position of the force point instead of the vector relative to the pivot."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Scalar Triple Product",
+    "id": "MAT-CH14-T28",
+    "scratch_idea": "The scalar triple product $\\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w})$ results in a scalar. It is computed using a $3\\times 3$ determinant of the three vectors' components.",
+    "prerequisites": [
+      "Dot product",
+      "Cross product",
+      "Determinants"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w}) = \\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\\\ \\end{vmatrix}$"
+    ],
+    "core_technique": "The positions of dot and cross can be interchanged without changing the result: $\\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w}) = (\\mathbf{u} \\times \\mathbf{v}) \\cdot \\mathbf{w}$.",
+    "check_questions": [
+      "Compute $[\\mathbf{i} \\mathbf{j} \\mathbf{k}]$.",
+      "Calculate the scalar triple product of $[1, 2, -1], [1, -2, 3],$ and $[1, -7, -4]$.",
+      "What is the result if any two vectors in the triple product are equal?"
+    ],
+    "common_pitfalls": [
+      "Assuming the result is a vector.",
+      "Incorrectly expanding the $3\\times 3$ determinant."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Volume of Parallelepiped and Tetrahedron",
+    "id": "MAT-CH14-T29",
+    "scratch_idea": "The absolute value of the scalar triple product is the volume of a parallelepiped. One-sixth of this value is the volume of a tetrahedron.",
+    "prerequisites": [
+      "Scalar triple product",
+      "Geometric shapes"
+    ],
+    "formulas": [
+      "$\\text{Volume of Parallelepiped} = |\\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w})|$",
+      "$\\text{Volume of Tetrahedron} = \\frac{1}{6} |\\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w})|$"
+    ],
+    "core_technique": "Always use the absolute value, as volume cannot be negative.",
+    "check_questions": [
+      "Find the volume of a parallelepiped with edges $[1, 2, -1], [1, -2, 3], [1, -7, -4]$.",
+      "Calculate the volume of a tetrahedron with vertices (2,1,8), (3,2,9), (2,1,4), and (3,3,0).",
+      "How is the volume of a tetrahedron related to a parallelepiped?"
+    ],
+    "common_pitfalls": [
+      "Forgetting the $1/6$ factor for tetrahedrons.",
+      "Leaving the answer as a negative number."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Coplanarity of Vectors",
+    "id": "MAT-CH14-T30",
+    "scratch_idea": "Three vectors are coplanar if they lie in the same plane. This occurs if and only if their scalar triple product is zero, meaning the volume of the parallelepiped they form is zero.",
+    "prerequisites": [
+      "Scalar triple product",
+      "Linear dependence"
+    ],
+    "formulas": [
+      "$\\mathbf{u} \\cdot (\\mathbf{v} \\times \\mathbf{w}) = 0 \\iff \\text{Coplanar}$"
+    ],
+    "core_technique": "To prove four points are coplanar, form three vectors from them (e.g., AB, AC, AD) and check if their scalar triple product is zero.",
+    "check_questions": [
+      "Are $[1, -2, 3], [-2, 3, -4],$ and $[1, -3, 5]$ coplanar?",
+      "Find $\\alpha$ so that $[\\alpha, 1, 0], [1, 1, 3],$ and $[2, 1, -2]$ are coplanar.",
+      "What does a zero volume of a parallelepiped imply about its edge vectors?"
+    ],
+    "common_pitfalls": [
+      "Calculating the cross product only and not taking the dot product.",
+      "Failing to form vectors correctly from given points before checking coplanarity."
+    ],
+    "difficulty": "Medium"
+  }
+]

@@ -1,0 +1,388 @@
+[
+  {
+    "topic_name": "Base Physical Quantities",
+    "id": "PHY-CH1-T1",
+    "scratch_idea": "Physical quantities are the foundation of physics, divided into base and derived. Base quantities are independent and not defined in terms of other physical quantities.",
+    "prerequisites": [
+      "Concept of measurement",
+      "Standard of comparison"
+    ],
+    "formulas": [],
+    "core_technique": "Identify quantities that serve as the fundamental building blocks (e.g., length, mass, time) for all other measurements.",
+    "check_questions": [
+      "Define base quantities with two examples.",
+      "How is the measurement of a base quantity established?",
+      "Why are base quantities considered independent?"
+    ],
+    "common_pitfalls": [
+      "Confusing derived quantities like velocity with base quantities.",
+      "Thinking a unit is a quantity."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Derived Physical Quantities",
+    "id": "PHY-CH1-T2",
+    "scratch_idea": "These are physical quantities whose definitions and measurements depend on one or more base quantities. Examples include force, work, and pressure.",
+    "prerequisites": [
+      "Base Physical Quantities"
+    ],
+    "formulas": [
+      "$v = \\frac{\\Delta s}{\\Delta t}$",
+      "$F = ma$"
+    ],
+    "core_technique": "Recognize that derived quantities are always products or quotients of base quantities.",
+    "check_questions": [
+      "What is the definition of a derived quantity?",
+      "List three examples of derived quantities mentioned in the text.",
+      "Is density a base or derived quantity? Justify."
+    ],
+    "common_pitfalls": [
+      "Assuming all units in SI are base units.",
+      "Failing to express derived units in terms of base units."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "SI Base Units",
+    "id": "PHY-CH1-T3",
+    "scratch_idea": "The International System of Units (SI) defines seven specific base units for the seven base physical quantities, such as the metre for length and kelvin for temperature.",
+    "prerequisites": [
+      "Base Physical Quantities",
+      "System International (SI)"
+    ],
+    "formulas": [],
+    "core_technique": "Memorize the seven base units and their specific symbols (e.g., 'cd' for candela, 'K' for kelvin).",
+    "check_questions": [
+      "Name the SI unit for the amount of substance.",
+      "Which base unit is used for luminous intensity?",
+      "State the seven base units of the SI system."
+    ],
+    "common_pitfalls": [
+      "Using 'C' for Celsius instead of 'K' for Kelvin.",
+      "Capitalizing unit names like 'Metre' when they should be lowercase 'metre'."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Supplementary Units: Radian and Steradian",
+    "id": "PHY-CH1-T4",
+    "scratch_idea": "These are dimensionless units used for measuring angles. The radian is for plane angles (2D), and the steradian is for solid angles (3D).",
+    "prerequisites": [
+      "Geometry of circles and spheres"
+    ],
+    "formulas": [
+      "$\\theta = \\frac{s}{r}$",
+      "$\\Omega = \\frac{A}{r^2}$"
+    ],
+    "core_technique": "Note that while they have units (rad, sr), they are mathematically dimensionless because they represent ratios of similar physical dimensions.",
+    "check_questions": [
+      "Define a radian.",
+      "What is the difference between a plane angle and a solid angle?",
+      "Why are these units considered dimensionless?"
+    ],
+    "common_pitfalls": [
+      "Confusing radian with degrees.",
+      "Applying steradian to 2D circles."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Scientific Notation",
+    "id": "PHY-CH1-T5",
+    "scratch_idea": "A standard way of writing very large or small numbers using powers of ten, ensuring only one non-zero digit remains to the left of the decimal point.",
+    "prerequisites": [
+      "Powers of ten",
+      "Decimal placement"
+    ],
+    "formulas": [
+      "$M \\times 10^n$"
+    ],
+    "core_technique": "Always move the decimal point until only one non-zero digit is on the left; the number of shifts determines the exponent $n$.",
+    "check_questions": [
+      "Express 0.0000543 in scientific notation.",
+      "Write 134.7 in standard scientific form.",
+      "Why is scientific notation used in physics?"
+    ],
+    "common_pitfalls": [
+      "Leaving two digits to the left of the decimal (e.g., 13.4 x 10^1).",
+      "Incorrectly calculating the sign of the exponent for decimals."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Conventions for SI Units",
+    "id": "PHY-CH1-T6",
+    "scratch_idea": "Specific rules for writing unit symbols and names to ensure global consistency, such as not using plurals for symbols and adding spaces between values and units.",
+    "prerequisites": [
+      "SI Base and Derived Units"
+    ],
+    "formulas": [],
+    "core_technique": "Remember that symbols named after scientists (e.g., Newton) have capital symbols (N) but lowercase full names (newton).",
+    "check_questions": [
+      "Is '10 kgs' a correct representation? Why or why not?",
+      "How should a compound prefix be handled according to SI rules?",
+      "What is the correct way to write the unit for 50 meters?"
+    ],
+    "common_pitfalls": [
+      "Using abbreviations like 'sec' instead of 's'.",
+      "Using compound prefixes like $\\mu\\mu F$."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Absolute Uncertainty",
+    "id": "PHY-CH1-T7",
+    "scratch_idea": "The maximum possible error in a measurement, which is usually equal to the least count of the measuring instrument used.",
+    "prerequisites": [
+      "Least count of instruments"
+    ],
+    "formulas": [
+      "$\\text{Absolute Uncertainty} = \\text{Least Count}$"
+    ],
+    "core_technique": "Check the smallest graduation on your scale; that value represents your absolute uncertainty for a single reading.",
+    "check_questions": [
+      "What is the absolute uncertainty of a metre rule graduated in mm?",
+      "If a measurement is $23.5 \\pm 0.1$ cm, what is the absolute uncertainty?",
+      "Explain how absolute uncertainty is determined for a single reading."
+    ],
+    "common_pitfalls": [
+      "Confusing absolute uncertainty with percentage uncertainty.",
+      "Ignoring the uncertainty when calculating final values."
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "topic_name": "Fractional and Percentage Uncertainty",
+    "id": "PHY-CH1-T8",
+    "scratch_idea": "Measures of the relative size of the uncertainty compared to the total measurement, useful for determining the accuracy of a result.",
+    "prerequisites": [
+      "Absolute Uncertainty"
+    ],
+    "formulas": [
+      "$\\text{Fractional Uncertainty} = \\frac{\\text{Absolute Uncertainty}}{\\text{Measured Value}}$",
+      "$\\text{Percentage Uncertainty} = \\frac{\\text{Absolute Uncertainty}}{\\text{Measured Value}} \\times 100\\%$"
+    ],
+    "core_technique": "Use these values to compare the accuracy of measurements taken with different instruments.",
+    "check_questions": [
+      "Calculate the % uncertainty if the measurement is 25.5 cm and absolute uncertainty is 0.1 cm.",
+      "How is fractional uncertainty related to percentage uncertainty?",
+      "Which is a better indicator of accuracy: absolute or percentage uncertainty?"
+    ],
+    "common_pitfalls": [
+      "Forgetting to multiply by 100 for percentage uncertainty.",
+      "Using the wrong units in the ratio (units must cancel)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Significant Figures: Rules for Counting",
+    "id": "PHY-CH1-T9",
+    "scratch_idea": "Significant figures are the reliably known digits in a measurement plus the first doubtful digit. Specific rules govern whether zeros are counted.",
+    "prerequisites": [
+      "Scientific Notation"
+    ],
+    "formulas": [],
+    "core_technique": "Zeros to the left are never significant; zeros between non-zero digits are always significant; zeros to the right are significant only in decimals.",
+    "check_questions": [
+      "How many significant figures are in 0.00467?",
+      "Is the zero in 3.570 significant?",
+      "State the rule for zeros in integers like 8000 kg."
+    ],
+    "common_pitfalls": [
+      "Counting leading zeros as significant.",
+      "Assuming all zeros at the end of a whole number are significant without checking instrument precision."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Significant Figures in Multiplication and Division",
+    "id": "PHY-CH1-T10",
+    "scratch_idea": "When multiplying or dividing, the final result must be rounded to the same number of significant figures as the factor with the least number of significant figures.",
+    "prerequisites": [
+      "Significant Figures: Rules for Counting"
+    ],
+    "formulas": [],
+    "core_technique": "Focus on the 'least accurate factor' - the one with the smallest count of significant digits.",
+    "check_questions": [
+      "A box has sides 2.03 m and 1.22 m. To how many sig figs should the area be reported?",
+      "Calculate $5.348 \\times 10^{-2} \\times 3.64 \\times 10^4$ and round correctly.",
+      "What is the rounding rule if the digit to be dropped is 5?"
+    ],
+    "common_pitfalls": [
+      "Rounding to decimal places instead of total significant figures.",
+      "Incorrectly rounding '5' (forgetting the odd/even rule)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Significant Figures in Addition and Subtraction",
+    "id": "PHY-CH1-T11",
+    "scratch_idea": "In addition or subtraction, the result is rounded to the same number of decimal places as the quantity with the fewest decimal places.",
+    "prerequisites": [
+      "Decimal placement"
+    ],
+    "formulas": [],
+    "core_technique": "The total number of significant figures does not matter here; only the position of the decimal point is relevant.",
+    "check_questions": [
+      "Add 72.1 m, 3.42 m, and 0.003 m and provide the correct result.",
+      "Subtract 0.97268 from 1.126 to the appropriate precision.",
+      "Why is the rule for addition different from multiplication?"
+    ],
+    "common_pitfalls": [
+      "Rounding to the least number of sig figs instead of the least decimal places.",
+      "Misaligning decimal points during calculation."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Precision vs Accuracy",
+    "id": "PHY-CH1-T12",
+    "scratch_idea": "Precision relates to the absolute uncertainty (least count) of the instrument. Accuracy relates to the fractional or percentage uncertainty (error) of the measurement.",
+    "prerequisites": [
+      "Absolute Uncertainty",
+      "Percentage Uncertainty"
+    ],
+    "formulas": [],
+    "core_technique": "A precise measurement has a small absolute uncertainty; an accurate measurement has a small percentage uncertainty.",
+    "check_questions": [
+      "Distinguish between precision and accuracy.",
+      "Can a measurement be precise but not accurate?",
+      "Which measurement is more accurate: 25.5 cm with 0.4% error or 0.45 cm with 2% error?"
+    ],
+    "common_pitfalls": [
+      "Using the terms interchangeably.",
+      "Thinking that a higher-precision instrument always yields a more accurate measurement for every quantity."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Uncertainty in Addition and Subtraction",
+    "id": "PHY-CH1-T13",
+    "scratch_idea": "When two or more quantities are added or subtracted, the total absolute uncertainty is the sum of the absolute uncertainties of the individual quantities.",
+    "prerequisites": [
+      "Absolute Uncertainty"
+    ],
+    "formulas": [
+      "$\\Delta z = \\Delta x + \\Delta y$"
+    ],
+    "core_technique": "Always add the absolute uncertainties, even if the physical quantities are being subtracted.",
+    "check_questions": [
+      "If $x_1 = 10.0 \\pm 0.1$ and $x_2 = 5.0 \\pm 0.1$, find $x_1 - x_2$ with its uncertainty.",
+      "Why do uncertainties add up during subtraction?",
+      "Calculate the uncertainty in the perimeter of a rectangle if each side has an uncertainty of 0.1 cm."
+    ],
+    "common_pitfalls": [
+      "Subtracting uncertainties when subtracting quantities.",
+      "Confusing absolute uncertainty with percentage uncertainty in this rule."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Uncertainty in Multiplication and Division",
+    "id": "PHY-CH1-T14",
+    "scratch_idea": "For products and quotients, the total percentage uncertainty in the result is found by adding the percentage uncertainties of each factor.",
+    "prerequisites": [
+      "Percentage Uncertainty"
+    ],
+    "formulas": [
+      "$\\%\\Delta z = \\%\\Delta x + \\%\\Delta y$"
+    ],
+    "core_technique": "Convert all absolute uncertainties to percentages first, sum them, and then convert back to absolute if needed for the final answer.",
+    "check_questions": [
+      "If $V$ has 3% uncertainty and $I$ has 7%, what is the % uncertainty in $R = V/I$?",
+      "Calculate the total uncertainty in volume if the length, width, and height each have 1% uncertainty.",
+      "Explain the step-by-step process for finding uncertainty in a product."
+    ],
+    "common_pitfalls": [
+      "Adding absolute uncertainties instead of percentages.",
+      "Dividing percentage uncertainties when dividing quantities."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Uncertainty in Power Factors",
+    "id": "PHY-CH1-T15",
+    "scratch_idea": "When a quantity is raised to a power, the percentage uncertainty of that quantity is multiplied by the value of the power.",
+    "prerequisites": [
+      "Percentage Uncertainty"
+    ],
+    "formulas": [
+      "$\\%\\Delta (x^n) = n \\times (\\%\\Delta x)$"
+    ],
+    "core_technique": "Remember that powers significantly amplify the uncertainty of a measurement.",
+    "check_questions": [
+      "If the uncertainty in radius $r$ is 0.8%, what is the uncertainty in the area of a circle ($A = \\pi r^2$)?",
+      "Calculate the uncertainty in volume $V = \\frac{4}{3}\\pi r^3$ if $r$ has 2% uncertainty.",
+      "How does the power factor affect the demand for precision in the original measurement?"
+    ],
+    "common_pitfalls": [
+      "Raising the uncertainty to the power instead of multiplying it.",
+      "Forgetting to ignore constant factors like $\\pi$ or $1/2$ in uncertainty calculations."
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "topic_name": "Dimensions of Physical Quantities",
+    "id": "PHY-CH1-T16",
+    "scratch_idea": "Dimensions represent the qualitative nature of a physical quantity in terms of fundamental dimensions like $[M]$, $[L]$, and $[T]$.",
+    "prerequisites": [
+      "Base and Derived Physical Quantities"
+    ],
+    "formulas": [
+      "$[v] = [LT^{-1}]$"
+    ],
+    "core_technique": "Substitute the units or formula of a quantity with the symbols $[M], [L], [T]$ to find its dimensional formula.",
+    "check_questions": [
+      "What are the dimensions of Force?",
+      "Represent work in terms of fundamental dimensions.",
+      "Why are dimensions written in square brackets?"
+    ],
+    "common_pitfalls": [
+      "Using unit symbols (like kg) instead of dimensional symbols (like M).",
+      "Omitting the square brackets."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Principle of Homogeneity",
+    "id": "PHY-CH1-T17",
+    "scratch_idea": "A physical equation is correct only if the dimensions on both sides of the equation are identical. This is used to check the consistency of formulas.",
+    "prerequisites": [
+      "Dimensions of Physical Quantities"
+    ],
+    "formulas": [],
+    "core_technique": "Treat the '=' sign as a separator and verify that the final simplified dimensions of the LHS match the RHS.",
+    "check_questions": [
+      "Check the homogeneity of $S = v_i t + \\frac{1}{2}at^2$.",
+      "Does the constant $1/2$ affect the dimensional correctness of an equation?",
+      "If dimensions on both sides match, does it guarantee the equation is physically correct?"
+    ],
+    "common_pitfalls": [
+      "Trying to assign dimensions to numerical constants.",
+      "Assuming an equation is wrong if constants don't match (dimensionality only checks variables)."
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "topic_name": "Deriving Formulas through Dimensional Analysis",
+    "id": "PHY-CH1-T18",
+    "scratch_idea": "One can predict the relationship between physical quantities by assuming dependency and solving for exponents using dimensional balance.",
+    "prerequisites": [
+      "Principle of Homogeneity",
+      "Algebraic solving of equations"
+    ],
+    "formulas": [],
+    "core_technique": "Set up a proportionality $F \\propto m^a v^b r^c$, equate dimensions, and solve for $a, b, c$ by comparing powers of $M, L, T$.",
+    "check_questions": [
+      "Derive the formula for centripetal force using dimensions.",
+      "Derive the formula for the time period of a simple pendulum.",
+      "What is the main limitation of this method regarding constants?"
+    ],
+    "common_pitfalls": [
+      "Failing to account for all variables the quantity might depend on.",
+      "Incorrectly comparing powers of $T$ or $L$ when they appear in multiple terms."
+    ],
+    "difficulty": "Hard"
+  }
+]
